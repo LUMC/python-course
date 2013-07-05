@@ -1,0 +1,60 @@
+Introduction to Python
+======================
+
+Slides are created as an IPython Notebook (IPython 1.0) and exported to
+reveal.js.
+
+
+Installation in a virtual environment
+-------------------------------------
+
+Required IPython version is 1.0 and you can install it from source in a
+virtual environment like this (on Debian Wheezy):
+
+    mkvirtualenv --no-site-packages programming-course
+
+We need IPython 1.0 which is not yet released, so we get it from GitHub:
+
+    git clone https://github.com/ipython/ipython.git /tmp/ipython
+    pushd /tmp/ipython
+    python setup.py install
+    popd
+
+If IPython 1.0 is released, you can just do this:
+
+    pip install ipython
+
+Some additional packages:
+
+    pip install pyzmq tornado jinja2 pygments sphinx markdown
+    pip install numpy
+
+For matplotlib, we need some development and system packages:
+
+    sudo aptitude install libfreetype6-dev libpng12-dev python-cairo \
+      python-gtk2 python-gtk2-dev
+    mkdir -p $VIRTUAL_ENV/lib/python2.7/dist-packages
+    ln -s /usr/lib/python2.7/dist-packages/{glib,gobject,gtk-2.0*,pygtk.pth} \
+      $VIRTUAL_ENV/lib/python2.7/dist-packages/
+    ln -s /usr/lib/pymodules/python2.7/cairo \
+      $VIRTUAL_ENV/lib/python2.7/dist-packages/
+
+    pip install matplotlib
+    echo "backend : GTKCairo" >> ~/.matplotlib/matplotlibrc
+
+
+Editing the slides
+------------------
+
+    ipython notebook --pylab inline
+
+Some aditional information on editing slides in the Notebook can be found
+here:
+
+http://www.slideviper.oquanta.info/tutorial/slideshow_tutorial_slides.html
+
+
+Exporting the slides
+--------------------
+
+    ipython nbconvert reveal python-intro.ipynb
