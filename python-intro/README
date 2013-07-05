@@ -57,4 +57,10 @@ http://www.slideviper.oquanta.info/tutorial/slideshow_tutorial_slides.html
 Exporting the slides
 --------------------
 
+This will create a set of slides to be viewed in a browser:
+
     ipython nbconvert reveal python-intro.ipynb
+
+As a reference for students, you could also create a full HTML dump:
+
+    ipython nbconvert full_html python-intro.ipynb
