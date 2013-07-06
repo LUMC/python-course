@@ -61,8 +61,9 @@ This will create a set of slides to be viewed in a browser:
 
     ipython nbconvert reveal python-intro.ipynb
 
-Make sure you have the reveal.js submodule repository initialized, otherwise
-you won't have any styling and navigation in your slides:
+If you're not connected to the internet, make sure you have the reveal.js
+submodule repository initialized, otherwise you won't have any styling and
+navigation in your slides:
 
     git submodule init
     git submodule update
