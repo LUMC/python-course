@@ -63,7 +63,8 @@ Exporting the slides
 
 This will create a set of slides to be viewed in a browser:
 
-    ipython nbconvert reveal python-intro.ipynb
+    ipython nbconvert --FilesWriter.build_directory= --format reveal \
+      python-intro.ipynb
 
 If you're not connected to the internet, make sure you have the reveal.js
 submodule repository initialized, otherwise you won't have any styling and
@@ -74,4 +75,5 @@ navigation in your slides:
 
 As a reference for students, you could also create a full HTML dump:
 
-    ipython nbconvert full_html python-intro.ipynb
+    ipython nbconvert --FilesWriter.build_directory= --format full_html \
+      python-intro.ipynb
