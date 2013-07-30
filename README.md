@@ -35,6 +35,6 @@ Live rendering of the slides
 You can use nbconvert to convert the slides to HTML and serve them. For
 example:
 
-    ipython nbconvert --to slides --post serve numpy-slides.ipynb
+    ipython nbconvert --to slides --post serve numpy.ipynb
 
 This will open the slides in a new browser window.
