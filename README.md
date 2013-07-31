@@ -12,7 +12,7 @@ for more information.
 Software installation
 ---------------------
 
-Todo (copy from our wiki).
+See the instructions in `INSTALL.md`.
 
 
 Editing the slides
