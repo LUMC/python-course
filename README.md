@@ -23,7 +23,7 @@ notebook server:
 
     ipython notebook
 
-Choose `Slideshow` in the `Cell Toolbar` menu.
+Choose *Slideshow* in the *Cell Toolbar* menu.
 
 Some aditional information on editing slides in the Notebook can be found
 here in [this presentation](http://www.slideviper.oquanta.info/tutorial/slideshow_tutorial_slides.html).
