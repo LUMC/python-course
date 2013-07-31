@@ -32,14 +32,8 @@ Install [virtualenv](http://www.virtualenv.org/) and
 [virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/) using
 [Virtualenv Burrito](https://github.com/brainsik/virtualenv-burrito):
 
-    curl -s https://raw.github.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | exclude_profile=1 $SHELL
+    curl -s https://raw.github.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | $SHELL
     source ~/.venvburrito/startup.sh
-    echo "source ~/.venvburrito/startup.sh" >> ~/.bashrc
-
-Note that because of
-[a bug](https://github.com/brainsik/virtualenv-burrito/issues/31) in
-Virtualenv Burrito we use `exclude_profile=1` and add the relevant line to
-`~/.bashrc` manually.
 
 Automatically link PyGTK/Pycairo/PyQt system packages into our virtual
 environments:
