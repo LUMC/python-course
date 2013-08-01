@@ -35,8 +35,9 @@ Install [virtualenv](http://www.virtualenv.org/) and
     curl -s https://raw.github.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | $SHELL
     source ~/.venvburrito/startup.sh
 
-Automatically link PyGTK/Pycairo/PyQt system packages into our virtual
-environments:
+Automatically
+[link PyGTK/Pycairo/PyQt system packages](https://gist.github.com/martijnvermaat/6111396/)
+into our virtual environments:
 
     curl -s https://gist.github.com/martijnvermaat/6111396/raw/postmkvirtualenv > ~/.virtualenvs/postmkvirtualenv
 
