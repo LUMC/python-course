@@ -1,9 +1,16 @@
-LUMC Human Genetics programming course
-======================================
+Programming course
+==================
 
 This repository contains material for the first installment (August 2013) of
 a programming course for scientists organised by the department of Human
 Genetics of the Leiden University Medical Center.
+
+The course is targeted at PhD students, Postdocs, or anyone willing to learn
+how to program in Python. Students are assumed to have some experience with
+programming, but not necessarily in Python, and the UNIX shell.
+
+The program consists of four mornings with lessons and some assignments to
+be done in your own time (i.e., during the afternoons).
 
 See the [Trac Wiki](https://humgenprojects.lumc.nl/trac/programming-course)
 for more information.
@@ -13,6 +20,20 @@ Software installation
 ---------------------
 
 See the instructions in `INSTALL.md`.
+
+
+Slides
+------
+
+The top-level directory contains slides for the following lessons.
+
+1. [Welcome](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/welcome.ipynb)
+2. [Introduction to Python](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/python.ipynb)
+3. [Version control with Git](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/git.ipynb)
+4. [Working with NumPy arrays](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/numpy.ipynb)
+5. [Plotting with matplotlib](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/matplotlib.ipynb)
+
+Note: These links are to one-page renderings on [IPython Notebook Viewer](http://nbviewer.ipython.org/), see below how to get the real slideshows.
 
 
 Editing the slides
