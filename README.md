@@ -27,10 +27,11 @@ Slides
 
 The top-level directory contains slides for the following lessons.
 
-1. [Introduction to Python](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/python.ipynb)
-2. [Version control with Git](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/git.ipynb)
-3. [Working with NumPy arrays](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/numpy.ipynb)
-4. [Plotting with matplotlib](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/matplotlib.ipynb)
+1. [Welcome](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/welcome.ipynb)
+2. [Introduction to Python](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/python.ipynb)
+3. [Version control with Git](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/git.ipynb)
+4. [Working with NumPy arrays](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/numpy.ipynb)
+5. [Plotting with matplotlib](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/matplotlib.ipynb)
 
 Note: These links are to one-page renderings on [IPython Notebook Viewer](http://nbviewer.ipython.org/), see below how to get the real slideshows.
 
