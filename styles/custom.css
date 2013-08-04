@@ -1,0 +1,14 @@
+/* Remove the vertical scrollbar added by nbconvert. */
+.reveal {
+  overflow-y: hidden;
+}
+
+/* Workaround some highlight.js bugs in language autodetection. */
+code.objectivec *,
+code.perl *,
+code.cs *,
+code.javascript *,
+code.http * {
+  color: black ! important;
+  font-weight: normal ! important;
+}
