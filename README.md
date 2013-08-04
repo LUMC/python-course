@@ -58,4 +58,22 @@ example:
 
     ipython nbconvert --to slides --post serve numpy.ipynb
 
-This will open the slides in a new browser window.
+This will open the slides in a new browser window. If you don't want that, add
+this argument:
+
+    --ServePostProcessor.open_in_browser=False
+
+By default, the reveal.js library is loaded over the internet from a CDN. I
+think it's usually not a good idea to rely on internet connectivity for your
+slides, so you can also place a copy of reveal.js on your local computer and
+specify the location like this:
+
+    --RevealHelpTransformer.url_prefix=reveal.js
+
+This would look for the reveal.js library in the reveal.js directory. You can
+download reveal.js by cloning its GitHub repository:
+
+    git clone https://github.com/hakimel/reveal.js.git
+
+Also, if you just want to compile the slides to HTML without serving them to
+your browser, leave out the `--post serve` argument.
