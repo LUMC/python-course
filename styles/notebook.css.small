@@ -1,10 +1,10 @@
 /*
   https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers
 */
-/*@font-face {
+@font-face {
     font-family: "Computer Modern";
     src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
-}*/
+}
 div.cell{
     /*width:800px;
     margin-left:16% !important;*/
