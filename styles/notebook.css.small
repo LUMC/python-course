@@ -40,6 +40,11 @@ div.text_cell_render{
     margin-top: 0.5em;
     display: block;*/
 }
+.text_cell_render .example {
+    font-weight: 300;
+    color: #40A157;
+    font-style: italic;
+}
 
 .warning{
     color: rgb( 240, 20, 20 )
