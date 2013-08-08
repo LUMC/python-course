@@ -46,7 +46,7 @@ class Read(object):
         return sum(self.qual) / len(self.read)
 
     def trim(self, score):
-        for position in range(len(self.read) - 1, 0, -1):
+        for position in range(len(self.read) - 1, -1, -1):
             if self.qual[position] >= score:
                 return self.read[:position]
 
