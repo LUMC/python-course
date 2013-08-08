@@ -12,3 +12,6 @@ code.http * {
   color: black ! important;
   font-weight: normal ! important;
 }
+span.title {
+  color: black ! important;
+}
