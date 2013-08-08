@@ -15,3 +15,9 @@ code.http * {
 span.title {
   color: black ! important;
 }
+span.tag {
+  color: black ! important;
+}
+span.attribute {
+  color: black ! important;
+}
