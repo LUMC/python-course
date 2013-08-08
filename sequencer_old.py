@@ -32,14 +32,14 @@ class Sequence(object):
 
 class Read(object):
     def __init__(self):
-        self.read = ""
+        self.read = []
         self.qual = []
 
     def __str__(self):
-        return self.read
+        return "".join(self.read)
 
-    def add(self, base):
-        self.read += base[0]
+    def append(self, base):
+        self.read.append(base[0])
         self.qual.append(base[1])
 
     def quality(self):
@@ -48,20 +48,23 @@ class Read(object):
     def trim(self, score):
         for position in range(len(self.read) - 1, -1, -1):
             if self.qual[position] >= score:
-                return self.read[:position]
+                self.read = self.read[:position + 1]
+                self.qual = self.qual[:position + 1]
+                break
 
-def withClass():
+def with_class():
     spots = 2
     run = Sequence(spots)
 
     reads = [Read() for _ in range(spots)]
     for tile in run:
         for read_id, base in enumerate(tile):
-            reads[read_id].add(base)
+            reads[read_id].append(base)
 
     for i in reads:
         print i, i.quality()
-        print i.trim(39)
+        i.trim(39)
+        print i, i.quality()
 
 def quality(quals):
     return sum(quals) / len(quals)
@@ -69,9 +72,9 @@ def quality(quals):
 def trim(read, quals, score):
     for position in range(len(read) - 1, 0, -1):
         if quals[position] >= score:
-            return read[:position]
+            return read[:position + 1], quals[:position + 1]
 
-def withoutClass():
+def without_class():
     spots = 2
     run = Sequence(spots)
 
@@ -84,7 +87,9 @@ def withoutClass():
 
     for read_id, read in enumerate(reads):
         print read, quality(quals[read_id])
-        print trim(read, quals[read_id], 39)
+        read, quals[read_id] = trim(read, quals[read_id], 39)
+        print read, quality(quals[read_id])
 
 if __name__ == "__main__":
-    withoutClass()
+    #without_class()
+    with_class()
