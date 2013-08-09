@@ -46,10 +46,9 @@ any name here):
 
     mkvirtualenv programming-course
 
-Install IPython (version 1.0):
+Install IPython:
 
-    pip install -e git+https://github.com/ipython/ipython#egg=ipython
-    # or after its 1.0 release: pip install ipython
+    pip install ipython
 
 Install some of the other package we'll use:
 

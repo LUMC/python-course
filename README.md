@@ -33,6 +33,8 @@ The top-level directory contains slides for the following lessons.
 4. [More Python Goodness](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/more-python.ipynb)
 5. [Working with NumPy arrays](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/numpy.ipynb)
 6. [Plotting with matplotlib](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/matplotlib.ipynb)
+7. [Object-oriented programming](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/classes.ipynb)
+8. [A sip of Biopython](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/biopython.ipynb)
 
 Note: These links are to one-page renderings on [IPython Notebook Viewer](http://nbviewer.ipython.org/), see below how to get the real slideshows.
 

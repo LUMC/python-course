@@ -31,14 +31,19 @@ div.text_cell_render{
 .prompt{
     display: None;
 }
-.text_cell_render h5 {
+.text_cell_render .exercise {
     font-weight: 300;
-    font-size: 22pt;
+    /*font-size: 22pt;*/
     color: #4057A1;
     font-style: italic;
-    margin-bottom: .5em;
+    /*margin-bottom: .5em;
     margin-top: 0.5em;
-    display: block;
+    display: block;*/
+}
+.text_cell_render .example {
+    font-weight: 300;
+    color: #40A157;
+    font-style: italic;
 }
 
 .warning{
