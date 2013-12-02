@@ -12,7 +12,8 @@ programming, but not necessarily in Python, and the UNIX shell.
 The program consists of four mornings with lessons and some assignments to
 be done in your own time (i.e., during the afternoons).
 
-See the [Trac Wiki](https://humgenprojects.lumc.nl/trac/programming-course)
+See the
+[Trac Wiki](https://humgenprojects.lumc.nl/trac/humgenprojects/wiki/ProgrammingCourse)
 for more information.
 
 
