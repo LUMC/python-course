@@ -32,14 +32,14 @@ Install [virtualenv](http://www.virtualenv.org/) and
 [virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/) using
 [Virtualenv Burrito](https://github.com/brainsik/virtualenv-burrito):
 
-    curl -s https://raw.github.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | $SHELL
+    curl -sL https://raw.github.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | $SHELL
     source ~/.venvburrito/startup.sh
 
 Automatically
 [link PyGTK/Pycairo/PyQt system packages](https://gist.github.com/martijnvermaat/6111396/)
 into our virtual environments:
 
-    curl -s https://gist.github.com/martijnvermaat/6111396/raw/postmkvirtualenv > ~/.virtualenvs/postmkvirtualenv
+    curl -sL https://gist.github.com/martijnvermaat/6111396/raw/postmkvirtualenv > ~/.virtualenvs/postmkvirtualenv
 
 Create a virtual environment (named `programming-course`, but you could choose
 any name here):
