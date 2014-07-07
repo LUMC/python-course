@@ -1,0 +1,13 @@
+ipython
+pyzmq
+tornado
+jinja2
+pygments
+sphinx
+markdown
+nose
+numpy
+matplotlib
+biopython
+pandas
+openpyxl
