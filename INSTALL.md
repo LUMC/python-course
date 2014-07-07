@@ -59,8 +59,8 @@ Install some of the other package we'll use:
 
 Define a default matplotlib backend:
 
-    mkdir -p ~/.matplotlib
-    echo "backend : GTKCairo" >> ~/.matplotlib/matplotlibrc
+    mkdir -p ~/.config/matplotlib
+    echo "backend : GTKCairo" >> ~/.config/matplotlib/matplotlibrc
 
 
 Mac OSX Mountain Lion
