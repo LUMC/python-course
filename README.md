@@ -74,10 +74,11 @@ specify the location like this:
 
     --RevealHelpTransformer.url_prefix=reveal.js
 
-This would look for the reveal.js library in the reveal.js directory. You can
-download reveal.js by cloning its GitHub repository:
+This would look for the reveal.js library in the `reveal.js` directory. A Git
+submodule is already setup for this, so you can just do:
 
-    git clone https://github.com/hakimel/reveal.js.git
+    git submodule init
+    git submodule update
 
 Also, if you just want to compile the slides to HTML without serving them to
 your browser, leave out the `--post serve` argument.
