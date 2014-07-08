@@ -8,7 +8,7 @@ packages installed.
 Linux
 -----
 
-We assume Ubuntu (12.04 Quantal Quetzal or later) or Debian Linux (7.0 Wheezy
+We assume Ubuntu (12.10 Quantal Quetzal or later) or Debian Linux (7.0 Wheezy
 or later), but if you manage to install everything on a different flavour
 that's also fine.
 
@@ -56,11 +56,13 @@ Install some of the other package we'll use:
     pip install numpy
     pip install matplotlib
     pip install biopython
+    pip install pandas==0.14.0
+    pip install openpyxl==2.0.4
 
 Define a default matplotlib backend:
 
-    mkdir -p ~/.matplotlib
-    echo "backend : GTKCairo" >> ~/.matplotlib/matplotlibrc
+    mkdir -p ~/.config/matplotlib
+    echo "backend : GTKCairo" >> ~/.config/matplotlib/matplotlibrc
 
 
 Mac OSX Mountain Lion
@@ -110,3 +112,6 @@ Install some of the other package we'll use:
     pip install numpy
     pip install matplotlib
     pip install biopython
+    pip install pandas==0.14.0
+    pip install openpyxl==2.0.4
+
