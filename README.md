@@ -72,13 +72,17 @@ think it's usually not a good idea to rely on internet connectivity for your
 slides, so you can also place a copy of reveal.js on your local computer and
 specify the location like this:
 
-    --RevealHelpTransformer.url_prefix=reveal.js
+    --reveal-prefix reveal.js
 
 This would look for the reveal.js library in the `reveal.js` directory. A Git
 submodule is already setup for this, so you can just do:
 
     git submodule init
     git submodule update
+
+(Unfortunately, there are other online dependencies such Font Awesome, so
+without an internet connection, not everything will look ok, but it will
+work.)
 
 Also, if you just want to compile the slides to HTML without serving them to
 your browser, leave out the `--post serve` argument.
