@@ -1,8 +1,8 @@
 Programming course
 ==================
 
-This repository contains material for the first installment (August 2013) of
-a programming course for scientists organised by the department of Human
+This repository contains material for the second installment (July 2014) of a
+programming course for scientists organised by the department of Human
 Genetics of the Leiden University Medical Center.
 
 The course is targeted at PhD students, Postdocs, or anyone willing to learn
@@ -23,35 +23,52 @@ Software installation
 See the instructions in `INSTALL.md`.
 
 
-Slides
-------
+Materials
+---------
 
-The top-level directory contains slides for the following lessons.
+The top-level directory contains materials for the following lessons:
 
-1. [Welcome](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/welcome.ipynb)
-2. [Introduction to Python](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/python.ipynb)
-3. [Version control with Git](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/git.ipynb)
-4. [More Python Goodness](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/more-python.ipynb)
-5. [Working with NumPy arrays](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/numpy.ipynb)
-6. [Plotting with matplotlib](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/matplotlib.ipynb)
-7. [Object-oriented programming](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/classes.ipynb)
-8. [A sip of Biopython](http://nbviewer.ipython.org/urls/raw.github.com/LUMC/programming-course/master/biopython.ipynb)
+1. Welcome (slides) [view](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/welcome.ipynb)
+2. Introduction to Python (slides) [view](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/python.ipynb)
+3. More Python Goodness (notebook) [view](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/more-python.ipynb)
+4. Working with NumPy arrays (slides) [view](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/numpy.ipynb)
+5. Plotting with matplotlib (slides) [view](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/matplotlib.ipynb)
+6. Object-oriented programming (slides) [view](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/classes.ipynb)
+7. A sip of Biopython (notebook) [view](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/biopython.ipynb)
 
-Note: These links are to one-page renderings on [IPython Notebook Viewer](http://nbviewer.ipython.org/), see below how to get the real slideshows.
+As indicated, some of the lessons are slideshows, whereas others are just
+notebooks we scroll through during class. The links above are all one-page
+static renderings on [IPython Notebook Viewer](http://nbviewer.ipython.org/).
 
 
-Editing the slides
-------------------
+Notebooks
+---------
 
-The slides are simple IPython notebooks, you can edit them by starting a
-notebook server:
+We apply some custom styling to the notebooks (e.g., body width, font), which
+is loaded in the last cell. This loads `styles/notebook.css` and
+`styles/notebook.js`.
+
+A variant `styles/notebook.css.small` is provided that is more suitable for
+use on low-resolution displays. To use it, manually change the reference to
+this file in the bottom cell, and rerun it.
+
+
+Slideshows
+----------
+
+The sources for the slideshows are also IPython notebooks and you can edit
+them by starting a notebook server:
 
     ipython notebook
 
 Choose *Slideshow* in the *Cell Toolbar* menu.
 
 Some aditional information on editing slides in the Notebook can be found
-here in [this presentation](http://www.slideviper.oquanta.info/tutorial/slideshow_tutorial_slides.html).
+here in
+[this presentation](http://www.slideviper.oquanta.info/tutorial/slideshow_tutorial_slides.html).
+
+We also apply some custom styling to the slideshows, which is loaded in the
+last cell.
 
 
 Live rendering of the slides

@@ -8,7 +8,7 @@ packages installed.
 Linux
 -----
 
-We assume Ubuntu (12.10 Precise Pangolin or later) or Debian Linux (7.0 Wheezy
+We assume Ubuntu (12.04 Precise Pangolin or later) or Debian Linux (7.0 Wheezy
 or later), but if you manage to install everything on a different flavour
 that's also fine.
 
