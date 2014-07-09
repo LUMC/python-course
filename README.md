@@ -40,6 +40,9 @@ As indicated, some of the lessons are slideshows, whereas others are just
 notebooks we scroll through during class. The links above are all one-page
 static renderings on [IPython Notebook Viewer](http://nbviewer.ipython.org/).
 
+We also have a
+[repository with material for the assignments](https://git.lumc.nl/humgen/programming-course-assignments).
+
 
 Notebooks
 ---------
