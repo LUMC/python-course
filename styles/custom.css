@@ -1,5 +1,5 @@
 /* Remove the vertical scrollbar added by nbconvert. */
-.reveal {
+html {
   overflow-y: hidden;
 }
 

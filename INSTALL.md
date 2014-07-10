@@ -8,7 +8,7 @@ packages installed.
 Linux
 -----
 
-We assume Ubuntu (12.10 Quantal Quetzal or later) or Debian Linux (7.0 Wheezy
+We assume Ubuntu (12.04 Precise Pangolin or later) or Debian Linux (7.0 Wheezy
 or later), but if you manage to install everything on a different flavour
 that's also fine.
 
@@ -46,18 +46,9 @@ any name here):
 
     mkvirtualenv programming-course
 
-Install IPython:
+Install Python packages:
 
-    pip install ipython
-
-Install some of the other package we'll use:
-
-    pip install pyzmq tornado jinja2 pygments sphinx markdown nose
-    pip install numpy
-    pip install matplotlib
-    pip install biopython
-    pip install pandas==0.14.0
-    pip install openpyxl==2.0.4
+    pip install -r requirements.txt
 
 Define a default matplotlib backend:
 
@@ -93,7 +84,7 @@ Install [virtualenv](http://www.virtualenv.org/) and
 [virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/) using
 [Virtualenv Burrito](https://github.com/brainsik/virtualenv-burrito):
 
-    curl -s https://raw.github.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | $SHELL
+    curl -sL https://raw.github.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | $SHELL
     source .venvburrito/startup.sh
 
 Create a virtual environment (named `programming-course`, but you could choose
@@ -101,17 +92,6 @@ any name here):
 
     mkvirtualenv programming-course
 
-Install IPython (version 1.0):
+Install Python packages:
 
-    pip install -e git+https://github.com/ipython/ipython#egg=ipython
-    # or after its 1.0 release: pip install ipython
-
-Install some of the other package we'll use:
-
-    pip install pyzmq tornado jinja2 pygments sphinx markdown nose
-    pip install numpy
-    pip install matplotlib
-    pip install biopython
-    pip install pandas==0.14.0
-    pip install openpyxl==2.0.4
-
+    pip install -r requirements.txt
