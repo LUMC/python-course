@@ -23,8 +23,8 @@ We need some system packages to be installed. For the following command, you
 need sudo rights:
 
     sudo apt-get install -y \
-      curl python-qt4 libfreetype6-dev libpng12-dev python-cairo \
-      python-gtk2 python-gtk2-dev git gfortran
+      curl gfortran git libblas-dev libfreetype6-dev liblapack-dev
+      libpng12-dev python-cairo python-gtk2 python-gtk2-dev python-qt4
 
 From here on, everything is local for the current user.
 
