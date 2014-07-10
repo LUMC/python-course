@@ -28,13 +28,15 @@ Materials
 
 The top-level directory contains materials for the following lessons:
 
-1. Welcome (slides) [view](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/welcome.ipynb)
-2. Introduction to Python (slides) [view](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/python.ipynb)
-3. More Python Goodness (notebook) [view](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/more-python.ipynb)
-4. Working with NumPy arrays (slides) [view](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/numpy.ipynb)
-5. Plotting with matplotlib (slides) [view](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/matplotlib.ipynb)
-6. Object-oriented programming (slides) [view](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/classes.ipynb)
-7. A sip of Biopython (notebook) [view](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/biopython.ipynb)
+1. Welcome ([slides](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/01%20-%20Welcome.ipynb))
+2. Introduction to Python ([slides 1](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/02%20-%20Introduction%20to%20Python%20(1).ipynb), [slides 2](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/02%20-%20Introduction%20to%20Python%20(2).ipynb), [slides 3](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/02%20-%20Introduction%20to%20Python%20(3).ipynb))
+3. More Python Goodness ([notebook 1](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/03%20-%20More%20Python%20goodness%20(1).ipynb), [notebook 2](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/03%20-%20More%20Python%20goodness%20(2).ipynb))
+4. Working with NumPy arrays
+5. IPython Notebook ([notebook](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/05%20-%20IPython%20Notebook.ipynb))
+6. Plotting with matplotlib
+7. Python for data analysis
+8. Object-oriented programming
+9. A sip of Biopython ([notebook 1](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/09%20-%20A%20sip%20of%20Biopython%20(1).ipynb), [notebook 2](http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/09%20-%20A%20sip%20of%20Biopython%20(2).ipynb))
 
 As indicated, some of the lessons are slideshows, whereas others are just
 notebooks we scroll through during class. The links above are all one-page
