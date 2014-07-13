@@ -35,7 +35,7 @@ The top-level directory contains materials for the following lessons:
 4. Working with NumPy arrays ([slides][lesson_04])
 5. IPython Notebook ([notebook][lesson_05])
 6. Plotting with matplotlib
-7. Python for data analysis
+7. Painting Pandas
 8. Object-oriented programming
 9. A sip of Biopython ([notebook 1][lesson_09_01], [notebook 2][lesson_09_02])
 
