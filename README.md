@@ -35,7 +35,7 @@ The top-level directory contains materials for the following lessons:
 4. Working with NumPy arrays ([slides][lesson_04])
 5. IPython Notebook ([notebook][lesson_05])
 6. Plotting with matplotlib
-7. Painting Pandas
+7. Painting Pandas ([slides][lesson_07])
 8. Object-oriented programming
 9. A sip of Biopython ([notebook 1][lesson_09_01], [notebook 2][lesson_09_02])
 
@@ -47,6 +47,7 @@ The top-level directory contains materials for the following lessons:
 [lesson_03_02]: http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/03%20-%20More%20Python%20goodness%20(2).ipynb
 [lesson_04]: http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/04%20-%20Working%20with%20NumPy%20arrays.ipynb
 [lesson_05]: http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/05%20-%20IPython%20Notebook.ipynb
+[lesson_07]: http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/07%20-%20Painting%20Pandas.ipynb
 [lesson_09_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/09%20-%20A%20sip%20of%20Biopython%20(1).ipynb
 [lesson_09_02]: http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/09%20-%20A%20sip%20of%20Biopython%20(2).ipynb
 
