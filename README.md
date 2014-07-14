@@ -101,6 +101,12 @@ this argument:
 
     --ServePostProcessor.open_in_browser=False
 
+To serve on another IP address than the default 127.0.0.1, use the `ip`
+configuration of the serve postprocessing. For example, to listen on all IP
+addresses:
+
+    --ServePostProcessor.ip=0.0.0.0
+
 By default, the reveal.js library is loaded over the internet from a CDN. I
 think it's usually not a good idea to rely on internet connectivity for your
 slides, so you can also place a copy of reveal.js on your local computer and
