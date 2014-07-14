@@ -107,6 +107,8 @@ addresses:
 
     --ServePostProcessor.ip=0.0.0.0
 
+Changing the port can be done similarly with `port`.
+
 By default, the reveal.js library is loaded over the internet from a CDN. I
 think it's usually not a good idea to rely on internet connectivity for your
 slides, so you can also place a copy of reveal.js on your local computer and
