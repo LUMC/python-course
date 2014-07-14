@@ -32,7 +32,7 @@ The top-level directory contains materials for the following lessons:
 2. Introduction to Python ([slides 1][lesson_02_01], [slides 2][lesson_02_02],
    [slides 3][lesson_02_03])
 3. More Python Goodness ([notebook 1][lesson_03_01], [notebook 2][lesson_03_02])
-4. Working with NumPy arrays
+4. Working with NumPy arrays ([slides][lesson_04])
 5. IPython Notebook ([notebook][lesson_05])
 6. Plotting with matplotlib
 7. Painting Pandas ([slides][lesson_07])
@@ -45,6 +45,7 @@ The top-level directory contains materials for the following lessons:
 [lesson_02_03]: http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/02%20-%20Introduction%20to%20Python%20(3).ipynb
 [lesson_03_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/03%20-%20More%20Python%20goodness%20(1).ipynb
 [lesson_03_02]: http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/03%20-%20More%20Python%20goodness%20(2).ipynb
+[lesson_04]: http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/04%20-%20Working%20with%20NumPy%20arrays.ipynb
 [lesson_05]: http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/05%20-%20IPython%20Notebook.ipynb
 [lesson_07]: http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/07%20-%20Painting%20Pandas.ipynb
 [lesson_09_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/humgen/programming-course/raw/master/09%20-%20A%20sip%20of%20Biopython%20(1).ipynb
@@ -100,6 +101,14 @@ This will open the slides in a new browser window. If you don't want that, add
 this argument:
 
     --ServePostProcessor.open_in_browser=False
+
+To serve on another IP address than the default 127.0.0.1, use the `ip`
+configuration of the serve postprocessing. For example, to listen on all IP
+addresses:
+
+    --ServePostProcessor.ip=0.0.0.0
+
+Changing the port can be done similarly with `port`.
 
 By default, the reveal.js library is loaded over the internet from a CDN. I
 think it's usually not a good idea to rely on internet connectivity for your
