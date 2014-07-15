@@ -49,3 +49,7 @@ div.text_cell_render{
 .warning{
     color: rgb( 240, 20, 20 )
 }
+/* stupid beamer doesn't show left part of the screen */
+body {
+    margin-left: 10px;
+}
