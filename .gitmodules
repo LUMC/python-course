@@ -1,3 +1,6 @@
 [submodule "reveal.js"]
 	path = reveal.js
 	url = https://github.com/hakimel/reveal.js.git
+[submodule "programming-course-assignments"]
+	path = programming-course-assignments
+	url = git@git.lumc.nl:humgen/programming-course-assignments.git
