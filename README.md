@@ -16,6 +16,17 @@ See the
 [Trac Wiki](https://humgenprojects.lumc.nl/trac/humgenprojects/wiki/ProgrammingCourse)
 for more information.
 
+## Coordinates
+
+- Date: 18-21 September, 2017
+- Time: 10:00 - 17:00
+- Location: 01-J-01-083
+- Teachers:
+  - TBA
+- Registration via www.medgencentre.nl. Direct access to the [registration form](https://forms.lumc.nl/lumc2/PYTHONcourse).
+
+Please note that the above mentioned date and location are subject to change.
+
 
 Software installation
 ---------------------
