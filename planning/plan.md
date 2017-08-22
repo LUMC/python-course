@@ -61,7 +61,8 @@
   * range.
   * zip.
 - Flow control and iteration.
-- Functions
+- Functions.
+- Virtual environments.
 
 ## More Python Goodness (2h)
 
@@ -74,37 +75,47 @@
 - Working with modules.
 - Reading and writing files.
 
-## Working with NumPy arrays (1h)
-
 ## IPython Notebook (1h)
 
-## Plotting with matplotlib (1h)
+## Data manipulation (1h)
+- NumPy
+- Pandas
 
-## Painting Pandas (1h)
+## Data visualisation (2h)
+- Matplotlib
+- Bokeh
 
 ## Object-oriented programming (1h)
 
-## Biopython (2h)
+## Biopython (1h)
+
+## Putting everything together
+- Packaging
+- Real world project examples
 
 # Program
 
 - Mornings: presentations.
 - Afternoons: assignments.
 
-| Day             | Time  | Lesson                              | Teacher | 
-|-----------------|-------|------------------------------------ |---------|
-| Monday, 18/9    | 9-10  | Welcome, Introduction to Python (1) | TBD     | 
-|                 | 10-11 | Introduction to Python (2)          | TBD     | 
-|                 | 11-12 | Introduction to Python (3)          | TBD     | 
-| Tuesday, 19/9   | 9-10  | More Python Goodness (1)            | TBD     | 
-|                 | 10-11 | More Python Goodness (2)            | TBD     | 
-|                 | 11-12 | Working with NumPy arrays           | TBD     | 
-| Wednesday, 20/9 | 9-10  | IPython Notebook                    | TBD     | 
-|                 | 10-11 | Plotting with matplotlib            | TBD     | 
-|                 | 11-12 | Painting Pandas                     | TBD     | 
-| Thursday, 21/9  | 9-10  | Object-oriented programming         | TBD     | 
-|                 | 10-11 | Biopython (1)                       | TBD     | 
-|                 | 11-12 | Biopython (2)                       | TBD     | 
+| Day             | Time  | Lesson                              | Teacher  | 
+|-----------------|-------|------------------------------------ |----------|
+| Monday, 18/9    | 9-10  | Welcome, Introduction to Python (1) | Mihai    | 
+|                 | 10-11 | Introduction to Python (2)          | Jeroen   |  
+|                 | 11-12 | Introduction to Python (3)          | Mihai    | 
+|                 | 12-13 | Practical help                      |          | 
+| Tuesday, 19/9   | 9-10  | Assignments review                  |          |
+|                 | 10-11 | More Python Goodness (1)            | Mihai    | 
+|                 | 11-12 | More Python Goodness (2)            | Mihai    | 
+|                 | 12-13 | IPython Notebook                    | Mark     | 
+| Wednesday, 20/9 | 9-10  | Assignments review                  |          | 
+|                 | 10-11 | Data manipulation (NumPy, Pandas)   | Mark     | 
+|                 | 11-12 | Data visualisation (1)              | Guy      | 
+|                 | 12-13 | Data visualisation (2)              | Guy      | 
+| Thursday, 21/9  | 9-10  | Assignments review                  |          | 
+|                 | 10-11 | Object-oriented programming         | Jonathan | 
+|                 | 11-12 | Biopython                           | Guy      | 
+|                 | 12-13 | Putting everything together         | Jeroen   |
 
 # Assignments
 
