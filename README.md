@@ -12,7 +12,7 @@ be done in your own time (i.e., during the afternoons).
 
 - Date: 18-21 September, 2017
 - Time: 9:00 - 17:00
-- Location: 01-J-01-083
+- Location: V7-41
 - Teachers:
   - Jeroen Laros
   - Jonathan Vis
