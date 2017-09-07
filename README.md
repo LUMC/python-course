@@ -1,10 +1,6 @@
 Programming course
 ==================
 
-This repository contains material for the second installment (July 2014) of a
-programming course for scientists organised by the department of Human
-Genetics of the Leiden University Medical Center.
-
 The course is targeted at PhD students, Postdocs, or anyone willing to learn
 how to program in Python. Students are assumed to have some experience with
 programming, but not necessarily in Python, and the UNIX shell.
@@ -22,16 +18,39 @@ for more information.
 - Time: 10:00 - 17:00
 - Location: 01-J-01-083
 - Teachers:
-  - TBA
+  - Jeroen Laros
+  - Jonathan Vis
+  - Mark Santcroos
+  - Guy Allard
+  - Mihai Lefter
 - Registration via www.medgencentre.nl. Direct access to the [registration form](https://forms.lumc.nl/lumc2/PYTHONcourse).
 
 Please note that the above mentioned date and location are subject to change.
 
+Program
+-------
 
-Software installation
----------------------
+- Mornings: presentations.
+- Afternoons: assignments.
 
-See the instructions in `INSTALL.md`.
+| Day             | Time  | Lesson                              | Teacher  | 
+|-----------------|-------|------------------------------------ |----------|
+| Monday, 18/9    | 9-10  | Welcome, Introduction to Python (1) | Mihai    | 
+|                 | 10-11 | Introduction to Python (2)          | Jeroen   |  
+|                 | 11-12 | Introduction to Python (3)          | Mihai    | 
+|                 | 12-13 | Practical help                      |          | 
+| Tuesday, 19/9   | 9-10  | Assignments review                  |          |
+|                 | 10-11 | More Python Goodness (1)            | Mihai    | 
+|                 | 11-12 | More Python Goodness (2)            | Mihai    | 
+|                 | 12-13 | IPython Notebook                    | Mark     | 
+| Wednesday, 20/9 | 9-10  | Assignments review                  |          | 
+|                 | 10-11 | Data manipulation (NumPy, Pandas)   | Mark     | 
+|                 | 11-12 | Data visualisation (1)              | Guy      | 
+|                 | 12-13 | Data visualisation (2)              | Guy      | 
+| Thursday, 21/9  | 9-10  | Assignments review                  |          | 
+|                 | 10-11 | Object-oriented programming         | Jonathan | 
+|                 | 11-12 | Biopython                           | Guy      | 
+|                 | 12-13 | Putting everything together         | Jeroen   |
 
 
 Materials
@@ -71,6 +90,10 @@ static renderings on [IPython Notebook Viewer](http://nbviewer.ipython.org/).
 We also have a
 [repository with material for the assignments](https://git.lumc.nl/courses/programming-course-assignments).
 
+Software installation
+---------------------
+
+See the instructions in [INSTALL.md](/INSTALL.md).
 
 Notebooks
 ---------
