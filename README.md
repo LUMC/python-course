@@ -11,7 +11,7 @@ be done in your own time (i.e., during the afternoons).
 ## Coordinates
 
 - Date: 18-21 September, 2017
-- Time: 10:00 - 17:00
+- Time: 9:00 - 17:00
 - Location: 01-J-01-083
 - Teachers:
   - Jeroen Laros
