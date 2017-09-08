@@ -127,7 +127,8 @@
 
 There is a tutorial at the moment [here](../INSTALL.md). 
 
-# Previous sessions issues
+# [Previous sessions issues](https://git.lumc.nl/courses/programming-course/issues)
+- [Git](https://git.lumc.nl/courses/programming-course/issues/14)
 - [IPython or jupyter?](https://git.lumc.nl/courses/programming-course/issues/31)
 - [Evaluation notes](https://git.lumc.nl/courses/programming-course/issues/30)
 
