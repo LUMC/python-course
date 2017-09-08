@@ -119,8 +119,15 @@
 
 # Assignments
 
-- No assignment document, the exercises appear at the and of the notebooks.
-- Special [repository](https://git.lumc.nl/courses/programming-course-assignments) with the material.
-  * Students submit merge requests for check-up and feedback.
+- Make special document?
+- Special [repository](https://git.lumc.nl/courses/programming-course-assignments) with the material?
+  * Students submit merge requests for check-up and feedback?
 
+# Installation
+
+There is a tutorial at the moment [here](../INSTALL.md). 
+
+# Previous sessions issues
+- [IPython or jupyter?](https://git.lumc.nl/courses/programming-course/issues/31)
+- [Evaluation notes](https://git.lumc.nl/courses/programming-course/issues/30)
 
