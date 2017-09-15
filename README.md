@@ -31,9 +31,9 @@ Program
 
 | Day             | Time  | Lesson                              | Teacher  | 
 |-----------------|-------|------------------------------------ |----------|
-| Monday, 18/9    | 9-10  | [Welcome](lesson_01), [Introduction to Python (1)](lesson_02_01) | Mihai    | 
-|                 | 10-11 | [Introduction to Python (2)](lesson_02_02)          | Jeroen   |  
-|                 | 11-12 | [Introduction to Python (3)](lesson_02_03)          | Mihai    | 
+| Monday, 18/9    | 9-10  | [Welcome][lesson_01], [Introduction to Python (1)][lesson_02_01] | Mihai    | 
+|                 | 10-11 | [Introduction to Python (2)][lesson_02_02]          | Jeroen   |  
+|                 | 11-12 | [Introduction to Python (3)][lesson_02_03]          | Mihai    | 
 |                 | 12-13 | Practical help                      |          | 
 | Tuesday, 19/9   | 9-10  | Assignments review                  |          |
 |                 | 10-11 | More Python Goodness (1)            | Mihai    | 
