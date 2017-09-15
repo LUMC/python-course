@@ -65,7 +65,7 @@ The top-level directory contains materials for the following lessons:
 8. Object-oriented programming ([slides][lesson_08])
 9. A sip of Biopython ([notebook 1][lesson_09_01], [notebook 2][lesson_09_02])
 
-[lesson_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/01%20-%20Welcome.ipynb
+[lesson_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/introduction/01_welcome.ipynb
 [lesson_02_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/02%20-%20Introduction%20to%20Python%20(1).ipynb
 [lesson_02_02]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/02%20-%20Introduction%20to%20Python%20(2).ipynb
 [lesson_02_03]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/02%20-%20Introduction%20to%20Python%20(3).ipynb
