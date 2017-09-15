@@ -1,0 +1,410 @@
+\documentclass{beamer}
+
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{minted}
+\usepackage{url}
+
+\definecolor{pms280}{HTML}{00247d}
+\definecolor{pms280_2nd}{HTML}{385499}
+\definecolor{pms280_4th}{HTML}{7185b6}
+\definecolor{pms280_8th}{HTML}{e2e6F0}
+\definecolor{pms280_compl}{HTML}{7d5800}
+
+\usetheme{Boadilla}
+\useoutertheme{infolines}
+\useinnertheme{circles}
+\setbeamercolor{author in head/foot}{bg=pms280,fg=white}
+\setbeamercolor{title in head/foot}{bg=pms280_2nd,fg=white}
+\setbeamercolor{date in head/foot}{bg=pms280_4th,fg=white}
+\setbeamercolor{block title}{bg=pms280,fg=white}
+\setbeamercolor{block body}{bg=pms280_8th}
+\setbeamercolor{title}{fg=pms280}
+\setbeamercolor{titlelike}{fg=pms280}
+\setbeamercolor{itemize item}{fg=pms280}
+\setbeamercolor{itemize subitem}{fg=pms280}
+\setbeamertemplate{enumerate items}[default]
+\setbeamercolor{enumerate item}{fg=pms280}
+
+\author{Jonathan~K.~Vis}
+\institute[LUMC]{Dept. of Human Genetics, Leiden University Medical Center}
+\date{September 21st, 2017}
+\title{Object Oriented Programming}
+
+\begin{document}
+\beamertemplatenavigationsymbolsempty
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}[fragile]{Organizing data}
+
+\begin{itemize}
+\item Lists:
+\begin{minted}{python}
+vectors_x = [0, 1, 2]
+vectors_y = [0, 1, 1]
+>>> (vectors_x[2], vectors_y[1])
+(2, 1)
+\end{minted}
+
+\item Nested lists:
+\begin{minted}{python}
+vectors = [[0, 0], [1, 1], [2, 1]]
+>>> vectors[2]
+[2, 1]
+\end{minted}
+
+\item Dictionaries:
+\begin{minted}{python}
+vectors = [{'x': 0, 'y': 0},
+           {'x': 1, 'y': 1},
+           {'x': 2, 'y': 1}]
+>>> vectors[2]
+{'y': 1, 'x': 2}
+\end{minted}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Everything is an object}
+\begin{itemize}
+\item Python supports many different kinds of data:
+\begin{minted}{python}
+42    3.14159    'Hello World!'    [1, 1, 2, 3, 5, 8]
+{'name': 'Jack', 'age': 25}    True
+\end{minted}
+
+\item every \textcolor{pms280_compl}{object} has:
+\begin{itemize}
+\item a \textcolor{pms280_compl}{type};
+\item an internal \textcolor{pms280_compl}{data representation}
+(primitive or composite);
+\item a set of \textcolor{pms280_compl}{procedures} (functions) for
+interaction.
+\end{itemize}
+
+\item an object is an \textcolor{pms280_compl}{instance} of a type:
+\begin{itemize}
+\item \mintinline{python}{42} is an instance of type
+\mintinline{python}{int};
+\item \mintinline{python}{'Hello World!'} is an instance of type
+\mintinline{python}{string}.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Object oriented programming}
+\begin{itemize}
+\item \textcolor{pms280_compl}{create} new objects;
+\item \textcolor{pms280_compl}{manipulate} objects;
+\item \textcolor{pms280_compl}{destroy} objects:
+\begin{itemize}
+\item explicitly \mintinline{python}{del};
+\item or just ``forget'' about them: Python will destroy inaccessible
+objects in a process called \textcolor{pms280_compl}{garbage collection}.
+\end{itemize}
+\end{itemize}
+
+Objects are \textcolor{pms280_compl}{data abstraction}:
+\begin{enumerate}
+\item internal data representation using
+\textcolor{pms280_compl}{attributes} (member variables);
+\item an interface (for interaction):
+\begin{itemize}
+\item procedures (member functions);
+\item defines behaviour, but hides implementation.
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Working with objects}
+\begin{enumerate}
+\item creating a \mintinline{python}{class}:
+\begin{itemize}
+\item define the \mintinline{python}{class} name;
+\item define the \mintinline{python}{class} attributes (member
+functions).
+\end{itemize}
+
+\item using the \mintinline{python}{class}:
+\begin{itemize}
+\item create new \textcolor{pms280_compl}{instances} of a class;
+\item manipulating these instances.
+\end{itemize}
+
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Define your own types}
+Use the keyword \mintinline{python}{class} to define a new type:
+\begin{itemize}
+\item with as parent the \mintinline{python}{object} type;
+\item and \textcolor{blue}{\mintinline{python}{Vector}} as name.
+\end{itemize}
+
+\bigskip
+
+\begin{minted}{python}
+class Vector(object):
+    """2d vector class."""
+
+    def __init__(self, x=0, y=0):
+        """Initializes a new 2d vector; default: (0, 0)."""
+        self.x = x
+        self.y = y
+\end{minted}
+\end{frame}
+
+\begin{frame}{More on attributes}
+Data and procedures (functions) that ``belong'' to the class:
+
+\begin{itemize}
+\item \textcolor{pms280_compl}{Data} attributes: the objects that make up
+the class;
+\item a 2d vector is made up of two numbers (\mintinline{python}{x} and
+\mintinline{python}{y}).
+\item \textcolor{pms280_compl}{Methods} (procedures);
+\item functions that \emph{only} work with this class;
+\item how to interact with the object;
+\item e.g., calculate the length of a vector.
+\end{itemize}
+
+\bigskip
+
+\mintinline{python}{self} is the current instance of a class.
+
+\bigskip
+
+\mintinline{python}{def __init__(self, ...)} is a special method to
+create new instances of a class.
+\end{frame}
+
+\begin{frame}[fragile]{Creating an instance of a class}
+\begin{minted}{python}
+origin = Vector()
+v1 = Vector(2, 1)
+print v1.x, origin.y
+\end{minted}
+
+\bigskip
+
+\begin{itemize}
+\item don't provide anything for the \mintinline{python}{self} argument;
+Python does that automatically;
+\item use the \textcolor{pms280_compl}{dot} to access an attribute of an
+instance;
+\item \mintinline{python}{.x} is a member variable.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Hiding information --- separation of concern}
+\begin{itemize}
+\item Sometimes we would like to \textcolor{pms280_compl}{hide}
+attributes to the outside world, i.e., only usable inside the class.
+
+\item in Python we prefix an attribute with \mintinline{python}{_}
+(underscore) to make it \textcolor{pms280_compl}{private}:
+\begin{minted}{python}
+class Vector(object):
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+        self._secret = 42
+\end{minted}
+
+\item we agree not to access this attribute directly:
+\begin{minted}{python}
+>>> v1 = Vector(1, 2)
+>>> print v1._secret    # this is forbidden
+\end{minted}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Add a method to the \mintinline{python}{Vector} class}
+\begin{minted}{python}
+class Vector(object):
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+
+    def distance(self, other):
+        dx = (self.x - other.x) ** 2
+        dy = (self.y - other.y) ** 2
+        return (dx + dy) ** .5
+\end{minted}
+
+\bigskip
+
+To use the newly created method:
+\begin{minted}{python}
+origin.distance(v1)
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Print representation of an object}
+\begin{minted}{python}
+>>> v1 = Vector(4, 3)
+>>> print v1
+<__main__.Vector object at 0x7f41ab878450>
+\end{minted}
+
+\bigskip
+
+\begin{itemize}
+\item per default \textcolor{pms280_compl}{uninformative};
+\item define the special method \mintinline{python}{def __str__(self)};
+\item Python class the \mintinline{python}{__str__} method automatically
+when using the \mintinline{python}{print} function;
+\item we are in control of what is printed, e.g., for the vector class:
+\begin{minted}{python}
+>>> print v1
+<4, 3>
+\end{minted}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Own print method}
+The \mintinline{python}{__str__} function must return a string.
+
+\begin{minted}{python}
+class Vector(object):
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+
+    def distance(self, other):
+        dx = (self.x - other.x) ** 2
+        dy = (self.y - other.y) ** 2
+        return (dx + dy) ** .5
+
+    def __str__(self):
+        return '<' + str(self.x) + ', ' + str(self.y) + '>'
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{More on types}
+\begin{itemize}
+\item get the type of an instance:
+\begin{minted}{python}
+>>> v1 = Vector(4, 3)
+>>> print type(v1)
+<class '__main__.Vector'>
+\end{minted}
+
+\item that also works for the class:
+\begin{minted}{python}
+>>> print type(Vector)
+<type 'type'>
+\end{minted}
+
+\item use \mintinline{python}{isinstance()} to check if an object is a
+vector:
+\begin{minted}{python}
+>>> print isinstance(v1, Vector)
+True
+\end{minted}
+
+\item what happens here:
+\begin{minted}{python}
+>>> print v1.distance(4)
+\end{minted}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Special operators}
+\begin{itemize}
+\item define special operators like:
+\mintinline{python}{+,-,==,<,>,len(),...}
+see: \path{https://docs.python.org/2/reference/datamodel.html#basic-customization}
+
+\item these can be \textcolor{pms280_compl}{overloaded} to work with your
+class (keep it sensible);
+\item using the double underscore notation:
+\begin{minted}{python}
+__add__(self, other)  # self + other
+__sub__(self, other)  # self - other
+__eq__(self, other)   # self == other
+__lt__(self, other)   # self < other
+__len__(self)         # len(self)
+\end{minted}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Example of an overloaded operator}
+\begin{minted}{python}
+class Vector(object):
+    ...
+
+    def __add__(self, other):
+        return Vector(self.x + other.x, self.y + other.y)
+\end{minted}
+
+\bigskip
+
+\begin{minted}{python}
+>>> v1 = Vector(1, -6)
+>>> v2 = Vector(3, 4.5)
+>>> print v1 + v2
+<4, -1.5>
+\end{minted}
+\end{frame}
+
+\begin{frame}{The power of OOP}
+\begin{itemize}
+\item \textcolor{pms280_compl}{Bundle} together objects that share:
+\begin{itemize}
+\item common (data) attributes;
+\item methods that manipulate these attributes.
+\end{itemize}
+
+\item \textcolor{pms280_compl}{Abstract away} implementation by
+specifying interfaces and behaviour;
+
+\item Use \textcolor{pms280_compl}{inheritance} (not covered) to give an
+even nicer abstraction;
+
+\item \textcolor{pms280_compl}{Create} own data type on top of what
+Python provides;
+
+\item \textcolor{pms280_compl}{Reuse} code: wrapping code in classes
+prevents collision of function names;
+
+\item Many \textcolor{pms280_compl}{libraries} heavily use classes.
+\end{itemize}
+
+\vfill
+
+\begin{center}
+\textcolor{pms280}{\Large \textbf{Questions?}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Assignment}
+\begin{minted}{python}
+class Fraction(object):
+    def __init__(self, numerator, denominator=1):
+        self.numerator = numerator
+        self.denominator = denominator
+\end{minted}
+
+\bigskip
+
+Use the skeleton to implement a \textcolor{pms280_compl}{Fraction} type
+containing two integers: \mintinline{python}{numerator} and
+\mintinline{python}{denominator}.
+
+\begin{itemize}
+\item add, subtract;
+\item print representation, convert to \mintinline{python}{float};
+\item invert a fraction;
+\item $\ldots$
+\end{itemize}
+
+\bigskip
+
+see: \path{https://link.com/assignment}
+\end{frame}
+
+\end{document}
