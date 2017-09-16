@@ -36,8 +36,8 @@ Program
 |                 | 11-12 | [Introduction to Python (3)][lesson_02_03]          | Mihai    | 
 |                 | 12-13 | Practical help                      |          | 
 | Tuesday, 19/9   | 9-10  | Assignments review                  |          |
-|                 | 10-11 | [More Python Goodness (1)](lesson_03_01)            | Mihai    | 
-|                 | 11-12 | [More Python Goodness (2)](lesson_03_02)            | Mihai    | 
+|                 | 10-11 | [More Python Goodness (1)][lesson_03_01]            | Mihai    | 
+|                 | 11-12 | [More Python Goodness (2)][lesson_03_02]            | Mihai    | 
 |                 | 12-13 | IPython Notebook                    | Mark     | 
 | Wednesday, 20/9 | 9-10  | Assignments review                  |          | 
 |                 | 10-11 | Data manipulation (NumPy, Pandas)   | Mark     | 
