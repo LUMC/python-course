@@ -23,7 +23,7 @@ be done in your own time (i.e., during the afternoons).
 
 Please note that the above mentioned date and location are subject to change.
 
-Program
+Program and Materials
 -------
 
 - Mornings: presentations.
@@ -31,13 +31,13 @@ Program
 
 | Day             | Time  | Lesson                              | Teacher  | 
 |-----------------|-------|------------------------------------ |----------|
-| Monday, 18/9    | 9-10  | Welcome, Introduction to Python (1) | Mihai    | 
-|                 | 10-11 | Introduction to Python (2)          | Jeroen   |  
-|                 | 11-12 | Introduction to Python (3)          | Mihai    | 
+| Monday, 18/9    | 9-10  | [Welcome][lesson_01], [Introduction to Python (1)][lesson_02_01] | Mihai    | 
+|                 | 10-11 | [Introduction to Python (2)][lesson_02_02]          | Jeroen   |  
+|                 | 11-12 | [Introduction to Python (3)][lesson_02_03]          | Mihai    | 
 |                 | 12-13 | Practical help                      |          | 
 | Tuesday, 19/9   | 9-10  | Assignments review                  |          |
-|                 | 10-11 | More Python Goodness (1)            | Mihai    | 
-|                 | 11-12 | More Python Goodness (2)            | Mihai    | 
+|                 | 10-11 | [More Python Goodness (1)][lesson_03_01]            | Mihai    | 
+|                 | 11-12 | [More Python Goodness (2)][lesson_03_02]            | Mihai    | 
 |                 | 12-13 | IPython Notebook                    | Mark     | 
 | Wednesday, 20/9 | 9-10  | Assignments review                  |          | 
 |                 | 10-11 | Data manipulation (NumPy, Pandas)   | Mark     | 
@@ -48,29 +48,22 @@ Program
 |                 | 11-12 | Biopython                           | Guy      | 
 |                 | 12-13 | Putting everything together         | Jeroen   |
 
+Some of the lessons are slideshows, whereas others are just
+notebooks we scroll through during class. The links above are all one-page
+static renderings on [IPython Notebook Viewer](http://nbviewer.ipython.org/).
 
-Materials
----------
 
-The top-level directory contains materials for the following lessons:
+Assignments
+-------
+- [First day](https://classroom.github.com/a/QU2iPYKn).
 
-1. Welcome ([slides][lesson_01])
-2. Introduction to Python ([slides 1][lesson_02_01], [slides 2][lesson_02_02],
-   [slides 3][lesson_02_03])
-3. More Python Goodness ([notebook 1][lesson_03_01], [notebook 2][lesson_03_02])
-4. Working with NumPy arrays ([slides][lesson_04])
-5. IPython Notebook ([notebook][lesson_05])
-6. Plotting with matplotlib ([notebook][lesson_06])
-7. Painting Pandas ([slides][lesson_07])
-8. Object-oriented programming ([slides][lesson_08])
-9. A sip of Biopython ([notebook 1][lesson_09_01], [notebook 2][lesson_09_02])
 
 [lesson_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/introduction/01_welcome.ipynb
-[lesson_02_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/02%20-%20Introduction%20to%20Python%20(1).ipynb
-[lesson_02_02]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/02%20-%20Introduction%20to%20Python%20(2).ipynb
-[lesson_02_03]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/02%20-%20Introduction%20to%20Python%20(3).ipynb
-[lesson_03_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/03%20-%20More%20Python%20goodness%20(1).ipynb
-[lesson_03_02]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/03%20-%20More%20Python%20goodness%20(2).ipynb
+[lesson_02_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/introduction/02_introduction_to_python_1.ipynb
+[lesson_02_02]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/introduction/02_introduction_to_python_2.ipynb
+[lesson_02_03]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/introduction/02_introduction_to_python_3.ipynb
+[lesson_03_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/more_python/03_more_python_goodness_1.ipynb
+[lesson_03_02]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/more_python/03_more_python_goodness_2.ipynb
 [lesson_04]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/04%20-%20Working%20with%20NumPy%20arrays.ipynb
 [lesson_05]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/05%20-%20IPython%20Notebook.ipynb
 [lesson_06]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/06%20-%20Plotting%20with%20matplotlib.ipynb
@@ -79,17 +72,10 @@ The top-level directory contains materials for the following lessons:
 [lesson_09_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/09%20-%20A%20sip%20of%20Biopython%20(1).ipynb
 [lesson_09_02]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/09%20-%20A%20sip%20of%20Biopython%20(2).ipynb
 
-As indicated, some of the lessons are slideshows, whereas others are just
-notebooks we scroll through during class. The links above are all one-page
-static renderings on [IPython Notebook Viewer](http://nbviewer.ipython.org/).
-
-We also have a
-[repository with material for the assignments](https://git.lumc.nl/courses/programming-course-assignments).
-
 Software installation
 ---------------------
 
-See the instructions in [INSTALL.md](/INSTALL.md).
+See the instructions [here](https://docs.anaconda.com/anaconda/install/).
 
 Notebooks
 ---------
