@@ -45,7 +45,7 @@
 \begin{minted}{python}
 vectors_x = [0, 1, 2]
 vectors_y = [0, 1, 1]
->>> (vectors_x[2], vectors_y[1])
+>>> (vectors_x[2], vectors_y[2])
 (2, 1)
 \end{minted}
 
@@ -89,7 +89,7 @@ interaction.
 \item \mintinline{python}{42} is an instance of type
 \mintinline{python}{int};
 \item \mintinline{python}{'Hello World!'} is an instance of type
-\mintinline{python}{string}.
+\mintinline{python}{str}.
 \end{itemize}
 \end{itemize}
 \end{frame}
@@ -161,13 +161,19 @@ Data and procedures (functions) that ``belong'' to the class:
 
 \begin{itemize}
 \item \textcolor{pms280_compl}{Data} attributes: the objects that make up
-the class;
+the class:
+\begin{itemize}
 \item a 2d vector is made up of two numbers (\mintinline{python}{x} and
 \mintinline{python}{y}).
-\item \textcolor{pms280_compl}{Methods} (procedures);
+\end{itemize}
+
+\item \textcolor{pms280_compl}{Methods} (procedures):
+\begin{itemize}
 \item functions that \emph{only} work with this class;
 \item how to interact with the object;
 \item e.g., calculate the length of a vector.
+\end{itemize}
+
 \end{itemize}
 
 \bigskip
@@ -198,7 +204,7 @@ instance;
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Hiding information --- separation of concern}
+\begin{frame}[fragile]{Hiding information --- separation of concerns}
 \begin{itemize}
 \item Sometimes we would like to \textcolor{pms280_compl}{hide}
 attributes to the outside world, i.e., only usable inside the class.
@@ -210,13 +216,13 @@ class Vector(object):
     def __init__(self, x=0, y=0):
         self.x = x
         self.y = y
-        self._secret = 42
+        self._secret = 42    # this is allowed
 \end{minted}
 
 \item we agree not to access this attribute directly:
 \begin{minted}{python}
 >>> v1 = Vector(1, 2)
->>> print v1._secret    # this is forbidden
+>>> print v1._secret         # this is forbidden
 \end{minted}
 
 \end{itemize}
@@ -290,8 +296,11 @@ class Vector(object):
 \begin{minted}{python}
 >>> v1 = Vector(4, 3)
 >>> print type(v1)
-<class '__main__.Vector'>
 \end{minted}
+%% start minted fix
+\vspace{-.08cm}
+\mintinline{python}{<class}\mintinline{python}{ '__main__.Vector'>}
+%% end minted fix
 
 \item that also works for the class:
 \begin{minted}{python}
@@ -396,7 +405,7 @@ containing two integers: \mintinline{python}{numerator} and
 \mintinline{python}{denominator}.
 
 \begin{itemize}
-\item add, subtract;
+\item add, subtract, e.g., $\frac{1}{2} + \frac{2}{3} = \frac{7}{6}$;
 \item print representation, convert to \mintinline{python}{float};
 \item invert a fraction;
 \item $\ldots$
@@ -404,7 +413,8 @@ containing two integers: \mintinline{python}{numerator} and
 
 \bigskip
 
-see: \path{https://github.com/lumc-python/oop}
+see: \path{https://github.com/lumc-python/oop} \\
+or go directly to: \textcolor{pms280_compl}{\path{https://classroom.github.com/a/8BnbL9fD}}
 \end{frame}
 
 \end{document}
