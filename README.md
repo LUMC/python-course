@@ -40,11 +40,11 @@ Program and Materials
 |                 | 11-12 | [More Python Goodness (2)][lesson_03_02]            | Mihai    | 
 |                 | 12-13 | [Jupyter Notebook][lesson_jpn]       | Mark     | 
 | Wednesday, 20/9 | 9-10  | Assignments review                  |          | 
-|                 | 10-11 | Data manipulation (NumPy, Pandas)   | Mark     | 
-|                 | 11-12 | [Data visualisation (1)][lesson_dv_01] | Guy      | 
-|                 | 12-13 | [Data visualisation (2)][lesson_dv_02]          | Guy      | 
-| Thursday, 21/9  | 9-10  | Assignments review                  |          | 
 |                 | 10-11 | [Object-oriented programming](/uploads/183606d9b93de53a8262c51c9e32bc63/oop.pdf)         | Jonathan | 
+|                 | 11-12 | Data manipulation (NumPy, Pandas)   | Mark     | 
+|                 | 12-13 | [Data visualisation (1)][lesson_dv_01] | Guy      | 
+| Thursday, 21/9  | 9-10  | Assignments review                  |          | 
+|                 | 10-11 | [Data visualisation (2)][lesson_dv_02]          | Guy      | 
 |                 | 11-12 | Biopython                           | Guy      | 
 |                 | 12-13 | Putting everything together         | Jeroen   |
 
