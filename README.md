@@ -44,7 +44,7 @@ Program and Materials
 |                 | 11-12 | Data visualisation (1)              | Guy      | 
 |                 | 12-13 | Data visualisation (2)              | Guy      | 
 | Thursday, 21/9  | 9-10  | Assignments review                  |          | 
-|                 | 10-11 | Object-oriented programming         | Jonathan | 
+|                 | 10-11 | [Object-oriented programming](/uploads/183606d9b93de53a8262c51c9e32bc63/oop.pdf)         | Jonathan | 
 |                 | 11-12 | Biopython                           | Guy      | 
 |                 | 12-13 | Putting everything together         | Jeroen   |
 
@@ -56,6 +56,9 @@ static renderings on [IPython Notebook Viewer](http://nbviewer.ipython.org/).
 Assignments
 -------
 - [First day](https://classroom.github.com/a/QU2iPYKn).
+- [Second day](https://classroom.github.com/a/UbifRH_y)
+- Fourth day:
+  - [OOP](https://classroom.github.com/a/UbifRH_y)
 
 
 [lesson_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/introduction/01_welcome.ipynb
