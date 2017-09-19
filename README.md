@@ -38,11 +38,11 @@ Program and Materials
 | Tuesday, 19/9   | 9-10  | Assignments review                  |          |
 |                 | 10-11 | [More Python Goodness (1)][lesson_03_01]            | Mihai    | 
 |                 | 11-12 | [More Python Goodness (2)][lesson_03_02]            | Mihai    | 
-|                 | 12-13 | [Jupyter Notebook][lesson_05]       | Mark     | 
+|                 | 12-13 | [Jupyter Notebook][lesson_jpn]       | Mark     | 
 | Wednesday, 20/9 | 9-10  | Assignments review                  |          | 
 |                 | 10-11 | Data manipulation (NumPy, Pandas)   | Mark     | 
-|                 | 11-12 | Data visualisation (1)              | Guy      | 
-|                 | 12-13 | Data visualisation (2)              | Guy      | 
+|                 | 11-12 | [Data visualisation (1)][lesson_dv_01] | Guy      | 
+|                 | 12-13 | [Data visualisation (2)][lesson_dv_02]          | Guy      | 
 | Thursday, 21/9  | 9-10  | Assignments review                  |          | 
 |                 | 10-11 | [Object-oriented programming](/uploads/183606d9b93de53a8262c51c9e32bc63/oop.pdf)         | Jonathan | 
 |                 | 11-12 | Biopython                           | Guy      | 
@@ -56,9 +56,9 @@ static renderings on [IPython Notebook Viewer](http://nbviewer.ipython.org/).
 Assignments
 -------
 - [First day](https://classroom.github.com/a/QU2iPYKn).
-- [Second day](https://classroom.github.com/a/UbifRH_y)
+- [Second day](https://classroom.github.com/a/UbifRH_y).
 - Fourth day:
-  - [OOP](https://classroom.github.com/a/UbifRH_y)
+  - [OOP](https://classroom.github.com/a/8BnbL9fD)
 
 
 [lesson_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/introduction/01_welcome.ipynb
@@ -67,13 +67,9 @@ Assignments
 [lesson_02_03]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/introduction/02_introduction_to_python_3.ipynb
 [lesson_03_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/more_python/03_more_python_goodness_1.ipynb
 [lesson_03_02]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/more_python/03_more_python_goodness_2.ipynb
-[lesson_04]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/04%20-%20Working%20with%20NumPy%20arrays.ipynb
-[lesson_05]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/jupyter/05_jupyter.ipynb
-[lesson_06]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/06%20-%20Plotting%20with%20matplotlib.ipynb
-[lesson_07]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/07%20-%20Painting%20Pandas.ipynb
-[lesson_08]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/08%20-%20Object-oriented%20programming.ipynb
-[lesson_09_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/09%20-%20A%20sip%20of%20Biopython%20(1).ipynb
-[lesson_09_02]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/09%20-%20A%20sip%20of%20Biopython%20(2).ipynb
+[lesson_dv_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/visualization/DataVisualization1.ipynb 
+[lesson_dv_02]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/visualization/DataVisualization2.ipynb 
+[lesson_jpn]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/jupyter/05_jupyter.ipynb
 
 Software installation
 ---------------------
