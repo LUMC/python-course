@@ -45,7 +45,7 @@ Program and Materials
 |                 | 12-13 | [Data visualisation (1)][lesson_dv_01] | Guy      | 
 | Thursday, 21/9  | 9-10  | Assignments review                  |          | 
 |                 | 10-11 | [Data visualisation (2)][lesson_dv_02]          | Guy      | 
-|                 | 11-12 | Biopython                           | Guy      | 
+|                 | 11-12 | [Biopython][lesson_bp]                          | Guy      | 
 |                 | 12-13 | Putting everything together         | Jeroen   |
 
 Some of the lessons are slideshows, whereas others are just
@@ -73,6 +73,7 @@ Assignments
 [lesson_dv_02]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/visualization/DataVisualization2.ipynb 
 [lesson_jpn]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/jupyter/05_jupyter.ipynb
 [lesson_pandas]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/pandas/pandas.ipynb 
+[lesson_bp]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/Biopython/Biopython.ipynb
 
 Software installation
 ---------------------
