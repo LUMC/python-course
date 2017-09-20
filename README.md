@@ -73,7 +73,7 @@ Assignments
 [lesson_dv_02]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/visualization/DataVisualization2.ipynb 
 [lesson_jpn]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/jupyter/05_jupyter.ipynb
 [lesson_pandas]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/pandas/pandas.ipynb 
-[lesson_bp]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/Biopython/Biopython.ipynb
+[lesson_bp]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/BioPython/Biopython.ipynb
 
 Software installation
 ---------------------
