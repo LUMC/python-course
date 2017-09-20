@@ -41,7 +41,7 @@ Program and Materials
 |                 | 12-13 | [Jupyter Notebook][lesson_jpn]       | Mark     | 
 | Wednesday, 20/9 | 9-10  | Assignments review                  |          | 
 |                 | 10-11 | [Object-oriented programming](/uploads/183606d9b93de53a8262c51c9e32bc63/oop.pdf)         | Jonathan | 
-|                 | 11-12 | Data manipulation (NumPy, Pandas)   | Mark     | 
+|                 | 11-12 | [Data mangling with pandas][lesson_pandas]   | Mark     | 
 |                 | 12-13 | [Data visualisation (1)][lesson_dv_01] | Guy      | 
 | Thursday, 21/9  | 9-10  | Assignments review                  |          | 
 |                 | 10-11 | [Data visualisation (2)][lesson_dv_02]          | Guy      | 
@@ -70,6 +70,7 @@ Assignments
 [lesson_dv_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/visualization/DataVisualization1.ipynb 
 [lesson_dv_02]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/visualization/DataVisualization2.ipynb 
 [lesson_jpn]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/jupyter/05_jupyter.ipynb
+[lesson_pandas]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/pandas/pandas.ipynb 
 
 Software installation
 ---------------------
