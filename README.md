@@ -40,7 +40,7 @@ Program and Materials
 |                 | 11-12 | [More Python Goodness (2)][lesson_03_02]            | Mihai    | 
 |                 | 12-13 | [Jupyter Notebook][lesson_jpn]       | Mark     | 
 | Wednesday, 20/9 | 9-10  | Assignments review                  |          | 
-|                 | 10-11 | [Object-oriented programming](/uploads/183606d9b93de53a8262c51c9e32bc63/oop.pdf)         | Jonathan | 
+|                 | 10-11 | [Object-oriented programming][lesson_oop]         | Jonathan | 
 |                 | 11-12 | [Data mangling with pandas][lesson_pandas]   | Mark     | 
 |                 | 12-13 | [Data visualisation (1)][lesson_dv_01] | Guy      | 
 | Thursday, 21/9  | 9-10  | Assignments review                  |          | 
@@ -67,6 +67,7 @@ Assignments
 [lesson_02_03]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/introduction/02_introduction_to_python_3.ipynb
 [lesson_03_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/more_python/03_more_python_goodness_1.ipynb
 [lesson_03_02]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/more_python/03_more_python_goodness_2.ipynb
+[lesson_oop]: https://git.lumc.nl/courses/programming-course/raw/master/oop/oop.pdf
 [lesson_dv_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/visualization/DataVisualization1.ipynb 
 [lesson_dv_02]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/visualization/DataVisualization2.ipynb 
 [lesson_jpn]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/jupyter/05_jupyter.ipynb
