@@ -57,8 +57,9 @@ Assignments
 -------
 - [First day](https://classroom.github.com/a/QU2iPYKn).
 - [Second day](https://classroom.github.com/a/UbifRH_y).
-- Fourth day:
+- Third day:
   - [OOP](https://classroom.github.com/a/8BnbL9fD)
+  - [pandas](https://classroom.github.com/a/GOxWRQpa)
 
 
 [lesson_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/introduction/01_welcome.ipynb
