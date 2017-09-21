@@ -1,0 +1,352 @@
+\documentclass{beamer}
+
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{minted}
+\usepackage{url}
+
+\definecolor{pms280}{HTML}{00247d}
+\definecolor{pms280_2nd}{HTML}{385499}
+\definecolor{pms280_4th}{HTML}{7185b6}
+\definecolor{pms280_8th}{HTML}{e2e6F0}
+\definecolor{pms280_compl}{HTML}{7d5800}
+
+\usetheme{Boadilla}
+\useoutertheme{infolines}
+\useinnertheme{circles}
+\setbeamercolor{author in head/foot}{bg=pms280,fg=white}
+\setbeamercolor{title in head/foot}{bg=pms280_2nd,fg=white}
+\setbeamercolor{date in head/foot}{bg=pms280_4th,fg=white}
+\setbeamercolor{block title}{bg=pms280,fg=white}
+\setbeamercolor{block body}{bg=pms280_8th}
+\setbeamercolor{title}{fg=pms280}
+\setbeamercolor{titlelike}{fg=pms280}
+\setbeamercolor{itemize item}{fg=pms280}
+\setbeamercolor{itemize subitem}{fg=pms280}
+\setbeamertemplate{enumerate items}[default]
+\setbeamercolor{enumerate item}{fg=pms280}
+
+\author{Jonathan~K.~Vis}
+\institute[LUMC]{Dept. of Human Genetics, Leiden University Medical Center}
+\date{September 21st, 2017}
+\title{Solutions --- Object Oriented Programming}
+
+\begin{document}
+\beamertemplatenavigationsymbolsempty
+
+\begin{frame}
+\titlepage
+\vfill
+\hfill \textcolor{pms280_compl}{\texttt{j.k.vis@lumc.nl}}
+\end{frame}
+
+\begin{frame}[fragile]{0. Skeleton}
+\small
+\texttt{fraction.py}
+\begin{minted}{python}
+class Fraction(object):
+    def __init__(self, numerator, denominator=1):
+        self._numerator = numerator
+        self._denominator = denominator
+\end{minted}
+
+\vfill
+
+\texttt{test\_fraction.py}
+\begin{minted}{python}
+>>> f1 = Fraction(1, 2)
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{1. Adding a print representation}
+\small
+\texttt{fraction.py}
+\begin{minted}{python}
+class Fraction(object):
+    def __init__(self, numerator, denominator=1):
+        self._numerator = numerator
+        self._denominator = denominator
+
+    def __str__(self):
+        return str(self._numerator) + '/' + str(self._denominator)
+\end{minted}
+
+\vfill
+
+\texttt{test\_fraction.py}
+\begin{minted}{python}
+>>> print Fraction(1, 2)
+1/2
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{2. Add the \texttt{+} operator}
+\small
+\texttt{fraction.py}
+\begin{minted}{python}
+class Fraction(object):
+    def __init__(self, numerator, denominator=1):
+        self._numerator = numerator
+        self._denominator = denominator
+
+    def __str__(self):
+        return str(self._numerator) + '/' + str(self._denominator)
+
+    def __add__(self, other):
+        return Fraction(self._numerator * other._denominator +
+                        other._numerator * self._denominator,
+                        self._denominator * other._denominator)
+\end{minted}
+
+\vfill
+
+\texttt{test\_fraction.py}
+\begin{minted}{python}
+>>> print Fraction(1, 2) + Fraction(2, 3)
+7/6
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{3. Add an invert function}
+\small
+\texttt{fraction.py}
+\begin{minted}{python}
+class Fraction(object):
+    ...
+
+    def __str__(self):
+        return str(self._numerator) + '/' + str(self._denominator)
+
+    def __add__(self, other):
+        return Fraction(self._numerator * other._denominator +
+                        other._numerator * self._denominator,
+                        self._denominator * other._denominator)
+
+    def invert(self):
+        return Fraction(self._denominator, self._numerator)
+\end{minted}
+
+\vfill
+
+\texttt{test\_fraction.py}
+\begin{minted}{python}
+>>> print Fraction(1, 2).invert()
+2/1
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{4. Conversion to a decimal representation}
+\small
+\texttt{fraction.py}
+\begin{minted}{python}
+class Fraction(object):
+    ...
+
+    def __add__(self, other):
+        return Fraction(self._numerator * other._denominator +
+                        other._numerator * self._denominator,
+                        self._denominator * other._denominator)
+
+    def invert(self):
+        return Fraction(self._denominator, self._numerator)
+
+    def to_float(self):
+        return float(self._numerator) / float(self._denominator)
+\end{minted}
+
+\vfill
+
+\texttt{test\_fraction.py}
+\begin{minted}{python}
+>>> print Fraction(1, 2).to_float()
+0.5
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{5. Get the integer part of a fraction}
+\small
+\texttt{fraction.py}
+\begin{minted}{python}
+class Fraction(object):
+    ...
+
+    def invert(self):
+        return Fraction(self._denominator, self._numerator)
+
+    def to_float(self):
+        return float(self._numerator) / float(self._denominator)
+
+    def integer(self):
+        return int(self._numerator) / int(self._denominator)
+\end{minted}
+
+\vfill
+
+\texttt{test\_fraction.py}
+\begin{minted}{python}
+>>> print Fraction(7, 6).integer()
+1
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{6a. Substracting}
+\small
+\texttt{fraction.py}
+\begin{minted}{python}
+class Fraction(object):
+    ...
+
+    def to_float(self):
+        return float(self._numerator) / float(self._denominator)
+
+    def integer(self):
+        return int(self._numerator) / int(self._denominator)
+
+    def __sub__(self, other):
+        return Fraction(self._numerator * other._denominator -
+                        other._numerator * self._denominator,
+                        self._denominator * other._denominator)
+\end{minted}
+
+\vfill
+
+\texttt{test\_fraction.py}
+\begin{minted}{python}
+>>> print Fraction(1, 2) - Fraction(2, 3)
+-1/6
+\end{minted}
+\end{frame}
+
+
+\begin{frame}[fragile]{6b. Multiplication}
+\small
+\texttt{fraction.py}
+\begin{minted}{python}
+class Fraction(object):
+    ...
+
+    def integer(self):
+        return int(self._numerator) / int(self._denominator)
+
+    def __sub__(self, other):
+        return Fraction(self._numerator * other._denominator -
+                        other._numerator * self._denominator,
+                        self._denominator * other._denominator)
+
+    def __mul__(self, other):
+        return Fraction(self._numerator * other._numerator,
+                        self._denominator * other._denominator)
+\end{minted}
+
+\vfill
+
+\texttt{test\_fraction.py}
+\begin{minted}{python}
+>>> print Fraction(1, 2) * Fraction(2, 3)
+2/6
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{6c. Division}
+\small
+\texttt{fraction.py}
+\begin{minted}{python}
+class Fraction(object):
+    ...
+
+    def __sub__(self, other):
+        return Fraction(self._numerator * other._denominator -
+                        other._numerator * self._denominator,
+                        self._denominator * other._denominator)
+
+    def __mul__(self, other):
+        return Fraction(self._numerator * other._numerator,
+                        self._denominator * other._denominator)
+
+    def __div__(self, other):
+        return self * other.invert()
+\end{minted}
+
+\vfill
+
+\texttt{test\_fraction.py}
+\begin{minted}{python}
+>>> print Fraction(1, 2) / Fraction(2, 3)
+3/4
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{7. Simplification}
+\small
+\texttt{fraction.py}
+\begin{minted}{python}
+def gcd(a, b):
+    if b == 0:
+        return a
+    return gcd(b, a % b)
+
+class Fraction(object):
+    ...
+
+    def simplify(self):
+        divisor = gcd(self._numerator, self._denominator)
+        self._numerator = self._numerator / divisor
+        self._denominator = self._denominator / divisor
+        return self
+\end{minted}
+
+\vfill
+
+\texttt{test\_fraction.py}
+\begin{minted}{python}
+>>> print Fraction(2, 6).simplify()
+1/3
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{8--12. More advanced stuff}
+8. It would be a good idea to \mintinline{python}{simplify()} after each
+arithmetic operator. \\
+
+\vfill
+
+9. Here, you really need the fractions to be in a \emph{normal} form. \\
+
+\vfill
+10. Probably (for printing reasons) you would like for the numerator to
+be negative and not the denominator, avoid \mintinline{python}{1/-4}. And
+convert to positive when both the numerator and denominator are negative. \\
+
+\vfill
+
+11. Something like:
+{
+\small
+\begin{minted}{python}
+def __mul__(self, other):
+    if isinstance(other, int):
+        return Fraction(self._numerator * other, self._denominator)
+    return Fraction(self._numerator * other._numerator,
+                    self._denominator * other._denominator)
+\end{minted}
+}
+\vfill
+
+12. Using \mintinline{python}{isinstance(numerator, int)} etc. in the
+\mintinline{python}{__init__} function.
+\end{frame}
+
+\begin{frame}[fragile]{General remarks}
+\begin{itemize}
+\item As always, more docstrings and \emph{more} comments;
+\item All \mintinline{python}{import}s on the top of the file;
+\item \mintinline{python}{a is b} does \emph{not} check for numerical
+equality: use \mintinline{python}{==};
+\item \emph{Never} use bitwise operators: \mintinline{python}{&, |, ^, ~}:
+use \mintinline{python}{and or not};
+\item Prefer not calling the special functions, e.g.,
+\mintinline{python}{__add__} directly: use \mintinline{python}{+};
+\item Try to make your code look \emph{beautiful}.
+\end{itemize}
+\end{frame}
+\end{document}
