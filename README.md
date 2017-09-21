@@ -61,6 +61,9 @@ Assignments
   - [OOP](https://classroom.github.com/a/8BnbL9fD)
   - [pandas](https://classroom.github.com/a/GOxWRQpa)
   - [Visualization](https://classroom.github.com/a/X7ElFXpu)
+- Final day:
+  - [Visualization 2](https://classroom.github.com/a/2GAOqqBu)
+
 
 [lesson_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/introduction/01_welcome.ipynb
 [lesson_02_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/introduction/02_introduction_to_python_1.ipynb
