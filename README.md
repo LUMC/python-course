@@ -54,13 +54,13 @@ static renderings on [IPython Notebook Viewer](http://nbviewer.ipython.org/).
 
 
 Assignments
--------
-- [First day](https://classroom.github.com/a/QU2iPYKn).
-- [Second day](https://classroom.github.com/a/UbifRH_y).
+-----------
+- [First day](https://classroom.github.com/a/QU2iPYKn) - [Solutions](https://github.com/lumc-python/introduction-assignments/tree/master/solutions).
+- [Second day](https://classroom.github.com/a/UbifRH_y) - [Solutions](https://github.com/lumc-python/day2-assignments/blob/master/solution_v5.py).
 - Third day:
-  - [OOP](https://classroom.github.com/a/8BnbL9fD)
-  - [pandas](https://classroom.github.com/a/GOxWRQpa)
-  - [Visualization](https://classroom.github.com/a/X7ElFXpu)
+  - [OOP](https://classroom.github.com/a/8BnbL9fD) - [Solutions](https://git.lumc.nl/courses/programming-course/raw/master/oop/solutions.pdf).
+  - [pandas](https://classroom.github.com/a/GOxWRQpa) - [Solutions](https://github.com/lumc-python/pandas-assignments/blob/master/pandas_assignments_solutions.ipynb)
+  - [Visualization](https://classroom.github.com/a/X7ElFXpu) - [Solutions](https://github.com/lumc-python/day3-visualization-assignment/blob/master/Solution.ipynb).
 - Final day:
   - [Visualization 2](https://classroom.github.com/a/2GAOqqBu)
 
