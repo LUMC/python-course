@@ -10,11 +10,10 @@ be done in your own time (i.e., during the afternoons).
 
 ## Coordinates
 
-- Date: 18-21 September, 2017
+- Date: 27-30 November, 2017
 - Time: 9:00 - 17:00
-- Location: V7-41
+- Location: TBA
 - Teachers:
-  - Jeroen Laros
   - Jonathan Vis
   - Mark Santcroos
   - Guy Allard
@@ -31,22 +30,22 @@ Program and Materials
 
 | Day             | Time  | Lesson                              | Teacher  | 
 |-----------------|-------|------------------------------------ |----------|
-| Monday, 18/9    | 9-10  | [Welcome][lesson_01], [Introduction to Python (1)][lesson_02_01] | Mihai    | 
-|                 | 10-11 | [Introduction to Python (2)][lesson_02_02]          | Jeroen   |  
+| Tuesday, 27/11    | 9-10  | [Welcome][lesson_01], [Introduction to Python (1)][lesson_02_01] | Mihai    | 
+|                 | 10-11 | [Introduction to Python (2)][lesson_02_02]          | Mihai   |  
 |                 | 11-12 | [Introduction to Python (3)][lesson_02_03]          | Mihai    | 
 |                 | 12-13 | Practical help                      |          | 
-| Tuesday, 19/9   | 9-10  | Assignments review                  |          |
+| Wednesday, 28/11   | 9-10  | Assignments review                  |          |
 |                 | 10-11 | [More Python Goodness (1)][lesson_03_01]            | Mihai    | 
 |                 | 11-12 | [More Python Goodness (2)][lesson_03_02]            | Mihai    | 
 |                 | 12-13 | [Jupyter Notebook][lesson_jpn]       | Mark     | 
-| Wednesday, 20/9 | 9-10  | Assignments review                  |          | 
+| Thursday, 29/11 | 9-10  | Assignments review                  |          | 
 |                 | 10-11 | [Object-oriented programming][lesson_oop]         | Jonathan | 
 |                 | 11-12 | [Data mangling with pandas][lesson_pandas]   | Mark     | 
 |                 | 12-13 | [Data visualisation (1)][lesson_dv_01] | Guy      | 
-| Thursday, 21/9  | 9-10  | Assignments review                  |          | 
+| Friday, 30/11  | 9-10  | Assignments review                  |          | 
 |                 | 10-11 | [Data visualisation (2)][lesson_dv_02]          | Guy      | 
 |                 | 11-12 | [Biopython][lesson_bp]                          | Guy      | 
-|                 | 12-13 | Putting everything together         | Jeroen   |
+|                 | 12-13 | Putting everything together         | Mihai   |
 
 Some of the lessons are slideshows, whereas others are just
 notebooks we scroll through during class. The links above are all one-page
