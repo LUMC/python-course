@@ -12,7 +12,7 @@ be done in your own time (i.e., during the afternoons).
 
 - Date: 27-30 November, 2017
 - Time: 9:00 - 17:00
-- Location: TBA
+- Location: J1-83
 - Teachers:
   - Jonathan Vis
   - Mark Santcroos
