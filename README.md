@@ -14,6 +14,7 @@ be done in your own time (i.e., during the afternoons).
 - Time: 9:00 - 17:00
 - Location: J1-83
 - Teachers:
+  - Sander Bollen
   - Jonathan Vis
   - Mark Santcroos
   - Guy Allard
@@ -44,7 +45,7 @@ Program and Materials
 |                 | 12-13 | [Data visualisation (1)][lesson_dv_01] | Guy      | 
 | Friday, 30/11  | 9-10  | Assignments review                  |          | 
 |                 | 10-11 | [Data visualisation (2)][lesson_dv_02]          | Guy      | 
-|                 | 11-12 | [Biopython][lesson_bp]                          | Guy      | 
+|                 | 11-12 | [Biopython][lesson_bp]                          | Sander      | 
 |                 | 12-13 | Putting everything together         | Mihai   |
 
 Some of the lessons are slideshows, whereas others are just
