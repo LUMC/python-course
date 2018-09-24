@@ -35,18 +35,22 @@ Program and Materials
 |                 | 10-11 | [Introduction to Python (2)][lesson_02_02]          | Mihai   |  
 |                 | 11-12 | [Introduction to Python (3)][lesson_02_03]          | Mihai    | 
 |                 | 12-13 | Practical help                      |          | 
+|                 | Sander & Guy| |
 | Wednesday, 28/11   | 9-10  | Assignments review                  |          |
 |                 | 10-11 | [More Python Goodness (1)][lesson_03_01]            | Mihai    | 
 |                 | 11-12 | [More Python Goodness (2)][lesson_03_02]            | Mihai    | 
-|                 | 12-13 | [Jupyter Notebook][lesson_jpn]       | Mark     | 
+|                 | 12-13 |        |      | 
+| |                  Mark & Sander| |
 | Thursday, 29/11 | 9-10  | Assignments review                  |          | 
 |                 | 10-11 | [Object-oriented programming][lesson_oop]         | Jonathan | 
-|                 | 11-12 | [Data mangling with pandas][lesson_pandas]   | Mark     | 
-|                 | 12-13 | [Data visualisation (1)][lesson_dv_01] | Guy      | 
+|                 | 11-12 | [Jupyter Notebook][lesson_jpn]       | Mark     |
+|                 | 12-13 | [Data mangling with pandas][lesson_pandas]   | Mark     | 
+| |      Mark & Mark | | 
 | Friday, 30/11  | 9-10  | Assignments review                  |          | 
-|                 | 10-11 | [Data visualisation (2)][lesson_dv_02]          | Guy      | 
-|                 | 11-12 | [Biopython][lesson_bp]                          | Sander      | 
-|                 | 12-13 | Putting everything together         | Mihai   |
+|                 | 10-11 | [Data visualisation (1)][lesson_dv_01] | Guy      |
+|                 | 11-12 | [Data visualisation (2)][lesson_dv_02]          | Guy      | 
+|                 | 12-13 | [Biopython][lesson_bp]                          | Sander      | 
+| | Sander & Guy | |
 
 Some of the lessons are slideshows, whereas others are just
 notebooks we scroll through during class. The links above are all one-page
