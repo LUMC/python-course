@@ -27,14 +27,14 @@ Program and Materials
 
 | Day             | Time  | Lesson                              | Teacher  | 
 |-----------------|-------|------------------------------------ |----------|
-| Tuesday, 27/11    | 9-10  | [Welcome][lesson_01], [Introduction to Python (1)][lesson_02_01] | Mihai    | 
-|                 | 10-11 | [Introduction to Python (2)][lesson_02_02]          | Mihai   |  
-|                 | 11-12 | [Introduction to Python (3)][lesson_02_03]          | Mihai    | 
+| Tuesday, 27/11    | 9-10  | [Welcome][lesson_01], [Introduction to Python][lesson_02_01] | Mihai    | 
+|                 | 10-11 | [Data types][lesson_02_02]          | Mihai   |  
+|                 | 11-12 | [Functions][lesson_02_03]          | Mihai    | 
 |                 | 12-13 | Lunch break                      |          | 
 |                 | 13-16 | Practical session | Mihai, Sander, and Guy|
 | Wednesday, 28/11   | 9-10  | Assignments review                  |          |
-|                 | 10-11 | [More Python Goodness (1)][lesson_03_01]            | Mihai    | 
-|                 | 11-12 | [More Python Goodness (2)][lesson_03_02]            | Mihai    | 
+|                 | 10-11 | [String methods, errors and exceptions][lesson_03_01]            | Mihai    | 
+|                 | 11-12 | [Standard library, reading and writing files][lesson_03_02]            | Mihai    | 
 |                 | 12-13 | Lunch break                      |          | 
 |                 | 13-16 | Practical session | Mihai, Sander, and Mark|
 | Thursday, 29/11 | 9-10  | Assignments review                  |          | 
@@ -44,8 +44,8 @@ Program and Materials
 |                 | 12-13 | Lunch break                      |          | 
 |                 | 13-16 | Practical session | Mihai, and Mark|
 | Friday, 30/11  | 9-10  | Assignments review                  |          | 
-|                 | 10-11 | [Data visualisation (1)][lesson_dv_01] | Guy      |
-|                 | 11-12 | [Data visualisation (2)][lesson_dv_02]          | Guy      | 
+|                 | 10-11 | [Data visualisation with Matplotlib][lesson_dv_01] | Guy      |
+|                 | 11-12 | [Data visualisation with Bokeh][lesson_dv_02]          | Guy      | 
 |                 | 12-13 | [Biopython][lesson_bp]                          | Sander      | 
 |                 | 12-13 | Lunch break                      |          | 
 |                 | 13-16 | Practical session | Mihai, Sander, and Guy|
