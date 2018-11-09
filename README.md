@@ -3,25 +3,21 @@ Programming course
 
 The course is targeted at PhD students, Postdocs, or anyone willing to learn
 how to program in Python. Students are assumed to have some experience with
-programming, but not necessarily in Python, and the UNIX shell.
-
-The program consists of four mornings with lessons and some assignments to
-be done in your own time (i.e., during the afternoons).
+programming, but not necessarily in Python, and the UNIX shell. In addition, 
+they should bring their own laptops for the practical sessions.
 
 ## Coordinates
 
-- Date: 18-21 September, 2017
+- Date: 27-30 November, 2017
 - Time: 9:00 - 17:00
-- Location: V7-41
+- Location: J1-83
 - Teachers:
-  - Jeroen Laros
+  - Sander Bollen
   - Jonathan Vis
   - Mark Santcroos
   - Guy Allard
   - Mihai Lefter
 - Registration via www.medgencentre.nl. Direct access to the [registration form](https://forms.lumc.nl/lumc2/PYTHONcourse).
-
-Please note that the above mentioned date and location are subject to change.
 
 Program and Materials
 -------
@@ -31,22 +27,28 @@ Program and Materials
 
 | Day             | Time  | Lesson                              | Teacher  | 
 |-----------------|-------|------------------------------------ |----------|
-| Monday, 18/9    | 9-10  | [Welcome][lesson_01], [Introduction to Python (1)][lesson_02_01] | Mihai    | 
-|                 | 10-11 | [Introduction to Python (2)][lesson_02_02]          | Jeroen   |  
-|                 | 11-12 | [Introduction to Python (3)][lesson_02_03]          | Mihai    | 
-|                 | 12-13 | Practical help                      |          | 
-| Tuesday, 19/9   | 9-10  | Assignments review                  |          |
-|                 | 10-11 | [More Python Goodness (1)][lesson_03_01]            | Mihai    | 
-|                 | 11-12 | [More Python Goodness (2)][lesson_03_02]            | Mihai    | 
-|                 | 12-13 | [Jupyter Notebook][lesson_jpn]       | Mark     | 
-| Wednesday, 20/9 | 9-10  | Assignments review                  |          | 
+| Tuesday, 27/11    | 9-10  | [Welcome][lesson_01], [Introduction to Python][lesson_02_01] | Mihai    | 
+|                 | 10-11 | [Data types][lesson_02_02]          | Mihai   |  
+|                 | 11-12 | [Functions][lesson_02_03]          | Mihai    | 
+|                 | 12-13 | Lunch break                      |          | 
+|                 | 13-16 | Practical session | Mihai, Sander, and Guy|
+| Wednesday, 28/11   | 9-10  | Assignments review                  |          |
+|                 | 10-11 | [String methods, errors and exceptions][lesson_03_01]            | Mihai    | 
+|                 | 11-12 | [Standard library, reading and writing files][lesson_03_02]            | Mihai    | 
+|                 | 12-13 | Lunch break                      |          | 
+|                 | 13-16 | Practical session | Mihai, Sander, and Mark|
+| Thursday, 29/11 | 9-10  | Assignments review                  |          | 
 |                 | 10-11 | [Object-oriented programming][lesson_oop]         | Jonathan | 
-|                 | 11-12 | [Data mangling with pandas][lesson_pandas]   | Mark     | 
-|                 | 12-13 | [Data visualisation (1)][lesson_dv_01] | Guy      | 
-| Thursday, 21/9  | 9-10  | Assignments review                  |          | 
-|                 | 10-11 | [Data visualisation (2)][lesson_dv_02]          | Guy      | 
-|                 | 11-12 | [Biopython][lesson_bp]                          | Guy      | 
-|                 | 12-13 | Putting everything together         | Jeroen   |
+|                 | 11-12 | [Jupyter Notebook][lesson_jpn]       | Mark     |
+|                 | 12-13 | [Data mangling with pandas][lesson_pandas]   | Mark     | 
+|                 | 12-13 | Lunch break                      |          | 
+|                 | 13-16 | Practical session | Mihai, and Mark|
+| Friday, 30/11  | 9-10  | Assignments review                  |          | 
+|                 | 10-11 | [Data visualisation with Matplotlib][lesson_dv_01] | Guy      |
+|                 | 11-12 | [Data visualisation with Bokeh][lesson_dv_02]          | Guy      | 
+|                 | 12-13 | [Biopython][lesson_bp]                          | Sander      | 
+|                 | 12-13 | Lunch break                      |          | 
+|                 | 13-16 | Practical session | Mihai, Sander, and Guy|
 
 Some of the lessons are slideshows, whereas others are just
 notebooks we scroll through during class. The links above are all one-page
@@ -55,14 +57,14 @@ static renderings on [IPython Notebook Viewer](http://nbviewer.ipython.org/).
 
 Assignments
 -----------
-- [First day](https://classroom.github.com/a/QU2iPYKn) - [Solutions](https://github.com/lumc-python/introduction-assignments/tree/master/solutions).
-- [Second day](https://classroom.github.com/a/UbifRH_y) - [Solutions](https://github.com/lumc-python/day2-assignments/blob/master/solution_v5.py).
+- [First day](https://classroom.github.com/a/QU2iPYKn).
+- [Second day](https://classroom.github.com/a/UbifRH_y).
 - Third day:
-  - [OOP](https://classroom.github.com/a/8BnbL9fD) - [Solutions](https://git.lumc.nl/courses/programming-course/raw/master/oop/solutions.pdf).
-  - [pandas](https://classroom.github.com/a/GOxWRQpa) - [Solutions](https://github.com/lumc-python/pandas-assignments/blob/master/pandas_assignments_solutions.ipynb)
-  - [Visualization](https://classroom.github.com/a/X7ElFXpu) - [Solutions](https://github.com/lumc-python/day3-visualization-assignment/blob/master/Solution.ipynb).
+  - [OOP](https://classroom.github.com/a/8BnbL9fD).
+  - [pandas](https://classroom.github.com/a/GOxWRQpa).
 - Final day:
-  - [Visualization 2](https://classroom.github.com/a/2GAOqqBu)
+  - [Visualization 1](https://classroom.github.com/a/X7ElFXpu).
+  - [Visualization 2](https://classroom.github.com/a/2GAOqqBu).
 
 
 [lesson_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/introduction/01_welcome.ipynb
