@@ -3,4 +3,7 @@
 	url = https://github.com/hakimel/reveal.js.git
 [submodule "programming-course-assignments"]
 	path = programming-course-assignments
-	url = git@git.lumc.nl:humgen/programming-course-assignments.git
+	url = git@git.lumc.nl:courses/programming-course-assignments.git
+[submodule ".presentation"]
+	path = .presentation
+	url = https://git.lumc.nl/j.f.j.laros/presentation.git
