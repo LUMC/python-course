@@ -1,0 +1,390 @@
+\documentclass[slidestop]{beamer}
+
+\author{Mihai Lefter}
+\title{Python Programming}
+\providecommand{\mySubTitle}{Introduction}
+\providecommand{\myConference}{Work discussion}
+\providecommand{\myDate}{27-11-2018}
+\providecommand{\myGroup}{}
+\providecommand{\myDepartment}{}
+\providecommand{\myCenter}{}
+
+\usetheme{lumc}
+
+\usepackage{minted}
+\usepackage{tikz}
+\usepackage[many]{tcolorbox}
+
+\definecolor{monokaibg}{HTML}{272822}
+
+\newenvironment{ipython}
+ {\begin{tcolorbox}[title=IPython,
+                   title filled=false,
+                   fonttitle=\scriptsize,
+                   fontupper=\footnotesize,
+                   enhanced,
+                   colback=monokaibg,
+                   drop small lifted shadow,
+                   boxrule=0.1mm,
+                   left=0.1cm,
+                   arc=0mm,
+                   colframe=black]}
+ {\end{tcolorbox}
+}
+
+\definecolor{white}{rgb}{1,1,1}
+\definecolor{mygreen}{rgb}{0,0.4,0}
+\definecolor{light_gray}{rgb}{0.97,0.97,0.97}
+\definecolor{mykey}{rgb}{0.117,0.403,0.713}
+
+\tcbuselibrary{listings}
+\newlength\inwd
+\setlength\inwd{1.3cm}
+
+\newcounter{ipythcntr}
+\renewcommand{\theipythcntr}{\texttt{[\arabic{ipythcntr}]}}
+
+\newtcblisting{pyin}[1][]{%
+  sharp corners,
+  enlarge left by=\inwd,
+  width=\linewidth-\inwd,
+  enhanced,
+  boxrule=0pt,
+  colback=light_gray,
+  listing only,
+  top=0pt,
+  bottom=0pt,
+  overlay={
+    \node[
+      anchor=north east,
+      text width=\inwd,
+      font=\footnotesize\ttfamily\color{mykey},
+      inner ysep=2mm,
+      inner xsep=0pt,
+      outer sep=0pt
+      ]
+      at (frame.north west)
+      {\refstepcounter{ipythcntr}\label{#1}In \theipythcntr:};
+  }
+  listing engine=listing,
+  listing options={
+    aboveskip=1pt,
+    belowskip=1pt,
+    basicstyle=\footnotesize\ttfamily,
+    language=Python,
+    keywordstyle=\color{mykey},
+    showstringspaces=false,
+    stringstyle=\color{mygreen},
+    numbers=none,
+    frame=none
+  },
+}
+\newtcblisting{pyprint}{
+  sharp corners,
+  enlarge left by=\inwd,
+  width=\linewidth-\inwd,
+  enhanced,
+  boxrule=0pt,
+  colback=white,
+  listing only,
+  top=0pt,
+  bottom=0pt,
+  overlay={
+    \node[
+      anchor=north east,
+      text width=\inwd,
+      font=\footnotesize\ttfamily\color{mykey},
+      inner ysep=2mm,
+      inner xsep=0pt,
+      outer sep=0pt
+      ]
+      at (frame.north west)
+      {};
+  }
+  listing engine=listing,
+  listing options={
+      aboveskip=1pt,
+      belowskip=1pt,
+      basicstyle=\footnotesize\ttfamily,
+      language=Python,
+      keywordstyle=\color{mykey},
+      showstringspaces=false,
+      stringstyle=\color{mygreen},
+      numbers=none,
+      frame=none
+    },
+}
+\newtcblisting{pyout}[1][\theipythcntr]{
+  sharp corners,
+  enlarge left by=\inwd,
+  width=\linewidth-\inwd,
+  enhanced,
+  boxrule=0pt,
+  colback=white,
+  listing only,
+  top=0pt,
+  bottom=0pt,
+  overlay={
+    \node[
+      anchor=north east,
+      text width=\inwd,
+      font=\footnotesize\ttfamily\color{mykey},
+      inner ysep=2mm,
+      inner xsep=0pt,
+      outer sep=0pt
+      ]
+      at (frame.north west)
+      {\setcounter{ipythcntr}{\value{ipythcntr}}Out#1:};
+  }
+  listing engine=listing,
+  listing options={
+      aboveskip=1pt,
+      belowskip=1pt,
+      basicstyle=\footnotesize\ttfamily,
+      language=Python,
+      keywordstyle=\color{mykey},
+      showstringspaces=false,
+      stringstyle=\color{mygreen},
+      numbers=none,
+      frame=none
+    },
+}
+
+
+
+\begin{document}
+
+% This disables the \pause command, handy in the editing phase.
+%\renewcommand{\pause}{}
+
+% Make the title slide.
+\makeTitleSlide{\includegraphics[height=3.5cm]{../../images/Python.pdf}}
+
+% First page of the presentation.
+\section{Introduction}
+\makeTableOfContents
+
+\subsection{About the course}
+\begin{pframe}
+ \begin{itemize}
+  \item Aimed at PhD students, Postdocs, researchers, analysts, ...
+  \item Focus on:
+  \begin{itemize}
+   \item Basic understanding of Python.
+   \item Programming as a tool to do your research.
+   \item Slightly biased on bioinformatics.
+  \end{itemize}
+ \end{itemize}
+\end{pframe}
+
+\subsection{Hands on!}
+\begin{pframe}
+ Programming is fun!
+ \begin{itemize}
+  \item You only learn programming by doing it.
+  \item Lecture format:
+  \begin{itemize}
+   \item Blended teaching + exercising.
+  \end{itemize}
+  \item Have your laptop open during the lessons.
+  \item Repeat the code from the slides, play around with it.
+  \item Do the session exercises.
+  \item There will be a few assignments to submit.
+ \end{itemize}
+\end{pframe}
+
+\subsection{Teachers}
+\begin{pframe}
+ \begin{itemize}
+  \item Sander Bollen \\
+    \url{a.h.b.bollen@lumc.nl}
+  \item Jonathan Vis \\
+    \url{j.k.vis@lumc.nl}
+  \item Mark Santcroos \\
+    \url{m.a.santcroos@lumc.nl}
+  \item Guy Allard \\
+    \url{w.g.Allard@lumc.nl}
+  \item Mihai Lefter\\
+    \url{m.lefter@lumc.nl}
+ \end{itemize}
+\end{pframe}
+
+\subsection{Software requirements}
+\begin{pframe}
+ \begin{itemize}
+  \item Anaconda:
+  \begin{itemize}
+   \item Python 3.7
+   \item Comes with all that's required:
+   \begin{itemize}
+    \item Python interpreter.
+    \item Jupyter Notebook.
+    \item Libraries: NumPy, Panda, matplotlib, Bokeh, Biopython, ...
+   \end{itemize}
+   \item \href{http://docs.anaconda.com/anaconda/install/}{Installation instructions}.
+  \end{itemize}
+  \item Git.
+ \end{itemize}
+\end{pframe}
+
+\subsection{Assignments}
+\begin{pframe}
+ \begin{itemize}
+  \item We make use of GitHub Classroom.
+  \begin{itemize}
+   \item GitHub account required.
+   \item Receive link with assignment repository.
+  \end{itemize}
+  \item Own forked repository to work on:
+  \begin{itemize}
+   \item Clone it.
+   \item Code.
+   \item Push it.
+  \end{itemize}
+  \item Direct file upload to repository is also possible.
+ \end{itemize}
+\end{pframe}
+
+\subsection{Getting help}
+\begin{pframe}
+ \begin{itemize}
+  \item Ask a teacher.
+  \item If it's private, mail one of the teachers.
+ \end{itemize}
+\end{pframe}
+
+\section{About Python}
+
+\subsection{History}
+\begin{pframe}
+ \begin{itemize}
+  \item Created early 90's by Guido van Rossem at CWI.
+  \begin{itemize}
+   \item Name: Monty Python.
+  \end{itemize}
+  \item General purpose, high-level programming language.
+  \item Design is driven by code readability.
+ \end{itemize}
+\end{pframe}
+
+\subsection{Features}
+\begin{pframe}
+ \begin{itemize}
+  \item Interpreted, no separate compilation step needed.
+  \item Imperative and object-oriented programming.
+  \begin{itemize}
+   \item And some functional programming.
+  \end{itemize}
+  \item Dynamic type system.
+  \item Automatic memory management.
+ \end{itemize}
+ We'll come back to most of this.
+\end{pframe}
+
+\subsection{Why Python?}
+\begin{pframe}
+ \begin{itemize}
+  \item Readable and low barrier to entry.
+  \item Rich scientific libraries.
+  \item Many other libraries available.
+  \item Widely used with a large community.
+ \end{itemize}
+\end{pframe}
+
+\subsection{Python 2 versus Python 3}
+\begin{pframe}
+ \begin{itemize}
+  \item Python 3 is backwards incompatible.
+  \item Some libraries don't support it yet.
+  \item Python 2.7 is the last Python 2.
+  \item Some Python 3 features are backported in Python 2.7.
+  \item Python 2.7 will no longer .
+ \end{itemize}
+  We use Python 3.7 for the time being.
+\end{pframe}
+
+% \subsection{}
+% \begin{pframe}
+%  \begin{itemize}
+%   \item
+%  \end{itemize}
+% \end{pframe}
+
+\section{Python as a calculator}
+
+\subsection{Integers}
+\begin{pframe}
+ \begin{pyin}
+17
+ \end{pyin}
+ \begin{pyout}
+17
+ \end{pyout}
+ \begin{pyin}
+(17 + 4) * 2
+ \end{pyin}
+ \begin{pyout}
+42
+ \end{pyout}
+\end{pframe}
+
+\subsection{Floating point numbers}
+\begin{pframe}
+ \begin{pyin}
+3.2 * 18 - 2.1
+ \end{pyin}
+ \begin{pyout}
+55.5
+ \end{pyout}
+ \begin{pyin}
+36. / 5
+ \end{pyin}
+ \begin{pyout}
+7.2
+ \end{pyout}
+
+Scientific notation:
+ \begin{pyin}
+1.3e20 + 2
+ \end{pyin}
+ \begin{pyout}
+1.3e+20
+ \end{pyout}
+ \begin{pyin}
+1.3 * 10**20
+ \end{pyin}
+ \begin{pyout}
+1.3e+20
+ \end{pyout}
+
+\end{pframe}
+
+% \begin{pframe}
+%   \begin{ipython}
+%   \begin{minted}[breaklines=true,style=monokai]{python}
+% a = 100
+%   \end{minted}
+%  \end{ipython}
+% \end{pframe}
+
+
+% Make the acknowledgements slide.
+\makeAcknowledgementsSlide{
+  \begin{tabular}{ll}
+    \bf Department one  & \bf Other department\\
+    Colleague one       & Someone\\
+    Colleague two       & Someone else\\
+    Colleague three     & Someone's supervisor\\
+    Supervisor\\
+  \end{tabular}
+  \bigskip
+
+  \begin{tabular}{llll}
+    \includegraphics[height=1cm]{logos/lumc_logo_small} &
+    \includegraphics[height=1cm]{logos/ul_logo_white} &
+    \includegraphics[height=1cm]{logos/lumc_logo_small} &
+    \includegraphics[height=1cm]{logos/ul_logo_white}
+  \end{tabular}
+}
+
+\end{document}
