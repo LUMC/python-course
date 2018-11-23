@@ -25,30 +25,30 @@ Program and Materials
 - Mornings: presentations.
 - Afternoons: assignments.
 
-| Day             | Time  | Lesson                              | Teacher  | 
-|-----------------|-------|------------------------------------ |----------|
-| Tuesday, 27/11    | 9-10  | [Welcome][lesson_01], [Introduction to Python][lesson_02_01] | Mihai    | 
-|                 | 10-11 | [Data types][lesson_02_02]          | Mihai   |  
-|                 | 11-12 | [Functions][lesson_02_03]          | Mihai    | 
-|                 | 12-13 | Lunch break                      |          | 
-|                 | 13-16 | Practical session | Mihai, Sander, and Guy|
-| Wednesday, 28/11   | 9-10  | Assignments review                  |          |
-|                 | 10-11 | [String methods, errors and exceptions][lesson_03_01]            | Mihai    | 
-|                 | 11-12 | [Standard library, reading and writing files][lesson_03_02]            | Mihai    | 
-|                 | 12-13 | Lunch break                      |          | 
-|                 | 13-16 | Practical session | Mihai, Sander, and Mark|
-| Thursday, 29/11 | 9-10  | Assignments review                  |          | 
-|                 | 10-11 | [Object-oriented programming][lesson_oop]         | Jonathan | 
-|                 | 11-12 | [Jupyter Notebook][lesson_jpn]       | Mark     |
-|                 | 12-13 | [Data mangling with pandas][lesson_pandas]   | Mark     | 
-|                 | 12-13 | Lunch break                      |          | 
-|                 | 13-16 | Practical session | Mihai, and Mark|
-| Friday, 30/11  | 9-10  | Assignments review                  |          | 
-|                 | 10-11 | [Data visualisation with Matplotlib][lesson_dv_01] | Guy      |
-|                 | 11-12 | [Data visualisation with Bokeh][lesson_dv_02]          | Guy      | 
-|                 | 12-13 | [Biopython][lesson_bp]                          | Sander      | 
-|                 | 12-13 | Lunch break                      |          | 
-|                 | 13-16 | Practical session | Mihai, Sander, and Guy|
+| Day              | Time  | Lesson                              | Teacher  | 
+|------------------|-------|------------------------------------ |----------|
+| Tuesday, 27/11   | 9-10  | [Welcome][lesson_01], [Introduction to Python][lesson_02_01] | Mihai    | 
+|                  | 10-11 | [Data types][lesson_02_02]          | Mihai   |  
+|                  | 11-12 | [Functions][lesson_02_03]          | Mihai    | 
+|                  | 12-13 | Lunch break                      |          | 
+|                  | 13-16 | Practical session | Mihai, Sander, and Guy|
+| Wednesday, 28/11 | 9-10  | Assignments review                  |          |
+|                  | 10-11 | [String methods, errors and exceptions][lesson_03_01]            | Mihai    | 
+|                  | 11-12 | [Standard library, reading and writing files][lesson_03_02]            | Mihai    | 
+|                  | 12-13 | Lunch break                      |          | 
+|                  | 13-16 | Practical session | Mihai, Sander, and Mark|
+| Thursday, 29/11  | 9-10  | Assignments review                  |          | 
+|                  | 10-11 | [Object-oriented programming][lesson_oop]         | Jonathan | 
+|                  | 11-12 | [Jupyter Notebook][lesson_jpn]       | Mark     |
+|                  | 12-13 | [Data mangling with pandas][lesson_pandas]   | Mark     | 
+|                  | 13-14 | Lunch break                      |          | 
+|                  | 14-16 | Practical session | Mihai, and Mark|
+| Friday, 30/11    | 9-10  | Assignments review                  |          | 
+|                  | 10-11 | [Data visualisation with Matplotlib][lesson_dv_01] | Guy      |
+|                  | 11-12 | [Data visualisation with Bokeh][lesson_dv_02]          | Guy      | 
+|                  | 12-13 | [Biopython][lesson_bp]                          | Sander      | 
+|                  | 13-14 | Lunch break                      |          | 
+|                  | 14-16 | Practical session | Mihai, Sander, and Guy|
 
 Some of the lessons are slideshows, whereas others are just
 notebooks we scroll through during class. The links above are all one-page
