@@ -1,0 +1,678 @@
+\documentclass[aspectratio=1610,slidestop]{beamer}
+
+\author{Mihai Lefter}
+\title{Python Programming}
+\providecommand{\mySubTitle}{Data Types}
+\providecommand{\myConference}{Programming Course}
+\providecommand{\myDate}{27-11-2018}
+\providecommand{\myGroup}{}
+\providecommand{\myDepartment}{}
+\providecommand{\myCenter}{}
+
+\usetheme{lumc}
+
+\usepackage{minted}
+\usepackage{tikz}
+\usepackage[many]{tcolorbox}
+
+\definecolor{monokaibg}{HTML}{272822}
+\definecolor{emailc}{HTML}{1e90FF}
+
+
+\newenvironment{ipython}
+ {\begin{tcolorbox}[title=IPython,
+                   title filled=false,
+                   fonttitle=\scriptsize,
+                   fontupper=\footnotesize,
+                   enhanced,
+                   colback=monokaibg,
+                   drop small lifted shadow,
+                   boxrule=0.1mm,
+                   left=0.1cm,
+                   arc=0mm,
+                   colframe=black]}
+ {\end{tcolorbox}}
+
+
+\newenvironment{terminal}
+ {\begin{tcolorbox}[title=terminal,
+                   title filled=false,
+                   fonttitle=\scriptsize,
+                   fontupper=\footnotesize,
+                   enhanced,
+                   colback=monokaibg,
+                   drop small lifted shadow,
+                   boxrule=0.1mm,
+                   left=0.1cm,
+                   arc=0mm,
+                   colframe=black]}
+ {\end{tcolorbox}}
+
+
+\newcommand{\hrefcc}[2]{\textcolor{#1}{\href{#2}{#2}}}
+\newcommand{\hrefc}[3]{\textcolor{#1}{\href{#2}{#3}}}
+
+\newcounter{cntr}
+\renewcommand{\thecntr}{\texttt{[\arabic{cntr}]}}
+
+\newenvironment{pythonin}[1]
+{\VerbatimEnvironment
+  \begin{minipage}[t]{0.11\linewidth}
+   \textcolor{green}{\texttt{{\refstepcounter{cntr}\label{#1}In \thecntr:}}}
+  \end{minipage}
+  \begin{minipage}[t]{0.89\linewidth}
+  \begin{minted}[
+    breaklines=true,style=monokai]{#1}}
+ {\end{minted}
+ \end{minipage}}
+
+\newenvironment{pythonout}[1]
+{\VerbatimEnvironment
+  \addtocounter{cntr}{-1}
+  \begin{minipage}[t]{0.11\linewidth}
+   \textcolor{red}{\texttt{{\refstepcounter{cntr}\label{#1}Out\thecntr:}}}
+  \end{minipage}
+  \begin{minipage}[t]{0.89\linewidth}
+  \begin{minted}[
+    breaklines=true,style=monokai]{#1}}
+ {\end{minted}
+ \end{minipage}}
+
+\newenvironment{pythonerr}[1]
+{\VerbatimEnvironment
+  \begin{minted}[
+    breaklines=true,style=monokai]{#1}}
+ {\end{minted}}
+
+\begin{document}
+
+% This disables the \pause command, handy in the editing phase.
+%\renewcommand{\pause}{}
+
+% Make the title slide.
+\makeTitleSlide{\includegraphics[height=3.5cm]{../../images/Python.pdf}}
+
+% First page of the presentation.
+\section{Introduction}
+\makeTableOfContents
+
+
+\section{Sequence types}
+
+\subsection{Lists}
+\begin{pframe}
+Mutable sequences of values.
+ \begin{ipython}
+  \begin{pythonin}{python}
+l = [2, 5, 2, 3, 7]
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+type(l)
+  \end{pythonin}
+  \begin{pythonout}{python}
+list
+  \end{pythonout}
+ \end{ipython}
+ \medskip
+
+ Lists can be heterogeneous, but we typically don't use that.
+ \begin{ipython}
+  \begin{pythonin}{python}
+a = 'spezi'
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+[3, 'abc', 1.3e20, [a, a, 2]]
+  \end{pythonin}
+  \begin{pythonout}{python}
+[3, 'abc', 1.3e+20, ['spezi', 'spezi', 2]]
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+\subsection{Tuples}
+\begin{pframe}
+Mutable sequences of values.
+ \begin{ipython}
+  \begin{pythonin}{python}
+t = 'white', 77, 1.5
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+type(t)
+  \end{pythonin}
+  \begin{pythonout}{python}
+typle
+  \end{pythonout}
+ \\
+
+ \begin{pythonin}{python}
+color, width, scale = t
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+width
+  \end{pythonin}
+  \begin{pythonout}{python}
+77
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+\subsection{Strings}
+\begin{pframe}
+Immutable sequences of characters.
+ \begin{ipython}
+  \begin{pythonin}{python}
+'a string can be written in single quotes'
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+'a string can be written in single quotes'
+  \end{pythonout}
+ \end{ipython}
+
+Strings can also be written with double quotes, or over multiple lines with
+triple-quotes.
+ \begin{ipython}
+  \begin{pythonin}{python}
+"this makes it easier to use the ' character"
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+"this makes it easier to use the ' character"
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+"""A multiline string.
+You see? I continued after a blank line."""
+  \end{pythonin}
+  \begin{pythonout}{python}
+'A multiline string.\n\nYou see? I continued after a blank line.'
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+\begin{pframe}
+ A common operation is formatting strings using argument substitutions.
+ \begin{ipython}
+  \begin{pythonin}{python}
+'{} times {} equals {:.2f}'.format('pi', 2, 6.283185307179586)
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+'pi times 2 equals 6.28'
+  \end{pythonout}
+ \end{ipython}
+
+ Accessing arguments by position or name is more readable.
+ \begin{ipython}
+  \begin{pythonin}{python}
+'{1} times {0} equals {2:.2f}'.format('pi', 2, 6.283185307179586)
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+'2 times pi equals 6.28'
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+'{number} times {amount} equals {result:.2f}'.format(number='pi', amount=2, result=6.283185307179586)
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+'pi times 2 equals 6.28'
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+\section{Common sequence operations}
+
+\begin{pframe}
+ All sequence types support: concatenation, membership/substring tests,
+ indexing, and slicing.
+ \\
+ \begin{ipython}
+  \begin{pythonin}{python}
+[1, 2, 3] + [4, 5, 6]
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+[1, 2, 3, 4, 5, 6]
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+'bier' in 'we drinken bier vanaf half 5'
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+True
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+'abcdefghijkl'[5]
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+'f'
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+\subsection{Slicing}
+\begin{pframe}
+ Slice \mintinline{python}{s} from \mintinline{python}{i} to
+ \mintinline{python}{j} with \mintinline{python}{s[i:j]}.
+ \begin{ipython}
+  \begin{pythonin}{python}
+'abcdefghijkl'[4:8]
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+'efgh'
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+'abcdefghijkl'[:3]
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+'abc'
+  \end{pythonout}
+ \end{ipython}
+
+ We can also define the step \mintinline{python}{k} with
+ \mintinline{python}{s[i:j:k]}.
+ \begin{ipython}
+  \begin{pythonin}{python}
+'abcdefghijkl'[7:3:-1]
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+'hgfe'
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+\subsection{Several helpful builtins}
+\begin{pframe}
+ \begin{ipython}
+  \begin{pythonin}{python}
+len('attacgataggcatccgt')
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+18
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+max([17, 86, 34, 51])
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+86
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+('atg', 22, True, 'atg').count('atg')
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+2
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+\subsection{More with lists}
+\begin{pframe}
+ We can replace, add, remove, reverse and sort items in-place.
+ \begin{ipython}
+  \begin{pythonin}{python}
+l = [1, 2, 3, 4]
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+l[3] = 7
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+l.append(1)
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+l[1:3] = [3, 2]
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+l.sort()
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+l.reverse()
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+l
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+[7, 3, 2, 1, 1]
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+
+\section{Dictionaries}
+
+\subsection{Dictionaries map hashable values to arbitrary objects}
+\begin{pframe}
+ \begin{itemize}
+  \item All built-in immutable objects are hashable.
+  \item No built-in mutable objects are hashable.
+ \end{itemize}
+ \begin{ipython}
+  \begin{pythonin}{python}
+d = {'a': 27, 'b': 18, 'c': 12}
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+type(d)
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+dict
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+d['e'] = 17
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+'e' in d
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+True
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+d.update({'a': 18, 'f': 2})
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+d
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+{'a': 18, 'b': 18, 'c': 12, 'e': 17, 'f': 2}
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+\subsection{Accessing dictionary content}
+\begin{pframe}
+ \begin{ipython}
+  \begin{pythonin}{python}
+d['b']
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+18
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+d.keys()
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+dict_keys(['e', 'c', 'a', 'b', 'f'])
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+list(d.keys())
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+['a', 'c', 'b', 'e', 'f']
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+list(d.values())
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+[18, 12, 18, 17, 2]
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+list(d.items())
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+[('a', 18), ('c', 12), ('b', 18), ('e', 17), ('f', 2)]
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+
+\section{Sets}
+
+\subsection{Mutable unordered collections of hashable values without duplication}
+\begin{pframe}
+ \begin{ipython}
+  \begin{pythonin}{python}
+x = {12, 28, 21, 17}
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+type(x)
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+set
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+x.add(12)
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+a
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+{12, 17, 21, 28}
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+x.discard(21)
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+x
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+{12, 17, 28}
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+\subsection{Operations}
+\begin{pframe}
+ We can test for membership and apply many common set operations\\
+ such as union and intersect.
+ \medskip
+
+ \begin{ipython}
+  \begin{pythonin}{python}
+17 in {12, 28, 21, 17}
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+True
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+{12, 28, 21, 17} | {12, 18, 11}
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+{11, 12, 17, 18, 21, 28}
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+{12, 28, 21, 17} & {12, 18, 11}
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+{12}
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+
+\section{Booleans}
+
+\begin{pframe}
+  The two boolean values are written \mintinline{python}{False} and
+  \mintinline{python}{True}.
+ \begin{ipython}
+  \begin{pythonin}{python}
+True or False
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+True
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+True and False
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+False
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+not False
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+True
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+\subsection{Comparisons}
+\begin{pframe}
+  Comparisons can be done on all objects and return a boolean value.
+  \mintinline{python}{True}.
+ \begin{ipython}
+  \begin{pythonin}{python}
+22 * 3 > 66
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+False
+  \end{pythonout}
+ \end{ipython}
+
+ We have two equivalence relations: value equality (\mintinline{python}{==}) and
+ object identity (\mintinline{python}{is}).
+ \begin{ipython}
+  \begin{pythonin}{python}
+a, b = [1, 2, 3], [1, 2, 3]
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+a == b
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+True
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+a is b
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+False
+  \end{pythonout}
+ \end{ipython}
+
+
+\end{pframe}
+
+
+\section{Hands on!}
+\begin{pframe}
+ \vspace{-0.5cm}
+ \begin{enumerate}
+  \item Make a list with 10 integer elements.
+  \begin{enumerate}[a]
+  \item What is the sum of all the items in the list.
+  \item Make a new list from the above one that does not include the 0th, 4th,
+  and 5th elements.
+  \item Sum only the elements from the first list which are between the 2nd and
+  the 6th elements.
+  \item Make a new list that includes only the elements that are greater than
+  $10$ from the first list.
+  \end{enumerate}
+  \item Food:
+  \begin{enumerate}[a.]
+   \item Create a dictionary for food products called "prices" and put some
+   values in it, e.g., "apples": 2, "oranges": 1.5, "pears": 3, ...
+   \item Create a corresponding dictionary called "stocks" and put the stock
+   values in it, e.g., "apples": 0, "oranges": 1, "pears": 10, ...
+   \item Print stock and price information for each food item.
+   \item Determine and print how much money you would make if you sold all of
+   your food products.
+  \end{enumerate}
+ \end{enumerate}
+\end{pframe}
+
+
+% Make the acknowledgements slide.
+\makeAcknowledgementsSlide{
+  \begin{tabular}{ll}
+    Martijn Vermaat\\
+    Jeroen Laros\\
+    Jonathan Vis
+  \end{tabular}
+}
+
+\end{document}
