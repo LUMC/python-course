@@ -1,0 +1,313 @@
+\documentclass[aspectratio=1610,slidestop]{beamer}
+
+\author{Mihai Lefter}
+\title{Python Programming}
+\providecommand{\mySubTitle}{Flow Control}
+\providecommand{\myConference}{Programming Course}
+\providecommand{\myDate}{27-11-2018}
+\providecommand{\myGroup}{}
+\providecommand{\myDepartment}{}
+\providecommand{\myCenter}{}
+
+\usetheme{lumc}
+
+\usepackage{minted}
+\usepackage{tikz}
+\usepackage[many]{tcolorbox}
+
+\definecolor{monokaibg}{HTML}{272822}
+\definecolor{emailc}{HTML}{1e90FF}
+\definecolor{scriptback}{HTML}{CDECF0}
+
+\newenvironment{ipython}
+ {\begin{tcolorbox}[title=IPython,
+                   title filled=false,
+                   fonttitle=\scriptsize,
+                   fontupper=\footnotesize,
+                   enhanced,
+                   colback=monokaibg,
+                   drop small lifted shadow,
+                   boxrule=0.1mm,
+                   left=0.1cm,
+                   arc=0mm,
+                   colframe=black]}
+ {\end{tcolorbox}}
+
+
+\newenvironment{terminal}
+ {\begin{tcolorbox}[title=terminal,
+                   title filled=false,
+                   fonttitle=\scriptsize,
+                   fontupper=\footnotesize,
+                   enhanced,
+                   colback=monokaibg,
+                   drop small lifted shadow,
+                   boxrule=0.1mm,
+                   left=0.1cm,
+                   arc=0mm,
+                   colframe=black]}
+ {\end{tcolorbox}}
+
+
+\newcommand{\hrefcc}[2]{\textcolor{#1}{\href{#2}{#2}}}
+\newcommand{\hrefc}[3]{\textcolor{#1}{\href{#2}{#3}}}
+
+\newcounter{cntr}
+\renewcommand{\thecntr}{\texttt{[\arabic{cntr}]}}
+
+\newenvironment{pythonin}[1]
+{\VerbatimEnvironment
+  \begin{minipage}[t]{0.11\linewidth}
+   \textcolor{green}{\texttt{{\refstepcounter{cntr}\label{#1}In \thecntr:}}}
+  \end{minipage}
+  \begin{minipage}[t]{0.89\linewidth}
+  \begin{minted}[
+    breaklines=true,style=monokai]{#1}}
+ {\end{minted}
+ \end{minipage}}
+
+\newenvironment{pythonout}[1]
+{\VerbatimEnvironment
+  \addtocounter{cntr}{-1}
+  \begin{minipage}[t]{0.11\linewidth}
+   \textcolor{red}{\texttt{{\refstepcounter{cntr}\label{#1}Out\thecntr:}}}
+  \end{minipage}
+  \begin{minipage}[t]{0.89\linewidth}
+  \begin{minted}[
+    breaklines=true,style=monokai]{#1}}
+ {\end{minted}
+ \end{minipage}}
+
+\newenvironment{pythonerr}[1]
+{\VerbatimEnvironment
+  \begin{minted}[
+    breaklines=true,style=monokai]{#1}}
+ {\end{minted}}
+
+
+\newenvironment{pythonfile}[1]
+ {\begin{tcolorbox}[title=#1,
+                    title filled=false,
+                    coltitle=LUMCDonkerblauw,
+                    fonttitle=\scriptsize,
+                    fontupper=\footnotesize,
+                    enhanced,
+                    drop small lifted shadow,
+                    boxrule=0.1mm,
+                    leftrule=5mm,
+                    rulecolor=white,
+                    left=0.1cm,
+                    colback=white!92!black,
+                    colframe=scriptback]}
+ {\end{tcolorbox}}
+
+\begin{document}
+
+% This disables the \pause command, handy in the editing phase.
+%\renewcommand{\pause}{}
+
+% Make the title slide.
+\makeTitleSlide{\includegraphics[height=3.5cm]{../../images/Python.pdf}}
+
+% First page of the presentation.
+\section{Introduction}
+\makeTableOfContents
+
+
+\section{Working with scripts}
+
+\begin{pframe}
+ Interpreters are great for prototyping, but not really suitable if you want to
+ share or release code. To do so, we write our Python commands in scripts (and
+ later, modules).
+
+ A script is a simple text file containing Python instructions to execute.
+\end{pframe}
+
+
+\subsection{Executing scripts}
+\begin{pframe}
+ There are two common ways to execute a script:
+  \begin{itemize}
+   \item As an argument of the Python interpreter command.
+   \item As a standalone executable (with the appropriate shebang line and
+   file mode).
+  \end{itemize}
+  \medskip
+
+  IPython gives you a third option:
+  \begin{itemize}
+   \item As an argument of the \lstinline{%run} magic.
+  \end{itemize}
+\end{pframe}
+
+
+\subsection{Writing your script}
+\begin{pframe}
+ Let's start with a simple GC calculator. Open your text editor, and write the
+ following Python statements (remember your indentations):
+
+ \begin{pythonfile}{first\_script.py}
+  \begin{minted}[linenos]{python}
+print("Hello world!")
+  \end{minted}
+ \end{pythonfile}
+Save the file as first\_script.py and go to your shell.
+\end{pframe}
+
+\subsection{Running the script}
+\begin{pframe}
+ Let's try the first method: using your script as an argument:
+ \begin{terminal}
+  \color{white}{
+  \begin{lstlisting}[frame=,style=,numbers=none]
+$ python first_script.py
+  \end{lstlisting}}
+ \end{terminal}
+  Is the output as you expect?
+\end{pframe}
+
+\begin{pframe}
+  For the second method, we need to do two more things:
+  \begin{itemize}
+   \item Open the script in your editor and add the following line to the very
+   top:
+   \begin{itemize}
+    \item \mintinline{python}{#!/usr/bin/env python}
+   \end{itemize}
+   \item Save the file, go back to the shell, and allow the file to be executed.
+  \end{itemize}
+ \begin{terminal}
+  \color{white}{
+  \begin{lstlisting}[frame=,style=,numbers=none]
+$ chmod +x first_script.py
+  \end{lstlisting}}
+ \end{terminal}
+You can now execute the file directly:
+\begin{terminal}
+  \color{white}{
+  \begin{lstlisting}[frame=,style=,numbers=none]
+$ ./first_script.py
+  \end{lstlisting}}
+ \end{terminal}
+ Is the output the same as the previous method?
+\end{pframe}
+
+\begin{pframe}
+ Finally, try out the third method. Open an IPython interpreter session and do:
+ \begin{ipython}
+  \begin{pythonin}{python}
+%run seq_toolbox.py
+  \end{pythonin}
+ \end{ipython}
+\end{pframe}
+
+
+\section{Conditionals}
+
+\subsection{if statements}
+\begin{pframe}
+ \begin{pythonfile}{if.py}
+  \begin{minted}[linenos]{python}
+if 26 <= 17:
+    print('Fact: 26 is less than or equal to 17')
+elif (26 + 8 > 14) == True:
+    print('Did we need the ` == True` part here?')
+else:
+    print('Nothing seems true')
+  \end{minted}
+ \end{pythonfile}
+
+ \begin{terminal}
+  \color{white}{
+  \begin{lstlisting}[frame=,style=,numbers=none]
+$ python if.py
+Did we need the ` == True` part here?
+  \end{lstlisting}}
+ \end{terminal}
+\end{pframe}
+
+
+\section{Loops}
+
+\subsection{while statements}
+\begin{pframe}
+ \begin{pythonfile}{while.py}
+  \begin{minted}[linenos]{python}
+i = 0
+while i < 5:
+    print(i)
+    i += 1
+  \end{minted}
+ \end{pythonfile}
+
+ \begin{terminal}
+  \color{white}{
+  \begin{lstlisting}[frame=,style=,numbers=none]
+$ python while.py
+0
+1
+2
+3
+4
+  \end{lstlisting}}
+ \end{terminal}
+\end{pframe}
+
+\subsection{Iterating over a sequence}
+\begin{pframe}
+ \begin{pythonfile}{for.py}
+  \begin{minted}[linenos]{python}
+colors = ['red', 'white', 'blue', 'orange']
+cities = ['leiden', 'utrecht', 'warmond', 'san francisco']
+
+# The for statement can iterate over sequence items.
+for color in colors:
+    print(color)
+
+for character in 'blue':
+    print(character)
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+\begin{pframe}
+ \begin{terminal}
+  \color{white}{
+  \begin{lstlisting}[frame=,style=,numbers=none]
+$ python for.py
+red
+white
+blue
+orange
+b
+l
+u
+e  \end{lstlisting}}
+ \end{terminal}
+\end{pframe}
+
+
+
+\section{Hands on!}
+\begin{pframe}
+ \vspace{-0.5cm}
+ \begin{enumerate}
+  \item
+  \begin{enumerate}[a]
+  \item
+  \end{enumerate}
+ \end{enumerate}
+\end{pframe}
+
+
+% Make the acknowledgements slide.
+\makeAcknowledgementsSlide{
+  \begin{tabular}{ll}
+    Martijn Vermaat\\
+    Jeroen Laros\\
+    Jonathan Vis
+  \end{tabular}
+}
+
+\end{document}
