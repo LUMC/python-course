@@ -69,10 +69,10 @@
 \newenvironment{pythonout}[1]
 {\VerbatimEnvironment
   \addtocounter{cntr}{-1}
-  \begin{minipage}[c]{0.11\linewidth}
+  \begin{minipage}[t]{0.11\linewidth}
    \textcolor{red}{\texttt{{\refstepcounter{cntr}\label{#1}Out\thecntr:}}}
   \end{minipage}
-  \begin{minipage}[c]{0.89\linewidth}
+  \begin{minipage}[t]{0.89\linewidth}
   \begin{minted}[
     breaklines=true,style=monokai]{#1}}
  {\end{minted}
