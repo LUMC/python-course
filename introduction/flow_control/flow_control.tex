@@ -289,14 +289,109 @@ e  \end{lstlisting}}
 
 
 
+\section{Functions}
+
+\subsection{Defining a function}
+\begin{pframe}
+ A function is a named sequence of statements that performs some piece of work.
+ Later on that function can be called by using its name.
+ \medskip
+
+ A function definition includes its name, arguments and body.
+ \begin{pythonfile}{functions.py}
+  \begin{minted}[linenos]{python}
+def add_two(number):
+    return number + 2
+
+for i in range(5):
+    print add_two(i)
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
+\subsection{Keyword arguments}
+\begin{pframe}
+ Besides regular arguments, functions can have keyword arguments.
+ \begin{pythonfile}{functions\_keywords.py}
+  \begin{minted}[linenos]{python}
+def add_some_other_number(number, other_number=12):
+    return number + other_number
+
+add_some_other_number(2, 6)
+
+add_some_other_number(3, other_number=4)
+
+add_some_other_number(5)
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
+\subsection{Functions are values}
+\begin{pframe}
+ We can pass functions around just like other values, and call them.
+ \begin{pythonfile}{function\_values.py}
+  \begin{minted}[linenos]{python}
+functions = [add_two, add_some_other_number]
+for function in functions:
+    print function(7)
+
+# Simple anonymous functions can be created with lambda.
+functions.append(lambda x: x * 7)
+for function in functions:
+    print function(4)
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
+\subsection{Docstrings}
+\begin{pframe}
+ Like many other definitions, functions can have docstrings.
+ \begin{itemize}
+  \item Docstrings are regular string values which you start the definition
+  body with.
+  \item You can access an object's docstring using help.
+ \end{itemize}
+
+ \begin{ipython}
+  \begin{pythonin}{python}
+help(map)
+Help on class map in module builtins:
+
+class map(object)
+ |  map(func, *iterables) --> map object
+ |
+ |  Make an iterator that computes the function using arguments from
+ |  each of the iterables.  Stops when the shortest iterable is exhausted.
+  \end{pythonin}
+  \\
+
+ \begin{pythonin}{python}
+list(map(add_two, [1, 2, 3, 4]))
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+[3, 4, 5, 6]
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
 \section{Hands on!}
 \begin{pframe}
  \vspace{-0.5cm}
  \begin{enumerate}
-  \item
-  \begin{enumerate}[a]
-  \item
-  \end{enumerate}
+  \item Write a Python function that returns the maximum of two numbers.
+  \item Write a Python function that returns the maximum of three numbers.
+  Try to reuse the first maximum of two numbers function.
+  \item Write a Python function that accepts a string as parameter.
+  Next, it calculates and prints the number of upper case letters and lower
+  case letters. Make us of the \mintinline{python}{isupper} and
+  \mintinline{python}{islower} built in methods.
+
+
  \end{enumerate}
 \end{pframe}
 
