@@ -17,6 +17,7 @@
 
 \definecolor{monokaibg}{HTML}{272822}
 \definecolor{emailc}{HTML}{1e90FF}
+\definecolor{ipyout}{HTML}{F0FFF0}
 
 
 \newenvironment{ipython}
@@ -59,24 +60,24 @@
 {\VerbatimEnvironment
   \begin{minipage}[t]{0.11\linewidth}
    \textcolor{green}{\texttt{{\refstepcounter{cntr}\label{#1}In \thecntr:}}}
-  \end{minipage}
-  \begin{minipage}[t]{0.89\linewidth}
+  \end{minipage}%
+  \begin{minipage}[t]{0.89\linewidth}%
   \begin{minted}[
     breaklines=true,style=monokai]{#1}}
  {\end{minted}
  \end{minipage}}
 
-\newenvironment{pythonout}[1]
-{\VerbatimEnvironment
+\newenvironment{pythonout}
+{%
   \addtocounter{cntr}{-1}
   \begin{minipage}[t]{0.11\linewidth}
    \textcolor{red}{\texttt{{\refstepcounter{cntr}\label{#1}Out\thecntr:}}}
-  \end{minipage}
-  \begin{minipage}[t]{0.89\linewidth}
-  \begin{minted}[
-    breaklines=true,style=monokai]{#1}}
- {\end{minted}
- \end{minipage}}
+  \end{minipage}%
+  \color{ipyout}%
+  \ttfamily%
+  \begin{minipage}[t]{0.89\linewidth}%
+}
+{\end{minipage}}
 
 \newenvironment{pythonerr}[1]
 {\VerbatimEnvironment
@@ -110,7 +111,7 @@ l = [2, 5, 2, 3, 7]
   \begin{pythonin}{python}
 type(l)
   \end{pythonin}
-  \begin{pythonout}{python}
+  \begin{pythonout}
 list
   \end{pythonout}
  \end{ipython}
@@ -125,7 +126,7 @@ a = 'spezi'
   \begin{pythonin}{python}
 [3, 'abc', 1.3e20, [a, a, 2]]
   \end{pythonin}
-  \begin{pythonout}{python}
+  \begin{pythonout}
 [3, 'abc', 1.3e+20, ['spezi', 'spezi', 2]]
   \end{pythonout}
  \end{ipython}
@@ -134,7 +135,7 @@ a = 'spezi'
 
 \subsection{Tuples}
 \begin{pframe}
-Mutable sequences of values.
+Immutable sequences of values.
  \begin{ipython}
   \begin{pythonin}{python}
 t = 'white', 77, 1.5
@@ -143,8 +144,8 @@ t = 'white', 77, 1.5
   \begin{pythonin}{python}
 type(t)
   \end{pythonin}
-  \begin{pythonout}{python}
-typle
+  \begin{pythonout}
+tuple
   \end{pythonout}
  \\
 
@@ -155,7 +156,7 @@ color, width, scale = t
   \begin{pythonin}{python}
 width
   \end{pythonin}
-  \begin{pythonout}{python}
+  \begin{pythonout}
 77
   \end{pythonout}
  \end{ipython}
@@ -170,7 +171,7 @@ Immutable sequences of characters.
 'a string can be written in single quotes'
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 'a string can be written in single quotes'
   \end{pythonout}
  \end{ipython}
@@ -182,7 +183,7 @@ triple-quotes.
 "this makes it easier to use the ' character"
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 "this makes it easier to use the ' character"
   \end{pythonout}
   \\
@@ -191,7 +192,7 @@ triple-quotes.
 """A multiline string.
 You see? I continued after a blank line."""
   \end{pythonin}
-  \begin{pythonout}{python}
+  \begin{pythonout}
 'A multiline string.\n\nYou see? I continued after a blank line.'
   \end{pythonout}
  \end{ipython}
@@ -204,7 +205,7 @@ You see? I continued after a blank line."""
 '{} times {} equals {:.2f}'.format('pi', 2, 6.283185307179586)
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 'pi times 2 equals 6.28'
   \end{pythonout}
  \end{ipython}
@@ -215,7 +216,7 @@ You see? I continued after a blank line."""
 '{1} times {0} equals {2:.2f}'.format('pi', 2, 6.283185307179586)
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 '2 times pi equals 6.28'
   \end{pythonout}
   \\
@@ -224,7 +225,7 @@ You see? I continued after a blank line."""
 '{number} times {amount} equals {result:.2f}'.format(number='pi', amount=2, result=6.283185307179586)
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 'pi times 2 equals 6.28'
   \end{pythonout}
  \end{ipython}
@@ -242,7 +243,7 @@ You see? I continued after a blank line."""
 [1, 2, 3] + [4, 5, 6]
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 [1, 2, 3, 4, 5, 6]
   \end{pythonout}
   \\
@@ -251,7 +252,7 @@ You see? I continued after a blank line."""
 'bier' in 'we drinken bier vanaf half 5'
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 True
   \end{pythonout}
   \\
@@ -260,7 +261,7 @@ True
 'abcdefghijkl'[5]
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 'f'
   \end{pythonout}
  \end{ipython}
@@ -276,7 +277,7 @@ True
 'abcdefghijkl'[4:8]
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 'efgh'
   \end{pythonout}
   \\
@@ -285,7 +286,7 @@ True
 'abcdefghijkl'[:3]
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 'abc'
   \end{pythonout}
  \end{ipython}
@@ -297,7 +298,7 @@ True
 'abcdefghijkl'[7:3:-1]
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 'hgfe'
   \end{pythonout}
  \end{ipython}
@@ -311,7 +312,7 @@ True
 len('attacgataggcatccgt')
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 18
   \end{pythonout}
   \\
@@ -320,8 +321,17 @@ len('attacgataggcatccgt')
 max([17, 86, 34, 51])
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 86
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+sum([17, 86, 34, 51])
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+188
   \end{pythonout}
   \\
 
@@ -329,7 +339,7 @@ max([17, 86, 34, 51])
 ('atg', 22, True, 'atg').count('atg')
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 2
   \end{pythonout}
  \end{ipython}
@@ -368,22 +378,67 @@ l.reverse()
 l
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 [7, 3, 2, 1, 1]
   \end{pythonout}
  \end{ipython}
 \end{pframe}
 
 
+\subsection{Additional useful built-ins}
+\begin{pframe}
+ \begin{ipython}
+  \begin{pythonin}{python}
+list('abcdefghijk')
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k']
+  \end{pythonout}
+  \\
+  
+  \begin{pythonin}{python}
+range(5, 16)  # In python 2: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+range(5, 16)
+  \end{pythonout}
+  \\
+  
+  \begin{pythonin}{python}
+list(range(5, 16))
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+[5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+  \end{pythonout}
+  \\  
+  
+  \begin{pythonin}{python}
+zip(['red', 'white', 'blue'], range(3))
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+<zip at 0x7f3565860108>
+  \end{pythonout}
+  \\
+    
+  \begin{pythonin}{python}
+list(zip(['red', 'white', 'blue'], range(3)))
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+[('red', 0), ('white', 1), ('blue', 2)]
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
 
 \section{Dictionaries}
 
 \subsection{Dictionaries map hashable values to arbitrary objects}
 \begin{pframe}
- \begin{itemize}
-  \item All built-in immutable objects are hashable.
-  \item No built-in mutable objects are hashable.
- \end{itemize}
  \begin{ipython}
   \begin{pythonin}{python}
 d = {'a': 27, 'b': 18, 'c': 12}
@@ -393,7 +448,7 @@ d = {'a': 27, 'b': 18, 'c': 12}
 type(d)
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 dict
   \end{pythonout}
   \\
@@ -406,7 +461,7 @@ d['e'] = 17
 'e' in d
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 True
   \end{pythonout}
   \\
@@ -419,10 +474,14 @@ d.update({'a': 18, 'f': 2})
 d
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 {'a': 18, 'b': 18, 'c': 12, 'e': 17, 'f': 2}
   \end{pythonout}
  \end{ipython}
+% \begin{itemize}
+%  \item All built-in immutable objects are hashable.
+%  \item No built-in mutable objects are hashable.
+% \end{itemize}
 \end{pframe}
 
 
@@ -433,7 +492,7 @@ d
 d['b']
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 18
   \end{pythonout}
   \\
@@ -442,8 +501,8 @@ d['b']
 d.keys()
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
-dict_keys(['e', 'c', 'a', 'b', 'f'])
+  \begin{pythonout}
+dict\_keys(['e', 'c', 'a', 'b', 'f'])
   \end{pythonout}
   \\
 
@@ -451,7 +510,7 @@ dict_keys(['e', 'c', 'a', 'b', 'f'])
 list(d.keys())
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 ['a', 'c', 'b', 'e', 'f']
   \end{pythonout}
   \\
@@ -460,7 +519,7 @@ list(d.keys())
 list(d.values())
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 [18, 12, 18, 17, 2]
   \end{pythonout}
   \\
@@ -469,7 +528,7 @@ list(d.values())
 list(d.items())
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 [('a', 18), ('c', 12), ('b', 18), ('e', 17), ('f', 2)]
   \end{pythonout}
  \end{ipython}
@@ -490,7 +549,7 @@ x = {12, 28, 21, 17}
 type(x)
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 set
   \end{pythonout}
   \\
@@ -503,7 +562,7 @@ x.add(12)
 a
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 {12, 17, 21, 28}
   \end{pythonout}
   \\
@@ -516,11 +575,28 @@ x.discard(21)
 x
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 {12, 17, 28}
   \end{pythonout}
  \end{ipython}
 \end{pframe}
+
+\begin{pframe}
+ \begin{ipython}
+  \begin{pythonin}{python}
+x[0]
+  \end{pythonin}
+  \begin{pythonerr}{python}
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-62-2f755f117ac9> in <module>()
+----> 1 x[0]
+
+TypeError: 'set' object does not support indexing
+  \end{pythonerr}
+ \end{ipython}
+\end{pframe}
+
 
 
 \subsection{Operations}
@@ -534,7 +610,7 @@ x
 17 in {12, 28, 21, 17}
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 True
   \end{pythonout}
   \\
@@ -543,7 +619,7 @@ True
 {12, 28, 21, 17} | {12, 18, 11}
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 {11, 12, 17, 18, 21, 28}
   \end{pythonout}
   \\
@@ -552,8 +628,35 @@ True
 {12, 28, 21, 17} & {12, 18, 11}
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 {12}
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+\subsection{Operations}
+\begin{pframe}
+ Difference
+ \medskip
+
+ \begin{ipython}
+  \begin{pythonin}{python}
+s1 = {12, 28, 21, 17}
+  \end{pythonin}
+  \\
+  
+  \begin{pythonin}{python}
+s2 = {28, 32, 71, 12}
+  \end{pythonin}
+  \\
+  
+  \begin{pythonin}{python}
+s1.difference(s2)
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+{17, 21}
   \end{pythonout}
  \end{ipython}
 \end{pframe}
@@ -570,7 +673,7 @@ True
 True or False
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 True
   \end{pythonout}
   \\
@@ -579,7 +682,7 @@ True
 True and False
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 False
   \end{pythonout}
   \\
@@ -588,7 +691,7 @@ False
 not False
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 True
   \end{pythonout}
  \end{ipython}
@@ -598,13 +701,12 @@ True
 \subsection{Comparisons}
 \begin{pframe}
   Comparisons can be done on all objects and return a boolean value.
-  \mintinline{python}{True}.
  \begin{ipython}
   \begin{pythonin}{python}
 22 * 3 > 66
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 False
   \end{pythonout}
  \end{ipython}
@@ -620,7 +722,7 @@ a, b = [1, 2, 3], [1, 2, 3]
 a == b
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 True
   \end{pythonout}
   \\
@@ -629,7 +731,7 @@ True
 a is b
   \end{pythonin}
   \\
-  \begin{pythonout}{python}
+  \begin{pythonout}
 False
   \end{pythonout}
  \end{ipython}
@@ -640,26 +742,27 @@ False
 \begin{pframe}
  \vspace{-0.5cm}
  \begin{enumerate}
-  \item Make a list with 10 integer elements.
+  \item Make a list \texttt{l1} with 10 integer elements.
   \begin{enumerate}[a]
-  \item What is the sum of all the items in the list.
-  \item Make a new list from the above one that does not include the 0th, 4th,
-  and 5th elements.
-  \item Sum only the elements from the first list which are between the 2nd and
-  the 6th elements.
-  \item Make a new list that includes only the elements that are greater than
-  $10$ from the first list.
+  \item What is the sum of all the items in the \texttt{l1} list.
+  \item Make a new list \texttt{l2} from \texttt{l1} that does not include the 0th, 4th, and 5th elements.
+  \item Sum only the elements from \texttt{l1} which are between the 2nd and the 6th elements.
   \end{enumerate}
   \item Food:
   \begin{enumerate}[a.]
-   \item Create a dictionary for food products called "prices" and put some
+   \item Create a dictionary for food products called \texttt{prices} and put some
    values in it, e.g., "apples": 2, "oranges": 1.5, "pears": 3, ...
    \item Create a corresponding dictionary called "stocks" and put the stock
    values in it, e.g., "apples": 0, "oranges": 1, "pears": 10, ...
-   \item Print stock and price information for each food item.
-   \item Determine and print how much money you would make if you sold all of
-   your food products.
+   \item Add another entry in the \texttt{prices} dictionary with key 'bananas' and value 13.
+   \item Add another entry in the \texttt{stocks} dictionary with key 'bananas' and value 11.
+   \item What is the total money value for the "bananas" (stock $\times$ price)?
+   \item How many products are in the \texttt{stocks} dictionary?\\
+   \item Are the number of products in the \texttt{stocks} and \texttt{prices} dictionaries equal?
+   \item Are there the same products in the \texttt{stocks} and \texttt{prices} dictionaries?
+   \item What is the most expensive value in the \texttt{prices} dictionary?
   \end{enumerate}
+%  \item max(['a', 100, 20])
  \end{enumerate}
 \end{pframe}
 

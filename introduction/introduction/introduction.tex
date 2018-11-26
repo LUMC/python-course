@@ -17,6 +17,7 @@
 
 \definecolor{monokaibg}{HTML}{272822}
 \definecolor{emailc}{HTML}{1e90FF}
+\definecolor{ipyout}{HTML}{F0FFF0}
 
 
 \newenvironment{ipython}
@@ -59,43 +60,43 @@
 {\VerbatimEnvironment
   \begin{minipage}[t]{0.11\linewidth}
    \textcolor{green}{\texttt{{\refstepcounter{cntr}\label{#1}In \thecntr:}}}
-  \end{minipage}
-  \begin{minipage}[t]{0.89\linewidth}
+  \end{minipage}%
+  \begin{minipage}[t]{0.89\linewidth}%
   \begin{minted}[
     breaklines=true,style=monokai]{#1}}
  {\end{minted}
  \end{minipage}}
 
-\newenvironment{pythonout}[1]
-{\VerbatimEnvironment
+\newenvironment{pythonout}
+{%
   \addtocounter{cntr}{-1}
   \begin{minipage}[t]{0.11\linewidth}
    \textcolor{red}{\texttt{{\refstepcounter{cntr}\label{#1}Out\thecntr:}}}
-  \end{minipage}
-  \begin{minipage}[t]{0.89\linewidth}
-  \begin{minted}[
-    breaklines=true,style=monokai]{#1}}
- {\end{minted}
- \end{minipage}}
+  \end{minipage}%
+  \color{ipyout}%
+  \ttfamily%
+  \begin{minipage}[t]{0.89\linewidth}%
+}
+{\end{minipage}}
+
+%\newenvironment{pythonout}
+%{\VerbatimEnvironment%
+%  \addtocounter{cntr}{-1}
+%  \begin{minipage}[t]{0.11\linewidth}
+%   \textcolor{red}{\texttt{{\refstepcounter{cntr}\label{#1}Out\thecntr:}}}
+%  \end{minipage}%
+%  \begin{minipage}[t]{0.89\linewidth}%
+%  \color{ipyout}%
+%  \ttfamily%
+%}%
+%{%
+%\end{minipage}}
 
 \newenvironment{pythonerr}[1]
 {\VerbatimEnvironment
   \begin{minted}[
     breaklines=true,style=monokai]{#1}}
  {\end{minted}}
-
-
-% \newenvironment{pythonout}[1]
-% {\VerbatimEnvironment
-%   \addtocounter{cntr}{-1}
-%   \begin{minipage}[c]{0.13\linewidth}
-%    \textcolor{red}{\texttt{{\refstepcounter{cntr}\label{#1}Out\thecntr:}}}
-%   \end{minipage}
-%   \begin{minipage}[c]{0.87\linewidth}
-%   \color{gray}%
-%   }
-%  {\end{minipage}\\}
-
 
 \begin{document}
 
@@ -108,6 +109,27 @@
 % First page of the presentation.
 \section{Introduction}
 \makeTableOfContents
+
+
+%\begin{pframe}
+% \begin{ipython}
+%  \begin{pythonin}{python}
+%3.2 * 18 - 2.1
+%  \end{pythonin}
+%  \begin{pythonout}
+%55.5
+%  \end{pythonout}
+%  \\
+%
+%  \begin{pythonin}{python}
+%36 / 5
+%  \end{pythonin}
+%  \begin{pythonout}
+%7.2
+%  \end{pythonout}
+% \end{ipython}
+%
+%\end{pframe}
 
 
 \subsection{About the course}
@@ -158,7 +180,7 @@
    \item Mark Santcroos \\
      \hrefcc{emailc}{m.a.santcroos@lumc.nl}
    \item Guy Allard \\
-     \hrefcc{emailc}{w.g.Allard@lumc.nl}
+     \hrefcc{emailc}{w.g.allard@lumc.nl}
    \item Mihai Lefter\\
     \hrefcc{emailc}{m.lefter@lumc.nl}
   \end{itemize}
@@ -172,7 +194,7 @@
 \subsection{Program}
 \begin{pframe}
  \begin{center}
-  \includegraphics[width=\textwidth]{../../images/program.pdf}
+  \includegraphics[width=0.95\textwidth]{../../images/program.pdf}
  \end{center}
 \end{pframe}
 
@@ -345,7 +367,7 @@ Type "help", "copyright", "credits" or "license" for more information.
   \begin{itemize}
     \item syntax highlighting;
     \item tab completion;
-    \item cross-session history,
+    \item cross-session history;
     \item etc.
   \end{itemize}
 
@@ -376,7 +398,7 @@ IPython 6.1.0 -- An enhanced Interactive Python. Type '?' for help.
   \begin{pythonin}{python}
 17
   \end{pythonin}
-  \begin{pythonout}{python}
+  \begin{pythonout}
 17
   \end{pythonout}
   \\
@@ -384,7 +406,7 @@ IPython 6.1.0 -- An enhanced Interactive Python. Type '?' for help.
   \begin{pythonin}{python}
 (17 + 4) * 2
   \end{pythonin}
-  \begin{pythonout}{python}
+  \begin{pythonout}
 42
   \end{pythonout}
  \end{ipython}
@@ -397,7 +419,7 @@ IPython 6.1.0 -- An enhanced Interactive Python. Type '?' for help.
   \begin{pythonin}{python}
 3.2 * 18 - 2.1
   \end{pythonin}
-  \begin{pythonout}{python}
+  \begin{pythonout}
 55.5
   \end{pythonout}
   \\
@@ -405,8 +427,8 @@ IPython 6.1.0 -- An enhanced Interactive Python. Type '?' for help.
   \begin{pythonin}{python}
 36 / 5
   \end{pythonin}
-  \begin{pythonout}{python}
-7.2     # Note that this is Python 3 specific.
+  \begin{pythonout}
+7.2
   \end{pythonout}
  \end{ipython}
 \end{pframe}
@@ -418,7 +440,7 @@ Scientific notation:
   \begin{pythonin}{python}
 1.3e20 + 2
   \end{pythonin}
-  \begin{pythonout}{python}
+  \begin{pythonout}
 1.3e+20
   \end{pythonout}
   \\
@@ -426,7 +448,7 @@ Scientific notation:
   \begin{pythonin}{python}
 1.3 * 10**20
   \end{pythonin}
-  \begin{pythonout}{python}
+  \begin{pythonout}
 1.3e+20
   \end{pythonout}
  \end{ipython}
@@ -453,7 +475,7 @@ b = 2
   \begin{pythonin}{python}
 a
   \end{pythonin}
-  \begin{pythonout}{python}
+  \begin{pythonout}
 1.3e20
   \end{pythonout}
   \\
@@ -465,7 +487,7 @@ c = a + 1.5e19 * b
   \begin{pythonin}{python}
 c * 2
   \end{pythonin}
-  \begin{pythonout}{python}
+  \begin{pythonout}
 3.2e+20
   \end{pythonout}
  \end{ipython}
@@ -484,7 +506,7 @@ c * 2
   \begin{pythonin}{python}
 type(27)
   \end{pythonin}
-  \begin{pythonout}{python}
+  \begin{pythonout}
 int
   \end{pythonout}
   \\
@@ -492,7 +514,7 @@ int
   \begin{pythonin}{python}
 type(3 * 2)
   \end{pythonin}
-  \begin{pythonout}{python}
+  \begin{pythonout}
 int
   \end{pythonout}
   \\
@@ -500,7 +522,7 @@ int
   \begin{pythonin}{python}
 type(3 / 2)
   \end{pythonin}
-  \begin{pythonout}{python}
+  \begin{pythonout}
 float
   \end{pythonout}
   \\
@@ -508,7 +530,7 @@ float
   \begin{pythonin}{python}
 type(a)
   \end{pythonin}
-  \begin{pythonout}{python}
+  \begin{pythonout}
 float
   \end{pythonout}
  \end{ipython}
@@ -525,7 +547,7 @@ float
   \begin{pythonin}{python}
 type(3 * 2.0)
   \end{pythonin}
-  \begin{pythonout}{python}
+  \begin{pythonout}
 float
   \end{pythonout}
   \\
@@ -537,7 +559,7 @@ drinks = 'beer' * 5 + 'whiskey'
   \begin{pythonin}{python}
 drinks
   \end{pythonin}
-  \begin{pythonout}{python}
+  \begin{pythonout}
 'beerbeerbeerbeerbeerwhiskey'
   \end{pythonout}
   \\
@@ -545,7 +567,7 @@ drinks
   \begin{pythonin}{python}
 type(drinks)
   \end{pythonin}
-  \begin{pythonout}{python}
+  \begin{pythonout}
 str
   \end{pythonout}
  \end{ipython}
@@ -562,7 +584,7 @@ str
   \begin{pythonin}{python}
 a
   \end{pythonin}
-  \begin{pythonout}{python}
+  \begin{pythonout}
 1.3e+20
   \end{pythonout}
   \\
@@ -570,7 +592,7 @@ a
   \begin{pythonin}{python}
 type(a)
   \end{pythonin}
-  \begin{pythonout}{python}
+  \begin{pythonout}
 float
   \end{pythonout}
   \\
@@ -582,7 +604,7 @@ a = 'spezi'
   \begin{pythonin}{python}
 type(a)
   \end{pythonin}
-  \begin{pythonout}{python}
+  \begin{pythonout}
 str
   \end{pythonout}
  \end{ipython}
