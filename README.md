@@ -69,7 +69,7 @@ Assignments
 
 [lesson_01_01]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/introduction/introduction.pdf?inline=false
 [lesson_01_02]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/data_types/data_types.pdf?inline=false
-[lesson_01_03]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/introduction/02_introduction_to_python_3.ipynb
+[lesson_01_03]: https://git.lumc.nl/courses/programming-course/blob/master/introduction/flow_control/flow_control.pdf?inline=false
 [lesson_03_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/more_python/03_more_python_goodness_1.ipynb
 [lesson_03_02]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/more_python/03_more_python_goodness_2.ipynb
 [lesson_oop]: https://git.lumc.nl/courses/programming-course/raw/master/oop/oop.pdf
