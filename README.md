@@ -29,7 +29,7 @@ Program and Materials
 |------------------|-------|------------------------------------ |----------|
 | Tuesday, 27/11   | 9-10  | [Introduction][lesson_01_01] | Mihai    | 
 |                  | 10-11 | [Data types][lesson_01_02]          | Mihai   |  
-|                  | 11-12 | [Functions][lesson_01_03]          | Mihai    | 
+|                  | 11-12 | [Flow control][lesson_01_03]          | Mihai    | 
 |                  | 12-13 | Lunch break                      |          | 
 |                  | 13-16 | Practical session | Mihai, Sander, and Guy|
 | Wednesday, 28/11 | 9-10  | Assignments review                  |          |
