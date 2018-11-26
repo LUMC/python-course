@@ -27,9 +27,9 @@ Program and Materials
 
 | Day              | Time  | Lesson                              | Teacher  | 
 |------------------|-------|------------------------------------ |----------|
-| Tuesday, 27/11   | 9-10  | [Welcome][lesson_01], [Introduction to Python][lesson_02_01] | Mihai    | 
-|                  | 10-11 | [Data types][lesson_02_02]          | Mihai   |  
-|                  | 11-12 | [Functions][lesson_02_03]          | Mihai    | 
+| Tuesday, 27/11   | 9-10  | [Introduction][lesson_01_01] | Mihai    | 
+|                  | 10-11 | [Data types][lesson_01_02]          | Mihai   |  
+|                  | 11-12 | [Functions][lesson_01_03]          | Mihai    | 
 |                  | 12-13 | Lunch break                      |          | 
 |                  | 13-16 | Practical session | Mihai, Sander, and Guy|
 | Wednesday, 28/11 | 9-10  | Assignments review                  |          |
@@ -67,10 +67,9 @@ Assignments
   - [Visualization 2](https://classroom.github.com/a/2GAOqqBu).
 
 
-[lesson_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/introduction/01_welcome.ipynb
-[lesson_02_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/introduction/02_introduction_to_python_1.ipynb
-[lesson_02_02]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/introduction/02_introduction_to_python_2.ipynb
-[lesson_02_03]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/introduction/02_introduction_to_python_3.ipynb
+[lesson_01_01]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/introduction/introduction.pdf?inline=false
+[lesson_01_02]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/data_types/data_types.pdf?inline=false
+[lesson_01_03]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/introduction/02_introduction_to_python_3.ipynb
 [lesson_03_01]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/more_python/03_more_python_goodness_1.ipynb
 [lesson_03_02]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/more_python/03_more_python_goodness_2.ipynb
 [lesson_oop]: https://git.lumc.nl/courses/programming-course/raw/master/oop/oop.pdf
