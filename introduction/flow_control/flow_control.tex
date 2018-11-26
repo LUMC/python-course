@@ -137,15 +137,16 @@
 
   IPython gives you a third option:
   \begin{itemize}
-   \item As an argument of the \lstinline{%run} magic.
+   \item As an argument of the \texttt{\%run} magic.
   \end{itemize}
 \end{pframe}
 
 
 \subsection{Writing your script}
 \begin{pframe}
- Let's start with a simple GC calculator. Open your text editor, and write the
- following Python statements (remember your indentations):
+ Let's start with a simple hello world example.\\
+ 
+ Open your text editor and write the following Python statement:
 
  \begin{pythonfile}{first\_script.py}
   \begin{minted}[linenos]{python}
@@ -157,12 +158,9 @@ Save the file as first\_script.py and go to your shell.
 
 \subsection{Running the script}
 \begin{pframe}
- Let's try the first method: using your script as an argument:
+ Let's try the first method, i.e., using your script as an argument:
  \begin{terminal}
-  \color{white}{
-  \begin{lstlisting}[frame=,style=,numbers=none]
-$ python first_script.py
-  \end{lstlisting}}
+  \color{white}{\texttt{\$ python first\_script.py}}
  \end{terminal}
   Is the output as you expect?
 \end{pframe}
@@ -178,17 +176,11 @@ $ python first_script.py
    \item Save the file, go back to the shell, and allow the file to be executed.
   \end{itemize}
  \begin{terminal}
-  \color{white}{
-  \begin{lstlisting}[frame=,style=,numbers=none]
-$ chmod +x first_script.py
-  \end{lstlisting}}
+  \color{white}{\texttt{\$ chmod +x first\_script.py}
  \end{terminal}
 You can now execute the file directly:
 \begin{terminal}
-  \color{white}{
-  \begin{lstlisting}[frame=,style=,numbers=none]
-$ ./first_script.py
-  \end{lstlisting}}
+  \color{white}{\texttt{\$ ./first\_script.py}}
  \end{terminal}
  Is the output the same as the previous method?
 \end{pframe}
@@ -197,7 +189,7 @@ $ ./first_script.py
  Finally, try out the third method. Open an IPython interpreter session and do:
  \begin{ipython}
   \begin{pythonin}{python}
-%run seq_toolbox.py
+%run first_script.py
   \end{pythonin}
  \end{ipython}
 \end{pframe}
@@ -207,23 +199,20 @@ $ ./first_script.py
 
 \subsection{if statements}
 \begin{pframe}
- \begin{pythonfile}{if.py}
+ \begin{pythonfile}{if\_example.py}
   \begin{minted}[linenos]{python}
 if 26 <= 17:
     print('Fact: 26 is less than or equal to 17')
 elif (26 + 8 > 14) == True:
-    print('Did we need the ` == True` part here?')
+    print("Did we need the ' == True' part here?")
 else:
     print('Nothing seems true')
   \end{minted}
  \end{pythonfile}
 
  \begin{terminal}
-  \color{white}{
-  \begin{lstlisting}[frame=,style=,numbers=none]
-$ python if.py
-Did we need the ` == True` part here?
-  \end{lstlisting}}
+  \color{white}{\texttt{\$ python if\_example.py}\\
+  \texttt{Did we need the ' == True' part here?}}
  \end{terminal}
 \end{pframe}
 
@@ -232,7 +221,7 @@ Did we need the ` == True` part here?
 
 \subsection{while statements}
 \begin{pframe}
- \begin{pythonfile}{while.py}
+ \begin{pythonfile}{while\_example.py}
   \begin{minted}[linenos]{python}
 i = 0
 while i < 5:
@@ -242,21 +231,18 @@ while i < 5:
  \end{pythonfile}
 
  \begin{terminal}
-  \color{white}{
-  \begin{lstlisting}[frame=,style=,numbers=none]
-$ python while.py
-0
-1
-2
-3
-4
-  \end{lstlisting}}
+  \color{white}{\texttt{\$ python while\_example.py \\
+0\\ 
+1\\
+2\\
+3\\
+4\\}}
  \end{terminal}
 \end{pframe}
 
 \subsection{Iterating over a sequence}
 \begin{pframe}
- \begin{pythonfile}{for.py}
+ \begin{pythonfile}{for\_example.py}
   \begin{minted}[linenos]{python}
 colors = ['red', 'white', 'blue', 'orange']
 cities = ['leiden', 'utrecht', 'warmond', 'san francisco']
@@ -273,18 +259,115 @@ for character in 'blue':
 
 \begin{pframe}
  \begin{terminal}
-  \color{white}{
-  \begin{lstlisting}[frame=,style=,numbers=none]
-$ python for.py
-red
-white
-blue
-orange
-b
-l
-u
-e  \end{lstlisting}}
+  \color{white}{\texttt{\$ python for\_example.py\\
+red\\
+white\\
+blue\\
+orange\\
+b\\
+l\\
+u\\
+e\\
+}}
  \end{terminal}
+\end{pframe}
+
+
+\subsection{Python anti-patterns}
+\begin{pframe}
+These are common for programmers coming from other languages.
+ \begin{pythonfile}{unpythonic.py}
+  \begin{minted}[linenos]{python}
+i = 0
+while i < len(colors):
+    print colors[i]
+    i += 1
+    
+for i in range(len(colors)):
+    print colors[i]
+  \end{minted}
+ \end{pythonfile}
+
+We call them unpythonic.
+\end{pframe}
+
+
+\subsection{Additionals}
+\begin{pframe}
+ \begin{pythonfile}{iteration.py}
+  \begin{minted}[linenos]{python}
+# Iteration with values and indices:
+for i, color in enumerate(colors):
+    print(i, '->', color)
+
+# Taking two sequences together:
+for city, color in zip(cities, colors):
+    print(city, '->', color)
+    
+# Iterating over a dictionary yields keys:
+for key in {'a': 33, 'b': 17, 'c': 18}:
+    print(key)
+
+# Iterating over a file yields lines:
+for line in open('data/short_file.txt'):
+    print(line)
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
+
+\section{Notes about syntax}
+
+\subsection{Indentation}
+\begin{pframe}
+ Python uses indentation to delimit blocks
+ \begin{itemize}
+   \item Instead of \texttt{begin ... end} or \texttt{\{ ... \}} in other languages.
+   \item Always increase indentation by 4 spaces, never use tabs.
+   \begin{itemize}
+     \item In any case, be consistent.
+   \end{itemize}
+ \end{itemize}
+ \begin{pythonfile}{indentation\_example.py}
+  \begin{minted}[linenos]{python}
+if False:
+    if False:
+        print 'Why am I here?'
+    else:
+        while True:
+            print 'When will it stop?'
+    print "And we're back to the first indentation level"
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
+\subsection{Comments}
+\begin{pframe}
+ Comments are prepended by \texttt{\#} and completely ignored.
+ \begin{pythonfile}{comments\_example.py}
+  \begin{minted}[linenos]{python}
+# Create the list.
+l = []
+
+# Add 42 to this list.
+l.append(42)
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
+\subsection{The pass statement}
+\begin{pframe}
+ If you ever need a statement syntactically but don't want to do anything, use \texttt{pass}.
+ \begin{pythonfile}{comments\_example.py}
+  \begin{minted}[linenos]{python}
+while False:
+    # This is never executed anyway.
+    pass
+  \end{minted}
+ \end{pythonfile}
 \end{pframe}
 
 
@@ -318,11 +401,11 @@ for i in range(5):
 def add_some_other_number(number, other_number=12):
     return number + other_number
 
-add_some_other_number(2, 6)
+add_some_other_number(2, 6)  # 8
 
-add_some_other_number(3, other_number=4)
+add_some_other_number(3, other_number=4)  # 7
 
-add_some_other_number(5)
+add_some_other_number(5)  # 17
   \end{minted}
  \end{pythonfile}
 \end{pframe}
@@ -333,6 +416,12 @@ add_some_other_number(5)
  We can pass functions around just like other values, and call them.
  \begin{pythonfile}{function\_values.py}
   \begin{minted}[linenos]{python}
+def add_two(number):
+    return number + 2
+
+def add_some_other_number(number, other_number=12):
+    return number + other_number
+
 functions = [add_two, add_some_other_number]
 for function in functions:
     print function(7)
@@ -346,6 +435,7 @@ for function in functions:
 \end{pframe}
 
 
+
 \subsection{Docstrings}
 \begin{pframe}
  Like many other definitions, functions can have docstrings.
@@ -354,12 +444,25 @@ for function in functions:
   body with.
   \item You can access an object's docstring using help.
  \end{itemize}
+ \begin{pythonfile}{docstring\_example.py}
+  \begin{minted}[linenos]{python}
+def factorial(n):
+    """Compute factorial of n in the obious way."""
+    if n == 0:
+        return 1
+    else:
+        return factorial(n - 1) * n
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
 
+\subsection{Higher-order functions}
+\begin{pframe}
+ A function that takes a function as argument is a higher-order function.
  \begin{ipython}
   \begin{pythonin}{python}
 help(map)
 Help on class map in module builtins:
-
 class map(object)
  |  map(func, *iterables) --> map object
  |
@@ -379,6 +482,71 @@ list(map(add_two, [1, 2, 3, 4]))
 \end{pframe}
 
 
+
+\section{Comprehensions}
+
+\subsection{List comprehensions}
+\begin{pframe}
+ Similar to mathematical set notation (e.g., ${x | x \in R \wedge x>0}$), we can create lists.
+ \begin{ipython}
+  \begin{pythonin}{python}
+[(x, x * x) for x in range(10) if x % 2]
+  \end{pythonin}
+  \\
+
+  \begin{pythonout}{python}
+[(1, 1), (3, 9), (5, 25), (7, 49), (9, 81)]
+  \end{pythonout}
+ \end{ipython}
+
+We can do the same thing using \texttt{map} and \texttt{filter}, but list comprehensions are often more readable.
+
+ \begin{ipython}
+  \begin{pythonin}{python}
+list(map(lambda x: (x, x * x), filter(lambda x: x %2, range(10))))
+  \end{pythonin}
+  \\
+
+  \begin{pythonout}{python}
+[(1, 1), (3, 9), (5, 25), (7, 49), (9, 81)]
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+\subsection{Set and dictionary comprehensions}
+\begin{pframe}
+ Similar notation can be used for (non-empty) sets.
+ \begin{ipython}
+  \begin{pythonin}{python}
+{c for c in 'LUMC-standard' if 'a' <= c <= 'z'}
+  \end{pythonin}
+  \\
+
+  \begin{pythonout}{python}
+{'a', 'd', 'n', 'r', 's', 't'}
+  \end{pythonout}
+ \end{ipython}
+
+We can do the same thing using \texttt{map} and \texttt{filter}, but list comprehensions are often more readable.
+
+ \begin{ipython}
+  \begin{pythonin}{python}
+colors = ['red', 'white', 'blue', 'orange']
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+{c: len(c) for c in colors}
+  \end{pythonin}
+  \\
+
+  \begin{pythonout}{python}
+{'blue': 4, 'orange': 6, 'red': 3, 'white': 5}
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+
 \section{Hands on!}
 \begin{pframe}
  \vspace{-0.5cm}
@@ -388,7 +556,7 @@ list(map(add_two, [1, 2, 3, 4]))
   Try to reuse the first maximum of two numbers function.
   \item Write a Python function that accepts a string as parameter.
   Next, it calculates and prints the number of upper case letters and lower
-  case letters. Make us of the \mintinline{python}{isupper} and
+  case letters. Make use of the \mintinline{python}{isupper} and
   \mintinline{python}{islower} built in methods.
 
 
