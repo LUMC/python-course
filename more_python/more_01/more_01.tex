@@ -1,0 +1,299 @@
+\documentclass[aspectratio=1610,slidestop]{beamer}
+
+\author{Mihai Lefter}
+\title{Python Programming}
+\providecommand{\mySubTitle}{String methods, error and exceptions}
+\providecommand{\myConference}{Programming Course}
+\providecommand{\myDate}{27-11-2018}
+\providecommand{\myGroup}{}
+\providecommand{\myDepartment}{}
+\providecommand{\myCenter}{}
+
+\usetheme{lumc}
+\usepackage{minted}
+\usepackage{tikz}
+\usepackage[many]{tcolorbox}
+
+\definecolor{monokaibg}{HTML}{272822}
+\definecolor{emailc}{HTML}{1e90FF}
+\definecolor{scriptback}{HTML}{CDECF0}
+
+\newenvironment{ipython}
+ {\begin{tcolorbox}[title=IPython,
+                   title filled=false,
+                   fonttitle=\scriptsize,
+                   fontupper=\footnotesize,
+                   enhanced,
+                   colback=monokaibg,
+                   drop small lifted shadow,
+                   boxrule=0.1mm,
+                   left=0.1cm,
+                   arc=0mm,
+                   colframe=black]}
+ {\end{tcolorbox}}
+
+
+
+\newenvironment{terminal}
+ {\begin{tcolorbox}[title=terminal,
+                   title filled=false,
+                   fonttitle=\scriptsize,
+                   fontupper=\footnotesize,
+                   enhanced,
+                   colback=monokaibg,
+                   drop small lifted shadow,
+                   boxrule=0.1mm,
+                   left=0.1cm,
+                   arc=0mm,
+                   colframe=black]}
+ {\end{tcolorbox}}
+
+
+\newcommand{\hrefcc}[2]{\textcolor{#1}{\href{#2}{#2}}}
+\newcommand{\hrefc}[3]{\textcolor{#1}{\href{#2}{#3}}}
+
+\newcounter{cntr}
+\renewcommand{\thecntr}{\texttt{[\arabic{cntr}]}}
+
+\newenvironment{pythonin}[1]
+{\VerbatimEnvironment
+  \begin{minipage}[t]{0.11\linewidth}
+   \textcolor{green}{\texttt{{\refstepcounter{cntr}\label{#1}In \thecntr:}}}
+  \end{minipage}
+  \begin{minipage}[t]{0.89\linewidth}
+  \begin{minted}[
+    breaklines=true,style=monokai]{#1}}
+ {\end{minted}
+ \end{minipage}}
+
+\newenvironment{pythonout}[1]
+{\VerbatimEnvironment
+  \addtocounter{cntr}{-1}
+  \begin{minipage}[t]{0.11\linewidth}
+   \textcolor{red}{\texttt{{\refstepcounter{cntr}\label{#1}Out\thecntr:}}}
+  \end{minipage}
+  \begin{minipage}[t]{0.89\linewidth}
+  \begin{minted}[
+    breaklines=true,style=monokai]{#1}}
+ {\end{minted}
+ \end{minipage}}
+
+\newenvironment{pythonerr}[1]
+{\VerbatimEnvironment
+  \begin{minted}[
+    breaklines=true,style=monokai]{#1}}
+ {\end{minted}}
+
+
+\newenvironment{pythonfile}[1]
+ {\begin{tcolorbox}[title=#1,
+                    title filled=false,
+                    coltitle=LUMCDonkerblauw,
+                    fonttitle=\scriptsize,
+                    fontupper=\footnotesize,
+                    enhanced,
+                    drop small lifted shadow,
+                    boxrule=0.1mm,
+                    leftrule=5mm,
+                    rulecolor=white,
+                    left=0.1cm,
+                    colback=white!92!black,
+                    colframe=scriptback]}
+ {\end{tcolorbox}}
+
+
+\begin{document}
+
+% This disables the \pause command, handy in the editing phase.
+%\renewcommand{\pause}{}
+
+% Make the title slide.
+\makeTitleSlide{\includegraphics[height=3.5cm]{../../images/Python.pdf}}
+
+% First page of the presentation.
+\section{Introduction}
+\makeTableOfContents
+
+\subsection{Let's start with a simple GC calculator}
+\begin{pframe}
+ \begin{pythonfile}{seq\_toolbox.py}
+  \begin{minted}[linenos]{python}
+def calc_gc_percent(seq):
+    at_count, gc_count = 0, 0
+    for char in seq:
+        if char in ('A', 'T'):
+            at_count += 1
+        elif char in ('G', 'C'):
+            gc_count += 1
+
+    return gc_count * 100.0 / (gc_count + at_count)       
+
+print("The sequence 'CAGG' has a %GC of {:.2f}".format(
+          calc_gc_percent("CAGG")))
+  \end{minted}
+ \end{pythonfile}
+ \pause
+ Our script is nice and dandy, but we don't want to edit the source file everytime we calculate a sequence's GC. 
+\end{pframe}
+
+
+
+\section{The standard library}
+
+\begin{pframe}
+\begin{itemize}
+  \item A collection of Python modules (or functions, for now) that comes packaged with a default Python installation.
+  \item They're not part of the language per se, more like a batteries included thing.
+\end{itemize}
+
+\end{pframe}
+
+\subsection{Our first standard library module: sys}
+\begin{pframe}
+We'll start by using the simple sys module to make our script more flexible.
+
+Standard library (and other modules, as we'll see later) can be used via the import statement, for example:
+\end{pframe}
+
+
+\subsection{Improving our script with sys.argv}
+\begin{pframe}
+ \begin{pythonfile}{seq\_toolbox.py}
+  \begin{minted}[linenos]{python}
+import sys
+
+def calc_gc_percent(seq):
+    at_count, gc_count = 0, 0
+    for char in seq:
+        if char in ('A', 'T'):
+            at_count += 1
+        elif char in ('G', 'C'):
+            gc_count += 1
+
+    return gc_count * 100.0 / (gc_count + at_count)       
+
+input_seq = sys.argv[1]
+print("The sequence '{}' has a %GC of {:.2f}".format(
+          input_seq, calc_gc_percent(input_seq)))
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
+
+\section{String methods}
+
+\begin{pframe}
+\end{pframe}
+
+\subsection{Improving our script with upper()}
+\begin{pframe}
+ \begin{pythonfile}{seq\_toolbox.py}
+  \begin{minted}[linenos]{python}
+import sys
+
+def calc_gc_percent(seq):
+    at_count, gc_count = 0, 0
+    for char in seq.upper():
+        if char in ('A', 'T'):
+            at_count += 1
+        elif char in ('G', 'C'):
+            gc_count += 1
+
+    return gc_count * 100.0 / (gc_count + at_count)
+
+input_seq = sys.argv[1]
+print("The sequence '{}' has a %GC of {:.2f}".format(
+          input_seq, calc_gc_percent(input_seq)))
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
+\section{Improving our script with comments and docstrings}
+\begin{pframe}
+  \vspace{-1.2cm}
+ \begin{pythonfile}{seq\_toolbox.py}
+  \begin{tiny}
+  \begin{minted}[linenos]{python}
+import sys
+
+def calc_gc_percent(seq):
+    """
+    Calculates the GC percentage of the given sequence.
+
+    Arguments:
+        - seq - the input sequence (string).
+
+    Returns:
+        - GC percentage (float).
+
+    The returned value is always <= 100.0
+    """
+    at_count, gc_count = 0, 0
+    # Change input to all caps to allow for non-capital
+    # input sequence.
+    for char in seq.upper():
+        if char in ('A', 'T'):
+            at_count += 1
+        elif char in ('G', 'C'):
+            gc_count += 1
+
+    return gc_count * 100.0 / (gc_count + at_count)
+    
+input_seq = sys.argv[1]
+print("The sequence '{}' has a %GC of {:.2f}".format(
+          input_seq, calc_gc_percent(input_seq)))
+  \end{minted}
+  \end{scriptsize}
+ \end{pythonfile}}
+\end{pframe}
+
+
+\section{Errors and exceptions}
+\subsection{Improving our script by handling corner cases}
+\begin{pframe}
+ \begin{pythonfile}{seq\_toolbox.py}
+  \begin{tiny}
+  \begin{minted}[linenos]{python}
+def calc_gc_percent(seq):
+    """
+    Calculates the GC percentage of the given sequence.
+    ...
+    The returned value is always <= 100.0
+    """
+    at_count, gc_count = 0, 0
+    # Change input to all caps to allow for non-capital
+    # input sequence.
+    for char in seq.upper():
+        if char in ('A', 'T'):
+            at_count += 1
+        elif char in ('G', 'C'):
+            gc_count += 1
+        else:
+            raise ValueError(
+                "Unexpeced character found: {}. Only "
+                "ACTGs are allowed.".format(char))
+
+    # Corner case handling: empty input sequence.
+    try:
+        return gc_count * 100.0 / (gc_count + at_count)
+    except ZeroDivisionError:
+        return 0.0    
+  \end{minted}
+  \end{scriptsize}
+ \end{pythonfile}}
+\end{pframe}
+
+
+
+% Make the acknowledgements slide.
+\makeAcknowledgementsSlide{
+  \begin{tabular}{ll}
+    Martijn Vermaat\\
+    Jeroen Laros\\
+    Jonathan Vis
+  \end{tabular}
+}
+
+\end{document}
