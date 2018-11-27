@@ -1,0 +1,576 @@
+\documentclass[aspectratio=1610,slidestop]{beamer}
+
+\author{Mihai Lefter}
+\title{Python Programming}
+\providecommand{\mySubTitle}{Flow Control}
+\providecommand{\myConference}{Programming Course}
+\providecommand{\myDate}{27-11-2018}
+\providecommand{\myGroup}{}
+\providecommand{\myDepartment}{}
+\providecommand{\myCenter}{}
+
+\usetheme{lumc}
+
+\usepackage{minted}
+\usepackage{tikz}
+\usepackage[many]{tcolorbox}
+
+\definecolor{monokaibg}{HTML}{272822}
+\definecolor{emailc}{HTML}{1e90FF}
+\definecolor{scriptback}{HTML}{CDECF0}
+
+\newenvironment{ipython}
+ {\begin{tcolorbox}[title=IPython,
+                   title filled=false,
+                   fonttitle=\scriptsize,
+                   fontupper=\footnotesize,
+                   enhanced,
+                   colback=monokaibg,
+                   drop small lifted shadow,
+                   boxrule=0.1mm,
+                   left=0.1cm,
+                   arc=0mm,
+                   colframe=black]}
+ {\end{tcolorbox}}
+
+
+\newenvironment{terminal}
+ {\begin{tcolorbox}[title=terminal,
+                   title filled=false,
+                   fonttitle=\scriptsize,
+                   fontupper=\footnotesize,
+                   enhanced,
+                   colback=monokaibg,
+                   drop small lifted shadow,
+                   boxrule=0.1mm,
+                   left=0.1cm,
+                   arc=0mm,
+                   colframe=black]}
+ {\end{tcolorbox}}
+
+
+\newcommand{\hrefcc}[2]{\textcolor{#1}{\href{#2}{#2}}}
+\newcommand{\hrefc}[3]{\textcolor{#1}{\href{#2}{#3}}}
+
+\newcounter{cntr}
+\renewcommand{\thecntr}{\texttt{[\arabic{cntr}]}}
+
+\newenvironment{pythonin}[1]
+{\VerbatimEnvironment
+  \begin{minipage}[t]{0.11\linewidth}
+   \textcolor{green}{\texttt{{\refstepcounter{cntr}\label{#1}In \thecntr:}}}
+  \end{minipage}
+  \begin{minipage}[t]{0.89\linewidth}
+  \begin{minted}[
+    breaklines=true,style=monokai]{#1}}
+ {\end{minted}
+ \end{minipage}}
+
+\newenvironment{pythonout}[1]
+{\VerbatimEnvironment
+  \addtocounter{cntr}{-1}
+  \begin{minipage}[t]{0.11\linewidth}
+   \textcolor{red}{\texttt{{\refstepcounter{cntr}\label{#1}Out\thecntr:}}}
+  \end{minipage}
+  \begin{minipage}[t]{0.89\linewidth}
+  \begin{minted}[
+    breaklines=true,style=monokai]{#1}}
+ {\end{minted}
+ \end{minipage}}
+
+\newenvironment{pythonerr}[1]
+{\VerbatimEnvironment
+  \begin{minted}[
+    breaklines=true,style=monokai]{#1}}
+ {\end{minted}}
+
+
+\newenvironment{pythonfile}[1]
+ {\begin{tcolorbox}[title=#1,
+                    title filled=false,
+                    coltitle=LUMCDonkerblauw,
+                    fonttitle=\scriptsize,
+                    fontupper=\footnotesize,
+                    enhanced,
+                    drop small lifted shadow,
+                    boxrule=0.1mm,
+                    leftrule=5mm,
+                    rulecolor=white,
+                    left=0.1cm,
+                    colback=white!92!black,
+                    colframe=scriptback]}
+ {\end{tcolorbox}}
+
+\begin{document}
+
+% This disables the \pause command, handy in the editing phase.
+%\renewcommand{\pause}{}
+
+% Make the title slide.
+\makeTitleSlide{\includegraphics[height=3.5cm]{../../images/Python.pdf}}
+
+% First page of the presentation.
+\section{Introduction}
+\makeTableOfContents
+
+
+\section{Working with scripts}
+
+\begin{pframe}
+ Interpreters are great for prototyping, but not really suitable if you want to
+ share or release code. To do so, we write our Python commands in scripts (and
+ later, modules).
+
+ A script is a simple text file containing Python instructions to execute.
+\end{pframe}
+
+
+\subsection{Executing scripts}
+\begin{pframe}
+ There are two common ways to execute a script:
+  \begin{itemize}
+   \item As an argument of the Python interpreter command.
+   \item As a standalone executable (with the appropriate shebang line and
+   file mode).
+  \end{itemize}
+  \medskip
+
+  IPython gives you a third option:
+  \begin{itemize}
+   \item As an argument of the \texttt{\%run} magic.
+  \end{itemize}
+\end{pframe}
+
+
+\subsection{Writing your script}
+\begin{pframe}
+ Let's start with a simple hello world example.\\
+ 
+ Open your text editor and write the following Python statement:
+
+ \begin{pythonfile}{first\_script.py}
+  \begin{minted}[linenos]{python}
+print("Hello world!")
+  \end{minted}
+ \end{pythonfile}
+Save the file as first\_script.py and go to your shell.
+\end{pframe}
+
+\subsection{Running the script}
+\begin{pframe}
+ Let's try the first method, i.e., using your script as an argument:
+ \begin{terminal}
+  \color{white}{\texttt{\$ python first\_script.py}}
+ \end{terminal}
+  Is the output as you expect?
+\end{pframe}
+
+\begin{pframe}
+  For the second method, we need to do two more things:
+  \begin{itemize}
+   \item Open the script in your editor and add the following line to the very
+   top:
+   \begin{itemize}
+    \item \mintinline{python}{#!/usr/bin/env python}
+   \end{itemize}
+   \item Save the file, go back to the shell, and allow the file to be executed.
+  \end{itemize}
+ \begin{terminal}
+  \color{white}{\texttt{\$ chmod +x first\_script.py}
+ \end{terminal}
+You can now execute the file directly:
+\begin{terminal}
+  \color{white}{\texttt{\$ ./first\_script.py}}
+ \end{terminal}
+ Is the output the same as the previous method?
+\end{pframe}
+
+\begin{pframe}
+ Finally, try out the third method. Open an IPython interpreter session and do:
+ \begin{ipython}
+  \begin{pythonin}{python}
+%run first_script.py
+  \end{pythonin}
+ \end{ipython}
+\end{pframe}
+
+
+\section{Conditionals}
+
+\subsection{if statements}
+\begin{pframe}
+ \begin{pythonfile}{if\_example.py}
+  \begin{minted}[linenos]{python}
+if 26 <= 17:
+    print('Fact: 26 is less than or equal to 17')
+elif (26 + 8 > 14) == True:
+    print("Did we need the ' == True' part here?")
+else:
+    print('Nothing seems true')
+  \end{minted}
+ \end{pythonfile}
+
+ \begin{terminal}
+  \color{white}{\texttt{\$ python if\_example.py}\\
+  \texttt{Did we need the ' == True' part here?}}
+ \end{terminal}
+\end{pframe}
+
+
+\section{Loops}
+
+\subsection{while statements}
+\begin{pframe}
+ \begin{pythonfile}{while\_example.py}
+  \begin{minted}[linenos]{python}
+i = 0
+while i < 5:
+    print(i)
+    i += 1
+  \end{minted}
+ \end{pythonfile}
+
+ \begin{terminal}
+  \color{white}{\texttt{\$ python while\_example.py \\
+0\\ 
+1\\
+2\\
+3\\
+4\\}}
+ \end{terminal}
+\end{pframe}
+
+\subsection{Iterating over a sequence}
+\begin{pframe}
+ \begin{pythonfile}{for\_example.py}
+  \begin{minted}[linenos]{python}
+colors = ['red', 'white', 'blue', 'orange']
+cities = ['leiden', 'utrecht', 'warmond', 'san francisco']
+
+# The for statement can iterate over sequence items.
+for color in colors:
+    print(color)
+
+for character in 'blue':
+    print(character)
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+\begin{pframe}
+ \begin{terminal}
+  \color{white}{\texttt{\$ python for\_example.py\\
+red\\
+white\\
+blue\\
+orange\\
+b\\
+l\\
+u\\
+e\\
+}}
+ \end{terminal}
+\end{pframe}
+
+
+\subsection{Python anti-patterns}
+\begin{pframe}
+These are common for programmers coming from other languages.
+ \begin{pythonfile}{unpythonic.py}
+  \begin{minted}[linenos]{python}
+i = 0
+while i < len(colors):
+    print colors[i]
+    i += 1
+    
+for i in range(len(colors)):
+    print colors[i]
+  \end{minted}
+ \end{pythonfile}
+
+We call them unpythonic.
+\end{pframe}
+
+
+\subsection{Additionals}
+\begin{pframe}
+ \begin{pythonfile}{iteration.py}
+  \begin{minted}[linenos]{python}
+# Iteration with values and indices:
+for i, color in enumerate(colors):
+    print(i, '->', color)
+
+# Taking two sequences together:
+for city, color in zip(cities, colors):
+    print(city, '->', color)
+    
+# Iterating over a dictionary yields keys:
+for key in {'a': 33, 'b': 17, 'c': 18}:
+    print(key)
+
+# Iterating over a file yields lines:
+for line in open('data/short_file.txt'):
+    print(line)
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
+
+\section{Notes about syntax}
+
+\subsection{Indentation}
+\begin{pframe}
+ Python uses indentation to delimit blocks
+ \begin{itemize}
+   \item Instead of \texttt{begin ... end} or \texttt{\{ ... \}} in other languages.
+   \item Always increase indentation by 4 spaces, never use tabs.
+   \begin{itemize}
+     \item In any case, be consistent.
+   \end{itemize}
+ \end{itemize}
+ \begin{pythonfile}{indentation\_example.py}
+  \begin{minted}[linenos]{python}
+if False:
+    if False:
+        print 'Why am I here?'
+    else:
+        while True:
+            print 'When will it stop?'
+    print "And we're back to the first indentation level"
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
+\subsection{Comments}
+\begin{pframe}
+ Comments are prepended by \texttt{\#} and completely ignored.
+ \begin{pythonfile}{comments\_example.py}
+  \begin{minted}[linenos]{python}
+# Create the list.
+l = []
+
+# Add 42 to this list.
+l.append(42)
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
+\subsection{The pass statement}
+\begin{pframe}
+ If you ever need a statement syntactically but don't want to do anything, use \texttt{pass}.
+ \begin{pythonfile}{comments\_example.py}
+  \begin{minted}[linenos]{python}
+while False:
+    # This is never executed anyway.
+    pass
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
+
+\section{Functions}
+
+\subsection{Defining a function}
+\begin{pframe}
+ A function is a named sequence of statements that performs some piece of work.
+ Later on that function can be called by using its name.
+ \medskip
+
+ A function definition includes its name, arguments and body.
+ \begin{pythonfile}{functions.py}
+  \begin{minted}[linenos]{python}
+def add_two(number):
+    return number + 2
+
+for i in range(5):
+    print add_two(i)
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
+\subsection{Keyword arguments}
+\begin{pframe}
+ Besides regular arguments, functions can have keyword arguments.
+ \begin{pythonfile}{functions\_keywords.py}
+  \begin{minted}[linenos]{python}
+def add_some_other_number(number, other_number=12):
+    return number + other_number
+
+add_some_other_number(2, 6)  # 8
+
+add_some_other_number(3, other_number=4)  # 7
+
+add_some_other_number(5)  # 17
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
+\subsection{Functions are values}
+\begin{pframe}
+ We can pass functions around just like other values, and call them.
+ \begin{pythonfile}{function\_values.py}
+  \begin{minted}[linenos]{python}
+def add_two(number):
+    return number + 2
+
+def add_some_other_number(number, other_number=12):
+    return number + other_number
+
+functions = [add_two, add_some_other_number]
+for function in functions:
+    print function(7)
+
+# Simple anonymous functions can be created with lambda.
+functions.append(lambda x: x * 7)
+for function in functions:
+    print function(4)
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
+
+\subsection{Docstrings}
+\begin{pframe}
+ Like many other definitions, functions can have docstrings.
+ \begin{itemize}
+  \item Docstrings are regular string values which you start the definition
+  body with.
+  \item You can access an object's docstring using help.
+ \end{itemize}
+ \begin{pythonfile}{docstring\_example.py}
+  \begin{minted}[linenos]{python}
+def factorial(n):
+    """Compute factorial of n in the obious way."""
+    if n == 0:
+        return 1
+    else:
+        return factorial(n - 1) * n
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+\subsection{Higher-order functions}
+\begin{pframe}
+ A function that takes a function as argument is a higher-order function.
+ \begin{ipython}
+  \begin{pythonin}{python}
+help(map)
+Help on class map in module builtins:
+class map(object)
+ |  map(func, *iterables) --> map object
+ |
+ |  Make an iterator that computes the function using arguments from
+ |  each of the iterables.  Stops when the shortest iterable is exhausted.
+  \end{pythonin}
+  \\
+
+ \begin{pythonin}{python}
+list(map(add_two, [1, 2, 3, 4]))
+  \end{pythonin}
+  \\
+  \begin{pythonout}{python}
+[3, 4, 5, 6]
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+
+\section{Comprehensions}
+
+\subsection{List comprehensions}
+\begin{pframe}
+ Similar to mathematical set notation (e.g., ${x | x \in R \wedge x>0}$), we can create lists.
+ \begin{ipython}
+  \begin{pythonin}{python}
+[(x, x * x) for x in range(10) if x % 2]
+  \end{pythonin}
+  \\
+
+  \begin{pythonout}{python}
+[(1, 1), (3, 9), (5, 25), (7, 49), (9, 81)]
+  \end{pythonout}
+ \end{ipython}
+
+We can do the same thing using \texttt{map} and \texttt{filter}, but list comprehensions are often more readable.
+
+ \begin{ipython}
+  \begin{pythonin}{python}
+list(map(lambda x: (x, x * x), filter(lambda x: x %2, range(10))))
+  \end{pythonin}
+  \\
+
+  \begin{pythonout}{python}
+[(1, 1), (3, 9), (5, 25), (7, 49), (9, 81)]
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+\subsection{Set and dictionary comprehensions}
+\begin{pframe}
+ Similar notation can be used for (non-empty) sets.
+ \begin{ipython}
+  \begin{pythonin}{python}
+{c for c in 'LUMC-standard' if 'a' <= c <= 'z'}
+  \end{pythonin}
+  \\
+
+  \begin{pythonout}{python}
+{'a', 'd', 'n', 'r', 's', 't'}
+  \end{pythonout}
+ \end{ipython}
+
+We can do the same thing using \texttt{map} and \texttt{filter}, but list comprehensions are often more readable.
+
+ \begin{ipython}
+  \begin{pythonin}{python}
+colors = ['red', 'white', 'blue', 'orange']
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+{c: len(c) for c in colors}
+  \end{pythonin}
+  \\
+
+  \begin{pythonout}{python}
+{'blue': 4, 'orange': 6, 'red': 3, 'white': 5}
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+
+\section{Hands on!}
+\begin{pframe}
+ \vspace{-0.5cm}
+ \begin{enumerate}
+  \item Write a Python function that returns the maximum of two numbers.
+  \item Write a Python function that returns the maximum of three numbers.
+  Try to reuse the first maximum of two numbers function.
+  \item Write a Python function that accepts a string as parameter.
+  Next, it calculates and prints the number of upper case letters and lower
+  case letters. Make use of the \mintinline{python}{isupper} and
+  \mintinline{python}{islower} built in methods.
+
+
+ \end{enumerate}
+\end{pframe}
+
+
+% Make the acknowledgements slide.
+\makeAcknowledgementsSlide{
+  \begin{tabular}{ll}
+    Martijn Vermaat\\
+    Jeroen Laros\\
+    Jonathan Vis
+  \end{tabular}
+}
+
+\end{document}
