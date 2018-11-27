@@ -17,6 +17,7 @@
 \definecolor{monokaibg}{HTML}{272822}
 \definecolor{emailc}{HTML}{1e90FF}
 \definecolor{scriptback}{HTML}{CDECF0}
+\definecolor{ipyout}{HTML}{F0FFF0}
 
 \newenvironment{ipython}
  {\begin{tcolorbox}[title=IPython,
@@ -58,25 +59,25 @@
 \newenvironment{pythonin}[1]
 {\VerbatimEnvironment
   \begin{minipage}[t]{0.11\linewidth}
-   \textcolor{green}{\texttt{{\refstepcounter{cntr}\label{#1}In \thecntr:}}}
-  \end{minipage}
-  \begin{minipage}[t]{0.89\linewidth}
+   \textcolor{green}{\texttt{{\refstepcounter{cntr}In \thecntr:}}}
+  \end{minipage}%
+  \begin{minipage}[t]{0.89\linewidth}%
   \begin{minted}[
     breaklines=true,style=monokai]{#1}}
  {\end{minted}
  \end{minipage}}
 
-\newenvironment{pythonout}[1]
-{\VerbatimEnvironment
+\newenvironment{pythonout}
+{%
   \addtocounter{cntr}{-1}
   \begin{minipage}[t]{0.11\linewidth}
-   \textcolor{red}{\texttt{{\refstepcounter{cntr}\label{#1}Out\thecntr:}}}
-  \end{minipage}
-  \begin{minipage}[t]{0.89\linewidth}
-  \begin{minted}[
-    breaklines=true,style=monokai]{#1}}
- {\end{minted}
- \end{minipage}}
+   \textcolor{red}{\texttt{{\refstepcounter{cntr}Out\thecntr:}}}
+  \end{minipage}%
+  \color{ipyout}%
+  \ttfamily%
+  \begin{minipage}[t]{0.89\linewidth}%
+}
+{\end{minipage}}
 
 \newenvironment{pythonerr}[1]
 {\VerbatimEnvironment
@@ -88,6 +89,22 @@
 \newenvironment{pythonfile}[1]
  {\begin{tcolorbox}[title=#1,
                     title filled=false,
+                    coltitle=LUMCDonkerblauw,
+                    fonttitle=\scriptsize,
+                    fontupper=\footnotesize,
+                    enhanced,
+                    drop small lifted shadow,
+                    boxrule=0.1mm,
+                    leftrule=5mm,
+                    rulecolor=white,
+                    left=0.1cm,
+                    colback=white!92!black,
+                    colframe=scriptback]}
+ {\end{tcolorbox}}
+
+
+\newenvironment{pythoncode}
+ {\begin{tcolorbox}[title filled=false,
                     coltitle=LUMCDonkerblauw,
                     fonttitle=\scriptsize,
                     fontupper=\footnotesize,
@@ -126,14 +143,14 @@ def calc_gc_percent(seq):
         elif char in ('G', 'C'):
             gc_count += 1
 
-    return gc_count * 100.0 / (gc_count + at_count)       
+    return gc_count * 100.0 / (gc_count + at_count)
 
 print("The sequence 'CAGG' has a %GC of {:.2f}".format(
           calc_gc_percent("CAGG")))
   \end{minted}
  \end{pythonfile}
  \pause
- Our script is nice and dandy, but we don't want to edit the source file everytime we calculate a sequence's GC. 
+ Our script is nice and dandy, but we don't want to edit the source file everytime we calculate a sequence's GC.
 \end{pframe}
 
 
@@ -150,9 +167,48 @@ print("The sequence 'CAGG' has a %GC of {:.2f}".format(
 
 \subsection{Our first standard library module: sys}
 \begin{pframe}
-We'll start by using the simple sys module to make our script more flexible.
+ \begin{itemize}
+  \item We'll start by using the simple sys module to make our script more flexible.
+  \item Standard library (and other modules, as we'll see later) can be used via the import statement, for example:
+ \end{itemize}
 
-Standard library (and other modules, as we'll see later) can be used via the import statement, for example:
+ \begin{ipython}
+   \begin{pythonin}{python}
+import sys
+   \end{pythonin}
+ \end{ipython}
+
+\begin{itemize}
+ \item Like other objects so far, we can peek into the documentation of these modules
+using help, or the IPython ? shortcut. For example:
+\end{itemize}
+ \begin{ipython}
+   \begin{pythonin}{python}
+sys?
+   \end{pythonin}
+ \end{ipython}
+\end{pframe}
+
+
+\subsection{The sys.argv list}
+\begin{pframe}
+  \begin{itemize}
+   \item The sys module allows to capture command line arguments with its argv
+  object.
+  \item This is a list of arguments supplied when invoking the current Python
+  session.
+  \item Not really useful for an interpreter session, but very handy for
+  scripts.
+  \end{itemize}
+ \begin{ipython}
+   \begin{pythonin}{python}
+sys.argv
+   \end{pythonin}
+   \\
+   \begin{pythonout}
+['/usr/local/bin/ipython']
+   \end{pythonout}
+ \end{ipython}
 \end{pframe}
 
 
@@ -170,7 +226,7 @@ def calc_gc_percent(seq):
         elif char in ('G', 'C'):
             gc_count += 1
 
-    return gc_count * 100.0 / (gc_count + at_count)       
+    return gc_count * 100.0 / (gc_count + at_count)
 
 input_seq = sys.argv[1]
 print("The sequence '{}' has a %GC of {:.2f}".format(
@@ -184,7 +240,100 @@ print("The sequence '{}' has a %GC of {:.2f}".format(
 \section{String methods}
 
 \begin{pframe}
+
+ \begin{itemize}
+  \vspace{-0.8cm}
+  \item Try running the script with \mintinline{python}{'cagg'} as the input sequence. What happens?
+  \item As we saw earlier, many objects, like those of type
+  \mintinline{python}{list}, \mintinline{python}{dict}, or \mintinline{python}{str},
+  have useful methods defined on them.
+  \item One way to squash this potential bug is by using Python's string method upper.
+  \item Let's first check out some commonly used string functions.
+ \end{itemize}
+
+ \begin{ipython}
+   \begin{pythonin}{python}
+my_str = 'Hello again, ipython!'
+   \end{pythonin}
+   \\
+   \begin{pythonin}{python}
+my_str.upper()
+   \end{pythonin}
+   \\
+   \begin{pythonout}
+'HELLO AGAIN, IPYTHON!'
+   \end{pythonout}
+   \\
+
+   \begin{pythonin}{python}
+my_str.lower()
+   \end{pythonin}
+   \\
+   \begin{pythonout}
+'hello again, ipython!'
+   \end{pythonout}
+   \\
+
+   \begin{pythonin}{python}
+my_str.title()
+   \end{pythonin}
+   \\
+   \begin{pythonout}
+'Hello Again, Ipython!'
+   \end{pythonout}
+  \end{ipython}
 \end{pframe}
+
+\begin{pframe}
+ \begin{ipython}
+   \begin{pythonin}{python}
+my_str.startswith('H')
+   \end{pythonin}
+   \\
+   \begin{pythonout}
+True
+   \end{pythonout}
+   \\
+
+   \begin{pythonin}{python}
+my_str.startswith('h')
+   \end{pythonin}
+   \\
+   \begin{pythonout}
+False
+   \end{pythonout}
+   \\
+
+   \begin{pythonin}{python}
+my_str.split(',')
+   \end{pythonin}
+   \\
+   \begin{pythonout}
+['Hello again', ' ipython!']
+   \end{pythonout}
+   \\
+
+   \begin{pythonin}{python}
+my_str.replace('ipython', 'lumc')
+   \end{pythonin}
+   \\
+   \begin{pythonout}
+'Hello again, lumc!'
+   \end{pythonout}
+   \\
+
+   \begin{pythonin}{python}
+my_str.count('n')
+   \end{pythonin}
+   \\
+   \begin{pythonout}
+2
+   \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+
 
 \subsection{Improving our script with upper()}
 \begin{pframe}
@@ -240,17 +389,116 @@ def calc_gc_percent(seq):
             gc_count += 1
 
     return gc_count * 100.0 / (gc_count + at_count)
-    
+
 input_seq = sys.argv[1]
 print("The sequence '{}' has a %GC of {:.2f}".format(
           input_seq, calc_gc_percent(input_seq)))
   \end{minted}
-  \end{scriptsize}
- \end{pythonfile}}
+  \end{tiny}
+ \end{pythonfile}
 \end{pframe}
 
 
+
 \section{Errors and exceptions}
+
+\begin{pframe}
+ \begin{itemize}
+  \item Try running the script with \mintinline{python}{'ACTG123'} as the argument.
+  \begin{itemize}
+   \item What happens?
+   \item Is this acceptable behavior?
+  \end{itemize}
+  \item Sometimes we want to put safeguards to handle invalid inputs. In this
+  case we only accept ACTG, all other characters are invalid.
+  \item Python provides a way to break out of the normal execution flow, by
+  raising what's called as an \mintinline{python}{exception}.
+  \item We can raise exceptions ourselves as well, by using the
+  \mintinline{python}{raise} statement.
+ \end{itemize}
+\end{pframe}
+
+
+\subsection{The ValueError built-in exception}
+
+\begin{pframe}
+ \begin{itemize}
+  \item Used on occasions where inappropriate argument values are used,
+  for example when trying to convert the string A to an integer:
+ \end{itemize}
+ \begin{ipython}
+   \begin{pythonin}{python}
+int('A')
+   \end{pythonin}
+   \begin{pythonerr}{python}
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-14-0da6d315d7ad> in <module>()
+----> 1 int('A')
+
+ValueError: invalid literal for int() with base 10: 'A'
+   \end{pythonerr}
+ \end{ipython}
+ \begin{itemize}
+  \item ValueError is the appropriate exception to raise when your function is
+  called with argument values it cannot handle.
+ \end{itemize}
+\end{pframe}
+
+
+\subsection{Improving our script by handling invalid inputs}
+\begin{pframe}
+ \begin{pythonfile}{seq\_toolbox.py}
+  \begin{tiny}
+  \begin{minted}[linenos]{python}
+def calc_gc_percent(seq):
+    """
+    Calculates the GC percentage of the given sequence.
+
+    Arguments:
+        - seq - the input sequence (string).
+
+    Returns:
+        - GC percentage (float).
+
+    The returned value is always <= 100.0
+    """
+    at_count, gc_count = 0, 0
+    # Change input to all caps to allow for non-capital
+    # input sequence.
+    for char in seq.upper():
+        if char in ('A', 'T'):
+            at_count += 1
+        elif char in ('G', 'C'):
+            gc_count += 1
+        else:
+            raise ValueError('Unexpected character found: {}. Only '
+                             'ACTGs are allowed.'.format(char))
+
+    return gc_count * 100.0 / (gc_count + at_count)
+    \end{minted}
+  \end{tiny}
+ \end{pythonfile}
+\end{pframe}
+
+
+\subsection{Handling corner cases}
+\begin{pframe}
+ \begin{itemize}
+  \item Try running the script with \mintinline{python}{''} as the argument.
+  \begin{itemize}
+   \item What happens?
+   \item Why? Is this a valid input?
+  \end{itemize}
+  \item We don't always want to let exceptions stop program flow,
+  sometimes we want to provide alternative flow.
+  \item The \mintinline{python}{try} ... \mintinline{python}{except} block
+allows you to do this.
+ \end{itemize}
+\end{pframe}
+
+
+
 \subsection{Improving our script by handling corner cases}
 \begin{pframe}
  \begin{pythonfile}{seq\_toolbox.py}
@@ -271,21 +519,114 @@ def calc_gc_percent(seq):
         elif char in ('G', 'C'):
             gc_count += 1
         else:
-            raise ValueError(
-                "Unexpeced character found: {}. Only "
-                "ACTGs are allowed.".format(char))
+            raise ValueError('Unexpected character found: {}. Only '
+                             'ACTGs are allowed.'.format(char))
 
     # Corner case handling: empty input sequence.
     try:
         return gc_count * 100.0 / (gc_count + at_count)
     except ZeroDivisionError:
-        return 0.0    
+        return 0.0
   \end{minted}
-  \end{scriptsize}
- \end{pythonfile}}
+  \end{tiny}
+ \end{pythonfile}
 \end{pframe}
 
 
+\subsection{Aim for a minimal try block}
+\begin{pframe}
+ \vspace{-0.5cm}
+ \begin{itemize}
+  \item We want to be able to pinpoint the statements that may raise the
+  exceptions so we can tailor our handling.
+  \item Example of code that violates this principle:
+ \end{itemize}
+ \vspace{-0.3cm}
+ \begin{pythoncode}
+   \begin{minted}{python}
+try:
+    my_function()
+    my_other_function()
+except ValueError:
+    my_fallback_function()
+   \end{minted}
+  \end{pythoncode}
+ \begin{itemize}
+  \item A better way would be:
+ \end{itemize}
+ \vspace{-0.3cm}
+ \begin{pythoncode}
+   \begin{minted}{python}
+try:
+    my_function()
+except ValueError:
+    my_fallback_function()
+my_other_function()
+   \end{minted}
+  \end{pythoncode}
+\end{pframe}
+
+
+\subsection{Be specific when handling exceptions}
+\begin{pframe}
+ \vspace{-0.5cm}
+ \begin{itemize}
+  \item The following code is syntactically valid, but never use it:
+ \end{itemize}
+ \vspace{-0.3cm}
+ \begin{pythoncode}
+   \begin{minted}{python}
+try:
+    my_function()
+except:
+    my_fallback_function()
+    \end{minted}
+  \end{pythoncode}
+ \begin{itemize}
+  \item Always use the full exception name when to make for a much cleaner code:
+ \end{itemize}
+ \vspace{-0.3cm}
+ \begin{pythoncode}
+   \begin{minted}{python}
+try:
+    my_function()
+except ValueError:
+    my_fallback_function()
+except TypeError:
+    my_other_fallback_function()
+except IndexError:
+    my_final_function()
+    \end{minted}
+  \end{pythoncode}
+\end{pframe}
+
+
+\subsection{Look Before You Leap (LBYL) vs Easier to Ask for Apology (EAFP)}
+\begin{pframe}
+ \vspace{-0.5cm}
+ \begin{itemize}
+  \item We could have written our last exception block like so:
+ \end{itemize}
+ \vspace{-0.3cm}
+ \begin{pythoncode}
+   \begin{minted}{python}
+if gc_count + at_count == 0:
+    return 0.0
+return gc_count * 100.0 / (gc_count + at_count)
+    \end{minted}
+  \end{pythoncode}
+ \begin{itemize}
+  \item Both approaches are correct and have their own plus and minuses in general.
+ \end{itemize}
+\end{pframe}
+
+% \section{Improving our script by handling more corner cases}
+% \begin{pframe}
+%  \begin{itemize}
+%   \item Now try running your script without any arguments at all. What happens?
+%   \item Armed with what you now know, how would you handle this situation?
+%  \end{itemize}
+% \end{pframe}
 
 % Make the acknowledgements slide.
 \makeAcknowledgementsSlide{
