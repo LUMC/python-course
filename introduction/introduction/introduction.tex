@@ -59,7 +59,7 @@
 \newenvironment{pythonin}[1]
 {\VerbatimEnvironment
   \begin{minipage}[t]{0.11\linewidth}
-   \textcolor{green}{\texttt{{\refstepcounter{cntr}\label{#1}In \thecntr:}}}
+   \textcolor{green}{\texttt{{\refstepcounter{cntr}In \thecntr:}}}
   \end{minipage}%
   \begin{minipage}[t]{0.89\linewidth}%
   \begin{minted}[
@@ -71,13 +71,21 @@
 {%
   \addtocounter{cntr}{-1}
   \begin{minipage}[t]{0.11\linewidth}
-   \textcolor{red}{\texttt{{\refstepcounter{cntr}\label{#1}Out\thecntr:}}}
+   \textcolor{red}{\texttt{{\refstepcounter{cntr}Out\thecntr:}}}
   \end{minipage}%
   \color{ipyout}%
   \ttfamily%
   \begin{minipage}[t]{0.89\linewidth}%
 }
 {\end{minipage}}
+
+\newenvironment{pythonoutnonumber}
+{%
+  \color{ipyout}%
+  \ttfamily%
+}
+{}
+
 
 %\newenvironment{pythonout}
 %{\VerbatimEnvironment%
@@ -143,8 +151,31 @@
    \item Slightly biased on bioinformatics.
   \end{itemize}
  \end{itemize}
+ \medskip
+
+ \begin{minipage}{0.47\textwidth}
+ \begin{center}
+   \includegraphics[width=0.69\textwidth]{../../images/laptop_man.jpg}
+ \end{center}
+ \end{minipage}%
+ \begin{minipage}{0.47\textwidth}
+ \begin{center}
+   \includegraphics[width=0.9\textwidth]{../../images/dna.jpg}
+ \end{center}
+ \end{minipage}
+
 \end{pframe}
 
+
+\subsection{Material}
+\begin{pframe}
+ All course material is to be found here:\\
+ \hrefcc{emailc}{https://git.lumc.nl/courses/programming-course}
+
+ \begin{center}
+   \includegraphics[width=0.95\textwidth]{../../images/books.jpg}
+ \end{center}
+\end{pframe}
 
 \subsection{Hands on!}
 \begin{pframe}
@@ -271,7 +302,6 @@
   \begin{itemize}
    \item Name: Monty Python.
   \end{itemize}
-  \item General purpose, high-level programming language.
   \item Design is driven by code readability.
  \end{itemize}
  \begin{tikzpicture}[remember picture,overlay]
@@ -282,13 +312,13 @@
    \node[xshift=-11.5cm,yshift=-6.5cm] at (current page.north east)
    {\includegraphics[width=6cm]{../../images/cwi.pdf}};
  \end{tikzpicture}
-
 \end{pframe}
 
 
 \subsection{Features}
 \begin{pframe}
  \begin{itemize}
+  \item General purpose, high-level programming language.
   \item Interpreted, no separate compilation step needed.
   \item Imperative and object-oriented programming.
   \begin{itemize}
@@ -298,6 +328,10 @@
   \item Automatic memory management.
  \end{itemize}
  We'll come back to most of this.
+ \begin{tikzpicture}[remember picture,overlay]
+    \node[xshift=-4.5cm,yshift=-6.5cm] at (current page.north east)
+    {\includegraphics[width=6cm]{../../images/abstract.jpg}};
+  \end{tikzpicture}
 \end{pframe}
 
 
@@ -309,6 +343,10 @@
   \item Many other libraries available.
   \item Widely used with a large community.
  \end{itemize}
+ \begin{tikzpicture}[remember picture,overlay]
+    \node[xshift=-4.5cm,yshift=-6.5cm] at (current page.north east)
+    {\includegraphics[width=6cm]{../../images/widely.jpg}};
+  \end{tikzpicture}
 \end{pframe}
 
 
@@ -638,6 +676,32 @@ TypeError                                 Traceback (most recent call last)
 TypeError: Can't convert 'int' object to str implicitly
   \end{pythonerr}
  \end{ipython}
+\end{pframe}
+
+
+\section{Ipython magics}
+
+\begin{pframe}
+ \begin{ipython}
+  \begin{pythonin}{python}
+%save introduction 1-25
+  \end{pythonin}
+  \begin{pythonoutnonumber}
+The following commands were written to file 'introduction.py':\\
+...
+  \end{pythonoutnonumber}\\
+  \begin{pythonin}{python}
+%run introduction.py
+  \end{pythonin}
+  \\
+
+  \begin{pythonin}{python}
+exit
+  \end{pythonin}
+ \end{ipython}
+
+ Documentation of all the magics is to be found
+  \hrefc{emailc}{https://ipython.readthedocs.io/en/stable/interactive/magics.html}{here}.
 \end{pframe}
 
 
