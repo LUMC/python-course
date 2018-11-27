@@ -1,0 +1,713 @@
+\documentclass[aspectratio=1610,slidestop]{beamer}
+
+\author{Mihai Lefter}
+\title{Python Programming}
+\providecommand{\mySubTitle}{Standard library, reading and writing files}
+\providecommand{\myConference}{Programming Course}
+\providecommand{\myDate}{28-11-2018}
+\providecommand{\myGroup}{}
+\providecommand{\myDepartment}{}
+\providecommand{\myCenter}{}
+
+\usetheme{lumc}
+\usepackage{minted}
+\usepackage{tikz}
+\usepackage[many]{tcolorbox}
+
+\definecolor{monokaibg}{HTML}{272822}
+\definecolor{emailc}{HTML}{1e90FF}
+\definecolor{scriptback}{HTML}{CDECF0}
+\definecolor{ipyout}{HTML}{F0FFF0}
+
+\newenvironment{ipython}
+ {\begin{tcolorbox}[title=IPython,
+                   title filled=false,
+                   fonttitle=\scriptsize,
+                   fontupper=\footnotesize,
+                   enhanced,
+                   colback=monokaibg,
+                   drop small lifted shadow,
+                   boxrule=0.1mm,
+                   left=0.1cm,
+                   arc=0mm,
+                   colframe=black]}
+ {\end{tcolorbox}}
+
+
+
+\newenvironment{terminal}
+ {\begin{tcolorbox}[title=terminal,
+                   title filled=false,
+                   fonttitle=\scriptsize,
+                   fontupper=\footnotesize,
+                   enhanced,
+                   colback=monokaibg,
+                   drop small lifted shadow,
+                   boxrule=0.1mm,
+                   left=0.1cm,
+                   arc=0mm,
+                   colframe=black]}
+ {\end{tcolorbox}}
+
+
+\newcommand{\hrefcc}[2]{\textcolor{#1}{\href{#2}{#2}}}
+\newcommand{\hrefc}[3]{\textcolor{#1}{\href{#2}{#3}}}
+
+\newcounter{cntr}
+\renewcommand{\thecntr}{\texttt{[\arabic{cntr}]}}
+
+\newenvironment{pythonin}[1]
+{\VerbatimEnvironment
+  \begin{minipage}[t]{0.11\linewidth}
+   \textcolor{green}{\texttt{{\refstepcounter{cntr}In \thecntr:}}}
+  \end{minipage}%
+  \begin{minipage}[t]{0.89\linewidth}%
+  \begin{minted}[
+    breaklines=true,style=monokai]{#1}}
+ {\end{minted}
+ \end{minipage}}
+
+\newenvironment{pythonout}
+{%
+  \addtocounter{cntr}{-1}
+  \begin{minipage}[t]{0.11\linewidth}
+   \textcolor{red}{\texttt{{\refstepcounter{cntr}Out\thecntr:}}}
+  \end{minipage}%
+  \color{ipyout}%
+  \ttfamily%
+  \begin{minipage}[t]{0.89\linewidth}%
+}
+{\end{minipage}}
+
+\newenvironment{pythonerr}[1]
+{\VerbatimEnvironment
+  \begin{minted}[
+    breaklines=true,style=monokai]{#1}}
+ {\end{minted}}
+
+
+\newenvironment{pythonfile}[1]
+ {\begin{tcolorbox}[title=#1,
+                    title filled=false,
+                    coltitle=LUMCDonkerblauw,
+                    fonttitle=\scriptsize,
+                    fontupper=\footnotesize,
+                    enhanced,
+                    drop small lifted shadow,
+                    boxrule=0.1mm,
+                    leftrule=5mm,
+                    rulecolor=white,
+                    left=0.1cm,
+                    colback=white!92!black,
+                    colframe=scriptback]}
+ {\end{tcolorbox}}
+
+
+\newenvironment{pythoncode}
+ {\begin{tcolorbox}[title filled=false,
+                    coltitle=LUMCDonkerblauw,
+                    fonttitle=\scriptsize,
+                    fontupper=\footnotesize,
+                    enhanced,
+                    drop small lifted shadow,
+                    boxrule=0.1mm,
+                    leftrule=5mm,
+                    rulecolor=white,
+                    left=0.1cm,
+                    colback=white!92!black,
+                    colframe=scriptback]}
+ {\end{tcolorbox}}
+
+
+\begin{document}
+
+% This disables the \pause command, handy in the editing phase.
+%\renewcommand{\pause}{}
+
+% Make the title slide.
+\makeTitleSlide{\includegraphics[height=3.5cm]{../../images/Python.pdf}}
+
+% First page of the presentation.
+\section{Introduction}
+\makeTableOfContents
+
+\section{Working with modules}
+
+\begin{pframe}
+ \begin{itemize}
+  \item A module allows you to share code in the form of libraries.
+  \item You've seen one example: the sys module in the standard library.
+  \item There are many other modules in the standard library, as we'll see soon.
+ \end{itemize}
+\end{pframe}
+
+\subsection{What modules look like}
+\begin{pframe}
+ \begin{itemize}
+  \item Any Python script can in principle be imported as a module.
+  \item We can import whenever we can write a valid Python statement, in a
+  script or in an interpreter session.
+  \item If a script is called \texttt{script.py}, then we use
+  \mintinline{python}{import script}.
+  \item This gives us access to the objects defined in \texttt{script.py} by
+  prefixing them with \texttt{script} and a dot.
+  \item Keep in mind that this is not the only way to import Python modules.
+  \item Refer to the Python documentation to find out more ways to do imports.
+ \end{itemize}
+\end{pframe}
+
+\subsection{Using seq\_toolbox.py as a module}
+\begin{pframe}
+ Open an interpreter and try importing your module:
+ \begin{ipython}
+  \begin{pythonin}{python}
+import seq_toolbox
+  \end{pythonin}
+ \end{ipython}
+Does this work? Why?
+\end{pframe}
+
+\begin{pframe}
+ \begin{ipython}
+  \begin{pythonerr}{python}
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+<ipython-input-1-ccf54d4de53d> in <module>()
+----> 1 import seq_toolbox
+
+~/.../seq_toolbox.py in <module>()
+     35
+     36
+---> 37 input_seq = sys.argv[1]
+     38 print("The sequence '{}' has a %GC of {:.2f}".format(
+     39           input_seq, calc_gc_percent(input_seq)))
+
+IndexError: list index out of range
+  \end{pythonerr}
+ \end{ipython}
+\end{pframe}
+
+\subsection{Improving our script for importing}
+\begin{pframe}
+ \begin{itemize}
+  \item During a module import, Python executes all the statements inside the module.
+  \item To make our script work as a module (in the intended way), we need to
+  add a check whether the module is imported or not:
+ \end{itemize}
+ \begin{pythoncode}
+   \begin{minted}{python}
+if __name__ == '__main__':
+    input_seq = sys.argv[1]
+    print "The sequence '{}' has %GC of {:.2f}".format(
+              input_seq, calc_gc_percent(input_seq))
+   \end{minted}
+ \end{pythoncode}
+ \begin{itemize}
+  \item Now try importing the module again.
+  \begin{itemize}
+   \item What happens? Can you still use the module as a script?
+  \end{itemize}
+ \end{itemize}
+\end{pframe}
+
+
+\subsection{Using modules}
+\begin{pframe}
+ \begin{itemize}
+  \item When a module is imported, we can access the objects defined in it:
+ \end{itemize}
+ \vspace{-0.3cm}
+ \begin{ipython}
+   \begin{pythonin}{python}
+import seq_toolbox
+   \end{pythonin}
+   \\
+   \begin{pythonin}{python}
+seq_toolbox.calc_gc_percent
+   \end{pythonin}
+   \\
+   \begin{pythonout}
+<function seq\_toolbox.calc\_gc\_percent>
+   \end{pythonout}
+ \end{ipython}
+ \pause
+
+ \begin{itemize}
+  \item By the way, remember we added docstring to the calc\_gc\_percent function?
+  \item After importing our module, we can read up on how to use the function
+  in its docstring:
+ \end{itemize}
+ \vspace{-0.3cm}
+ \begin{ipython}
+   \begin{pythonin}{python}
+seq_toolbox.calc_gc_percent?
+   \end{pythonin}
+   \\
+   \begin{pythonin}{python}
+seq_toolbox.calc_gc_percent('ACTG')
+   \end{pythonin}
+   \\
+   \begin{pythonout}
+50.0
+   \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+\subsection{Using modules}
+\begin{pframe}
+ \begin{itemize}
+  \item We can also expose an object inside the module directly into our
+  current namespace using the \mintinline{python}{from ... import ...} statement:
+ \end{itemize}
+ \begin{ipython}
+   \begin{pythonin}{python}
+from seq_toolbox import calc_gc_percent
+   \end{pythonin}
+   \\
+   \begin{pythonin}{python}
+calc_gc_percent('AAAG')
+   \end{pythonin}
+   \\
+   \begin{pythonout}
+25.0
+   \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+\subsection{(A simple guide on) How modules are discovered}
+\begin{pframe}
+ \begin{itemize}
+  \item In our case, Python imports by checking whether the module exists in
+  the current directory.
+  \item This is not the only place Python looks, however.
+  \item A complete list of paths where Python looks for modules is available
+  via the sys module as sys.path. It is composed of (in order):
+  \begin{itemize}
+   \item The current directory.
+   \item The PYTHONPATH environment variable.
+   \item Installation-dependent defaults.
+  \end{itemize}
+ \end{itemize}
+\end{pframe}
+
+
+\section{More standard library}
+
+\subsection{os module}
+\begin{pframe}
+ \begin{itemize}
+  \item provides a portable way of using various operating system-specific
+  functionality.
+  \item It is a large module, but the one of the most frequently used bits is
+  the file-related functions.
+ \end{itemize}
+ \begin{ipython}
+  \begin{pythonin}{python}
+import os
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+os.getcwd()    # Get current directory.
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+'/home/student/projects/programming-course'
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+my_filename = 'input.fastq'
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+os.path.splitext(my_filename)    # Split the extension and filename.
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+('input', '.fastq')
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+os.path.isdir('/home')    # Checks whether '/home' is a directory.
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+True
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+\subsection{math module}
+\begin{pframe}
+ \begin{itemize}
+  \item Useful math-related functions can be found here.
+  \item Other more comprehensive modules exist (numpy, your lesson tomorrow),
+  but nevertheless math is still useful.
+ \end{itemize}
+ \begin{ipython}
+  \begin{pythonin}{python}
+import math
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+math.log(10)    # Natural log of 10.
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+2.302585092994046
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+math.log(100, 10)    # Log base 10 of 100.
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+2.0
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+math.sqrt(2)    # Square root of 2.
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+1.4142135623730951
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+\subsection{random module}
+\begin{pframe}
+ \begin{itemize}
+  \item The random module contains useful functions for generating pseudo-random numbers.
+ \end{itemize}
+ \begin{ipython}
+  \begin{pythonin}{python}
+import random
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+math.log(10)    # Natural log of 10.
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+0.9562916447281146
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+random.randint(2, 17)    # Random integer between 2 and 17, inclusive.
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+13
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+# Random choice of any items in the given list.
+random.choice(['apple', 'banana', 'grape', 'kiwi', 'orange'])
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+'grape'
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+\subsection{argparse module}
+\begin{pframe}
+ \begin{itemize}
+  \item Using sys.argv is neat for small scripts, but as our script gets larger
+  and more complex, we want to be able to handle complex arguments too.
+  \item The argparse module has handy functionalities for creating command-line scripts.
+ \end{itemize}
+\end{pframe}
+
+\begin{pframe}
+ \vspace{-0.5cm}
+ \begin{itemize}
+  \item Open your script/module in a text editor and replace
+  \mintinline{python}{import sys} with \mintinline{python}{import argparse}.
+  \item Remove all lines / blocks referencing \mintinline{python}{sys.argv}.
+  \item Change the \mintinline{python}{if __name__ == '__main__'} block to be
+  the following:
+ \end{itemize}
+ \vspace{-0.3cm}
+ \begin{pythoncode}
+  \begin{minted}{python}
+if __name__ == '__main__':
+    # Create our argument parser object.
+    parser = argparse.ArgumentParser()
+    # Add the expected argument.
+    parser.add_argument('input_seq', type=str,
+                        help="Input sequence")
+    # Do the actual parsing.
+    args = parser.parse_args()
+    # And show the output.
+    print "The sequence '{}' has %GC of {:.2f}".format(
+              args.input_seq,
+              calc_gc_percent(args.input_seq))
+   \end{minted}
+ \end{pythoncode}
+\end{pframe}
+
+
+
+\section{Working with text files}
+
+\begin{pframe}
+ \begin{itemize}
+  \item Opening files for reading or writing is done using the
+  \mintinline{python}{open} function.
+  \item It is commonly used with two arguments, \texttt{name} and \texttt{mode}:
+  \begin{itemize}
+   \item \texttt{name} is the name of the file to open.
+   \item \texttt{mode} specifies how the file should be handled.
+  \end{itemize}
+  \item These are some of the common file modes:
+  \begin{itemize}
+   \item r: open file for reading (default).
+   \item w: open file for writing.
+   \item a: open file for appending content.
+  \end{itemize}
+ \end{itemize}
+\end{pframe}
+
+\subsection{Reading files}
+\begin{pframe}
+ \begin{itemize}
+  \item Let's go through some ways of reading from a file.
+ \end{itemize}
+ \begin{ipython}
+  \begin{pythonin}{python}
+fh = open('data/short_file.txt')
+  \end{pythonin}
+ \end{ipython}
+
+ \begin{itemize}
+  \item fh is a file handle object which we can use to retrieve the file contents.
+  \item One simple way would be to read the whole file contents:
+ \end{itemize}
+ \begin{ipython}
+  \begin{pythonin}{python}
+fh.read()
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+'this short file has two lines it is used in the example code'
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+\begin{pframe}
+ \begin{itemize}
+  \item Executing fh.read() a second time gives an empty string.
+  This is because we have "walked" through the file to its end.
+ \end{itemize}
+ \vspace{-0.3cm}
+ \begin{ipython}
+  \begin{pythonin}{python}
+fh.read()
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+''
+  \end{pythonout}
+ \end{ipython}
+ \begin{itemize}
+  \item We can reset the handle to the beginning of the file again using the
+  \mintinline{python}{seek()} function.
+  \item Here, we use 0 as the argument since we want to move the handle to
+  position 0 (beginning of the file):
+ \end{itemize}
+ \vspace{-0.3cm}
+ \begin{ipython}
+  \begin{pythonin}{python}
+fh.seek(0)
+  \end{pythonin}
+ \end{ipython}
+\end{pframe}
+
+
+
+\begin{pframe}
+ \begin{itemize}
+  \item In practice, reading the whole file into memory is not always a good
+  idea.
+  \item It is practical for small files, but not if our file is big (e.g.,
+  bigger than our memory).
+  \item In this case, the alternative is to use the
+  \mintinline{python}{readline()} function.
+ \end{itemize}
+ \begin{ipython}
+  \begin{pythonin}{python}
+fh.readline()
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+'this short file has two lines'
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+fh.readline()
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+'it is used in the example code'
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+fh.readline()
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+''
+  \end{pythonout}
+ \end{ipython}
+
+\end{pframe}
+
+\begin{pframe}
+ \begin{itemize}
+  \item More common in Python is to use the for loop with the file handle itself.
+  \item Python will automatically iterate over each line.
+ \end{itemize}
+ \begin{pythoncode}
+  \begin{minted}{python}
+for line in fh:
+    print line
+  \end{minted}
+ \end{pythoncode}
+ \begin{itemize}
+  \item Now that we're done with the file handle, we can call the
+  \mintinline{python}{close()}
+  method to free up any system resources still being used to keep the file open.
+  \item After we closed the file, we can not use the file object anymore.
+ \end{itemize}
+\end{pframe}
+
+
+\subsection{Writing files}
+\begin{pframe}
+ \begin{itemize}
+  \item When writing files, we supply the w file mode explicitely:
+ \end{itemize}
+ \begin{ipython}
+  \begin{pythonin}{python}
+fw = open('data/my_file.txt', 'w')
+  \end{pythonin}
+ \end{ipython}
+ \begin{itemize}
+  \item fw is a file handle similar to the fh that we've seen previously.
+  \item It is used only for writing and not reading, however.
+ \end{itemize}
+\end{pframe}
+
+\begin{pframe}
+ \begin{itemize}
+  \item To write to the file, we use its \mintinline{python}{write()} method.
+  \item Remember that Python does not add newline characters here
+  \item (as opposed to when you use the print statement), so to move to a new
+  \item line we have to add \textbackslash n ourselves.
+ \end{itemize}
+ \begin{ipython}
+  \begin{pythonin}{python}
+fw.write('This is my first line ')
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+fw.write('Still on my first line\n')
+  \end{pythonin}
+  \\
+  \begin{pythonin}{python}
+fw.write('Now on my second line')
+  \end{pythonin}
+ \end{ipython}
+\end{pframe}
+
+\begin{pframe}
+ \begin{itemize}
+  \item As with the r mode, we can close the handle when we're done with it.
+  The file can then be reopened with the r mode and we can check its contents.
+ \end{itemize}
+ \begin{ipython}
+  \begin{pythonin}{python}
+fw.close()
+  \end{pythonin}
+ \end{ipython}
+\end{pframe}
+
+
+\subsection{Be cautious when using file handles}
+\begin{pframe}
+ \begin{itemize}
+  \item When reading / writing files, we are interacting with external resources
+  that may or may not behave as expected.
+  \item For example:
+  \begin{itemize}
+   \item We don't always have permission to read / write a file.
+   \item The file itself may not exist.
+   \item We have a completely wrong idea of what's in the file.
+  \end{itemize}
+ \end{itemize}
+ \vspace{-0.3cm}
+ \begin{pythoncode}
+  \begin{minted}{python}
+try:
+    f = open('data/short_file.txt')
+    for line in f:
+        print int(line)
+except ValueError:
+    print 'Seems there was a line we could not handle'
+finally:
+    f.close()
+    print 'We closed our file handle'
+  \end{minted}
+ \end{pythoncode}
+\end{pframe}
+
+\begin{pframe}
+ \begin{itemize}
+  \item This option is highly recommended:
+ \end{itemize}
+ \begin{pythoncode}
+  \begin{minted}{python}
+with open("welcome.txt") as f: # Use file to refer to the file object
+    for line in f:
+       #do something with data
+  \end{minted}
+ \end{pythoncode}
+
+\end{pframe}
+
+\subsection{Improving our script to allow input from a file}
+\begin{pframe}
+ \begin{itemize}
+  \item The script should accept as its argument a path to a file containing sequences.
+  \item It will then compute the GC percentage for each sequence in this file.
+  \item There are at least two things we need to do:
+  \begin{itemize}
+   \item Change the argument parser so that it deals with a new execution mode.
+   \item Add some statements to read from a file.
+  \end{itemize}
+ \end{itemize}
+\end{pframe}
+
+% Make the acknowledgements slide.
+\makeAcknowledgementsSlide{
+  \begin{tabular}{ll}
+    Martijn Vermaat\\
+    Jeroen Laros\\
+    Jonathan Vis
+  \end{tabular}
+}
+
+\end{document}
