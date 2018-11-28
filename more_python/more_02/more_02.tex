@@ -189,11 +189,13 @@ IndexError: list index out of range
 
 \subsection{Improving our script for importing}
 \begin{pframe}
+ \vspace{-.05cm}
  \begin{itemize}
   \item During a module import, Python executes all the statements inside the module.
   \item To make our script work as a module (in the intended way), we need to
   add a check whether the module is imported or not:
  \end{itemize}
+ \vspace{-0.3cm}
  \begin{pythoncode}
    \begin{minted}{python}
 if __name__ == '__main__':
@@ -203,10 +205,13 @@ if __name__ == '__main__':
    \end{minted}
  \end{pythoncode}
  \begin{itemize}
-  \item Now try importing the module again.
-  \begin{itemize}
-   \item What happens? Can you still use the module as a script?
-  \end{itemize}
+  \item If the Python interpreter is running that module as the main program,
+  it sets the special \mintinline{python}{__name__} variable to have a value
+  \mintinline{python}{"__main__"}.
+  \item If this file is being imported from another module,
+  \mintinline{python}{__name__} will be set to the module's name.
+  \item Now try importing the module again. What happens? Can you still use the
+  module as a script?
  \end{itemize}
 \end{pframe}
 
@@ -230,8 +235,9 @@ seq_toolbox.calc_gc_percent
 <function seq\_toolbox.calc\_gc\_percent>
    \end{pythonout}
  \end{ipython}
- \pause
+\end{pframe}
 
+\begin{pframe}
  \begin{itemize}
   \item By the way, remember we added docstring to the calc\_gc\_percent function?
   \item After importing our module, we can read up on how to use the function
