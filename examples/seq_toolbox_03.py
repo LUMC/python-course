@@ -13,4 +13,4 @@ def calc_gc_percent(seq):
     return gc_count * 100.0 / (gc_count + at_count)
 
 input_seq = sys.argv[1]
-print "The sequence '{}' has a %GC of {:.2f}".format(input_seq, calc_gc_percent(input_seq))
+print("The sequence '{}' has a %GC of {:.2f}".format(input_seq, calc_gc_percent(input_seq)))

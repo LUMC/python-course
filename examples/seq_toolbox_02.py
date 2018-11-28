@@ -10,4 +10,4 @@ def calc_gc_percent(seq):
 
     return gc_count * 100.0 / (gc_count + at_count)
 
-print "The sequence 'CAGG' has a %GC of {:.2f}".format(calc_gc_percent("CAGG"))
+print("The sequence 'CAGG' has a %GC of {:.2f}".format(calc_gc_percent("CAGG")))
