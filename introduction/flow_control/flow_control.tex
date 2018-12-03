@@ -11,95 +11,7 @@
 
 \usetheme{lumc}
 
-\usepackage{minted}
-\usepackage{tikz}
-\usepackage[many]{tcolorbox}
-
-\definecolor{monokaibg}{HTML}{272822}
-\definecolor{emailc}{HTML}{1e90FF}
-\definecolor{scriptback}{HTML}{CDECF0}
-
-\newenvironment{ipython}
- {\begin{tcolorbox}[title=IPython,
-                   title filled=false,
-                   fonttitle=\scriptsize,
-                   fontupper=\footnotesize,
-                   enhanced,
-                   colback=monokaibg,
-                   drop small lifted shadow,
-                   boxrule=0.1mm,
-                   left=0.1cm,
-                   arc=0mm,
-                   colframe=black]}
- {\end{tcolorbox}}
-
-
-\newenvironment{terminal}
- {\begin{tcolorbox}[title=terminal,
-                   title filled=false,
-                   fonttitle=\scriptsize,
-                   fontupper=\footnotesize,
-                   enhanced,
-                   colback=monokaibg,
-                   drop small lifted shadow,
-                   boxrule=0.1mm,
-                   left=0.1cm,
-                   arc=0mm,
-                   colframe=black]}
- {\end{tcolorbox}}
-
-
-\newcommand{\hrefcc}[2]{\textcolor{#1}{\href{#2}{#2}}}
-\newcommand{\hrefc}[3]{\textcolor{#1}{\href{#2}{#3}}}
-
-\newcounter{cntr}
-\renewcommand{\thecntr}{\texttt{[\arabic{cntr}]}}
-
-\newenvironment{pythonin}[1]
-{\VerbatimEnvironment
-  \begin{minipage}[t]{0.11\linewidth}
-   \textcolor{green}{\texttt{{\refstepcounter{cntr}\label{#1}In \thecntr:}}}
-  \end{minipage}
-  \begin{minipage}[t]{0.89\linewidth}
-  \begin{minted}[
-    breaklines=true,style=monokai]{#1}}
- {\end{minted}
- \end{minipage}}
-
-\newenvironment{pythonout}[1]
-{\VerbatimEnvironment
-  \addtocounter{cntr}{-1}
-  \begin{minipage}[t]{0.11\linewidth}
-   \textcolor{red}{\texttt{{\refstepcounter{cntr}\label{#1}Out\thecntr:}}}
-  \end{minipage}
-  \begin{minipage}[t]{0.89\linewidth}
-  \begin{minted}[
-    breaklines=true,style=monokai]{#1}}
- {\end{minted}
- \end{minipage}}
-
-\newenvironment{pythonerr}[1]
-{\VerbatimEnvironment
-  \begin{minted}[
-    breaklines=true,style=monokai]{#1}}
- {\end{minted}}
-
-
-\newenvironment{pythonfile}[1]
- {\begin{tcolorbox}[title=#1,
-                    title filled=false,
-                    coltitle=LUMCDonkerblauw,
-                    fonttitle=\scriptsize,
-                    fontupper=\footnotesize,
-                    enhanced,
-                    drop small lifted shadow,
-                    boxrule=0.1mm,
-                    leftrule=5mm,
-                    rulecolor=white,
-                    left=0.1cm,
-                    colback=white!92!black,
-                    colframe=scriptback]}
- {\end{tcolorbox}}
+\input{../../shared/shared.tex}
 
 \begin{document}
 
@@ -145,7 +57,7 @@
 \subsection{Writing your script}
 \begin{pframe}
  Let's start with a simple hello world example.\\
- 
+
  Open your text editor and write the following Python statement:
 
  \begin{pythonfile}{first\_script.py}
@@ -176,7 +88,7 @@ Save the file as first\_script.py and go to your shell.
    \item Save the file, go back to the shell, and allow the file to be executed.
   \end{itemize}
  \begin{terminal}
-  \color{white}{\texttt{\$ chmod +x first\_script.py}
+  \color{white}{\texttt{\$ chmod +x first\_script.py}}
  \end{terminal}
 You can now execute the file directly:
 \begin{terminal}
@@ -232,7 +144,7 @@ while i < 5:
 
  \begin{terminal}
   \color{white}{\texttt{\$ python while\_example.py \\
-0\\ 
+0\\
 1\\
 2\\
 3\\
@@ -280,11 +192,11 @@ These are common for programmers coming from other languages.
   \begin{minted}[linenos]{python}
 i = 0
 while i < len(colors):
-    print colors[i]
+    print(colors[i])
     i += 1
-    
+
 for i in range(len(colors)):
-    print colors[i]
+    print(colors[i])
   \end{minted}
  \end{pythonfile}
 
@@ -303,7 +215,7 @@ for i, color in enumerate(colors):
 # Taking two sequences together:
 for city, color in zip(cities, colors):
     print(city, '->', color)
-    
+
 # Iterating over a dictionary yields keys:
 for key in {'a': 33, 'b': 17, 'c': 18}:
     print(key)
@@ -333,11 +245,11 @@ for line in open('data/short_file.txt'):
   \begin{minted}[linenos]{python}
 if False:
     if False:
-        print 'Why am I here?'
+        print('Why am I here?')
     else:
         while True:
-            print 'When will it stop?'
-    print "And we're back to the first indentation level"
+            print('When will it stop?')
+    print("And we're back to the first indentation level")
   \end{minted}
  \end{pythonfile}
 \end{pframe}
@@ -387,7 +299,7 @@ def add_two(number):
     return number + 2
 
 for i in range(5):
-    print add_two(i)
+    print(add_two(i))
   \end{minted}
  \end{pythonfile}
 \end{pframe}
@@ -424,12 +336,12 @@ def add_some_other_number(number, other_number=12):
 
 functions = [add_two, add_some_other_number]
 for function in functions:
-    print function(7)
+    print(function(7))
 
 # Simple anonymous functions can be created with lambda.
 functions.append(lambda x: x * 7)
 for function in functions:
-    print function(4)
+    print(function(4))
   \end{minted}
  \end{pythonfile}
 \end{pframe}
@@ -558,8 +470,6 @@ colors = ['red', 'white', 'blue', 'orange']
   Next, it calculates and prints the number of upper case letters and lower
   case letters. Make use of the \mintinline{python}{isupper} and
   \mintinline{python}{islower} built in methods.
-
-
  \end{enumerate}
 \end{pframe}
 

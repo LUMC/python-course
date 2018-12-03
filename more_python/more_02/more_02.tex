@@ -10,113 +10,8 @@
 \providecommand{\myCenter}{}
 
 \usetheme{lumc}
-\usepackage{minted}
-\usepackage{tikz}
-\usepackage[many]{tcolorbox}
 
-\definecolor{monokaibg}{HTML}{272822}
-\definecolor{emailc}{HTML}{1e90FF}
-\definecolor{scriptback}{HTML}{CDECF0}
-\definecolor{ipyout}{HTML}{F0FFF0}
-
-\newenvironment{ipython}
- {\begin{tcolorbox}[title=IPython,
-                   title filled=false,
-                   fonttitle=\scriptsize,
-                   fontupper=\footnotesize,
-                   enhanced,
-                   colback=monokaibg,
-                   drop small lifted shadow,
-                   boxrule=0.1mm,
-                   left=0.1cm,
-                   arc=0mm,
-                   colframe=black]}
- {\end{tcolorbox}}
-
-
-
-\newenvironment{terminal}
- {\begin{tcolorbox}[title=terminal,
-                   title filled=false,
-                   fonttitle=\scriptsize,
-                   fontupper=\footnotesize,
-                   enhanced,
-                   colback=monokaibg,
-                   drop small lifted shadow,
-                   boxrule=0.1mm,
-                   left=0.1cm,
-                   arc=0mm,
-                   colframe=black]}
- {\end{tcolorbox}}
-
-
-\newcommand{\hrefcc}[2]{\textcolor{#1}{\href{#2}{#2}}}
-\newcommand{\hrefc}[3]{\textcolor{#1}{\href{#2}{#3}}}
-
-\newcounter{cntr}
-\renewcommand{\thecntr}{\texttt{[\arabic{cntr}]}}
-
-\newenvironment{pythonin}[1]
-{\VerbatimEnvironment
-  \begin{minipage}[t]{0.11\linewidth}
-   \textcolor{green}{\texttt{{\refstepcounter{cntr}In \thecntr:}}}
-  \end{minipage}%
-  \begin{minipage}[t]{0.89\linewidth}%
-  \begin{minted}[
-    breaklines=true,style=monokai]{#1}}
- {\end{minted}
- \end{minipage}}
-
-\newenvironment{pythonout}
-{%
-  \addtocounter{cntr}{-1}
-  \begin{minipage}[t]{0.11\linewidth}
-   \textcolor{red}{\texttt{{\refstepcounter{cntr}Out\thecntr:}}}
-  \end{minipage}%
-  \color{ipyout}%
-  \ttfamily%
-  \begin{minipage}[t]{0.89\linewidth}%
-}
-{\end{minipage}}
-
-\newenvironment{pythonerr}[1]
-{\VerbatimEnvironment
-  \begin{minted}[
-    breaklines=true,style=monokai]{#1}}
- {\end{minted}}
-
-
-\newenvironment{pythonfile}[1]
- {\begin{tcolorbox}[title=#1,
-                    title filled=false,
-                    coltitle=LUMCDonkerblauw,
-                    fonttitle=\scriptsize,
-                    fontupper=\footnotesize,
-                    enhanced,
-                    drop small lifted shadow,
-                    boxrule=0.1mm,
-                    leftrule=5mm,
-                    rulecolor=white,
-                    left=0.1cm,
-                    colback=white!92!black,
-                    colframe=scriptback]}
- {\end{tcolorbox}}
-
-
-\newenvironment{pythoncode}
- {\begin{tcolorbox}[title filled=false,
-                    coltitle=LUMCDonkerblauw,
-                    fonttitle=\scriptsize,
-                    fontupper=\footnotesize,
-                    enhanced,
-                    drop small lifted shadow,
-                    boxrule=0.1mm,
-                    leftrule=5mm,
-                    rulecolor=white,
-                    left=0.1cm,
-                    colback=white!92!black,
-                    colframe=scriptback]}
- {\end{tcolorbox}}
+\input{../../shared/shared.tex}
 
 
 \begin{document}
@@ -191,7 +86,8 @@ IndexError: list index out of range
 \begin{pframe}
  \vspace{-.05cm}
  \begin{itemize}
-  \item During a module import, Python executes all the statements inside the module.
+  \item During a module import, Python executes all the statements inside the
+  module.
   \item To make our script work as a module (in the intended way), we need to
   add a check whether the module is imported or not:
  \end{itemize}
@@ -200,8 +96,8 @@ IndexError: list index out of range
    \begin{minted}{python}
 if __name__ == '__main__':
     input_seq = sys.argv[1]
-    print "The sequence '{}' has %GC of {:.2f}".format(
-              input_seq, calc_gc_percent(input_seq))
+    print("The sequence '{}' has %GC of {:.2f}".format(
+              input_seq, calc_gc_percent(input_seq)))
    \end{minted}
  \end{pythoncode}
  \begin{itemize}
@@ -239,7 +135,8 @@ seq_toolbox.calc_gc_percent
 
 \begin{pframe}
  \begin{itemize}
-  \item By the way, remember we added docstring to the calc\_gc\_percent function?
+  \item By the way, remember we added docstring to the calc\_gc\_percent
+  function?
   \item After importing our module, we can read up on how to use the function
   in its docstring:
  \end{itemize}
@@ -263,7 +160,8 @@ seq_toolbox.calc_gc_percent('ACTG')
 \begin{pframe}
  \begin{itemize}
   \item We can also expose an object inside the module directly into our
-  current namespace using the \mintinline{python}{from ... import ...} statement:
+  current namespace using the \mintinline{python}{from ... import ...}
+  statement:
  \end{itemize}
  \begin{ipython}
    \begin{pythonin}{python}
@@ -389,7 +287,8 @@ math.sqrt(2)    # Square root of 2.
 \subsection{random module}
 \begin{pframe}
  \begin{itemize}
-  \item The random module contains useful functions for generating pseudo-random numbers.
+  \item The random module contains useful functions for generating
+  pseudo-random numbers.
  \end{itemize}
  \begin{ipython}
   \begin{pythonin}{python}
@@ -431,7 +330,8 @@ random.choice(['apple', 'banana', 'grape', 'kiwi', 'orange'])
  \begin{itemize}
   \item Using sys.argv is neat for small scripts, but as our script gets larger
   and more complex, we want to be able to handle complex arguments too.
-  \item The argparse module has handy functionalities for creating command-line scripts.
+  \item The argparse module has handy functionalities for creating command-line
+  scripts.
  \end{itemize}
 \end{pframe}
 
@@ -456,9 +356,9 @@ if __name__ == '__main__':
     # Do the actual parsing.
     args = parser.parse_args()
     # And show the output.
-    print "The sequence '{}' has %GC of {:.2f}".format(
+    print("The sequence '{}' has %GC of {:.2f}".format(
               args.input_seq,
-              calc_gc_percent(args.input_seq))
+              calc_gc_percent(args.input_seq)))
    \end{minted}
  \end{pythoncode}
 \end{pframe}
@@ -497,7 +397,8 @@ fh = open('data/short_file.txt')
  \end{ipython}
 
  \begin{itemize}
-  \item fh is a file handle object which we can use to retrieve the file contents.
+  \item fh is a file handle object which we can use to retrieve the file
+  contents.
   \item One simple way would be to read the whole file contents:
  \end{itemize}
  \begin{ipython}
@@ -583,13 +484,14 @@ fh.readline()
 
 \begin{pframe}
  \begin{itemize}
-  \item More common in Python is to use the for loop with the file handle itself.
+  \item More common in Python is to use the for loop with the file handle
+  itself.
   \item Python will automatically iterate over each line.
  \end{itemize}
  \begin{pythoncode}
   \begin{minted}{python}
 for line in fh:
-    print line
+    print(line)
   \end{minted}
  \end{pythoncode}
  \begin{itemize}
@@ -670,12 +572,12 @@ fw.close()
 try:
     f = open('data/short_file.txt')
     for line in f:
-        print int(line)
+        print(int(line))
 except ValueError:
-    print 'Seems there was a line we could not handle'
+    print('Seems there was a line we could not handle')
 finally:
     f.close()
-    print 'We closed our file handle'
+    print('We closed our file handle')
   \end{minted}
  \end{pythoncode}
 \end{pframe}
@@ -697,7 +599,8 @@ with open("welcome.txt") as f: # Use file to refer to the file object
 \subsection{Improving our script to allow input from a file}
 \begin{pframe}
  \begin{itemize}
-  \item The script should accept as its argument a path to a file containing sequences.
+  \item The script should accept as its argument a path to a file containing
+  sequences.
   \item It will then compute the GC percentage for each sequence in this file.
   \item There are at least two things we need to do:
   \begin{itemize}

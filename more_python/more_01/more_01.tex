@@ -10,113 +10,8 @@
 \providecommand{\myCenter}{}
 
 \usetheme{lumc}
-\usepackage{minted}
-\usepackage{tikz}
-\usepackage[many]{tcolorbox}
 
-\definecolor{monokaibg}{HTML}{272822}
-\definecolor{emailc}{HTML}{1e90FF}
-\definecolor{scriptback}{HTML}{CDECF0}
-\definecolor{ipyout}{HTML}{F0FFF0}
-
-\newenvironment{ipython}
- {\begin{tcolorbox}[title=IPython,
-                   title filled=false,
-                   fonttitle=\scriptsize,
-                   fontupper=\footnotesize,
-                   enhanced,
-                   colback=monokaibg,
-                   drop small lifted shadow,
-                   boxrule=0.1mm,
-                   left=0.1cm,
-                   arc=0mm,
-                   colframe=black]}
- {\end{tcolorbox}}
-
-
-
-\newenvironment{terminal}
- {\begin{tcolorbox}[title=terminal,
-                   title filled=false,
-                   fonttitle=\scriptsize,
-                   fontupper=\footnotesize,
-                   enhanced,
-                   colback=monokaibg,
-                   drop small lifted shadow,
-                   boxrule=0.1mm,
-                   left=0.1cm,
-                   arc=0mm,
-                   colframe=black]}
- {\end{tcolorbox}}
-
-
-\newcommand{\hrefcc}[2]{\textcolor{#1}{\href{#2}{#2}}}
-\newcommand{\hrefc}[3]{\textcolor{#1}{\href{#2}{#3}}}
-
-\newcounter{cntr}
-\renewcommand{\thecntr}{\texttt{[\arabic{cntr}]}}
-
-\newenvironment{pythonin}[1]
-{\VerbatimEnvironment
-  \begin{minipage}[t]{0.11\linewidth}
-   \textcolor{green}{\texttt{{\refstepcounter{cntr}In \thecntr:}}}
-  \end{minipage}%
-  \begin{minipage}[t]{0.89\linewidth}%
-  \begin{minted}[
-    breaklines=true,style=monokai]{#1}}
- {\end{minted}
- \end{minipage}}
-
-\newenvironment{pythonout}
-{%
-  \addtocounter{cntr}{-1}
-  \begin{minipage}[t]{0.11\linewidth}
-   \textcolor{red}{\texttt{{\refstepcounter{cntr}Out\thecntr:}}}
-  \end{minipage}%
-  \color{ipyout}%
-  \ttfamily%
-  \begin{minipage}[t]{0.89\linewidth}%
-}
-{\end{minipage}}
-
-\newenvironment{pythonerr}[1]
-{\VerbatimEnvironment
-  \begin{minted}[
-    breaklines=true,style=monokai]{#1}}
- {\end{minted}}
-
-
-\newenvironment{pythonfile}[1]
- {\begin{tcolorbox}[title=#1,
-                    title filled=false,
-                    coltitle=LUMCDonkerblauw,
-                    fonttitle=\scriptsize,
-                    fontupper=\footnotesize,
-                    enhanced,
-                    drop small lifted shadow,
-                    boxrule=0.1mm,
-                    leftrule=5mm,
-                    rulecolor=white,
-                    left=0.1cm,
-                    colback=white!92!black,
-                    colframe=scriptback]}
- {\end{tcolorbox}}
-
-
-\newenvironment{pythoncode}
- {\begin{tcolorbox}[title filled=false,
-                    coltitle=LUMCDonkerblauw,
-                    fonttitle=\scriptsize,
-                    fontupper=\footnotesize,
-                    enhanced,
-                    drop small lifted shadow,
-                    boxrule=0.1mm,
-                    leftrule=5mm,
-                    rulecolor=white,
-                    left=0.1cm,
-                    colback=white!92!black,
-                    colframe=scriptback]}
- {\end{tcolorbox}}
+\input{../../shared/shared.tex}
 
 
 \begin{document}
@@ -150,7 +45,8 @@ print("The sequence 'CAGG' has a %GC of {:.2f}".format(
   \end{minted}
  \end{pythonfile}
  \pause
- Our script is nice and dandy, but we don't want to edit the source file everytime we calculate a sequence's GC.
+ Our script is nice and dandy, but we don't want to edit the source file
+ everytime we calculate a sequence's GC.
 \end{pframe}
 
 
@@ -159,8 +55,10 @@ print("The sequence 'CAGG' has a %GC of {:.2f}".format(
 
 \begin{pframe}
 \begin{itemize}
-  \item A collection of Python modules (or functions, for now) that comes packaged with a default Python installation.
-  \item They're not part of the language per se, more like a batteries included thing.
+  \item A collection of Python modules (or functions, for now) that comes
+  packaged with a default Python installation.
+  \item They're not part of the language per se, more like a batteries included
+  thing.
 \end{itemize}
 
 \end{pframe}
@@ -168,8 +66,10 @@ print("The sequence 'CAGG' has a %GC of {:.2f}".format(
 \subsection{Our first standard library module: sys}
 \begin{pframe}
  \begin{itemize}
-  \item We'll start by using the simple sys module to make our script more flexible.
-  \item Standard library (and other modules, as we'll see later) can be used via the import statement, for example:
+  \item We'll start by using the simple sys module to make our script more
+  flexible.
+  \item Standard library (and other modules, as we'll see later) can be used
+  via the import statement, for example:
  \end{itemize}
 
  \begin{ipython}
@@ -179,8 +79,8 @@ import sys
  \end{ipython}
 
 \begin{itemize}
- \item Like other objects so far, we can peek into the documentation of these modules
-using help, or the IPython ? shortcut. For example:
+ \item Like other objects so far, we can peek into the documentation of these
+ modules using help, or the IPython ? shortcut. For example:
 \end{itemize}
  \begin{ipython}
    \begin{pythonin}{python}
@@ -243,11 +143,13 @@ print("The sequence '{}' has a %GC of {:.2f}".format(
 
  \begin{itemize}
   \vspace{-0.8cm}
-  \item Try running the script with \mintinline{python}{'cagg'} as the input sequence. What happens?
+  \item Try running the script with \mintinline{python}{'cagg'} as the input
+  sequence. What happens?
   \item As we saw earlier, many objects, like those of type
-  \mintinline{python}{list}, \mintinline{python}{dict}, or \mintinline{python}{str},
-  have useful methods defined on them.
-  \item One way to squash this potential bug is by using Python's string method upper.
+  \mintinline{python}{list}, \mintinline{python}{dict}, or
+  \mintinline{python}{str}, have useful methods defined on them.
+  \item One way to squash this potential bug is by using Python's string method
+  upper.
   \item Let's first check out some commonly used string functions.
  \end{itemize}
 
@@ -404,7 +306,8 @@ print("The sequence '{}' has a %GC of {:.2f}".format(
 
 \begin{pframe}
  \begin{itemize}
-  \item Try running the script with \mintinline{python}{'ACTG123'} as the argument.
+  \item Try running the script with \mintinline{python}{'ACTG123'} as the
+  argument.
   \begin{itemize}
    \item What happens?
    \item Is this acceptable behavior?
@@ -616,17 +519,10 @@ return gc_count * 100.0 / (gc_count + at_count)
     \end{minted}
   \end{pythoncode}
  \begin{itemize}
-  \item Both approaches are correct and have their own plus and minuses in general.
+  \item Both approaches are correct and have their own plus and minuses in
+  general.
  \end{itemize}
 \end{pframe}
-
-% \section{Improving our script by handling more corner cases}
-% \begin{pframe}
-%  \begin{itemize}
-%   \item Now try running your script without any arguments at all. What happens?
-%   \item Armed with what you now know, how would you handle this situation?
-%  \end{itemize}
-% \end{pframe}
 
 % Make the acknowledgements slide.
 \makeAcknowledgementsSlide{

@@ -11,100 +11,7 @@
 
 \usetheme{lumc}
 
-\usepackage{minted}
-\usepackage{tikz}
-\usepackage[many]{tcolorbox}
-
-\definecolor{monokaibg}{HTML}{272822}
-\definecolor{emailc}{HTML}{1e90FF}
-\definecolor{ipyout}{HTML}{F0FFF0}
-
-
-\newenvironment{ipython}
- {\begin{tcolorbox}[title=IPython,
-                   title filled=false,
-                   fonttitle=\scriptsize,
-                   fontupper=\footnotesize,
-                   enhanced,
-                   colback=monokaibg,
-                   drop small lifted shadow,
-                   boxrule=0.1mm,
-                   left=0.1cm,
-                   arc=0mm,
-                   colframe=black]}
- {\end{tcolorbox}}
-
-
-\newenvironment{terminal}
- {\begin{tcolorbox}[title=terminal,
-                   title filled=false,
-                   fonttitle=\scriptsize,
-                   fontupper=\footnotesize,
-                   enhanced,
-                   colback=monokaibg,
-                   drop small lifted shadow,
-                   boxrule=0.1mm,
-                   left=0.1cm,
-                   arc=0mm,
-                   colframe=black]}
- {\end{tcolorbox}}
-
-
-\newcommand{\hrefcc}[2]{\textcolor{#1}{\href{#2}{#2}}}
-\newcommand{\hrefc}[3]{\textcolor{#1}{\href{#2}{#3}}}
-
-\newcounter{cntr}
-\renewcommand{\thecntr}{\texttt{[\arabic{cntr}]}}
-
-\newenvironment{pythonin}[1]
-{\VerbatimEnvironment
-  \begin{minipage}[t]{0.11\linewidth}
-   \textcolor{green}{\texttt{{\refstepcounter{cntr}In \thecntr:}}}
-  \end{minipage}%
-  \begin{minipage}[t]{0.89\linewidth}%
-  \begin{minted}[
-    breaklines=true,style=monokai]{#1}}
- {\end{minted}
- \end{minipage}}
-
-\newenvironment{pythonout}
-{%
-  \addtocounter{cntr}{-1}
-  \begin{minipage}[t]{0.11\linewidth}
-   \textcolor{red}{\texttt{{\refstepcounter{cntr}Out\thecntr:}}}
-  \end{minipage}%
-  \color{ipyout}%
-  \ttfamily%
-  \begin{minipage}[t]{0.89\linewidth}%
-}
-{\end{minipage}}
-
-\newenvironment{pythonoutnonumber}
-{%
-  \color{ipyout}%
-  \ttfamily%
-}
-{}
-
-
-%\newenvironment{pythonout}
-%{\VerbatimEnvironment%
-%  \addtocounter{cntr}{-1}
-%  \begin{minipage}[t]{0.11\linewidth}
-%   \textcolor{red}{\texttt{{\refstepcounter{cntr}\label{#1}Out\thecntr:}}}
-%  \end{minipage}%
-%  \begin{minipage}[t]{0.89\linewidth}%
-%  \color{ipyout}%
-%  \ttfamily%
-%}%
-%{%
-%\end{minipage}}
-
-\newenvironment{pythonerr}[1]
-{\VerbatimEnvironment
-  \begin{minted}[
-    breaklines=true,style=monokai]{#1}}
- {\end{minted}}
+\input{../../shared/shared.tex}
 
 \begin{document}
 
@@ -446,6 +353,22 @@ IPython 6.1.0 -- An enhanced Interactive Python. Type '?' for help.
   \end{pythonin}
   \begin{pythonout}
 42
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+14 // 4
+  \end{pythonin}
+  \begin{pythonout}
+3
+  \end{pythonout}
+  \\
+
+  \begin{pythonin}{python}
+14 % 4
+  \end{pythonin}
+  \begin{pythonout}
+2
   \end{pythonout}
   \\
 

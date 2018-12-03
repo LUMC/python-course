@@ -11,79 +11,7 @@
 
 \usetheme{lumc}
 
-\usepackage{minted}
-\usepackage{tikz}
-\usepackage[many]{tcolorbox}
-
-\definecolor{monokaibg}{HTML}{272822}
-\definecolor{emailc}{HTML}{1e90FF}
-\definecolor{ipyout}{HTML}{F0FFF0}
-
-
-\newenvironment{ipython}
- {\begin{tcolorbox}[title=IPython,
-                   title filled=false,
-                   fonttitle=\scriptsize,
-                   fontupper=\footnotesize,
-                   enhanced,
-                   colback=monokaibg,
-                   drop small lifted shadow,
-                   boxrule=0.1mm,
-                   left=0.1cm,
-                   arc=0mm,
-                   colframe=black]}
- {\end{tcolorbox}}
-
-
-\newenvironment{terminal}
- {\begin{tcolorbox}[title=terminal,
-                   title filled=false,
-                   fonttitle=\scriptsize,
-                   fontupper=\footnotesize,
-                   enhanced,
-                   colback=monokaibg,
-                   drop small lifted shadow,
-                   boxrule=0.1mm,
-                   left=0.1cm,
-                   arc=0mm,
-                   colframe=black]}
- {\end{tcolorbox}}
-
-
-\newcommand{\hrefcc}[2]{\textcolor{#1}{\href{#2}{#2}}}
-\newcommand{\hrefc}[3]{\textcolor{#1}{\href{#2}{#3}}}
-
-\newcounter{cntr}
-\renewcommand{\thecntr}{\texttt{[\arabic{cntr}]}}
-
-\newenvironment{pythonin}[1]
-{\VerbatimEnvironment
-  \begin{minipage}[t]{0.11\linewidth}
-   \textcolor{green}{\texttt{{\refstepcounter{cntr}\label{#1}In \thecntr:}}}
-  \end{minipage}%
-  \begin{minipage}[t]{0.89\linewidth}%
-  \begin{minted}[
-    breaklines=true,style=monokai]{#1}}
- {\end{minted}
- \end{minipage}}
-
-\newenvironment{pythonout}
-{%
-  \addtocounter{cntr}{-1}
-  \begin{minipage}[t]{0.11\linewidth}
-   \textcolor{red}{\texttt{{\refstepcounter{cntr}\label{#1}Out\thecntr:}}}
-  \end{minipage}%
-  \color{ipyout}%
-  \ttfamily%
-  \begin{minipage}[t]{0.89\linewidth}%
-}
-{\end{minipage}}
-
-\newenvironment{pythonerr}[1]
-{\VerbatimEnvironment
-  \begin{minted}[
-    breaklines=true,style=monokai]{#1}}
- {\end{minted}}
+\input{../../shared/shared.tex}
 
 \begin{document}
 
@@ -193,7 +121,7 @@ triple-quotes.
 You see? I continued after a blank line."""
   \end{pythonin}
   \begin{pythonout}
-'A multiline string.\n\nYou see? I continued after a blank line.'
+'A multiline string.\textbackslash n\textbackslash nYou see? I continued after a blank line.'
   \end{pythonout}
  \end{ipython}
 \end{pframe}
@@ -396,7 +324,7 @@ list('abcdefghijk')
 ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k']
   \end{pythonout}
   \\
-  
+
   \begin{pythonin}{python}
 range(5, 16)  # In python 2: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
   \end{pythonin}
@@ -405,7 +333,7 @@ range(5, 16)  # In python 2: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 range(5, 16)
   \end{pythonout}
   \\
-  
+
   \begin{pythonin}{python}
 list(range(5, 16))
   \end{pythonin}
@@ -413,8 +341,8 @@ list(range(5, 16))
   \begin{pythonout}
 [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
   \end{pythonout}
-  \\  
-  
+  \\
+
   \begin{pythonin}{python}
 zip(['red', 'white', 'blue'], range(3))
   \end{pythonin}
@@ -423,7 +351,7 @@ zip(['red', 'white', 'blue'], range(3))
 <zip at 0x7f3565860108>
   \end{pythonout}
   \\
-    
+
   \begin{pythonin}{python}
 list(zip(['red', 'white', 'blue'], range(3)))
   \end{pythonin}
@@ -645,12 +573,12 @@ True
 s1 = {12, 28, 21, 17}
   \end{pythonin}
   \\
-  
+
   \begin{pythonin}{python}
 s2 = {28, 32, 71, 12}
   \end{pythonin}
   \\
-  
+
   \begin{pythonin}{python}
 s1.difference(s2)
   \end{pythonin}

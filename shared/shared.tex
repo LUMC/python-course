@@ -1,0 +1,115 @@
+\usepackage{minted}
+\usepackage{tikz}
+\usepackage[many]{tcolorbox}
+
+\definecolor{monokaibg}{HTML}{272822}
+\definecolor{emailc}{HTML}{1e90FF}
+\definecolor{scriptback}{HTML}{CDECF0}
+\definecolor{ipyout}{HTML}{F0FFF0}
+
+\newenvironment{ipython}
+ {\begin{tcolorbox}[title=IPython,
+                   title filled=false,
+                   fonttitle=\scriptsize,
+                   fontupper=\footnotesize,
+                   enhanced,
+                   colback=monokaibg,
+                   drop small lifted shadow,
+                   boxrule=0.1mm,
+                   left=0.1cm,
+                   arc=0mm,
+                   colframe=black]}
+ {\end{tcolorbox}}
+
+
+
+\newenvironment{terminal}
+ {\begin{tcolorbox}[title=terminal,
+                   title filled=false,
+                   fonttitle=\scriptsize,
+                   fontupper=\footnotesize,
+                   enhanced,
+                   colback=monokaibg,
+                   drop small lifted shadow,
+                   boxrule=0.1mm,
+                   left=0.1cm,
+                   arc=0mm,
+                   colframe=black]}
+ {\end{tcolorbox}}
+
+
+\newcommand{\hrefcc}[2]{\textcolor{#1}{\href{#2}{#2}}}
+\newcommand{\hrefc}[3]{\textcolor{#1}{\href{#2}{#3}}}
+
+\newcounter{cntr}
+\renewcommand{\thecntr}{\texttt{[\arabic{cntr}]}}
+
+\newenvironment{pythonin}[1]
+{\VerbatimEnvironment
+  \begin{minipage}[t]{0.11\linewidth}
+   \textcolor{green}{\texttt{{\refstepcounter{cntr}In \thecntr:}}}
+  \end{minipage}%
+  \begin{minipage}[t]{0.89\linewidth}%
+  \begin{minted}[
+    breaklines=true,style=monokai]{#1}}
+ {\end{minted}
+ \end{minipage}}
+
+\newenvironment{pythonout}
+{%
+  \addtocounter{cntr}{-1}
+  \begin{minipage}[t]{0.11\linewidth}
+   \textcolor{red}{\texttt{{\refstepcounter{cntr}Out\thecntr:}}}
+  \end{minipage}%
+  \color{ipyout}%
+  \ttfamily%
+  \begin{minipage}[t]{0.89\linewidth}%
+}
+{\end{minipage}}
+
+\newenvironment{pythonerr}[1]
+{\VerbatimEnvironment
+  \begin{minted}[
+    breaklines=true,style=monokai]{#1}}
+ {\end{minted}}
+
+
+\newenvironment{pythonfile}[1]
+ {\begin{tcolorbox}[title=#1,
+                    title filled=false,
+                    coltitle=LUMCDonkerblauw,
+                    fonttitle=\scriptsize,
+                    fontupper=\footnotesize,
+                    enhanced,
+                    drop small lifted shadow,
+                    boxrule=0.1mm,
+                    leftrule=5mm,
+                    rulecolor=white,
+                    left=0.1cm,
+                    colback=white!92!black,
+                    colframe=scriptback]}
+ {\end{tcolorbox}}
+
+
+\newenvironment{pythoncode}
+ {\begin{tcolorbox}[title filled=false,
+                    coltitle=LUMCDonkerblauw,
+                    fonttitle=\scriptsize,
+                    fontupper=\footnotesize,
+                    enhanced,
+                    drop small lifted shadow,
+                    boxrule=0.1mm,
+                    leftrule=5mm,
+                    rulecolor=white,
+                    left=0.1cm,
+                    colback=white!92!black,
+                    colframe=scriptback]}
+ {\end{tcolorbox}}
+
+
+\newenvironment{pythonoutnonumber}
+{%
+  \color{ipyout}%
+  \ttfamily%
+}
+{}
