@@ -8,15 +8,11 @@ they should bring their own laptops for the practical sessions.
 
 ## Coordinates
 
-- Date: 27-30 November, 2017
-- Time: 9:00 - 17:00
-- Location: J1-83
+- Date: TBA
+- Time: TBA
+- Location: TBA
 - Teachers:
-  - Sander Bollen
-  - Jonathan Vis
-  - Mark Santcroos
-  - Guy Allard
-  - Mihai Lefter
+  - TBA
 - Registration via www.medgencentre.nl. Direct access to the [registration form](https://forms.lumc.nl/lumc2/PYTHONcourse).
 
 Program and Materials
