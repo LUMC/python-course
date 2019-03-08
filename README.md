@@ -3,8 +3,16 @@ Programming course
 
 The course is targeted at PhD students, Postdocs, or anyone willing to learn
 how to program in Python. Students are assumed to have some experience with
-programming, but not necessarily in Python, and the UNIX shell. In addition, 
-they should bring their own laptops for the practical sessions.
+programming, but not necessarily in Python. In addition, they should bring
+their own laptops for the practical sessions.
+
+## Prerequisites
+
+Affinity with the UNIX shell and git is required. For this reason it is
+mandatory to follow our
+[Practical Linux](https://git.lumc.nl/courses/practical-linux-course)
+and [Code and data management with git](https://git.lumc.nl/courses/gitcourse)
+courses before.
 
 ## Coordinates
 
