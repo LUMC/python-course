@@ -21,7 +21,7 @@ courses before.
 - Location: TBA
 - Teachers:
   - TBA
-- Registration via www.medgencentre.nl. Direct access to the [registration form](https://forms.lumc.nl/lumc2/PYTHONcourse).
+- Registration via www.medgencentre.com. Direct access to the [registration form](https://forms.lumc.nl/lumc2/PYTHONcourse).
 
 Program and Materials
 -------
