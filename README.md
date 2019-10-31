@@ -16,11 +16,15 @@ courses before.
 
 ## Coordinates
 
-- Date: TBA
-- Time: TBA
-- Location: TBA
+- Date: 26-29 November, 2019
+- Time: 9:00 - 17:00
+- Location: J-1-83 and P-5-34
 - Teachers:
-  - TBA
+  - Mark Santcroos
+  - Jonathan Vis
+  - Ruben Vorderman
+  - Redmar van den Berg
+  - Mihai Lefter
 - Registration via www.medgencentre.com. Direct access to the [registration form](https://forms.lumc.nl/lumc2/PYTHONcourse).
 
 Program and Materials
@@ -29,7 +33,29 @@ Program and Materials
 - Mornings: presentations.
 - Afternoons: assignments.
 
-TBA
+| Day              | Location | Time  | Lesson                                                      | Teacher  |
+|------------------|----------|-------|-------------------------------------------------------------|----------|
+| Tuesday, 26/11   | J-1-83   | 9-10  | [Introduction][introduction]                                | Mihai    |
+|                  |          | 10-11 | [Data types][data_types]                                    | Mark     |
+|                  |          | 11-12 | [Flow control I][flow_control_1]                            | Mihai    |
+|                  |          | 12-13 | Lunch break                                                 |          |
+|                  |          | 13-16 | Practical session                              | Mihai / Mark / Redmar |
+| Wednesday, 27/11 | P-5-34   | 9-10  | Assignments review                                      | Mihai / Mark |
+|                  |          | 10-11 | [Flow control II][flow_control_2]                           | Mihai    |
+|                  |          | 11-12 | [Object-oriented programming][oop]                          | Jonathan |
+|                  |          | 12-13 | Lunch break                                                 |          |
+|                  |          | 13-16 | Practical session                          | Mihai / Jonathan / Redmar |
+| Thursday, 28/11  | P-5-34   | 9-10  | Assignments review                                  | Mihai / Jonathan |
+|                  |          | 10-11 | [String methods, errors and exceptions][strings]            | Ruben    |
+|                  |          | 11-12 | [Standard library, reading and writing files][std_library]  | Mihai    |
+|                  |          | 12-13 | Lunch break                                                 |          |
+|                  |          | 13-16 | Practical session                              | Mihai / Ruben / Redmar|
+| Friday, 29/11    | J-1-83   | 9-10  | Assignments review                                      | Mihai / Ruben|
+|                  |          | 10-11 | [Jupyter Notebook][jupyter_notebook]                        | Ruben    |
+|                  |          | 11-12 | [Data mangling with pandas][pandas]                         | Mihai    |
+|                  |          | 12-13 | Lunch break                                                 |          |
+|                  |          | 13-16 | Practical session                             | Mihai / Ruben / Redmar |
+
 
 Assignments
 -----------
@@ -39,3 +65,13 @@ Software installation
 ---------------------
 
 See the instructions [here](https://docs.anaconda.com/anaconda/install/).
+
+[introduction]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/introduction/introduction.pdf?inline=false
+[data_types]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/data_types/data_types.pdf?inline=false
+[flow_control_1]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/flow_control/flow_control.pdf?inline=false
+[flow_control_2]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/flow_control/flow_control.pdf?inline=false
+[strings]: https://git.lumc.nl/courses/programming-course/raw/master/more_python/more_01/more_01.pdf?inline=false
+[std_library]: https://git.lumc.nl/courses/programming-course/raw/master/more_python/more_02/more_02.pdf?inline=false
+[oop]: https://git.lumc.nl/courses/programming-course/raw/master/oop/oop.pdf
+[jupyter_notebook]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/jupyter/05_jupyter.ipynb
+[pandas]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/pandas/pandas.ipynb 
