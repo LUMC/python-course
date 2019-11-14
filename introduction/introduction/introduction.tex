@@ -4,7 +4,7 @@
 \title{Python Programming}
 \providecommand{\mySubTitle}{Introduction}
 \providecommand{\myConference}{Programming Course}
-\providecommand{\myDate}{27-11-2018}
+\providecommand{\myDate}{26-11-2018}
 \providecommand{\myGroup}{}
 \providecommand{\myDepartment}{}
 \providecommand{\myCenter}{}
@@ -111,14 +111,14 @@
 \begin{pframe}
  \begin{minipage}[t]{0.5\textwidth}
   \begin{itemize}
-   \item Sander Bollen \\
-     \hrefcc{emailc}{a.h.b.bollen@lumc.nl}
-   \item Jonathan Vis \\
-     \hrefcc{emailc}{j.k.vis@lumc.nl}
    \item Mark Santcroos \\
      \hrefcc{emailc}{m.a.santcroos@lumc.nl}
-   \item Guy Allard \\
-     \hrefcc{emailc}{w.g.allard@lumc.nl}
+   \item Jonathan Vis \\
+     \hrefcc{emailc}{j.k.vis@lumc.nl}
+   \item Ruben Vorderman \\
+     \hrefcc{emailc}{r.h.p.vorderman@lumc.nl}
+   \item Redmar van den Berg \\
+     \hrefcc{emailc}{r.r.van_den_berg@lumc.n}
    \item Mihai Lefter\\
     \hrefcc{emailc}{m.lefter@lumc.nl}
   \end{itemize}
@@ -245,16 +245,50 @@
 \subsection{Why Python?}
 \begin{pframe}
  \begin{itemize}
-  \item Readable and low barrier to entry.
+  \item Widely used with a large community.
+ \end{itemize}
+ \vspace{-0.5cm}
+ \begin{center}
+  \includegraphics[width=0.70\textwidth]{../../images/growth_major_languages-1-1024x878_stackoverflow_c.png}
+  \tiny{https://stackoverflow.blog/2017/09/06/incredible-growth-python/}
+ \end{center}
+\end{pframe}
+
+\begin{pframe}
+ \begin{itemize}
+  \item Widely used with a large community.
+ \end{itemize}
+ \vspace{-0.5cm}
+ \begin{center}
+  \includegraphics[width=0.70\textwidth]{../../images/stackoverflow_most_wanted_2019.png}\\
+  \tiny{https://insights.stackoverflow.com/survey/2019/\#most-loved-dreaded-and-wanted}
+ \end{center}
+\end{pframe}
+
+\begin{pframe}
+ \begin{itemize}
+  \item Widely used with a large community.
+ \end{itemize}
+ \vspace{-0.5cm}
+ \begin{center}
+  \includegraphics[width=0.35\textwidth]{../../images/ieee_programming_languages_top_2019.png}\\
+  \tiny{https://spectrum.ieee.org/computing/software/the-top-programming-languages-2019}
+ \end{center}
+\end{pframe}
+
+\begin{pframe}
+ \begin{itemize}
+  \item Widely used with a large community.
   \item Rich scientific libraries.
   \item Many other libraries available.
-  \item Widely used with a large community.
+  \item Readable and low barrier to entry.
  \end{itemize}
  \begin{tikzpicture}[remember picture,overlay]
     \node[xshift=-4.5cm,yshift=-6.5cm] at (current page.north east)
     {\includegraphics[width=6cm]{../../images/widely.jpg}};
   \end{tikzpicture}
 \end{pframe}
+
 
 
 \subsection{Python 2 versus Python 3}
@@ -349,15 +383,15 @@ IPython 6.1.0 -- An enhanced Interactive Python. Type '?' for help.
   \\
 
   \begin{pythonin}{python}
-(17 + 4) * 2
+(17 + 4) * 2 - 10
   \end{pythonin}
   \begin{pythonout}
-42
+32
   \end{pythonout}
   \\
 
   \begin{pythonin}{python}
-14 // 4
+14 // 4  # floor division - quotient
   \end{pythonin}
   \begin{pythonout}
 3
@@ -365,7 +399,7 @@ IPython 6.1.0 -- An enhanced Interactive Python. Type '?' for help.
   \\
 
   \begin{pythonin}{python}
-14 % 4
+14 % 4   # modulus - remainder
   \end{pythonin}
   \begin{pythonout}
 2
@@ -373,7 +407,7 @@ IPython 6.1.0 -- An enhanced Interactive Python. Type '?' for help.
   \\
 
   \begin{pythonin}{python}
-2 ** 3
+2 ** 3   # exponentiation
   \end{pythonin}
   \begin{pythonout}
 8
@@ -427,38 +461,60 @@ Scientific notation:
 \section{Variables}
 
 \begin{pframe}
+ \vspace{-0.75cm}
  \begin{itemize}
-  \item We can use names to reference values (variables).
-  \item No need to declare them first or define the type.
+  \item Names (identifiers) used to reference values. Can consist of:
+  \begin{itemize}
+   \item the uppercase and lowercase letters \emp{A} through \emp{Z};
+   \item the underscore \emp{\_};
+   \item the digits \emp{0} through \emp{9}, except for the first character.
+  \end{itemize}
+  \item Notes:
+  \begin{itemize}
+   \item Python is case sensitive.
+   \item \hrefc{linkc}{https://docs.python.org/3.7/reference/lexical_analysis.html\#keywords}{Reserved words} (\emp{if}, \emp{then}, \emp{for}, etc.) are not be employed.
+  \end{itemize}
  \end{itemize}
 
  \begin{ipython}
   \begin{pythonin}{python}
-a = 1.3e20
+a = 17
   \end{pythonin}
   \\
   \begin{pythonin}{python}
-b = 2
+leiden_population = 123856
   \end{pythonin}
   \\
   \begin{pythonin}{python}
-a
+f18_speed = 1.8
   \end{pythonin}
-  \begin{pythonout}
-1.3e20
-  \end{pythonout}
-  \\
+ \end{ipython}
+\end{pframe}
 
+
+\begin{pframe}
+ \vspace{-0.75cm}
+ \begin{itemize}
+  \item No need to declare them first or define the type.
+  \item However, you do need to give variables values before you use them.
+ \end{itemize}
+
+ \begin{ipython}
   \begin{pythonin}{python}
-c = a + 1.5e19 * b
+a = 17
   \end{pythonin}
   \\
   \begin{pythonin}{python}
-c * 2
+c = a + b
   \end{pythonin}
-  \begin{pythonout}
-3.2e+20
-  \end{pythonout}
+  \begin{pythonerr}{python}
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-2-1674f6151070> in <module>
+----> 1 c = a + b
+
+NameError: name 'b' is not defined
+  \end{pythonerr}
  \end{ipython}
 \end{pframe}
 
@@ -500,7 +556,7 @@ float
 type(a)
   \end{pythonin}
   \begin{pythonout}
-float
+int
   \end{pythonout}
  \end{ipython}
 \end{pframe}
@@ -554,7 +610,7 @@ str
 a
   \end{pythonin}
   \begin{pythonout}
-1.3e+20
+17
   \end{pythonout}
   \\
 
@@ -562,7 +618,7 @@ a
 type(a)
   \end{pythonin}
   \begin{pythonout}
-float
+int
   \end{pythonout}
   \\
 
@@ -624,7 +680,7 @@ exit
  \end{ipython}
 
  Documentation of all the magics is to be found
-  \hrefc{emailc}{https://ipython.readthedocs.io/en/stable/interactive/magics.html}{here}.
+  \hrefc{linkc}{https://ipython.readthedocs.io/en/stable/interactive/magics.html}{here}.
 \end{pframe}
 
 
@@ -652,7 +708,6 @@ exit
   \item If an article costs $249$ Euros including the $19\%$ Value Added Tax
   (VAT), what is the actual VAT amount in Euros for the corresponding article?
  \end{enumerate}
-
 \end{pframe}
 
 
