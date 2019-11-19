@@ -1,10 +1,10 @@
-\documentclass[aspectratio=1610,slidestop]{beamer}
+\documentclass[aspectratio=1610,t]{beamer}
 
 \author{Mihai Lefter}
 \title{Python Programming}
 \providecommand{\mySubTitle}{Flow Control}
 \providecommand{\myConference}{Programming Course}
-\providecommand{\myDate}{27-11-2018}
+\providecommand{\myDate}{26-11-2019}
 \providecommand{\myGroup}{}
 \providecommand{\myDepartment}{}
 \providecommand{\myCenter}{}
@@ -12,6 +12,8 @@
 \usetheme{lumc}
 
 \input{../../shared/shared.tex}
+
+\usepackage{booktabs}
 
 \begin{document}
 
@@ -107,32 +109,366 @@ You can now execute the file directly:
 \end{pframe}
 
 
-\section{Conditionals}
+\section{Sequential Execution}
 
-\subsection{if statements}
 \begin{pframe}
- \begin{pythonfile}{if\_example.py}
+ \begin{center}
+   \includegraphics[width=0.25\textwidth]{../../images/flow_sequential.pdf}
+ \end{center}
+\end{pframe}
+
+\begin{pframe}
+ \begin{minipage}{0.37\textwidth}
+ \begin{center}
+   \includegraphics[width=0.50\textwidth]{../../images/flow_sequential.pdf}
+ \end{center}
+ \end{minipage}%
+ \begin{minipage}{0.57\textwidth}
+ \begin{pythonfile}{sum.py}
   \begin{minted}[linenos]{python}
-if 26 <= 17:
-    print('Fact: 26 is less than or equal to 17')
-elif (26 + 8 > 14) == True:
-    print("Did we need the ' == True' part here?")
-else:
-    print('Nothing seems true')
+a = 100
+b = 200
+print(a+b)
   \end{minted}
  \end{pythonfile}
-
  \begin{terminal}
-  \color{white}{\texttt{\$ python if\_example.py}\\
-  \texttt{Did we need the ' == True' part here?}}
+  \color{white}{\texttt{\$ python sum.py \\
+300}}
+ \end{terminal}
+ \end{minipage}
+\end{pframe}
+
+\subsection{Intermezzo - User input}
+\begin{pframe}
+Performed with the \emp{input([prompt])} built-in function:
+ \begin{itemize}
+  \item If the \emp{prompt} argument is present, it is written to the standard
+        output.
+  \item The user input is then read as a string.
+ \end{itemize}
+ \pause
+ \begin{pythonfile}{sum.py}
+  \begin{minted}[linenos]{python}
+a = input('a = ')
+b = input('b = ')
+print(a+b)
+  \end{minted}
+ \end{pythonfile}
+ \pause
+ \begin{terminal}
+  \color{white}{\texttt{\$ python sum.py \\
+a = 100 \\
+b = 200 \\
+100200}}
+ \end{terminal}
+ \pause
+ \begin{tikzpicture}[remember picture,overlay]
+    \node[xshift=-6.5cm,yshift=-6.64cm] at (current page.north east)
+    {\includegraphics[width=5.8cm]{../../images/questions.pdf}};
+ \end{tikzpicture}
+\end{pframe}
+
+\begin{pframe}
+Performed with the \emp{input([prompt])} built-in function:
+ \begin{itemize}
+  \item If the \emp{prompt} argument is present, it is written to the standard
+        output.
+  \item The user input is then read as a \empt{string}.
+ \end{itemize}
+ \begin{pythonfile}{sum.py}
+  \begin{minted}[linenos]{python}
+a = int(input('a = '))
+b = int(input('b = '))
+print(a+b)
+  \end{minted}
+ \end{pythonfile}
+ \begin{terminal}
+  \color{white}{\texttt{\$ python sum.py \\
+a = 100 \\
+b = 200 \\
+300}}
  \end{terminal}
 \end{pframe}
 
 
-\section{Loops}
-
-\subsection{while statements}
+\section{Conditionals}
 \begin{pframe}
+ \begin{center}
+   \includegraphics[width=0.55\textwidth]{../../images/flow_conditional.pdf}
+ \end{center}
+\end{pframe}
+
+\begin{pframe}
+ \begin{center}
+   \includegraphics[width=0.55\textwidth]{../../images/flow_conditional_if_only.pdf}
+ \end{center}
+\end{pframe}
+
+\begin{pframe}
+ \begin{center}
+   \includegraphics[width=0.75\textwidth]{../../images/flow_conditional_chained_if.pdf}
+ \end{center}
+\end{pframe}
+
+\subsection{Truth Value Testing}
+\begin{pframe}
+%  Any object can be tested for its \textbf{truth} value:
+ \begin{itemize}
+ \item Built-in objects considered \textcolor{red}{false}:
+ \begin{itemize}
+   \item constants defined to be \textcolor{red}{false}: \emp{None} and \emp{False}.
+   \pause
+   \item zero of any numeric type: \emp{0}, \emp{0.0}, \emp{0j},
+         \emp{Decimal(0)}, \emp{Fraction(0, 1)}.
+   \pause
+   \item empty sequences and collections: \emp{''}, \emp{()}, \emp{[]},
+         \emp{\{\}}, \emp{set()}, \emp{range(0)}.
+  \end{itemize}
+  \pause
+  \item For the moment, let's assume that any other object is considered
+  \textcolor{green}{true}.
+ \end{itemize}
+ \pause
+ \begin{ipython}
+  \begin{pythonin}{python}
+bool(0)
+  \end{pythonin}
+  \begin{pythonout}
+False
+  \end{pythonout}\\ \\
+  \begin{pythonin}{python}
+bool(1)
+  \end{pythonin}
+  \begin{pythonout}
+True
+  \end{pythonout}\\ \\
+  \begin{pythonin}{python}
+bool([False])
+  \end{pythonin}
+  \begin{pythonout}
+True
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+\subsection{Comparisons}
+\begin{pframe}
+\begin{table}[]
+\begin{tabular}{@{}lll@{}}
+\toprule
+  Operation    & Meaning & Example \\ \toprule
+  \emp{<}      & strictly less than & \pythoninline{x < y} \\
+  \emp{<=}     & less than or equal & \pythoninline{x <= y} \\
+  \emp{>}      & strictly greater than & \pythoninline{x > y} \\
+  \emp{>=}     & greater than or equal & \pythoninline{x >= y} \\
+  \emp{==}     & equal & \pythoninline{x == y} \\
+  \emp{!=}     & not equal & \pythoninline{x != y} \\ \midrule
+  \emp{is}     & object identity & \pythoninline{x is y} \\
+  \emp{is not} & negated object identity & \pythoninline{x is not y} \\ \bottomrule
+\end{tabular}
+\end{table}
+\end{pframe}
+
+\begin{pframe}
+ \begin{ipython}
+  \begin{pythonin}{python}
+3 < 4
+  \end{pythonin}
+  \begin{pythonout}
+True
+  \end{pythonout} \\ \\
+  \begin{pythonin}{python}
+3 <= 3.5
+  \end{pythonin}
+  \begin{pythonout}
+True
+  \end{pythonout} \\ \\
+  \begin{pythonin}{python}
+3 == 3.0
+  \end{pythonin}
+  \begin{pythonout}
+True
+  \end{pythonout}
+ \\ \\
+  \begin{pythonin}{python}
+3 is 3.0
+  \end{pythonin}
+  \begin{pythonout}
+False
+  \end{pythonout} \\ \\
+  \begin{pythonin}{python}
+3 is 3
+  \end{pythonin}
+  \begin{pythonout}
+True
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+\subsection{Boolean (Logical) Operations}
+\begin{pframe}
+\begin{table}[]
+\begin{tabular}{@{}llc@{}}
+\toprule
+ Operation     & Result & Notes \\ \midrule
+ \pythoninline{x or y}  & if \emp{x} is false, then \emp{y}, else \emp{x} & (1) \\
+ \pythoninline{x and y} & if \emp{x} is false, then \emp{x}, else \emp{y} & (2) \\
+ \pythoninline{not x}   & if \emp{x} is false, then \emp{True}, else \emp{False} & (3) \\ \bottomrule
+\end{tabular}
+\end{table}
+ \begin{enumerate}
+  \item It evaluates \emp{y} only if \emp{x} is false.
+  \item It evaluates \emp{y} only if \emp{x} is true.
+  \item \pythoninline{not x == y} is interpreted as \pythoninline{not (x == y)}
+  and \pythoninline{x == not y} is a syntax error.
+ \end{enumerate}
+\end{pframe}
+
+\begin{pframe}
+\begin{table}[]
+\begin{tabular}{@{}cc|cc@{}}
+\toprule
+  \emp{x}     & \emp{y}     & \emp{x or y} & \emp{x and y} \\ \midrule
+  \emp{True}  & \emp{True}  & \emp{True}   & \emp{True}    \\
+  \emp{True}  & \emp{False} & \emp{True}   & \emp{False}   \\
+  \emp{False} & \emp{True}  & \emp{True}   & \emp{False}   \\
+  \emp{False} & \emp{False} & \emp{False}   & \emp{False}  \\ \bottomrule
+\end{tabular}
+\end{table}
+\end{pframe}
+
+\begin{pframe}
+ \begin{ipython}
+  \begin{pythonin}{python}
+3 < 4 and 5 <= 10
+  \end{pythonin}
+  \begin{pythonout}
+True
+  \end{pythonout} \\ \\
+  \begin{pythonin}{python}
+3 < 4 or 5 <= 10
+  \end{pythonin}
+  \begin{pythonout}
+True
+  \end{pythonout} \\ \\
+  \begin{pythonin}{python}
+3 < 4 and 5 > 10
+  \end{pythonin}
+  \begin{pythonout}
+False
+  \end{pythonout}
+ \\ \\
+  \begin{pythonin}{python}
+3 < 4 and 5 > 10
+  \end{pythonin}
+  \begin{pythonout}
+True
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+\subsection{\emp{if} statement}
+\begin{pframe}
+ \begin{minipage}{0.47\textwidth}
+ \begin{center}
+   \includegraphics[width=0.80\textwidth]{../../images/flow_conditional.pdf}
+ \end{center}
+ \end{minipage}%
+ \begin{minipage}{0.47\textwidth}
+ \begin{pythonfile}{max.py}
+  \begin{minted}[linenos]{python}
+a = int(input('a = '))
+b = int(input('b = '))
+
+if a > b:
+    print(a)
+else:
+    print(b)
+  \end{minted}
+ \end{pythonfile}
+
+ \begin{terminal}
+  \color{white}{\texttt{\$ python max.py \\
+a = 100 \\
+b = 200 \\
+200}}
+ \end{terminal}
+ \end{minipage}
+\end{pframe}
+
+\begin{pframe}
+ \begin{minipage}{0.57\textwidth}
+ \begin{center}
+   \includegraphics[width=0.90\textwidth]{../../images/flow_conditional_chained_if.pdf}
+ \end{center}
+ \end{minipage}%
+ \begin{minipage}{0.37\textwidth}
+ \begin{pythonfile}{compare.py}
+  \begin{minted}[linenos]{python}
+a = int(input('a = '))
+b = int(input('b = '))
+
+if a > b:
+    print(a)
+elif a == b:
+    print('equal')
+else:
+    print(b)
+  \end{minted}
+ \end{pythonfile}
+
+ \begin{terminal}
+  \color{white}{\texttt{\$ python compare.py \\
+a = 100 \\
+b = 100 \\
+equal}}
+ \end{terminal}
+ \end{minipage}
+\end{pframe}
+
+\section{Indentation}
+\begin{pframe}
+ Python uses indentation to delimit blocks
+ \begin{itemize}
+   \item Instead of \emp{begin ... end} or \emp{\{ ... \}} in other languages.
+   \item Always increase indentation by 4 spaces, never use tabs.
+   \begin{itemize}
+     \item In any case, be consistent.
+   \end{itemize}
+ \end{itemize}
+ \begin{pythonfile}{indentation\_example.py}
+  \begin{minted}[linenos]{python}
+if False:
+    if False:
+        print('Why am I here?')
+    else:
+        while True:
+            print('When will it stop?')
+    print("And we're back to the first indentation level")
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
+
+\section{Loops}
+\begin{pframe}
+ \begin{center}
+   \includegraphics[width=0.50\textwidth]{../../images/flow_loops.pdf}
+ \end{center}
+\end{pframe}
+
+
+
+\subsection{\pythoninline{while} statement}
+\begin{pframe}
+ \begin{minipage}{0.47\textwidth}
+ \begin{center}
+   \includegraphics[width=0.80\textwidth]{../../images/flow_loops.pdf}
+ \end{center}
+ \end{minipage}%
+ \begin{minipage}{0.47\textwidth}
  \begin{pythonfile}{while\_example.py}
   \begin{minted}[linenos]{python}
 i = 0
@@ -150,36 +486,28 @@ while i < 5:
 3\\
 4\\}}
  \end{terminal}
+ \end{minipage}
+
 \end{pframe}
 
-\subsection{Iterating over a sequence}
+\subsection{\pythoninline{for} statement}
 \begin{pframe}
+ Used to iterate over a sequence.
  \begin{pythonfile}{for\_example.py}
   \begin{minted}[linenos]{python}
 colors = ['red', 'white', 'blue', 'orange']
-cities = ['leiden', 'utrecht', 'warmond', 'san francisco']
 
-# The for statement can iterate over sequence items.
 for color in colors:
     print(color)
-
-for character in 'blue':
-    print(character)
   \end{minted}
  \end{pythonfile}
-\end{pframe}
-
-\begin{pframe}
+ \pause
  \begin{terminal}
   \color{white}{\texttt{\$ python for\_example.py\\
 red\\
 white\\
 blue\\
 orange\\
-b\\
-l\\
-u\\
-e\\
 }}
  \end{terminal}
 \end{pframe}
@@ -209,12 +537,12 @@ We call them unpythonic.
  \begin{pythonfile}{iteration.py}
   \begin{minted}[linenos]{python}
 # Iteration with values and indices:
-for i, color in enumerate(colors):
+for i, color in enumerate(['red', 'yellow', 'blue']):
     print(i, '->', color)
 
 # Taking two sequences together:
-for city, color in zip(cities, colors):
-    print(city, '->', color)
+for city, population in zip(['Delft', 'Leiden'], [101030, 121562]):
+    print(city, '->', population)
 
 # Iterating over a dictionary yields keys:
 for key in {'a': 33, 'b': 17, 'c': 18}:
@@ -228,32 +556,19 @@ for line in open('data/short_file.txt'):
 \end{pframe}
 
 
+\section{Extras}
 
-\section{Notes about syntax}
-
-\subsection{Indentation}
+\subsection{The pass statement}
 \begin{pframe}
- Python uses indentation to delimit blocks
- \begin{itemize}
-   \item Instead of \texttt{begin ... end} or \texttt{\{ ... \}} in other languages.
-   \item Always increase indentation by 4 spaces, never use tabs.
-   \begin{itemize}
-     \item In any case, be consistent.
-   \end{itemize}
- \end{itemize}
- \begin{pythonfile}{indentation\_example.py}
+ If you ever need a statement syntactically but don't want to do anything, use \texttt{pass}.
+ \begin{pythonfile}{comments\_example.py}
   \begin{minted}[linenos]{python}
-if False:
-    if False:
-        print('Why am I here?')
-    else:
-        while True:
-            print('When will it stop?')
-    print("And we're back to the first indentation level")
+while False:
+    # This is never executed anyway.
+    pass
   \end{minted}
  \end{pythonfile}
 \end{pframe}
-
 
 \subsection{Comments}
 \begin{pframe}
@@ -269,218 +584,14 @@ l.append(42)
  \end{pythonfile}
 \end{pframe}
 
-
-\subsection{The pass statement}
-\begin{pframe}
- If you ever need a statement syntactically but don't want to do anything, use \texttt{pass}.
- \begin{pythonfile}{comments\_example.py}
-  \begin{minted}[linenos]{python}
-while False:
-    # This is never executed anyway.
-    pass
-  \end{minted}
- \end{pythonfile}
-\end{pframe}
-
-
-
-\section{Functions}
-
-\subsection{Defining a function}
-\begin{pframe}
- A function is a named sequence of statements that performs some piece of work.
- Later on that function can be called by using its name.
- \medskip
-
- A function definition includes its name, arguments and body.
- \begin{pythonfile}{functions.py}
-  \begin{minted}[linenos]{python}
-def add_two(number):
-    return number + 2
-
-for i in range(5):
-    print(add_two(i))
-  \end{minted}
- \end{pythonfile}
-\end{pframe}
-
-
-\subsection{Keyword arguments}
-\begin{pframe}
- Besides regular arguments, functions can have keyword arguments.
- \begin{pythonfile}{functions\_keywords.py}
-  \begin{minted}[linenos]{python}
-def add_some_other_number(number, other_number=12):
-    return number + other_number
-
-add_some_other_number(2, 6)  # 8
-
-add_some_other_number(3, other_number=4)  # 7
-
-add_some_other_number(5)  # 17
-  \end{minted}
- \end{pythonfile}
-\end{pframe}
-
-
-\subsection{Functions are values}
-\begin{pframe}
- We can pass functions around just like other values, and call them.
- \begin{pythonfile}{function\_values.py}
-  \begin{minted}[linenos]{python}
-def add_two(number):
-    return number + 2
-
-def add_some_other_number(number, other_number=12):
-    return number + other_number
-
-functions = [add_two, add_some_other_number]
-for function in functions:
-    print(function(7))
-
-# Simple anonymous functions can be created with lambda.
-functions.append(lambda x: x * 7)
-for function in functions:
-    print(function(4))
-  \end{minted}
- \end{pythonfile}
-\end{pframe}
-
-
-
-\subsection{Docstrings}
-\begin{pframe}
- Like many other definitions, functions can have docstrings.
- \begin{itemize}
-  \item Docstrings are regular string values which you start the definition
-  body with.
-  \item You can access an object's docstring using help.
- \end{itemize}
- \begin{pythonfile}{docstring\_example.py}
-  \begin{minted}[linenos]{python}
-def factorial(n):
-    """Compute factorial of n in the obious way."""
-    if n == 0:
-        return 1
-    else:
-        return factorial(n - 1) * n
-  \end{minted}
- \end{pythonfile}
-\end{pframe}
-
-\subsection{Higher-order functions}
-\begin{pframe}
- A function that takes a function as argument is a higher-order function.
- \begin{ipython}
-  \begin{pythonin}{python}
-help(map)
-Help on class map in module builtins:
-class map(object)
- |  map(func, *iterables) --> map object
- |
- |  Make an iterator that computes the function using arguments from
- |  each of the iterables.  Stops when the shortest iterable is exhausted.
-  \end{pythonin}
-  \\
-
- \begin{pythonin}{python}
-list(map(add_two, [1, 2, 3, 4]))
-  \end{pythonin}
-  \\
-  \begin{pythonout}{python}
-[3, 4, 5, 6]
-  \end{pythonout}
- \end{ipython}
-\end{pframe}
-
-
-
-\section{Comprehensions}
-
-\subsection{List comprehensions}
-\begin{pframe}
- Similar to mathematical set notation (e.g., ${x | x \in R \wedge x>0}$), we can create lists.
- \begin{ipython}
-  \begin{pythonin}{python}
-[(x, x * x) for x in range(10) if x % 2]
-  \end{pythonin}
-  \\
-
-  \begin{pythonout}{python}
-[(1, 1), (3, 9), (5, 25), (7, 49), (9, 81)]
-  \end{pythonout}
- \end{ipython}
-
-We can do the same thing using \texttt{map} and \texttt{filter}, but list comprehensions are often more readable.
-
- \begin{ipython}
-  \begin{pythonin}{python}
-list(map(lambda x: (x, x * x), filter(lambda x: x %2, range(10))))
-  \end{pythonin}
-  \\
-
-  \begin{pythonout}{python}
-[(1, 1), (3, 9), (5, 25), (7, 49), (9, 81)]
-  \end{pythonout}
- \end{ipython}
-\end{pframe}
-
-\subsection{Set and dictionary comprehensions}
-\begin{pframe}
- Similar notation can be used for (non-empty) sets.
- \begin{ipython}
-  \begin{pythonin}{python}
-{c for c in 'LUMC-standard' if 'a' <= c <= 'z'}
-  \end{pythonin}
-  \\
-
-  \begin{pythonout}{python}
-{'a', 'd', 'n', 'r', 's', 't'}
-  \end{pythonout}
- \end{ipython}
-
-We can do the same thing using \texttt{map} and \texttt{filter}, but list comprehensions are often more readable.
-
- \begin{ipython}
-  \begin{pythonin}{python}
-colors = ['red', 'white', 'blue', 'orange']
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
-{c: len(c) for c in colors}
-  \end{pythonin}
-  \\
-
-  \begin{pythonout}{python}
-{'blue': 4, 'orange': 6, 'red': 3, 'white': 5}
-  \end{pythonout}
- \end{ipython}
-\end{pframe}
-
-
-
 \section{Hands on!}
 \begin{pframe}
  \vspace{-0.5cm}
  \begin{enumerate}
-  \item Write a Python function that returns the maximum of two numbers.
-  \item Write a Python function that returns the maximum of three numbers.
-  Try to reuse the first maximum of two numbers function.
-  \item Write a Python function that accepts a string as parameter.
-  Next, it calculates and prints the number of upper case letters and lower
-  case letters. Make use of the \mintinline{python}{isupper} and
-  \mintinline{python}{islower} built in methods.
+  \item Write a program that prints those numbers which are divisible by
+  13 and multiple of 5, between 10 and 1313 (both included).
  \end{enumerate}
 \end{pframe}
 
-
-% Make the acknowledgements slide.
-\makeAcknowledgementsSlide{
-  \begin{tabular}{ll}
-    Martijn Vermaat\\
-    Jeroen Laros\\
-    Jonathan Vis
-  \end{tabular}
-}
 
 \end{document}
