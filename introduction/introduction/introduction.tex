@@ -70,7 +70,6 @@
    \includegraphics[width=0.9\textwidth]{../../images/dna.jpg}
  \end{center}
  \end{minipage}
-
 \end{pframe}
 
 
@@ -118,7 +117,7 @@
    \item Ruben Vorderman \\
      \hrefcc{emailc}{r.h.p.vorderman@lumc.nl}
    \item Redmar van den Berg \\
-     \hrefcc{emailc}{r.r.van_den_berg@lumc.n}
+     \hrefcc{emailc}{r.r.van\_den\_berg@lumc.n}
    \item Mihai Lefter\\
     \hrefcc{emailc}{m.lefter@lumc.nl}
   \end{itemize}
@@ -289,8 +288,6 @@
   \end{tikzpicture}
 \end{pframe}
 
-
-
 \subsection{Python 2 versus Python 3}
 \begin{pframe}
  \begin{itemize}
@@ -307,38 +304,59 @@
 \section{Running Python code}
 
 \begin{pframe}
-  Two main ways of writing and executing Python code:
+\vspace{-0.5cm}
+\begin{minipage}[t]{0.47\textwidth}
+  Interactively:
+  {\small
   \begin{itemize}
-    \item Interactively:
-    \begin{itemize}
-     \item Statement by statement, directly in the interpreter.
-    \end{itemize}
-    \item Non-interactively:
-    \begin{itemize}
-     \item By editing in a file and running the code afterwards.
-    \end{itemize}
-  \end{itemize}
-\end{pframe}
-
-\subsection{The standard Python interpreter}
-\begin{pframe}
-  Start it by typing \textbf{python} on the command line:
+    \item Statement by statement, directly in the interpreter.
+  \end{itemize}}
+  \pause
   \begin{terminal}
-  \color{white}{
-  \begin{lstlisting}[frame=,style=,numbers=none]
+  {\tiny \color{white}{
+   \begin{lstlisting}[frame=,style=,numbers=none,aboveskip=-0.1cm,belowskip=-0.1cm]
 $ python
-Python 3.7 (default, Nov 12 2018, 13:43:14)
+Python 3.7 (default, Nov 26 2019, 10:23:46)
 [GCC 5.4.0 20160609] on linux
-Type "help", "copyright", "credits" or "license" for more information.
+Type "help", "copyright", "credits" or
+"license" for more information.
+>>> print('Hello world')
+Hello world
 >>>
-  \end{lstlisting}}
+  \end{lstlisting}}}
  \end{terminal}
+ \pause
+ {\small
  \begin{itemize}
-  \item It shows an interpreter prompt.
-  \item You can give it Python code to interpret.
- \end{itemize}
+  \item Interpreters are great for prototyping.
+  \item But not really suitable if you want to share or release code.
+ \end{itemize}}
+ \end{minipage}\qquad%
+ \begin{minipage}[t]{0.47\textwidth}
+  \pause
+  \vspace{-0.3cm}
+  Non-interactively:
+  {\small
+  \begin{itemize}
+   \item By editing a file and running the code afterwards.
+  \end{itemize}}
+  \pause
+  \begin{pythonfile}{first\_script.py}
+   \begin{minted}[linenos]{python}
+print("Hello world!")
+   \end{minted}
+  \end{pythonfile}
+  \pause
+  \begin{terminal}
+   {\tiny \color{white}{
+   \begin{lstlisting}[frame=,style=,numbers=none,aboveskip=-0.1cm,belowskip=-0.1cm]
+$ python first_script.py
+Hello world
+$
+   \end{lstlisting}}}
+  \end{terminal}
+ \end{minipage}
 \end{pframe}
-
 
 \subsection{The IPython interpreter}
 \begin{pframe}
@@ -349,11 +367,11 @@ Type "help", "copyright", "credits" or "license" for more information.
     \item cross-session history;
     \item etc.
   \end{itemize}
+  \medskip
 
-  Start it by typing \textbf{ipython} on the command line:
   \begin{terminal}
   \color{white}{
-  \begin{lstlisting}[frame=,style=,numbers=none]
+   \begin{lstlisting}[frame=,style=,numbers=none,aboveskip=-0.1cm]
 $ ipython
 Python 3.7 (default, Nov 12 2018, 13:43:14)
 Type 'copyright', 'credits' or 'license' for more information
@@ -363,11 +381,8 @@ IPython 6.1.0 -- An enhanced Interactive Python. Type '?' for help.
   \end{pythonin}
   \addtocounter{cntr}{-1}
  \end{terminal}
- \begin{itemize}
-  \item It shows an interpreter prompt.
-  \item You can give it Python code to interpret.
- \end{itemize}
 \end{pframe}
+
 
 \section{Python as a calculator}
 
