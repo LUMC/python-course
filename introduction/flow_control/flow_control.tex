@@ -29,7 +29,6 @@
 
 
 
-
 \section{Sequential Execution}
 
 \begin{pframe}
@@ -38,26 +37,28 @@
  \end{center}
 \end{pframe}
 
+
 \begin{pframe}
  \begin{minipage}{0.37\textwidth}
- \begin{center}
+  \begin{center}
    \includegraphics[width=0.50\textwidth]{../../images/flow_sequential.pdf}
- \end{center}
+  \end{center}
  \end{minipage}%
  \begin{minipage}{0.57\textwidth}
- \begin{pythonfile}{sum.py}
-  \begin{minted}[linenos]{python}
+  \begin{pythonfile}{sum.py}
+   \begin{minted}[linenos]{python}
 a = 100
 b = 200
 print(a+b)
-  \end{minted}
- \end{pythonfile}
+   \end{minted}
+  \end{pythonfile}
  \begin{terminal}
   \color{white}{\texttt{\$ python sum.py \\
 300}}
- \end{terminal}
+  \end{terminal}
  \end{minipage}
 \end{pframe}
+
 
 \subsection{Intermezzo - User input}
 \begin{pframe}
@@ -84,10 +85,11 @@ b = 200 \\
  \end{terminal}
  \pause
  \begin{tikzpicture}[remember picture,overlay]
-    \node[xshift=-6.5cm,yshift=-6.64cm] at (current page.north east)
-    {\includegraphics[width=5.8cm]{../../images/questions.pdf}};
+   \node[xshift=-6.5cm,yshift=-6.64cm] at (current page.north east)
+   {\includegraphics[width=5.8cm]{../../images/questions.pdf}};
  \end{tikzpicture}
 \end{pframe}
+
 
 \begin{pframe}
 Performed with the \emp{input([prompt])} built-in function:
@@ -112,7 +114,24 @@ b = 200 \\
 \end{pframe}
 
 
+\subsection{Intermezzo - Comments}
+\begin{pframe}
+ Comments are prepended by \emp{\#} and completely ignored.
+ \begin{pythonfile}{sum.py}
+  \begin{minted}[linenos]{python}
+# Retrieve the input
+a = int(input('a = '))
+b = int(input('b = '))
+
+# Compute and display the result
+print(a+b)
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
 \section{Conditionals}
+
 \begin{pframe}
  \begin{center}
    \includegraphics[width=0.55\textwidth]{../../images/flow_conditional.pdf}
@@ -130,6 +149,7 @@ b = 200 \\
    \includegraphics[width=0.75\textwidth]{../../images/flow_conditional_chained_if.pdf}
  \end{center}
 \end{pframe}
+
 
 \subsection{Truth Value Testing}
 \begin{pframe}
@@ -172,23 +192,25 @@ True
  \end{ipython}
 \end{pframe}
 
+
 \subsection{Comparisons}
 \begin{pframe}
-\begin{table}[]
-\begin{tabular}{@{}lll@{}}
-\toprule
-  Operation    & Meaning & Example \\ \toprule
-  \emp{<}      & strictly less than & \pythoninline{x < y} \\
-  \emp{<=}     & less than or equal & \pythoninline{x <= y} \\
-  \emp{>}      & strictly greater than & \pythoninline{x > y} \\
-  \emp{>=}     & greater than or equal & \pythoninline{x >= y} \\
-  \emp{==}     & equal & \pythoninline{x == y} \\
-  \emp{!=}     & not equal & \pythoninline{x != y} \\ \midrule
-  \emp{is}     & object identity & \pythoninline{x is y} \\
-  \emp{is not} & negated object identity & \pythoninline{x is not y} \\ \bottomrule
-\end{tabular}
-\end{table}
+ \begin{table}[]
+  \begin{tabular}{@{}lll@{}}
+   \toprule
+   Operation    & Meaning & Example \\ \toprule
+   \emp{<}      & strictly less than & \pythoninline{x < y} \\
+   \emp{<=}     & less than or equal & \pythoninline{x <= y} \\
+   \emp{>}      & strictly greater than & \pythoninline{x > y} \\
+   \emp{>=}     & greater than or equal & \pythoninline{x >= y} \\
+   \emp{==}     & equal & \pythoninline{x == y} \\
+   \emp{!=}     & not equal & \pythoninline{x != y} \\ \midrule
+   \emp{is}     & object identity & \pythoninline{x is y} \\
+   \emp{is not} & negated object identity & \pythoninline{x is not y} \\ \bottomrule
+  \end{tabular}
+ \end{table}
 \end{pframe}
+
 
 \begin{pframe}
  \begin{ipython}
@@ -229,15 +251,15 @@ True
 
 \subsection{Boolean (Logical) Operations}
 \begin{pframe}
-\begin{table}[]
-\begin{tabular}{@{}llc@{}}
-\toprule
- Operation     & Result & Notes \\ \midrule
- \pythoninline{x or y}  & if \emp{x} is false, then \emp{y}, else \emp{x} & (1) \\
- \pythoninline{x and y} & if \emp{x} is false, then \emp{x}, else \emp{y} & (2) \\
- \pythoninline{not x}   & if \emp{x} is false, then \emp{True}, else \emp{False} & (3) \\ \bottomrule
-\end{tabular}
-\end{table}
+ \begin{table}[]
+  \begin{tabular}{@{}llc@{}}
+   \toprule
+   Operation     & Result & Notes \\ \midrule
+   \pythoninline{x or y}  & if \emp{x} is false, then \emp{y}, else \emp{x} & (1) \\
+   \pythoninline{x and y} & if \emp{x} is false, then \emp{x}, else \emp{y} & (2) \\
+   \pythoninline{not x}   & if \emp{x} is false, then \emp{True}, else \emp{False} & (3) \\ \bottomrule
+  \end{tabular}
+ \end{table}
  \begin{enumerate}
   \item It evaluates \emp{y} only if \emp{x} is false.
   \item It evaluates \emp{y} only if \emp{x} is true.
@@ -246,18 +268,20 @@ True
  \end{enumerate}
 \end{pframe}
 
+
 \begin{pframe}
-\begin{table}[]
-\begin{tabular}{@{}cc|cc@{}}
-\toprule
-  \emp{x}     & \emp{y}     & \emp{x or y} & \emp{x and y} \\ \midrule
-  \emp{True}  & \emp{True}  & \emp{True}   & \emp{True}    \\
-  \emp{True}  & \emp{False} & \emp{True}   & \emp{False}   \\
-  \emp{False} & \emp{True}  & \emp{True}   & \emp{False}   \\
-  \emp{False} & \emp{False} & \emp{False}   & \emp{False}  \\ \bottomrule
-\end{tabular}
-\end{table}
+ \begin{table}[]
+  \begin{tabular}{@{}cc|cc@{}}
+   \toprule
+   \emp{x}     & \emp{y}     & \emp{x or y} & \emp{x and y} \\ \midrule
+   \emp{True}  & \emp{True}  & \emp{True}   & \emp{True}    \\
+   \emp{True}  & \emp{False} & \emp{True}   & \emp{False}   \\
+   \emp{False} & \emp{True}  & \emp{True}   & \emp{False}   \\
+   \emp{False} & \emp{False} & \emp{False}   & \emp{False}  \\ \bottomrule
+  \end{tabular}
+ \end{table}
 \end{pframe}
+
 
 \begin{pframe}
  \begin{ipython}
@@ -289,6 +313,7 @@ True
  \end{ipython}
 \end{pframe}
 
+
 \subsection{\emp{if} statement}
 \begin{pframe}
  \begin{minipage}{0.47\textwidth}
@@ -297,6 +322,25 @@ True
  \end{center}
  \end{minipage}%
  \begin{minipage}{0.47\textwidth}
+  \begin{pythondeclaration}
+   \emp{if}\textvisiblespace\lstinline{condition}\emp{:}\\
+   \textvisiblespace\textvisiblespace\textvisiblespace\textvisiblespace
+   \lstinline{task 2}\\
+   \emp{else:}\\
+   \textvisiblespace\textvisiblespace\textvisiblespace\textvisiblespace
+   \lstinline{task 3}
+  \end{pythondeclaration}
+ \end{minipage}
+\end{pframe}
+
+
+\begin{pframe}
+ \begin{minipage}[t]{0.47\textwidth}
+ \begin{center}
+   \includegraphics[width=0.80\textwidth]{../../images/flow_conditional.pdf}
+ \end{center}
+ \end{minipage}\qquad%
+ \begin{minipage}[t]{0.47\textwidth}
  \begin{pythonfile}{max.py}
   \begin{minted}[linenos]{python}
 a = int(input('a = '))
@@ -318,15 +362,17 @@ b = 200 \\
  \end{minipage}
 \end{pframe}
 
+
 \begin{pframe}
- \begin{minipage}{0.57\textwidth}
- \begin{center}
+ \vspace{-0.5cm}
+ \begin{minipage}[t]{0.57\textwidth}
+  \begin{center}
    \includegraphics[width=0.90\textwidth]{../../images/flow_conditional_chained_if.pdf}
- \end{center}
+  \end{center}
  \end{minipage}%
- \begin{minipage}{0.37\textwidth}
- \begin{pythonfile}{compare.py}
-  \begin{minted}[linenos]{python}
+ \begin{minipage}[t]{0.37\textwidth}
+  \begin{pythonfile}{compare.py}
+   \begin{minted}[linenos]{python}
 a = int(input('a = '))
 b = int(input('b = '))
 
@@ -336,17 +382,17 @@ elif a == b:
     print('equal')
 else:
     print(b)
-  \end{minted}
- \end{pythonfile}
-
- \begin{terminal}
+   \end{minted}
+  \end{pythonfile}
+  \begin{terminal}
   \color{white}{\texttt{\$ python compare.py \\
 a = 100 \\
 b = 100 \\
 equal}}
- \end{terminal}
+  \end{terminal}
  \end{minipage}
 \end{pframe}
+
 
 \section{Indentation}
 \begin{pframe}
@@ -374,12 +420,12 @@ if False:
 
 
 \section{Loops}
+
 \begin{pframe}
  \begin{center}
    \includegraphics[width=0.50\textwidth]{../../images/flow_loops.pdf}
  \end{center}
 \end{pframe}
-
 
 
 \subsection{\pythoninline{while} statement}
@@ -390,26 +436,61 @@ if False:
  \end{center}
  \end{minipage}%
  \begin{minipage}{0.47\textwidth}
- \begin{pythonfile}{while\_example.py}
-  \begin{minted}[linenos]{python}
+  \begin{pythondeclaration}
+   \emp{while}\textvisiblespace\lstinline{condition}\emp{:}\\
+   \textvisiblespace\textvisiblespace\textvisiblespace\textvisiblespace
+   \lstinline{task 2}
+  \end{pythondeclaration}
+ \end{minipage}
+\end{pframe}
+
+
+\begin{pframe}
+ \begin{minipage}{0.47\textwidth}
+  \begin{center}
+   \includegraphics[width=0.80\textwidth]{../../images/flow_loops.pdf}
+  \end{center}
+ \end{minipage}%
+ \begin{minipage}{0.47\textwidth}
+  \begin{pythonfile}{while\_example.py}
+   \begin{minted}[linenos]{python}
 i = 0
 while i < 5:
     print(i)
     i += 1
-  \end{minted}
- \end{pythonfile}
-
- \begin{terminal}
+   \end{minted}
+  \end{pythonfile}
+  \begin{terminal}
   \color{white}{\texttt{\$ python while\_example.py \\
 0\\
 1\\
 2\\
 3\\
-4\\}}
- \end{terminal}
+4}}
+  \end{terminal}
  \end{minipage}
-
 \end{pframe}
+
+
+\subsection{Infinite loop}
+\begin{pframe}
+ \begin{pythonfile}{infinite\_loop.py}
+  \begin{minted}[linenos]{python}
+while True:
+    print('yes')
+  \end{minted}
+ \end{pythonfile}
+ \begin{terminal}
+  \color{white}{\texttt{\$ python infinite\_loop.py \\
+yes\\
+yed\\
+yes\\
+yes\\
+...}}
+ \end{terminal}
+\end{pframe}
+
+
 
 \subsection{\pythoninline{for} statement}
 \begin{pframe}
@@ -428,7 +509,7 @@ for color in colors:
 red\\
 white\\
 blue\\
-orange\\
+orange
 }}
  \end{terminal}
 \end{pframe}
@@ -436,9 +517,12 @@ orange\\
 
 \subsection{Python anti-patterns}
 \begin{pframe}
-These are common for programmers coming from other languages.
- \begin{pythonfile}{unpythonic.py}
-  \begin{minted}[linenos]{python}
+ \begin{minipage}[t]{0.48\textwidth}
+  These are common for programmers coming from other languages.
+  \begin{pythonfile}{unpythonic.py}
+   \begin{minted}[linenos]{python}
+colors = ['red', 'white', 'blue']
+
 i = 0
 while i < len(colors):
     print(colors[i])
@@ -446,10 +530,68 @@ while i < len(colors):
 
 for i in range(len(colors)):
     print(colors[i])
-  \end{minted}
- \end{pythonfile}
+   \end{minted}
+  \end{pythonfile}
+  We call them unpythonic.
+ \end{minipage}\qquad%
+ \begin{minipage}[t]{0.48\textwidth}
+  The Pythonic way:
+  \begin{pythonfile}{for\_example.py}
+   \begin{minted}[linenos]{python}
+colors = ['red', 'white', 'blue']
 
-We call them unpythonic.
+for color in colors:
+    print(color)
+   \end{minted}
+  \end{pythonfile}
+ \end{minipage}\qquad
+\end{pframe}
+
+
+\subsection{\emp{break} and \emp{continue} statements}
+\begin{pframe}
+ \pause
+ \begin{minipage}[t]{0.48\textwidth}
+%   Immediately drop out of the loop.
+  \emp{break} will immediately exit a loop.
+  \begin{pythonfile}{break\_example.py}
+   \begin{minted}[linenos]{python}
+# Print up to the first negative
+for i in [6, 3, -1, 7, -2, 5]:
+    if i < 0:
+        break
+    print(i)
+   \end{minted}
+  \end{pythonfile}
+  \pause
+  \begin{terminal}
+  \color{white}{\texttt{\$ python break\_example.py \\
+6\\
+3}}
+  \end{terminal}
+ \end{minipage}\qquad%
+ \pause
+ \begin{minipage}[t]{0.48\textwidth}
+ \emp{continue} will skip the current block.
+  \begin{pythonfile}{continue\_example.py}
+   \begin{minted}[linenos]{python}
+# Print only positive numbers
+for i in [6, 3, -1, 7, -2, 5]:
+    if i < 0:
+        continue
+    print(i)
+   \end{minted}
+  \end{pythonfile}
+  \pause
+  \begin{terminal}
+  \color{white}{\texttt{\$ python continue\_example.py \\
+6\\
+3\\
+7\\
+5
+}}
+  \end{terminal}
+ \end{minipage}\qquad
 \end{pframe}
 
 
@@ -477,40 +619,36 @@ for line in open('data/short_file.txt'):
 \end{pframe}
 
 
-\section{Extras}
-
-\subsection{The pass statement}
+\subsection{The \emp{pass} statement}
 \begin{pframe}
- If you ever need a statement syntactically but don't want to do anything, use \texttt{pass}.
- \begin{pythonfile}{comments\_example.py}
+ If you need a statement syntactically, but don't want to do anything yet, use \emp{pass}:
+ \begin{pythonfile}{pass\_statement.py}
   \begin{minted}[linenos]{python}
-while False:
-    # This is never executed anyway.
+age = int(input('Please enter your age: '))
+
+if age < 18:
+    # This is to be decided.
     pass
+else:
+    print('You can apply for a driver\'s permit in most of the countries.')
   \end{minted}
  \end{pythonfile}
 \end{pframe}
 
-\subsection{Comments}
-\begin{pframe}
- Comments are prepended by \texttt{\#} and completely ignored.
- \begin{pythonfile}{comments\_example.py}
-  \begin{minted}[linenos]{python}
-# Create the list.
-l = []
-
-# Add 42 to this list.
-l.append(42)
-  \end{minted}
- \end{pythonfile}
-\end{pframe}
 
 \section{Hands on!}
 \begin{pframe}
  \vspace{-0.5cm}
+ Write a python program for each of the following exercises:
  \begin{enumerate}
-  \item Write a program that prints those numbers which are divisible by
-  13 and multiple of 5, between 10 and 1313 (both included).
+  \item \textbf{Special numbers} \\
+        Print only those numbers which are divisible by \emp{13} and multiple of
+        \emp{5}, between \emp{10} and \emp{1313} (both included).
+  \item \textbf{Bank account simulator} \\
+        Take as input an initial bank account amount. Next, accept inputs
+        consisting of expenses / revenues until the user introduces \emp{exit}.
+        After each input, in case the balance is about to go negative, print an
+        error message, otherwise print the new balance value.
  \end{enumerate}
 \end{pframe}
 
