@@ -32,7 +32,7 @@
 
 % First page of the presentation.
 \section{Introduction}
-\makeTableOfContents
+%\makeTableOfContents
 
 
 
@@ -46,9 +46,10 @@ l = [2, 5, 2, 3, 7]
 type(l)
 \end{pyconsole}
 \medskip
+\medskip
 Lists can be heterogeneous, but we typically don't use that.
 \begin{pyconsole}
-a = 'spezi'
+a = 'xyz'
 [3, 'abc', 1.3e20, [a, a, 2]]
 \end{pyconsole}
 \end{pframe}
@@ -95,14 +96,15 @@ But not mix them!
 \end{pframe}
 
 \begin{pframe}
- A common operation is formatting strings using argument substitutions.
+\vspace{-0.3cm}
+A common operation is formatting strings using argument substitutions.
 \begin{pyconsole}
 '{} times {} equals {:.2f}'\
     .format('pi', 2, 6.283185307179586)
 \end{pyconsole}
 \medskip
 \medskip
- Accessing arguments by position or name is more readable.
+Accessing arguments by position or name is more readable.
 \begin{pyconsole}
 '{1} times {0} equals {2:.2f}'\
     .format('pi', 2, 6.283185307179586)
@@ -113,11 +115,10 @@ But not mix them!
 \end{pframe}
 
 
-\section{Common sequence operations}
-
+\subsection{Common sequence operations}
 \begin{pframe}
- All sequence types support: concatenation, membership/substring tests,
- indexing, and slicing.
+All sequence types support: concatenation, membership/substring tests,
+indexing, and slicing.
 \begin{pyconsole}
 [1, 2, 3] + [4, 5, 6]
 
@@ -179,6 +180,7 @@ l
 
 \subsection{Additional useful built-ins}
 \begin{pframe}
+\vspace{-0.25cm}
 \begin{pyconsole}
 list('abcdefghijk')
 
@@ -211,6 +213,7 @@ d
 
 \subsection{Accessing dictionary content}
 \begin{pframe}
+\vspace{-0.25cm}
 \begin{pyconsole}
 d['b']
 
@@ -243,8 +246,16 @@ x
 
 \subsection{Sets are not indexed}
 \begin{pframe}
+Sets are unordered collections, and therefore without index.
 \begin{pyconsole}
 x[0]
+\end{pyconsole}
+\medskip
+\medskip
+
+In contrast to lists ...
+\begin{pyconsole}
+list(x)[0]
 \end{pyconsole}
 \end{pframe}
 
@@ -252,9 +263,9 @@ x[0]
 
 \subsection{Operations}
 \begin{pframe}
- We can test for membership and apply many common set operations\\
- such as union and intersect.
- \medskip
+We can test for membership and apply many common set operations\\
+such as union and intersect.
+\medskip
 
 \begin{pyconsole}
 17 in {12, 28, 21, 17}
@@ -283,8 +294,8 @@ s1.difference(s2)
 
 \section{Booleans}
 \begin{pframe}
-  The two boolean values are written \mintinline{python}{False} and
-  \mintinline{python}{True}.
+The two boolean values are written \mintinline{python}{False} and
+\mintinline{python}{True}.
 \begin{pyconsole}
 True or False
 
@@ -313,20 +324,26 @@ not False
 \section{Equivalence}
 \subsection{Value vs object}
 \begin{pframe}
- We have two equivalence relations: value equality (\mintinline{python}{==}) and
- object identity (\mintinline{python}{is}).
+We have two equivalence relations: value equality (\mintinline{python}{==}) and
+object identity (\mintinline{python}{is}).
 \begin{pyconsole}
 a, b = [1, 2, 3], [1, 2, 3]
 a == b
 
 a is b
+
+a = 0
+b = 0
+a is b
+
 \end{pyconsole}
 \end{pframe}
 
 
 \section{Casting}
-\subsection{Sometimes you might want to combine values of different types.}
+\subsection{Changing the type of a value}
 \begin{pframe}
+Sometimes you might want to combine values of different types.
 \begin{pyconsole}
 x = 1
 name = 'John'
@@ -336,13 +353,16 @@ name + x
 
 
 \section{Casting}
-\subsection{This is how you can do that}
+\subsection{Combining different types}
 \begin{pframe}
 \begin{pyconsole}
 x = 1
 name = 'John'
 name + str(x)
 \end{pyconsole}
+\medskip
+\medskip
+And further ...
 \begin{pyconsole}
 x = 1
 x
@@ -356,25 +376,27 @@ int(str(x))
 \begin{pframe}
  \vspace{-0.5cm}
  \begin{enumerate}
-  \item Make a list \texttt{l1} with 10 integer elements.
+  \item Make a list \pyv{list1} with 10 integer elements.
   \begin{enumerate}[a]
-  \item What is the sum of all the items in the \texttt{l1} list.
-  \item Make a new list \texttt{l2} from \texttt{l1} that does not include the 0th, 4th, and 5th elements.
-  \item Sum only the elements from \texttt{l1} which are between the 2nd and the 6th elements.
+  \item What is the sum of all the items in the \pyv{list1} list.
+  \item Make a list \pyv{list2} from \pyv{list1} that does not include the 0th, 4th, and 5th elements.
+  \item Sum only the elements from \pyv{list1} which are between the 2nd and the 6th elements.
   \end{enumerate}
   \item Food:
   \begin{enumerate}[a.]
-   \item Create a dictionary for food products called \texttt{prices} and put some
-   values in it, e.g., "apples": 2, "oranges": 1.5, "pears": 3, ...
-   \item Create a corresponding dictionary called "stocks" and put the stock
-   values in it, e.g., "apples": 0, "oranges": 1, "pears": 10, ...
-   \item Add another entry in the \texttt{prices} dictionary with key 'bananas' and value 13.
-   \item Add another entry in the \texttt{stocks} dictionary with key 'bananas' and value 11.
-   \item What is the total money value for the "bananas" (stock $\times$ price)?
-   \item How many products are in the \texttt{stocks} dictionary?\\
-   \item Are the number of products in the \texttt{stocks} and \texttt{prices} dictionaries equal?
-   \item Are there the same products in the \texttt{stocks} and \texttt{prices} dictionaries?
-   \item What is the most expensive value in the \texttt{prices} dictionary?
+   \item Create a dictionary for food products called \pyv{prices} and put some
+       values in it, e.g., \textit{apples}: \textbf{2}, \textit{oranges}: \textbf{1.5},
+          \textit{pears}: \textbf{3}, ...
+      \item Create a corresponding dictionary called \textit{stock} and put the stock
+          values in it, e.g., \textit{apples}: \textbf{0}, \textit{oranges}:
+          \textbf{1}, \textit{pears}: \textbf{10}, ...
+   \item Add another entry in the \pyv{prices} dictionary with key \textit{bananas} and value \textbf{13}.
+   \item Add another entry in the \pyv{stocks} dictionary with key \textit{bananas} and value \textbf{11}.
+   \item What is the total money value for the \textit{bananas} (\pyv{stock} $\times$ \pyv{price})?
+   \item How many products are in the \pyv{stocks} dictionary?\\
+   \item Are the number of products in the \pyv{stocks} and \pyv{prices} dictionaries equal?
+   \item Are there the same products in the \pyv{stocks} and \pyv{prices} dictionaries?
+   \item What is the most expensive value in the \pyv{prices} dictionary?
   \end{enumerate}
 %  \item max(['a', 100, 20])
  \end{enumerate}
