@@ -1,0 +1,457 @@
+\documentclass[aspectratio=1610,slidestop]{beamer}
+
+\author{Mihai Lefter}
+\title{Python Programming}
+\providecommand{\mySubTitle}{Functions}
+\providecommand{\myConference}{Programming Course}
+\providecommand{\myDate}{27-11-2019}
+\providecommand{\myGroup}{}
+\providecommand{\myDepartment}{}
+\providecommand{\myCenter}{}
+
+\usetheme{lumc}
+
+\input{../../shared/shared.tex}
+
+\usepackage[inkscapelatex=false]{svg}
+\newcommand{\decl}[1]{\textcolor{blue}{\lstinline{#1}}}
+
+
+\begin{document}
+
+% This disables the \pause command, handy in the editing phase.
+%\renewcommand{\pause}{}
+
+% Make the title slide.
+\makeTitleSlide{\includesvg[height=3.5cm]{../../images/Python.svg}}
+
+
+% First page of the presentation.
+\section{Introduction}
+\makeTableOfContents
+
+
+\section{User Defined Functions}
+
+\begin{pframe}
+ \begin{itemize}
+  \item A function is a named sequence of statements that performs some piece
+        of work.
+  \item Later on that function can be called multiple times by using its name.
+ \end{itemize}
+\end{pframe}
+
+
+\subsection{Defining a function}
+\begin{pframe}
+ A function definition includes its \decl{name}, \decl{parameters}, and \decl{body}:
+ \begin{pythondeclaration}
+  \emp{def}\textvisiblespace\decl{name}\emp{(}\decl{parameters}\emp{):}\\
+  \textvisiblespace\textvisiblespace\textvisiblespace\textvisiblespace\decl{body}
+ \end{pythondeclaration}
+ \pause
+ \begin{pythonfile}{functions.py}
+  \begin{minted}[linenos]{python}
+def greeting():
+    print('Hello!')
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
+\subsection{Calling a function}
+\begin{pframe}
+ A function is called by using its \decl{name} and by providing the required
+ \decl{arguments}:
+ \begin{pythondeclaration}
+  \decl{name}\emp{(}\decl{arguments}\emp{)}
+ \end{pythondeclaration}
+ \pause
+ \begin{pythonfile}{functions.py}
+  \begin{minted}[linenos]{python}
+def greeting():
+    print('Hello!')
+
+greeting()
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
+\begin{pframe}
+ A function is called by using its \decl{name} and by providing the required
+ \decl{arguments}:
+ \begin{pythondeclaration}
+  \decl{name}\emp{(}\decl{arguments}\emp{)}
+ \end{pythondeclaration}
+ \vspace{0.1cm}
+ \begin{minipage}[t]{0.47\textwidth}
+  \begin{pythonfile}{functions.py}
+   \begin{minted}[linenos]{python}
+def greeting():
+    print('Hello!')
+
+greeting()
+   \end{minted}
+  \end{pythonfile}
+ \end{minipage}\qquad
+ \begin{minipage}[t]{0.47\textwidth}
+ \vspace{-2.55cm}
+ \begin{terminal}
+  \color{white}{\texttt{\$ python functions.py \\
+Hello!}}
+ \end{terminal}
+ \end{minipage}
+\end{pframe}
+
+
+\begin{pframe}
+ A function is called by using its \decl{name} and by providing the required
+ \decl{arguments}:
+ \begin{pythondeclaration}
+  \decl{name}\emp{(}\decl{arguments}\emp{)}
+ \end{pythondeclaration}
+ Now let's add some \decl{parameters}:
+ \vspace{0.1cm}
+
+ \begin{minipage}[t]{0.49\textwidth}
+  \begin{pythonfile}{functions.py}
+   \begin{minted}[linenos]{python}
+def greeting(name):
+    print('Hello! {}'.format(name))
+
+greeting('students')
+   \end{minted}
+  \end{pythonfile}
+ \end{minipage}\qquad
+ \begin{minipage}[t]{0.47\textwidth}
+ \vspace{-2.55cm}
+ \begin{terminal}
+  \color{white}{\texttt{\$ python functions.py \\
+Hello students !}}
+ \end{terminal}
+ \end{minipage}
+\end{pframe}
+
+
+
+\subsection{The Return Statement}
+
+\begin{pframe}
+ Used to return a certain result value back to the caller.
+ \begin{pythonfile}{functions.py}
+  \begin{minted}[linenos]{python}
+def add_two(number):
+    return number + 2
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
+\begin{pframe}
+ Used to return a certain result value back to the caller.
+ \begin{pythonfile}{functions.py}
+  \begin{minted}[linenos]{python}
+def add_two(number):
+    return number + 2
+
+print(add_two(5))
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
+\begin{pframe}
+ Used to return a certain result value back to the caller.
+ \medskip
+
+ \begin{minipage}[t]{0.47\textwidth}
+  \begin{pythonfile}{functions.py}
+   \begin{minted}[linenos]{python}
+def add_two(number):
+    return number + 2
+
+print(add_two(5))
+   \end{minted}
+  \end{pythonfile}
+ \end{minipage}\qquad
+ \begin{minipage}[t]{0.47\textwidth}
+ \vspace{-2.55cm}
+ \begin{terminal}
+  \color{white}{\texttt{\$ python functions.py \\
+7}}
+ \end{terminal}
+ \end{minipage}
+\end{pframe}
+
+
+\begin{pframe}
+ Used to return a certain result value back to the caller.
+ \medskip
+
+ \begin{minipage}[t]{0.47\textwidth}
+  \begin{pythonfile}{functions.py}
+   \begin{minted}[linenos]{python}
+def add_two(number):
+    return number + 2
+
+for i in range(5):
+    print(i, '->', add_two(i))
+   \end{minted}
+  \end{pythonfile}
+ \end{minipage}\qquad
+ \pause
+ \begin{minipage}[t]{0.47\textwidth}
+ \vspace{-3.05cm}
+ \begin{terminal}
+  \color{white}{\texttt{\$ python functions.py \\
+0 -> 2\\
+1 -> 3\\
+2 -> 4\\
+3 -> 5\\
+4 -> 6}}
+ \end{terminal}
+ \end{minipage}
+\end{pframe}
+
+
+
+\section{Arguments}
+
+\subsection{Required}
+\begin{pframe}
+  Have to be passed during the function call (precisely in the right order).
+ \begin{pythonfile}{functions.py}
+  \begin{minted}[linenos]{python}
+def add_two(number):
+    return number + 2
+
+print(add_two())
+  \end{minted}
+ \end{pythonfile}
+ \pause
+ \begin{terminal}
+  \color{white}{\texttt{\$ python functions.py \\
+  File "functions.py", line 4, in <module>\\
+    add\_two()\\
+TypeError: add\_two() missing 1 required positional argument: 'number'
+}}
+ \end{terminal}
+\end{pframe}
+
+
+\subsection{Default}
+\begin{pframe}
+ Take a default value if no argument value is passed during the function call.
+ \medskip
+
+ \begin{minipage}[t]{0.47\textwidth}
+  \begin{pythonfile}{functions.py}
+   \begin{minted}[linenos]{python}
+def add_value(number, value=2):
+    return number + value
+
+print(add_value(5))
+   \end{minted}
+  \end{pythonfile}
+ \end{minipage}\qquad
+ \begin{minipage}[t]{0.47\textwidth}
+  \vspace{-2.6cm}
+  \begin{terminal}
+   \color{white}{\texttt{\$ python functions.py \\
+7
+}}
+  \end{terminal}
+ \end{minipage}
+\end{pframe}
+
+
+\begin{pframe}
+ Take a default value if no argument value is passed during the function call.
+ \medskip
+
+ \begin{minipage}[t]{0.47\textwidth}
+  \begin{pythonfile}{functions.py}
+   \begin{minted}[linenos]{python}
+def add_value(number, value=2):
+    return number + value
+
+print(add_value(5))
+print(add_value(5, 5))
+   \end{minted}
+  \end{pythonfile}
+ \end{minipage}\qquad
+ \begin{minipage}[t]{0.47\textwidth}
+  \vspace{-3.05cm}
+  \begin{terminal}
+   \color{white}{\texttt{\$ python functions.py \\
+7\\
+10
+}}
+  \end{terminal}
+ \end{minipage}
+\end{pframe}
+
+
+\subsection{Explicit parameter mentioning}
+\begin{pframe}
+ When you want to make sure that the mapping is correct.
+ \medskip
+
+ \begin{minipage}[t]{0.49\textwidth}
+  \begin{pythonfile}{functions.py}
+   \begin{minted}[linenos]{python}
+def add_value(number, value=2):
+    return number + value
+
+print(add_value(5, value=2))
+print(add_value(number=5, value=2))
+print(add_value(value=2, number=5))
+   \end{minted}
+  \end{pythonfile}
+ \end{minipage}\qquad
+ \begin{minipage}[t]{0.47\textwidth}
+  \vspace{-3.05cm}
+  \begin{terminal}
+   \color{white}{\texttt{\$ python functions.py \\
+7\\
+7\\
+7}}
+  \end{terminal}
+ \end{minipage}
+\end{pframe}
+
+
+\section{Variable Scope}
+
+\begin{pframe}
+ The range where a variable is visible.
+ \bigskip
+
+ Roughly speaking:
+ \begin{itemize}
+  \item The whole program forms one scope.
+  \item A function definition creates a new (nested) scope.
+  \item Variables inside a nested scope are not visible in the outer scope.
+  \item Variables from the outside scope are visible in the inner nested scope,
+        but you cannot (re)-assign a value to them (read-only) unless they are
+       declared global.
+ \end{itemize}
+\end{pframe}
+
+
+\subsection{Hiding variables}
+\begin{pframe}
+ If in a new scope a variable is created that already existed in an outer scope,
+ the new variable will hide the outer variable.
+\end{pframe}
+
+
+\subsection{Scope of function arguments}
+\begin{pframe}
+ Arguments of a function declaration are also only visible inside the function.
+\end{pframe}
+
+
+\section{Function as values}
+
+\subsection{Functions are values}
+\begin{pframe}
+ We can pass functions around just like other values, and call them.
+ \begin{pythonfile}{function\_values.py}
+  \begin{minted}[linenos]{python}
+def add_two(number):
+    return number + 2
+
+def add_some_other_number(number, other_number=12):
+    return number + other_number
+
+functions = [add_two, add_some_other_number]
+for function in functions:
+    print(function(7))
+
+# Simple anonymous functions can be created with lambda.
+functions.append(lambda x: x * 7)
+for function in functions:
+    print(function(4))
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+
+
+\section{Docstrings}
+\begin{pframe}
+ Like many other definitions, functions can have docstrings.
+ \begin{itemize}
+  \item Docstrings are regular string values which you start the definition
+  body with.
+  \item You can access an object's docstring using help.
+ \end{itemize}
+ \begin{pythonfile}{docstring\_example.py}
+  \begin{minted}[linenos]{python}
+def factorial(n):
+    """Compute factorial of n in the obious way."""
+    if n == 0:
+        return 1
+    else:
+        return factorial(n - 1) * n
+  \end{minted}
+ \end{pythonfile}
+\end{pframe}
+
+\section{Higher-order functions}
+\begin{pframe}
+ Take a function as an argument.
+ \begin{ipython}
+  \begin{pythonin}{python}
+help(map)
+Help on class map in module builtins:
+class map(object)
+ |  map(func, *iterables) --> map object
+ |
+ |  Make an iterator that computes the function using arguments from
+ |  each of the iterables.  Stops when the shortest iterable is
+ |  exhausted.
+  \end{pythonin}
+  \\
+
+ \begin{pythonin}{python}
+list(map(add_two, [1, 2, 3, 4]))
+  \end{pythonin}
+  \\
+  \begin{pythonout}
+[3, 4, 5, 6]
+  \end{pythonout}
+ \end{ipython}
+\end{pframe}
+
+
+
+
+
+\section{Hands on!}
+\begin{pframe}
+ \vspace{-0.5cm}
+ \begin{enumerate}
+  \item Write a Python function that returns the maximum of two numbers.
+  \item Write a Python function that returns the maximum of three numbers.
+  Try to reuse the first maximum of two numbers function.
+  \item Write a Python function that accepts a string as parameter.
+  Next, it calculates and prints the number of upper case letters and lower
+  case letters. Make use of the \mintinline{python}{isupper} and
+  \mintinline{python}{islower} built in methods.
+ \end{enumerate}
+\end{pframe}
+
+
+% Make the acknowledgements slide.
+\makeAcknowledgementsSlide{
+  \begin{tabular}{ll}
+    Martijn Vermaat\\
+    Jeroen Laros\\
+    Jonathan Vis
+  \end{tabular}
+}
+
+\end{document}
