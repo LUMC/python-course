@@ -1,10 +1,14 @@
 \documentclass[aspectratio=1610,slidestop]{beamer}
 
-\author{Mihai Lefter}
+% TODO: mutable vs immutable
+% TODO: add some questions in between?
+
+
+\author{Mark Santcroos}
 \title{Python Programming}
 \providecommand{\mySubTitle}{Data Types}
 \providecommand{\myConference}{Programming Course}
-\providecommand{\myDate}{27-11-2018}
+\providecommand{\myDate}{26-11-2019}
 \providecommand{\myGroup}{}
 \providecommand{\myDepartment}{}
 \providecommand{\myCenter}{}
@@ -12,6 +16,11 @@
 \usetheme{lumc}
 
 \input{../../shared/shared.tex}
+
+\usepackage[pyconbanner=none,pygopt={style=friendly, texcomments=true, mathescape=false}]{pythontex}
+\usepackage{mdframed}
+\surroundwithmdframed[backgroundcolor=black!15]{pyconsole}
+
 
 \begin{document}
 
@@ -26,137 +35,81 @@
 \makeTableOfContents
 
 
+
 \section{Sequence types}
 
 \subsection{Lists}
 \begin{pframe}
 Mutable sequences of values.
- \begin{ipython}
-  \begin{pythonin}{python}
+\begin{pyconsole}
 l = [2, 5, 2, 3, 7]
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
 type(l)
-  \end{pythonin}
-  \begin{pythonout}
-list
-  \end{pythonout}
- \end{ipython}
- \medskip
-
- Lists can be heterogeneous, but we typically don't use that.
- \begin{ipython}
-  \begin{pythonin}{python}
+\end{pyconsole}
+\medskip
+Lists can be heterogeneous, but we typically don't use that.
+\begin{pyconsole}
 a = 'spezi'
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
 [3, 'abc', 1.3e20, [a, a, 2]]
-  \end{pythonin}
-  \begin{pythonout}
-[3, 'abc', 1.3e+20, ['spezi', 'spezi', 2]]
-  \end{pythonout}
- \end{ipython}
+\end{pyconsole}
 \end{pframe}
 
 
 \subsection{Tuples}
 \begin{pframe}
 Immutable sequences of values.
- \begin{ipython}
-  \begin{pythonin}{python}
+\begin{pyconsole}
 t = 'white', 77, 1.5
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
 type(t)
-  \end{pythonin}
-  \begin{pythonout}
-tuple
-  \end{pythonout}
- \\
 
- \begin{pythonin}{python}
 color, width, scale = t
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
 width
-  \end{pythonin}
-  \begin{pythonout}
-77
-  \end{pythonout}
- \end{ipython}
+\end{pyconsole}
 \end{pframe}
 
 
 \subsection{Strings}
 \begin{pframe}
 Immutable sequences of characters.
- \begin{ipython}
-  \begin{pythonin}{python}
+\begin{pyconsole}
 'a string can be written in single quotes'
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-'a string can be written in single quotes'
-  \end{pythonout}
- \end{ipython}
-
+\end{pyconsole}
+\medskip
+\medskip
 Strings can also be written with double quotes, or over multiple lines with
 triple-quotes.
- \begin{ipython}
-  \begin{pythonin}{python}
+\begin{pyconsole}
 "this makes it easier to use the ' character"
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-"this makes it easier to use the ' character"
-  \end{pythonout}
-  \\
-
-  \begin{pythonin}{python}
+\end{pyconsole}
+\medskip
+\begin{pyconsole}
 """A multiline string.
 You see? I continued after a blank line."""
-  \end{pythonin}
-  \begin{pythonout}
-'A multiline string.\textbackslash n\textbackslash nYou see? I continued after a blank line.'
-  \end{pythonout}
- \end{ipython}
+\end{pyconsole}
+\end{pframe}
+
+\begin{pframe}
+But not mix them!
+\begin{pyconsole}
+'a string can not be written with mixed quotes"
+\end{pyconsole}
 \end{pframe}
 
 \begin{pframe}
  A common operation is formatting strings using argument substitutions.
- \begin{ipython}
-  \begin{pythonin}{python}
-'{} times {} equals {:.2f}'.format('pi', 2, 6.283185307179586)
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-'pi times 2 equals 6.28'
-  \end{pythonout}
- \end{ipython}
-
+\begin{pyconsole}
+'{} times {} equals {:.2f}'\
+    .format('pi', 2, 6.283185307179586)
+\end{pyconsole}
+\medskip
+\medskip
  Accessing arguments by position or name is more readable.
- \begin{ipython}
-  \begin{pythonin}{python}
-'{1} times {0} equals {2:.2f}'.format('pi', 2, 6.283185307179586)
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-'2 times pi equals 6.28'
-  \end{pythonout}
-  \\
+\begin{pyconsole}
+'{1} times {0} equals {2:.2f}'\
+    .format('pi', 2, 6.283185307179586)
 
-  \begin{pythonin}{python}
-'{number} times {amount} equals {result:.2f}'.format(number='pi', amount=2, result=6.283185307179586)
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-'pi times 2 equals 6.28'
-  \end{pythonout}
- \end{ipython}
+'{number} times {amount} equals {result:.2f}'\
+    .format(number='pi', amount=2, result=6.283185307179586)
+\end{pyconsole}
 \end{pframe}
 
 
@@ -165,34 +118,15 @@ You see? I continued after a blank line."""
 \begin{pframe}
  All sequence types support: concatenation, membership/substring tests,
  indexing, and slicing.
- \\
- \begin{ipython}
-  \begin{pythonin}{python}
+\begin{pyconsole}
 [1, 2, 3] + [4, 5, 6]
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-[1, 2, 3, 4, 5, 6]
-  \end{pythonout}
-  \\
 
-  \begin{pythonin}{python}
-'bier' in 'we drinken bier vanaf half 5'
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-True
-  \end{pythonout}
-  \\
+'hay' in 'haystack'
 
-  \begin{pythonin}{python}
-'abcdefghijkl'[5]
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-'f'
-  \end{pythonout}
- \end{ipython}
+'needle' in 'haystack'
+
+'abcdefghijkl'[3]
+\end{pyconsole}
 \end{pframe}
 
 
@@ -200,329 +134,118 @@ True
 \begin{pframe}
  Slice \mintinline{python}{s} from \mintinline{python}{i} to
  \mintinline{python}{j} with \mintinline{python}{s[i:j]}.
- \begin{ipython}
-  \begin{pythonin}{python}
+\begin{pyconsole}
 'abcdefghijkl'[4:8]
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-'efgh'
-  \end{pythonout}
-  \\
-
-  \begin{pythonin}{python}
 'abcdefghijkl'[:3]
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-'abc'
-  \end{pythonout}
- \end{ipython}
-
+\end{pyconsole}
+\medskip
+\medskip
  We can also define the step \mintinline{python}{k} with
  \mintinline{python}{s[i:j:k]}.
- \begin{ipython}
-  \begin{pythonin}{python}
+\begin{pyconsole}
 'abcdefghijkl'[7:3:-1]
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-'hgfe'
-  \end{pythonout}
- \end{ipython}
+\end{pyconsole}
 \end{pframe}
 
 
 \subsection{Several helpful builtins}
 \begin{pframe}
- \begin{ipython}
-  \begin{pythonin}{python}
+\begin{pyconsole}
 len('attacgataggcatccgt')
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-18
-  \end{pythonout}
-  \\
 
-  \begin{pythonin}{python}
 max([17, 86, 34, 51])
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-86
-  \end{pythonout}
-  \\
 
-  \begin{pythonin}{python}
 sum([17, 86, 34, 51])
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-188
-  \end{pythonout}
-  \\
 
-  \begin{pythonin}{python}
 ('atg', 22, True, 'atg').count('atg')
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-2
-  \end{pythonout}
- \end{ipython}
+\end{pyconsole}
 \end{pframe}
 
 
 \subsection{More with lists}
 \begin{pframe}
  We can replace, add, remove, reverse and sort items in-place.
- \begin{ipython}
-  \begin{pythonin}{python}
+\begin{pyconsole}
 l = [1, 2, 3, 4]
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
 l[3] = 7
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
 l.append(1)
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
 l[1:3] = [3, 2]
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
 l.sort()
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
 l.reverse()
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
 l
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-[7, 3, 2, 1, 1]
-  \end{pythonout}
- \end{ipython}
+\end{pyconsole}
 \end{pframe}
 
 
 \subsection{Additional useful built-ins}
 \begin{pframe}
- \begin{ipython}
-  \begin{pythonin}{python}
+\begin{pyconsole}
 list('abcdefghijk')
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k']
-  \end{pythonout}
-  \\
 
-  \begin{pythonin}{python}
-range(5, 16)  # In python 2: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-  \end{pythonin}
-  \\
-  \begin{pythonout}
 range(5, 16)
-  \end{pythonout}
-  \\
 
-  \begin{pythonin}{python}
 list(range(5, 16))
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-[5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-  \end{pythonout}
-  \\
 
-  \begin{pythonin}{python}
 zip(['red', 'white', 'blue'], range(3))
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-<zip at 0x7f3565860108>
-  \end{pythonout}
-  \\
 
-  \begin{pythonin}{python}
 list(zip(['red', 'white', 'blue'], range(3)))
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-[('red', 0), ('white', 1), ('blue', 2)]
-  \end{pythonout}
- \end{ipython}
+\end{pyconsole}
 \end{pframe}
 
 
 \section{Dictionaries}
-
-\subsection{Dictionaries map hashable values to arbitrary objects}
+\subsection{Unordered map of hashable values to arbitrary objects}
 \begin{pframe}
- \begin{ipython}
-  \begin{pythonin}{python}
+\begin{pyconsole}
 d = {'a': 27, 'b': 18, 'c': 12}
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
 type(d)
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-dict
-  \end{pythonout}
-  \\
 
-  \begin{pythonin}{python}
 d['e'] = 17
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
 'e' in d
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-True
-  \end{pythonout}
-  \\
 
-  \begin{pythonin}{python}
 d.update({'a': 18, 'f': 2})
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
 d
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-{'a': 18, 'b': 18, 'c': 12, 'e': 17, 'f': 2}
-  \end{pythonout}
- \end{ipython}
-% \begin{itemize}
-%  \item All built-in immutable objects are hashable.
-%  \item No built-in mutable objects are hashable.
-% \end{itemize}
+\end{pyconsole}
 \end{pframe}
 
 
 \subsection{Accessing dictionary content}
 \begin{pframe}
- \begin{ipython}
-  \begin{pythonin}{python}
+\begin{pyconsole}
 d['b']
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-18
-  \end{pythonout}
-  \\
 
-  \begin{pythonin}{python}
 d.keys()
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-dict\_keys(['e', 'c', 'a', 'b', 'f'])
-  \end{pythonout}
-  \\
 
-  \begin{pythonin}{python}
 list(d.keys())
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-['a', 'c', 'b', 'e', 'f']
-  \end{pythonout}
-  \\
 
-  \begin{pythonin}{python}
 list(d.values())
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-[18, 12, 18, 17, 2]
-  \end{pythonout}
-  \\
 
-  \begin{pythonin}{python}
 list(d.items())
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-[('a', 18), ('c', 12), ('b', 18), ('e', 17), ('f', 2)]
-  \end{pythonout}
- \end{ipython}
+\end{pyconsole}
 \end{pframe}
-
 
 
 \section{Sets}
 
 \subsection{Mutable unordered collections of hashable values without duplication}
 \begin{pframe}
- \begin{ipython}
-  \begin{pythonin}{python}
+\begin{pyconsole}
 x = {12, 28, 21, 17}
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
 type(x)
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-set
-  \end{pythonout}
-  \\
 
-  \begin{pythonin}{python}
 x.add(12)
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
-a
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-{12, 17, 21, 28}
-  \end{pythonout}
-  \\
-
-  \begin{pythonin}{python}
-x.discard(21)
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
 x
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-{12, 17, 28}
-  \end{pythonout}
- \end{ipython}
+
+x.discard(21)
+x
+\end{pyconsole}
 \end{pframe}
 
+\subsection{Sets are not indexed}
 \begin{pframe}
- \begin{ipython}
-  \begin{pythonin}{python}
+\begin{pyconsole}
 x[0]
-  \end{pythonin}
-  \begin{pythonerr}{python}
----------------------------------------------------------------------------
-TypeError                                 Traceback (most recent call last)
-<ipython-input-62-2f755f117ac9> in <module>()
-----> 1 x[0]
-
-TypeError: 'set' object does not support indexing
-  \end{pythonerr}
- \end{ipython}
+\end{pyconsole}
 \end{pframe}
 
 
@@ -533,33 +256,13 @@ TypeError: 'set' object does not support indexing
  such as union and intersect.
  \medskip
 
- \begin{ipython}
-  \begin{pythonin}{python}
+\begin{pyconsole}
 17 in {12, 28, 21, 17}
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-True
-  \end{pythonout}
-  \\
 
-  \begin{pythonin}{python}
 {12, 28, 21, 17} | {12, 18, 11}
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-{11, 12, 17, 18, 21, 28}
-  \end{pythonout}
-  \\
 
-  \begin{pythonin}{python}
 {12, 28, 21, 17} & {12, 18, 11}
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-{12}
-  \end{pythonout}
- \end{ipython}
+\end{pyconsole}
 \end{pframe}
 
 
@@ -568,101 +271,84 @@ True
  Difference
  \medskip
 
- \begin{ipython}
-  \begin{pythonin}{python}
+\begin{pyconsole}
 s1 = {12, 28, 21, 17}
-  \end{pythonin}
-  \\
 
-  \begin{pythonin}{python}
 s2 = {28, 32, 71, 12}
-  \end{pythonin}
-  \\
 
-  \begin{pythonin}{python}
 s1.difference(s2)
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-{17, 21}
-  \end{pythonout}
- \end{ipython}
+\end{pyconsole}
 \end{pframe}
 
 
-
 \section{Booleans}
-
 \begin{pframe}
   The two boolean values are written \mintinline{python}{False} and
   \mintinline{python}{True}.
- \begin{ipython}
-  \begin{pythonin}{python}
+\begin{pyconsole}
 True or False
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-True
-  \end{pythonout}
-  \\
 
-  \begin{pythonin}{python}
 True and False
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-False
-  \end{pythonout}
-  \\
 
-  \begin{pythonin}{python}
 not False
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-True
-  \end{pythonout}
- \end{ipython}
+\end{pyconsole}
 \end{pframe}
 
 
 \subsection{Comparisons}
 \begin{pframe}
   Comparisons can be done on all objects and return a boolean value.
- \begin{ipython}
-  \begin{pythonin}{python}
-22 * 3 > 66
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-False
-  \end{pythonout}
- \end{ipython}
+\begin{pyconsole}
+1 < 2
 
+1 == 2
+
+"Left" == "Right"
+
+"Right" == "Right"
+\end{pyconsole}
+\end{pframe}
+
+
+\section{Equivalence}
+\subsection{Value vs object}
+\begin{pframe}
  We have two equivalence relations: value equality (\mintinline{python}{==}) and
  object identity (\mintinline{python}{is}).
- \begin{ipython}
-  \begin{pythonin}{python}
+\begin{pyconsole}
 a, b = [1, 2, 3], [1, 2, 3]
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
 a == b
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-True
-  \end{pythonout}
-  \\
 
-  \begin{pythonin}{python}
 a is b
-  \end{pythonin}
-  \\
-  \begin{pythonout}
-False
-  \end{pythonout}
- \end{ipython}
+\end{pyconsole}
+\end{pframe}
+
+
+\section{Casting}
+\subsection{Sometimes you might want to combine values of different types.}
+\begin{pframe}
+\begin{pyconsole}
+x = 1
+name = 'John'
+name + x
+\end{pyconsole}
+\end{pframe}
+
+
+\section{Casting}
+\subsection{This is how you can do that}
+\begin{pframe}
+\begin{pyconsole}
+x = 1
+name = 'John'
+name + str(x)
+\end{pyconsole}
+\begin{pyconsole}
+x = 1
+x
+str(x)
+int(str(x))
+\end{pyconsole}
 \end{pframe}
 
 
@@ -698,6 +384,7 @@ False
 % Make the acknowledgements slide.
 \makeAcknowledgementsSlide{
   \begin{tabular}{ll}
+    Mihai Lefter\\
     Martijn Vermaat\\
     Jeroen Laros\\
     Jonathan Vis
