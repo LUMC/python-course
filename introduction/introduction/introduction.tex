@@ -13,39 +13,21 @@
 
 \input{../../shared/shared.tex}
 
+\usepackage{svg}
+
 \begin{document}
 
 % This disables the \pause command, handy in the editing phase.
 %\renewcommand{\pause}{}
 
 % Make the title slide.
-\makeTitleSlide{\includegraphics[height=3.5cm]{../../images/Python.pdf}}
+\makeTitleSlide{\includesvg[inkscapelatex=false,height=3.5cm]{../../images/Python.svg}}
+
+
 
 % First page of the presentation.
 \section{Introduction}
 \makeTableOfContents
-
-
-%\begin{pframe}
-% \begin{ipython}
-%  \begin{pythonin}{python}
-%3.2 * 18 - 2.1
-%  \end{pythonin}
-%  \begin{pythonout}
-%55.5
-%  \end{pythonout}
-%  \\
-%
-%  \begin{pythonin}{python}
-%36 / 5
-%  \end{pythonin}
-%  \begin{pythonout}
-%7.2
-%  \end{pythonout}
-% \end{ipython}
-%
-%\end{pframe}
-
 
 \subsection{About the course}
 \begin{pframe}
@@ -71,7 +53,6 @@
  \end{center}
  \end{minipage}
 \end{pframe}
-
 
 \subsection{Material}
 \begin{pframe}
@@ -117,23 +98,25 @@
    \item Ruben Vorderman \\
      \hrefcc{emailc}{r.h.p.vorderman@lumc.nl}
    \item Redmar van den Berg \\
-     \hrefcc{emailc}{r.r.van\_den\_berg@lumc.n}
+     \hrefcc{emailc}{r.r.van\_den\_berg@lumc.nl}
    \item Mihai Lefter\\
     \hrefcc{emailc}{m.lefter@lumc.nl}
   \end{itemize}
  \end{minipage}
   \begin{tikzpicture}[remember picture,overlay]
     \node[xshift=-5.0cm,yshift=-6.0cm] at (current page.north east)
-    {\includegraphics[width=7cm]{../../images/class.pdf}};
+    {\includesvg[inkscapelatex=false,width=7cm]{../../images/class.svg}};
   \end{tikzpicture}
 \end{pframe}
+
 
 \subsection{Program}
 \begin{pframe}
  \begin{center}
-  \includegraphics[width=0.95\textwidth]{../../images/program.pdf}
+  \includesvg[inkscapelatex=false,width=0.95\textwidth]{../../images/program.svg}
  \end{center}
 \end{pframe}
+
 
 \subsection{Software requirements}
 \begin{pframe}
@@ -216,7 +199,7 @@
  \end{tikzpicture}
  \begin{tikzpicture}[remember picture,overlay]
    \node[xshift=-11.5cm,yshift=-6.5cm] at (current page.north east)
-   {\includegraphics[width=6cm]{../../images/cwi.pdf}};
+   {\includesvg[inkscapelatex=false,width=6cm]{../../images/cwi.svg}};
  \end{tikzpicture}
 \end{pframe}
 
