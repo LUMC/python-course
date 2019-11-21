@@ -1,6 +1,5 @@
 \documentclass[aspectratio=1610,slidestop]{beamer}
 
-% TODO: mutable vs immutable
 % TODO: add some questions in between?
 
 
@@ -244,7 +243,7 @@ x
 \end{pyconsole}
 \end{pframe}
 
-\subsection{Sets are not indexed}
+\subsection{Sets are not indexable}
 \begin{pframe}
 Sets are unordered collections, and therefore without index.
 \begin{pyconsole}
@@ -258,7 +257,6 @@ In contrast to lists ...
 list(x)[0]
 \end{pyconsole}
 \end{pframe}
-
 
 
 \subsection{Operations}
@@ -288,6 +286,8 @@ s1 = {12, 28, 21, 17}
 s2 = {28, 32, 71, 12}
 
 s1.difference(s2)
+
+{1,2}.issubset({1,2,3}
 \end{pyconsole}
 \end{pframe}
 
@@ -318,6 +318,38 @@ not False
 
 "Right" == "Right"
 \end{pyconsole}
+\end{pframe}
+
+
+\section{Mutable vs immutable data types}
+\subsection{Mutable data types}
+\begin{pframe}
+Objects whose value can change are said to be mutable. 
+
+Lists, sets and dictionaries are mutable.
+\begin{pyconsole}
+a = [1,2,3,4]
+a.append(5)
+a[2] = 6
+a
+
+b = {1,2}
+b.add(3)
+b
+\end{pyconsole}
+\end{pframe}
+
+\subsection{Immutable data types}
+\begin{pframe}
+Objects whose value is unchangeable once they are created are called immutable.
+
+int, float, decimal, bool, string, tuple are immutable.
+\begin{pyconsole}
+(1,2,3,4)[2] = 5
+\end{pyconsole}
+\medskip
+\medskip
+NB. In Python 3.8, range is also a data type and immutable.
 \end{pframe}
 
 
