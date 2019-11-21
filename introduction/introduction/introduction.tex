@@ -13,7 +13,7 @@
 
 \input{../../shared/shared.tex}
 
-\usepackage{svg}
+\usepackage[inkscapelatex=false]{svg}
 
 \begin{document}
 
@@ -21,7 +21,7 @@
 %\renewcommand{\pause}{}
 
 % Make the title slide.
-\makeTitleSlide{\includesvg[inkscapelatex=false,height=3.5cm]{../../images/Python.svg}}
+\makeTitleSlide{\includesvg[height=3.5cm]{../../images/Python.svg}}
 
 
 
@@ -64,7 +64,7 @@
  \end{center}
 \end{pframe}
 
-\subsection{Hands on!}
+\subsection{Hands On!}
 \begin{pframe}
  Programming is fun!
  \begin{itemize}
@@ -105,7 +105,7 @@
  \end{minipage}
   \begin{tikzpicture}[remember picture,overlay]
     \node[xshift=-5.0cm,yshift=-6.0cm] at (current page.north east)
-    {\includesvg[inkscapelatex=false,width=7cm]{../../images/class.svg}};
+    {\includesvg[width=7cm]{../../images/class.svg}};
   \end{tikzpicture}
 \end{pframe}
 
@@ -113,7 +113,7 @@
 \subsection{Program}
 \begin{pframe}
  \begin{center}
-  \includesvg[inkscapelatex=false,width=0.95\textwidth]{../../images/program.svg}
+  \includesvg[width=0.95\textwidth]{../../images/program.svg}
  \end{center}
 \end{pframe}
 
@@ -140,8 +140,8 @@
   \end{itemize}
  \end{itemize}
  \begin{tikzpicture}[remember picture,overlay]
-   \node[xshift=-4.5cm,yshift=-5.5cm] at (current page.north east)
-   {\includegraphics[width=3cm]{../../images/requirements_logos.pdf}};
+  \node[xshift=-4.5cm,yshift=-5.5cm] at (current page.north east)
+  {\includesvg[width=3cm]{../../images/requirements_logos.svg}};
  \end{tikzpicture}
 \end{pframe}
 
@@ -199,7 +199,7 @@
  \end{tikzpicture}
  \begin{tikzpicture}[remember picture,overlay]
    \node[xshift=-11.5cm,yshift=-6.5cm] at (current page.north east)
-   {\includesvg[inkscapelatex=false,width=6cm]{../../images/cwi.svg}};
+   {\includesvg[width=6cm]{../../images/cwi.svg}};
  \end{tikzpicture}
 \end{pframe}
 
