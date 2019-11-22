@@ -37,11 +37,11 @@ Program and Materials
 |------------------|----------|-------|-------------------------------------------------------------|----------|
 | Tuesday, 26/11   | J-1-83   | 9-10  | [Introduction][introduction]                                | Mihai    |
 |                  |          | 10-11 | [Data types][data_types]                                    | Mark     |
-|                  |          | 11-12 | [Flow control I][flow_control_1]                            | Mihai    |
+|                  |          | 11-12 | [Flow control][flow_control]                                | Mihai    |
 |                  |          | 12-13 | Lunch break                                                 |          |
 |                  |          | 13-16 | Practical session                              | Mihai / Mark / Redmar |
 | Wednesday, 27/11 | P-5-34   | 9-10  | Assignments review                                      | Mihai / Mark |
-|                  |          | 10-11 | [Flow control II][flow_control_2]                           | Mihai    |
+|                  |          | 10-11 | [Functions][functions]                                      | Mihai    |
 |                  |          | 11-12 | [Object-oriented programming][oop]                          | Jonathan |
 |                  |          | 12-13 | Lunch break                                                 |          |
 |                  |          | 13-16 | Practical session                          | Mihai / Jonathan / Redmar |
@@ -68,8 +68,8 @@ See the instructions [here](https://docs.anaconda.com/anaconda/install/).
 
 [introduction]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/introduction/introduction.pdf?inline=false
 [data_types]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/data_types/data_types.pdf?inline=false
-[flow_control_1]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/flow_control/flow_control.pdf?inline=false
-[flow_control_2]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/flow_control/flow_control.pdf?inline=false
+[flow_control]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/flow_control/flow_control.pdf?inline=false
+[functions]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/functions/functions.pdf?inline=false
 [strings]: https://git.lumc.nl/courses/programming-course/raw/master/more_python/more_01/more_01.pdf?inline=false
 [std_library]: https://git.lumc.nl/courses/programming-course/raw/master/more_python/more_02/more_02.pdf?inline=false
 [oop]: https://git.lumc.nl/courses/programming-course/raw/master/oop/oop.pdf
