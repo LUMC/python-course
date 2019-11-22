@@ -263,6 +263,38 @@ def first_negative(numbers):
        return
   print("No negative number found!")
 
+first_negative([3, -5, 10, -2])
+   \end{minted}
+  \end{pythonfile}
+ \end{minipage}\qquad
+ \begin{minipage}[t]{0.42\textwidth}
+ \vspace{-4.15cm}
+ \begin{terminal}
+  \color{white}{\texttt{\$ python functions.py \\
+-5
+}}
+ \end{terminal}
+ \end{minipage}
+\end{pframe}
+
+
+\begin{pframe}
+ \addtocounter{framenumber}{-1}
+ \begin{itemize}
+  \item Something is always returned.
+ \end{itemize}
+ \medskip
+
+ \begin{minipage}[t]{0.52\textwidth}
+  \begin{pythonfile}{functions.py}
+   \begin{minted}[linenos]{python}
+def first_negative(numbers):
+  for n in numbers:
+     if n < 0:
+       print(n)
+       return
+  print("No negative number found!")
+
 print(first_negative([3, -5, 10, -2]))
    \end{minted}
   \end{pythonfile}
@@ -435,6 +467,68 @@ print(add_value(default=2, number=5))
  \end{itemize}
 \end{pframe}
 
+\begin{pframe}
+ \begin{center}
+  \includesvg[width=0.75\textwidth]{../../images/scope_0.svg}
+ \end{center}
+\end{pframe}
+
+\begin{pframe}
+ \addtocounter{framenumber}{-1}
+ \begin{center}
+  \includesvg[width=0.75\textwidth]{../../images/scope_1.svg}
+ \end{center}
+\end{pframe}
+
+\begin{pframe}
+ \addtocounter{framenumber}{-1}
+ \begin{center}
+  \includesvg[width=0.75\textwidth]{../../images/scope_2.svg}
+ \end{center}
+\end{pframe}
+
+\begin{pframe}
+ \addtocounter{framenumber}{-1}
+ \begin{center}
+  \includesvg[width=0.75\textwidth]{../../images/scope_3.svg}
+ \end{center}
+\end{pframe}
+
+\begin{pframe}
+ \addtocounter{framenumber}{-1}
+ \begin{center}
+  \includesvg[width=0.75\textwidth]{../../images/scope_4.svg}
+ \end{center}
+\end{pframe}
+
+\begin{pframe}
+ \addtocounter{framenumber}{-1}
+ \begin{center}
+  \includesvg[width=0.75\textwidth]{../../images/scope_5.svg}
+ \end{center}
+\end{pframe}
+
+\begin{pframe}
+ \addtocounter{framenumber}{-1}
+ \begin{center}
+  \includesvg[width=0.75\textwidth]{../../images/scope_6.svg}
+ \end{center}
+\end{pframe}
+
+\begin{pframe}
+ \addtocounter{framenumber}{-1}
+ \begin{center}
+  \includesvg[width=0.75\textwidth]{../../images/scope_7.svg}
+ \end{center}
+\end{pframe}
+
+\begin{pframe}
+ \addtocounter{framenumber}{-1}
+ \begin{center}
+  \includesvg[width=0.75\textwidth]{../../images/scope_8.svg}
+ \end{center}
+\end{pframe}
+
 
 \subsection{Hiding variables}
 \begin{pframe}
@@ -442,11 +536,6 @@ print(add_value(default=2, number=5))
  the new variable will hide the outer variable.
 \end{pframe}
 
-
-\subsection{Scope of function arguments}
-\begin{pframe}
- Arguments of a function declaration are also only visible inside the function.
-\end{pframe}
 
 
 \section{Function as values}
