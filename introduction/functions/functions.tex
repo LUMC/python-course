@@ -44,7 +44,7 @@
 
 \subsection{Defining a function}
 \begin{pframe}
- A function definition includes its \decl{name}, \decl{parameters}, and \decl{body}:
+ A function definition includes its \decl{name}, \decl{parameters} (optional), and \decl{body}:
  \begin{pythondeclaration}
   \emp{def}\textvisiblespace\decl{name}\emp{(}\decl{parameters}\emp{):}\\
   \textvisiblespace\textvisiblespace\textvisiblespace\textvisiblespace\decl{body}
@@ -134,11 +134,10 @@ Hello students !}}
 \end{pframe}
 
 
-
-\subsection{The Return Statement}
+\subsection{The \emp{return} statement}
 
 \begin{pframe}
- Used to return a certain result value back to the caller.
+ Used mainly to \emp{return} a certain result value back to the caller.
  \begin{pythonfile}{functions.py}
   \begin{minted}[linenos]{python}
 def add_two(number):
@@ -149,7 +148,7 @@ def add_two(number):
 
 
 \begin{pframe}
- Used to return a certain result value back to the caller.
+ Used mainly to \emp{return} a certain result value back to the caller.
  \begin{pythonfile}{functions.py}
   \begin{minted}[linenos]{python}
 def add_two(number):
@@ -162,7 +161,7 @@ print(add_two(5))
 
 
 \begin{pframe}
- Used to return a certain result value back to the caller.
+ Used mainly to \emp{return} a certain result value back to the caller.
  \medskip
 
  \begin{minipage}[t]{0.47\textwidth}
@@ -186,7 +185,7 @@ print(add_two(5))
 
 
 \begin{pframe}
- Used to return a certain result value back to the caller.
+ Used mainly to \emp{return} a certain result value back to the caller.
  \medskip
 
  \begin{minipage}[t]{0.47\textwidth}
@@ -210,6 +209,103 @@ for i in range(5):
 2 -> 4\\
 3 -> 5\\
 4 -> 6}}
+ \end{terminal}
+ \end{minipage}
+\end{pframe}
+
+
+\begin{pframe}
+ \begin{itemize}
+  \item Functions immediately \empt{exit} when a \emp{return} statement is encountered.
+  \item No explicit value needs to be mentioned in the \emp{return} statement.
+ \end{itemize}
+ \pause
+ \medskip
+
+ \begin{minipage}[t]{0.49\textwidth}
+  \begin{pythonfile}{functions.py}
+   \begin{minted}[linenos]{python}
+def first_negative(numbers):
+  for n in numbers:
+     if n < 0:
+       print(n)
+       return
+  print("No negative number found!")
+
+first_negative([3, -5, 10, -2])
+   \end{minted}
+  \end{pythonfile}
+ \end{minipage}\qquad
+ \pause
+ \begin{minipage}[t]{0.45\textwidth}
+ \vspace{-4.15cm}
+ \begin{terminal}
+  \color{white}{\texttt{\$ python functions.py \\
+-5}}
+ \end{terminal}
+ \end{minipage}
+\end{pframe}
+
+
+\begin{pframe}
+ \begin{itemize}
+  \item Something is always returned.
+ \end{itemize}
+ \medskip
+
+ \begin{minipage}[t]{0.52\textwidth}
+  \begin{pythonfile}{functions.py}
+   \begin{minted}[linenos]{python}
+def first_negative(numbers):
+  for n in numbers:
+     if n < 0:
+       print(n)
+       return
+  print("No negative number found!")
+
+print(first_negative([3, -5, 10, -2]))
+   \end{minted}
+  \end{pythonfile}
+ \end{minipage}\qquad
+ \pause
+ \begin{minipage}[t]{0.42\textwidth}
+ \vspace{-4.15cm}
+ \begin{terminal}
+  \color{white}{\texttt{\$ python functions.py \\
+-5\\
+None}}
+ \end{terminal}
+ \end{minipage}
+\end{pframe}
+
+
+\begin{pframe}
+ \begin{itemize}
+  \item Something is always returned, even if no \emp{return} statement is reached.
+ \end{itemize}
+ \medskip
+
+ \begin{minipage}[t]{0.52\textwidth}
+  \begin{pythonfile}{functions.py}
+   \begin{minted}[linenos]{python}
+def first_negative(numbers):
+  for n in numbers:
+     if n < 0:
+       print(n)
+       return
+  print("No negative number found!")
+
+print(first_negative([]))
+   \end{minted}
+  \end{pythonfile}
+ \end{minipage}\qquad
+ \pause
+ \begin{minipage}[t]{0.42\textwidth}
+ \vspace{-4.15cm}
+ \begin{terminal}
+  \color{white}{\texttt{\$ python functions.py \\
+No negative number found!\\
+None}}
  \end{terminal}
  \end{minipage}
 \end{pframe}
@@ -273,8 +369,8 @@ print(add_value(5))
  \begin{minipage}[t]{0.47\textwidth}
   \begin{pythonfile}{functions.py}
    \begin{minted}[linenos]{python}
-def add_value(number, value=2):
-    return number + value
+def add_value(number, default=2):
+    return number + default
 
 print(add_value(5))
 print(add_value(5, 5))
@@ -298,20 +394,20 @@ print(add_value(5, 5))
  When you want to make sure that the mapping is correct.
  \medskip
 
- \begin{minipage}[t]{0.49\textwidth}
+ \begin{minipage}[t]{0.51\textwidth}
   \begin{pythonfile}{functions.py}
    \begin{minted}[linenos]{python}
-def add_value(number, value=2):
-    return number + value
+def add_value(number, default=2):
+    return number + default
 
-print(add_value(5, value=2))
-print(add_value(number=5, value=2))
-print(add_value(value=2, number=5))
+print(add_value(5, default=2))
+print(add_value(number=5, default=2))
+print(add_value(default=2, number=5))
    \end{minted}
   \end{pythonfile}
  \end{minipage}\qquad
- \begin{minipage}[t]{0.47\textwidth}
-  \vspace{-3.05cm}
+ \begin{minipage}[t]{0.43\textwidth}
+  \vspace{-3.45cm}
   \begin{terminal}
    \color{white}{\texttt{\$ python functions.py \\
 7\\
