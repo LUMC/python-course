@@ -118,7 +118,7 @@ Hello!}}
   \begin{pythonfile}{functions.py}
    \begin{minted}[linenos]{python}
 def greeting(name):
-    print('Hello! {}'.format(name))
+    print('Hello {}!'.format(name))
 
 greeting('students')
    \end{minted}
@@ -188,19 +188,19 @@ print(add_two(5))
  Used mainly to \emp{return} a certain result value back to the caller.
  \medskip
 
- \begin{minipage}[t]{0.47\textwidth}
+ \begin{minipage}[t]{0.60\textwidth}
   \begin{pythonfile}{functions.py}
    \begin{minted}[linenos]{python}
 def add_two(number):
     return number + 2
 
 for i in range(5):
-    print(i, '->', add_two(i))
+    print('{} -> {}'.format(i, add_two(i)))
    \end{minted}
   \end{pythonfile}
  \end{minipage}\qquad
  \pause
- \begin{minipage}[t]{0.47\textwidth}
+ \begin{minipage}[t]{0.35\textwidth}
  \vspace{-3.05cm}
  \begin{terminal}
   \color{white}{\texttt{\$ python functions.py \\
@@ -370,14 +370,14 @@ TypeError: add\_two() missing 1 required positional argument: 'number'
 
 \subsection{Default}
 \begin{pframe}
- Take a default value if no argument value is passed during the function call.
+ Have a default value if no argument value is passed during the function call.
  \medskip
 
  \begin{minipage}[t]{0.47\textwidth}
   \begin{pythonfile}{functions.py}
    \begin{minted}[linenos]{python}
-def add_value(number, value=2):
-    return number + value
+def add_value(number, default=2):
+    return number + default
 
 print(add_value(5))
    \end{minted}
@@ -395,7 +395,7 @@ print(add_value(5))
 
 
 \begin{pframe}
- Take a default value if no argument value is passed during the function call.
+ Have a default value if no argument value is passed during the function call.
  \medskip
 
  \begin{minipage}[t]{0.47\textwidth}
@@ -450,22 +450,65 @@ print(add_value(default=2, number=5))
 \end{pframe}
 
 
-\section{Variable Scope}
+\section{Variables Scope}
 
 \begin{pframe}
- The range where a variable is visible.
- \bigskip
+ Scope refers to the variables visibility, i.e., in which program parts can be seen and used.
+ \medskip
 
- Roughly speaking:
- \begin{itemize}
-  \item The whole program forms one scope.
-  \item A function definition creates a new (nested) scope.
-  \item Variables inside a nested scope are not visible in the outer scope.
-  \item Variables from the outside scope are visible in the inner nested scope,
-        but you cannot (re)-assign a value to them (read-only) unless they are
-       declared global.
+  Roughly speaking:
+  \begin{itemize}
+   \item The whole program (module) forms one scope.
+   \item A function definition creates a new (nested) scope.
  \end{itemize}
+ \begin{tikzpicture}[remember picture,overlay]
+   \node[xshift=-3.2cm,yshift=-5.5cm] at (current page.north east)
+    {\includesvg[width=4cm]{../../images/scope_overview_0.svg}};
+ \end{tikzpicture}
 \end{pframe}
+
+
+\begin{pframe}
+ \addtocounter{framenumber}{-1}
+ Scope refers to the variables visibility, i.e., in which program parts can be seen and used.
+ \medskip
+
+  Roughly speaking:
+  \begin{itemize}
+   \item The whole program (module) forms one scope.
+   \item A function definition creates a new (nested) scope.
+   \item Variables from an outside scope are visible in the \\
+         inner nested scope, but you cannot (re)-assign a value\\
+         to them (read only) unless they are declared global.
+ \end{itemize}
+ \begin{tikzpicture}[remember picture,overlay]
+   \node[xshift=-3.2cm,yshift=-5.5cm] at (current page.north east)
+    {\includesvg[width=4cm]{../../images/scope_overview_1.svg}};
+ \end{tikzpicture}
+\end{pframe}
+
+
+\begin{pframe}
+ \addtocounter{framenumber}{-1}
+ Scope refers to the variables visibility, i.e., in which program parts can be seen and used.
+ \medskip
+
+  Roughly speaking:
+  \begin{itemize}
+   \item The whole program (module) forms one scope.
+   \item A function definition creates a new (nested) scope.
+   \item Variables from an outside scope are visible in the \\
+         inner nested scope, but you cannot (re)-assign a value\\
+         to them (read only) unless they are declared global.
+   \item Variables inside a nested scope are not visible in \\
+         the outer scope.
+ \end{itemize}
+ \begin{tikzpicture}[remember picture,overlay]
+   \node[xshift=-3.2cm,yshift=-5.5cm] at (current page.north east)
+    {\includesvg[width=4cm]{../../images/scope_overview_2.svg}};
+ \end{tikzpicture}
+\end{pframe}
+
 
 \begin{pframe}
  \begin{center}
@@ -534,8 +577,73 @@ print(add_value(default=2, number=5))
 \begin{pframe}
  If in a new scope a variable is created that already existed in an outer scope,
  the new variable will hide the outer variable.
+ \pause
+ \medskip
+
+ \begin{minipage}[t]{0.60\textwidth}
+  \begin{pythonfile}{scope\_hiding.py}
+   \begin{minted}[linenos]{python}
+a = 1
+
+def some_function():
+    a = 2 # Hides the global a variable
+    print(a)
+
+# Calling the function
+some_function()
+print(a)
+   \end{minted}
+  \end{pythonfile}
+ \end{minipage}\qquad
+ \pause
+ \begin{minipage}[t]{0.35\textwidth}
+ \vspace{-4.55cm}
+ \begin{terminal}
+  \color{white}{\texttt{\$ python functions.py \\
+2\\
+1
+}}
+  \end{terminal}
+ \end{minipage}
 \end{pframe}
 
+\subsection{The \emp{global} keyword}
+\begin{pframe}
+ Allows a variable to be changed outside of the current scope.
+ \pause
+ \medskip
+
+ \begin{minipage}[t]{0.60\textwidth}
+  \begin{pythonfile}{scope\_hiding.py}
+   \begin{minted}[linenos]{python}
+a = 1
+
+def some_function():
+    global a  # a is the global one
+    a = 2
+    print(a)
+
+# Calling the function
+some_function()
+print(a)
+   \end{minted}
+  \end{pythonfile}
+ \end{minipage}\qquad
+ \pause
+ \begin{minipage}[t]{0.35\textwidth}
+ \vspace{-4.55cm}
+ \begin{terminal}
+  \color{white}{\texttt{\$ python functions.py \\
+2\\
+2
+}}
+  \end{terminal}
+ \end{minipage}
+\end{pframe}
+
+
+
+\section{Anonymous functions}
 
 
 \section{Function as values}
