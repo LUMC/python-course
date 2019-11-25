@@ -223,7 +223,7 @@ for i in range(5):
  \medskip
 
  \begin{minipage}[t]{0.49\textwidth}
-  \begin{pythonfile}{functions.py}
+  \begin{pythonfile}{negative.py}
    \begin{minted}[linenos]{python}
 def first_negative(numbers):
   for n in numbers:
@@ -240,7 +240,7 @@ first_negative([3, -5, 10, -2])
  \begin{minipage}[t]{0.45\textwidth}
  \vspace{-4.15cm}
  \begin{terminal}
-  \color{white}{\texttt{\$ python functions.py \\
+  \color{white}{\texttt{\$ python negative.py \\
 -5}}
  \end{terminal}
  \end{minipage}
@@ -254,7 +254,7 @@ first_negative([3, -5, 10, -2])
  \medskip
 
  \begin{minipage}[t]{0.52\textwidth}
-  \begin{pythonfile}{functions.py}
+  \begin{pythonfile}{negative.py}
    \begin{minted}[linenos]{python}
 def first_negative(numbers):
   for n in numbers:
@@ -270,7 +270,7 @@ first_negative([3, -5, 10, -2])
  \begin{minipage}[t]{0.42\textwidth}
  \vspace{-4.15cm}
  \begin{terminal}
-  \color{white}{\texttt{\$ python functions.py \\
+  \color{white}{\texttt{\$ python negative.py \\
 -5
 }}
  \end{terminal}
@@ -286,7 +286,7 @@ first_negative([3, -5, 10, -2])
  \medskip
 
  \begin{minipage}[t]{0.52\textwidth}
-  \begin{pythonfile}{functions.py}
+  \begin{pythonfile}{negative.py}
    \begin{minted}[linenos]{python}
 def first_negative(numbers):
   for n in numbers:
@@ -303,7 +303,7 @@ print(first_negative([3, -5, 10, -2]))
  \begin{minipage}[t]{0.42\textwidth}
  \vspace{-4.15cm}
  \begin{terminal}
-  \color{white}{\texttt{\$ python functions.py \\
+  \color{white}{\texttt{\$ python negative.py \\
 -5\\
 None}}
  \end{terminal}
@@ -318,7 +318,7 @@ None}}
  \medskip
 
  \begin{minipage}[t]{0.52\textwidth}
-  \begin{pythonfile}{functions.py}
+  \begin{pythonfile}{negative.py}
    \begin{minted}[linenos]{python}
 def first_negative(numbers):
   for n in numbers:
@@ -335,7 +335,7 @@ print(first_negative([]))
  \begin{minipage}[t]{0.42\textwidth}
  \vspace{-4.15cm}
  \begin{terminal}
-  \color{white}{\texttt{\$ python functions.py \\
+  \color{white}{\texttt{\$ python negative.py \\
 No negative number found!\\
 None}}
  \end{terminal}
@@ -455,6 +455,7 @@ print(add_value(default=2, number=5))
 \begin{pframe}
  Scope refers to the variables visibility, i.e., in which program parts can be seen and used.
  \medskip
+ \pause
 
   Roughly speaking:
   \begin{itemize}
@@ -575,7 +576,7 @@ print(add_value(default=2, number=5))
 
 \subsection{Hiding variables}
 \begin{pframe}
- If in a new scope a variable is created that already existed in an outer scope,
+ If in a new scope a variable is created that already exists in an outer scope,
  the new variable will hide the outer variable.
  \pause
  \medskip
@@ -599,13 +600,18 @@ print(a)
  \begin{minipage}[t]{0.35\textwidth}
  \vspace{-4.55cm}
  \begin{terminal}
-  \color{white}{\texttt{\$ python functions.py \\
+  \color{white}{\texttt{\$ python scope\_hiding.py \\
 2\\
 1
 }}
   \end{terminal}
  \end{minipage}
+ \pause
+ \smallskip
+
+  This applies to function parameters as well.
 \end{pframe}
+
 
 \subsection{The \emp{global} keyword}
 \begin{pframe}
@@ -614,7 +620,7 @@ print(a)
  \medskip
 
  \begin{minipage}[t]{0.60\textwidth}
-  \begin{pythonfile}{scope\_hiding.py}
+  \begin{pythonfile}{global.py}
    \begin{minted}[linenos]{python}
 a = 1
 
@@ -631,9 +637,9 @@ print(a)
  \end{minipage}\qquad
  \pause
  \begin{minipage}[t]{0.35\textwidth}
- \vspace{-4.55cm}
+ \vspace{-4.95cm}
  \begin{terminal}
-  \color{white}{\texttt{\$ python functions.py \\
+  \color{white}{\texttt{\$ python global.py \\
 2\\
 2
 }}
@@ -642,14 +648,115 @@ print(a)
 \end{pframe}
 
 
-
-\section{Anonymous functions}
-
-
-\section{Function as values}
-
-\subsection{Functions are values}
+\subsection{What about parameters and arguments?}
 \begin{pframe}
+ \begin{minipage}[t]{0.50\textwidth}
+  \begin{pythonfile}{parameters.py}
+   \begin{minted}[linenos]{python}
+def some_function(b):
+    b = 2
+    print(b)
+
+a = 1
+
+print(a)
+
+# Calling the function
+some_function(a)
+
+print(a)
+   \end{minted}
+  \end{pythonfile}
+ \end{minipage}\qquad
+ \pause
+ \begin{minipage}[t]{0.45\textwidth}
+ \vspace{-5.65cm}
+ \begin{terminal}
+  \color{white}{\texttt{\$ python parameters.py \\
+1\\
+2\\
+1
+}}
+  \end{terminal}
+ \end{minipage}
+\end{pframe}
+
+
+\subsection{Mutable arguments}
+\begin{pframe}
+ \begin{minipage}[t]{0.50\textwidth}
+  \begin{pythonfile}{mutable\_params.py}
+   \begin{minted}[linenos]{python}
+def some_function(a_list):
+    a_list = 13
+    print('a_list:', a_list)
+
+a = [7, 5]
+
+print('a before the call:', a)
+
+# Calling the function
+some_function(a)
+
+print('a after the call:', a)
+   \end{minted}
+  \end{pythonfile}
+ \end{minipage}\qquad
+ \pause
+ \begin{minipage}[t]{0.45\textwidth}
+ \vspace{-5.65cm}
+ \begin{terminal}
+  \color{white}{\texttt{\$ python mutable\_params.py \\
+a before the call: [7, 5]\\
+a\_list: 13\\
+a after the call: [7, 5]
+}}
+  \end{terminal}
+ \end{minipage}
+\end{pframe}
+
+
+\begin{pframe}
+ However, element changes to update the argument.
+ \medskip
+
+ \begin{minipage}[t]{0.50\textwidth}
+  \begin{pythonfile}{mutable\_params.py}
+   \begin{minted}[linenos]{python}
+def some_function(a_list):
+    a_list[1] = 13
+    print('a_list:', a_list)
+
+a = [7, 5]
+
+print('a before the call:', a)
+
+# Calling the function
+some_function(a)
+
+print('a after the call:', a)
+   \end{minted}
+  \end{pythonfile}
+ \end{minipage}\qquad
+ \pause
+ \begin{minipage}[t]{0.45\textwidth}
+ \vspace{-5.65cm}
+ \begin{terminal}
+  \color{white}{\texttt{\$ python mutable\_params.py \\
+a before the call: [7, 5]\\
+a\_list: [7, 13]\\
+a after the call: [7, 13]
+}}
+  \end{terminal}
+ \end{minipage}
+\end{pframe}
+
+
+
+\section{Function as Values}
+
+\begin{pframe}
+\vspace{-0.5cm}
  We can pass functions around just like other values, and call them.
  \begin{pythonfile}{function\_values.py}
   \begin{minted}[linenos]{python}
@@ -662,26 +769,28 @@ def add_some_other_number(number, other_number=12):
 functions = [add_two, add_some_other_number]
 for function in functions:
     print(function(7))
-
-# Simple anonymous functions can be created with lambda.
-functions.append(lambda x: x * 7)
-for function in functions:
-    print(function(4))
   \end{minted}
  \end{pythonfile}
+ \pause
+ \begin{terminal}
+  \color{white}{\texttt{\$ python function\_values.py \\
+9\\
+19
+}}
+ \end{terminal}
 \end{pframe}
 
 
 
 \section{Docstrings}
 \begin{pframe}
- Like many other definitions, functions can have docstrings.
+ \vspace{-1.1cm}
  \begin{itemize}
-  \item Docstrings are regular string values which you start the definition
-  body with.
-  \item You can access an object's docstring using help.
+  \item Regular string values which you start the function definition body with.
+  \item You can access a docstring using the \emp{help()} built-in.
  \end{itemize}
- \begin{pythonfile}{docstring\_example.py}
+ \vspace{-0.3cm}
+ \begin{pythonfile}{docstrings.py}
   \begin{minted}[linenos]{python}
 def factorial(n):
     """Compute factorial of n in the obious way."""
@@ -689,11 +798,21 @@ def factorial(n):
         return 1
     else:
         return factorial(n - 1) * n
+
+help(factorial)
   \end{minted}
  \end{pythonfile}
+ \pause
+ \begin{terminal}
+  \color{white}{\texttt{\$ python docstrings.py \\
+Help on function factorial in module \_\_main\_\_:\\
+factorial(n)\\
+    Compute factorial of n in the obious way.
+}}
+ \end{terminal}
 \end{pframe}
 
-\section{Higher-order functions}
+\section{Higher Order Functions}
 \begin{pframe}
  Take a function as an argument.
  \begin{ipython}
@@ -721,19 +840,113 @@ list(map(add_two, [1, 2, 3, 4]))
 
 
 
+\section{Anonymous Functions}
+
+% \begin{pframe}
+%  Can be created with the \emp{lambda} keyword:
+%  \begin{pythondeclaration}
+%   \emp{lambda}\textvisiblespace\decl{parameters}\emp{:}\textvisiblespace
+%   \decl{expression}
+%  \end{pythondeclaration}
+%  \bigskip
+%
+%  \begin{minipage}[t]{0.57\textwidth}
+%   \begin{pythonfile}{anonymous.py}
+%    \begin{minted}[linenos]{python}
+% x_times_7 = lambda x: x * 7
+% print(x_times_7(4))
+%
+% l = list(map(lambda x: x+2, [1, 2, 3, 4]))
+% print(l)
+%    \end{minted}
+%   \end{pythonfile}
+%  \end{minipage}\qquad
+%  \pause
+%  \begin{minipage}[t]{0.37\textwidth}
+%  \begin{terminal}
+%   \color{white}{\texttt{\$ python anonymous.py \\
+% 28\\
+% [3, 4, 5, 6]
+% }}
+%  \end{terminal}
+%  \end{minipage}
+% \end{pframe}
 
 
-\section{Hands on!}
+\begin{pframe}
+ Can be created with the \emp{lambda} keyword:
+ \begin{pythondeclaration}
+  \emp{lambda}\textvisiblespace\decl{parameters}\emp{:}\textvisiblespace
+  \decl{expression}
+ \end{pythondeclaration}
+ \bigskip
+
+ \begin{minipage}[t]{0.47\textwidth}
+  \begin{pythonfile}{anonymous.py}
+   \begin{minted}[linenos]{python}
+x_times_7 = lambda x: x * 7
+print(x_times_7(4))
+   \end{minted}
+  \end{pythonfile}
+ \end{minipage}\qquad
+ \pause
+ \begin{minipage}[t]{0.47\textwidth}
+%  \vspace{-2.55cm}
+ \begin{terminal}
+  \color{white}{\texttt{\$ python anonymous.py \\
+28}}
+ \end{terminal}
+ \end{minipage}
+\end{pframe}
+
+
+\begin{pframe}
+ Can be created with the \emp{lambda} keyword:
+ \begin{pythondeclaration}
+  \emp{lambda}\textvisiblespace\decl{parameters}\emp{:}\textvisiblespace
+  \decl{expression}
+ \end{pythondeclaration}
+ \bigskip
+
+ \begin{minipage}[t]{0.60\textwidth}
+ \vspace{-3.25cm}
+  \begin{pythonfile}{anonymous.py}
+   \begin{minted}[linenos]{python}
+x_times_7 = lambda x: x * 7
+print(x_times_7(4))
+
+for i in list(map(lambda x: x+2, range(4))):
+    print(i)
+   \end{minted}
+  \end{pythonfile}
+ \end{minipage}\qquad
+ \pause
+ \begin{minipage}[t]{0.35\textwidth}
+%  \vspace{-2.55cm}
+ \begin{terminal}
+  \color{white}{\texttt{\$ python anonymous.py \\
+28\\
+2\\
+3\\
+4\\
+5
+}}
+ \end{terminal}
+ \end{minipage}
+\end{pframe}
+
+
+
+\section{Hands On!}
+
 \begin{pframe}
  \vspace{-0.5cm}
  \begin{enumerate}
   \item Write a Python function that returns the maximum of two numbers.
   \item Write a Python function that returns the maximum of three numbers.
   Try to reuse the first maximum of two numbers function.
-  \item Write a Python function that accepts a string as parameter.
-  Next, it calculates and prints the number of upper case letters and lower
-  case letters. Make use of the \mintinline{python}{isupper} and
-  \mintinline{python}{islower} built in methods.
+  \item Write a Python function that accepts a list as a parameter.
+  Next, it determines and prints the number of positive and negative numbers.
  \end{enumerate}
 \end{pframe}
 
