@@ -535,6 +535,7 @@ for i in range(len(colors)):
   \end{pythonfile}
   We call them unpythonic.
  \end{minipage}\qquad%
+ \pause
  \begin{minipage}[t]{0.48\textwidth}
   The Pythonic way:
   \begin{pythonfile}{for\_example.py}
@@ -681,6 +682,28 @@ colors = ['red', 'white', 'blue', 'orange']
 \{'blue': 4, 'orange': 6, 'red': 3, 'white': 5\}
   \end{pythonout}
  \end{ipython}
+\end{pframe}
+
+
+
+\section*{Extra}
+
+\subsection{Python \emp{print}}
+\begin{pframe}
+ \begin{ipython}
+  \begin{pythonin}{python}
+print('{} {}'.format('one', 'two'))
+  \end{pythonin}
+  \begin{pythonout}
+one two
+  \end{pythonout}
+ \end{ipython}
+ \bigskip
+
+ More information:
+ \begin{itemize}
+  \item \hrefc{linkc}{https://pyformat.info/}{https://pyformat.info/}
+ \end{itemize}
 \end{pframe}
 
 
