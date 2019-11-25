@@ -59,7 +59,10 @@ Program and Materials
 
 Assignments
 -----------
-TBA
+Make sure that you have a GitHub account.
+
+- [First day](https://classroom.github.com/a/QU2iPYKn).
+
 
 Software installation
 ---------------------
