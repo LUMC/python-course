@@ -28,19 +28,33 @@
 
 % First page of the presentation.
 \section{Introduction}
-\makeTableOfContents
-
-
-\section{User Defined Functions}
 
 \begin{pframe}
+ \begin{center}
+  \includesvg[width=0.95\textwidth]{../../images/program.svg}
+ \end{center}
+\end{pframe}
+
+
+\begin{pframe}
+ \begin{center}
+  \includesvg[width=0.95\textwidth]{../../images/program_up_to_functions.svg}
+ \end{center}
+\end{pframe}
+
+\makeTableOfContents
+
+\subsection{ }
+\begin{pframe}
  \begin{itemize}
-  \item A function is a named sequence of statements that performs some piece
-        of work.
+  \item A \empt{function} is a named sequence of statements that performs some
+        piece of work.
   \item Later on that function can be called multiple times by using its name.
  \end{itemize}
 \end{pframe}
 
+
+\section{User Defined Functions}
 
 \subsection{Defining a function}
 \begin{pframe}
@@ -935,6 +949,28 @@ for i in list(map(lambda x: x+2, range(4))):
  \end{minipage}
 \end{pframe}
 
+
+\section*{Wrap up}
+
+\begin{pframe}
+ You are now able to:
+ \begin{itemize}
+  \item Create yout own user defined functions.
+  \item Call your defined functions with the right arguments.
+  \item Understand variables scope.
+  \item Write docstrings for your functions.
+  \item Use higher order functions.
+  \item Employ anonymous functions.
+ \end{itemize}
+
+\end{pframe}
+
+
+\begin{pframe}
+ \begin{center}
+  \includesvg[width=0.95\textwidth]{../../images/program_after_functions.svg}
+ \end{center}
+\end{pframe}
 
 
 \section{Hands On!}
