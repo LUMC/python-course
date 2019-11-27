@@ -62,6 +62,10 @@ Assignments
 Make sure that you have a GitHub account.
 
 - [First day](https://classroom.github.com/a/QU2iPYKn).
+- Day 2:
+  - [Functions](https://classroom.github.com/a/zsYhQHAS).
+  - [OOP](https://classroom.github.com/a/8BnbL9fD).
+
 
 
 Software installation
