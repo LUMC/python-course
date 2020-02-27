@@ -73,25 +73,6 @@ def greeting():
 \end{pframe}
 
 
-\subsection{Calling a function}
-\begin{pframe}
- A function is called by using its \decl{name} and by providing the required
- \decl{arguments}:
- \begin{pythondeclaration}
-  \decl{name}\emp{(}\decl{arguments}\emp{)}
- \end{pythondeclaration}
- \pause
- \begin{pythonfile}{functions.py}
-  \begin{minted}[linenos]{python}
-def greeting():
-    print('Hello!')
-
-greeting()
-  \end{minted}
- \end{pythonfile}
-\end{pframe}
-
-
 \begin{pframe}
  A function is called by using its \decl{name} and by providing the required
  \decl{arguments}:
@@ -807,7 +788,7 @@ for function in functions:
  \begin{pythonfile}{docstrings.py}
   \begin{minted}[linenos]{python}
 def factorial(n):
-    """Compute factorial of n in the obious way."""
+    """Compute factorial of n in the obvious way."""
     if n == 0:
         return 1
     else:
@@ -821,7 +802,7 @@ help(factorial)
   \color{white}{\texttt{\$ python docstrings.py \\
 Help on function factorial in module \_\_main\_\_:\\
 factorial(n)\\
-    Compute factorial of n in the obious way.
+    Compute factorial of n in the obvious way.
 }}
  \end{terminal}
 \end{pframe}
