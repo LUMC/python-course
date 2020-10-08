@@ -11,8 +11,12 @@
 |                  | 11:20 - 12:10 | [Builtin Functions and Packages][builtins]                  |
 |                  | 12:10 - 12:40 | Lunch Break                                                 |
 |                  | 12:40 - 13:00 | Q&A                                                         |
-|                  | 13:00 - 13:20 | [Flow Control][flow_control_external]                       |
-|                  | 13:20 - 13:40 | [Dictionaries][dictionaries_external]                       |
+|                  | 13:00 - 13:20 | Flow Control                                                |
+|                  |               | [Lecture][flow_control_external].                           |
+|                  |               | [Exercises][exercises_flow_control].                        |
+|                  | 13:20 - 13:40 | Dictionaries                                                |
+|                  |               | [Lecture][dictionaries_external].                           |
+|                  |               | [Exercises][exercises_dictionaries].                        |
 |                  | 13:40 - 15:10 | Practical Session                                           |
 |                  | 15:10 - 16:00 | Assignments Review                                          |
 | Tuesday, 13/10   | 9:00 - 9:20   | [Sets][sets_external]                                       |
@@ -57,6 +61,9 @@
 [oop_traversy_media]: https://www.youtube.com/watch?v=MikphENIrOo
 [oop_tech_with_tim]: https://www.youtube.com/watch?v=JeznW_7DlB0&t=2213s
 [data_analysis_external]: https://www.youtube.com/watch?v=r-uOLxNrNk8
+
+[exercises_flow_control]: exercises_flow_control.md
+[exercises_dictionaries]: exercises_dictionaries.md
 
 
 [introduction]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/introduction/introduction.pdf?inline=false
