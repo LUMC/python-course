@@ -26,7 +26,8 @@
 |                  | 12:00 - 12:30 | Lunch Break                                                 |
 |                  | 12:30 - 15:00 | Practical Session                                           |
 |                  | 15:00 - 16:00 | Assignments Review                                          |
-| Wednesday, 14/10 | 9:00 - 10:00  | Lecture: [1][oop_traversy_media] until 30:50.               |
+| Wednesday, 14/10 | 9:00 - 10:00  | Object Oriented Programming                                 |
+|                  |               | Lecture: [1][oop_traversy_media] until 30:50.               |
 |                  |               | Alternative: [2][oop_cs_dojo_1] until 8:50 and [3][oop_cs_dojo_2]  |
 |                  |               | Alternative: [4][oop_tech_with_tim]                         |
 |                  | 10:00 - 10:30 | Q&A                                                         |
