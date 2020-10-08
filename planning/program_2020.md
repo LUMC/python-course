@@ -14,10 +14,10 @@
 |                  | 13:00 - 13:20 | [Flow Control][flow_control_external]                       |
 |                  | 13:20 - 13:40 | [Dictionaries][dictionaries_external]                       |
 |                  | 13:40 - 15:10 | Practical Session                                           |
-|                  | 13:40 - 15:10 | Assignments Review                                          |
+|                  | 15:10 - 16:00 | Assignments Review                                          |
 | Tuesday, 13/10   | 9:00 - 9:20   | [Sets][sets_external]                                       |
 |                  | 9:20 - 9:40   | [Tuples][tuples_external]                                   |
-|                  | 9:40 - 10:10  | [Functions][functions_external]                             |
+|                  | 9:40 - 10:10  | [User Defined Functions][functions_external]                |
 |                  | 10:10 - 10:20 | Break                                                       |
 |                  | 10:20 - 10:50 | [Text Files][text_files_external]                           |
 |                  | 10:50 - 11:20 | [Exceptions][exceptions_external]                           |
@@ -26,7 +26,9 @@
 |                  | 12:00 - 12:30 | Lunch Break                                                 |
 |                  | 12:30 - 15:00 | Practical Session                                           |
 |                  | 15:00 - 16:00 | Assignments Review                                          |
-| Wednesday, 14/10 | 9:00 - 10:00  | OOP [1][oop_external_1], [2][oop_external_2]                |
+| Wednesday, 14/10 | 9:00 - 10:00  | Lecture: [1][oop_traversy_media] until 30:50.               |
+|                  |               | Alternative: [2][oop_cs_dojo_1] until 8:50 and [3][oop_cs_dojo_2]  |
+|                  |               | Alternative: [4][oop_tech_with_tim]                         |
 |                  | 10:00 - 10:30 | Q&A                                                         |
 |                  | 10:30 - 11:30 | Practical Session                                           |
 |                  | 11:30 - 11:00 | Assignments Review                                          |
@@ -49,8 +51,10 @@
 [functions_external]: https://www.youtube.com/watch?v=NE97ylAnrz4
 [text_files_external]: https://www.youtube.com/watch?v=4mX0uPQFLDU
 [exceptions_external]: https://www.youtube.com/watch?v=nlCKrKGHSSk
-[oop_external_1]: https://www.youtube.com/watch?v=8yjkWGRlUmY
-[oop_external_2]: https://www.youtube.com/watch?v=wfcWRAxRVBA
+[oop_cs_dojo_1]: https://www.youtube.com/watch?v=8yjkWGRlUmY
+[oop_cs_dojo_2]: https://www.youtube.com/watch?v=wfcWRAxRVBA
+[oop_traversy_media]: https://www.youtube.com/watch?v=MikphENIrOo
+[oop_tech_with_tim]: https://www.youtube.com/watch?v=JeznW_7DlB0&t=2213s
 [data_analysis_external]: https://www.youtube.com/watch?v=r-uOLxNrNk8
 
 
