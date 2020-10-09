@@ -11,12 +11,8 @@
 |                  | 11:20 - 12:10 | [Builtin Functions and Packages][builtins]                  |
 |                  | 12:10 - 12:40 | Lunch Break                                                 |
 |                  | 12:40 - 13:00 | Q&A                                                         |
-|                  | 13:00 - 13:20 | Flow Control                                                |
-|                  |               | [Lecture][flow_control_external].                           |
-|                  |               | [Exercises][exercises_flow_control].                        |
-|                  | 13:20 - 13:40 | Dictionaries                                                |
-|                  |               | [Lecture][dictionaries_external].                           |
-|                  |               | [Exercises][exercises_dictionaries].                        |
+|                  | 13:00 - 13:20 | Flow Control: [lecture][flow_control_external], [exercises][exercises_flow_control].|
+|                  | 13:20 - 13:40 | Dictionaries: [lecture][dictionaries_external], [exercises][exercises_dictionaries].|
 |                  | 13:40 - 15:10 | Practical Session                                           |
 |                  | 15:10 - 16:00 | Assignments Review                                          |
 | Tuesday, 13/10   | 9:00 - 9:20   | [Sets][sets_external]                                       |
@@ -30,10 +26,7 @@
 |                  | 12:00 - 12:30 | Lunch Break                                                 |
 |                  | 12:30 - 15:00 | Practical Session                                           |
 |                  | 15:00 - 16:00 | Assignments Review                                          |
-| Wednesday, 14/10 | 9:00 - 10:00  | Object Oriented Programming                                 |
-|                  |               | Lecture: [1][oop_traversy_media] until 30:50.               |
-|                  |               | Alternative: [2][oop_cs_dojo_1] until 8:50 and [3][oop_cs_dojo_2]  |
-|                  |               | Alternative: [4][oop_tech_with_tim]                         |
+| Wednesday, 14/10 | 9:00 - 10:00  | Object Oriented Programming: [lecture][oop_traversy_media] (until 30:50).|
 |                  | 10:00 - 10:30 | Q&A                                                         |
 |                  | 10:30 - 11:30 | Practical Session                                           |
 |                  | 11:30 - 11:00 | Assignments Review                                          |
@@ -66,7 +59,7 @@
 [exercises_dictionaries]: exercises_dictionaries.md
 
 
-[introduction]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/introduction/introduction.pdf?inline=false
+[introduction]: ../introduction/introduction/introduction.pdf?inline=false
 [data_types]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/data_types/data_types.pdf?inline=false
 [flow_control]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/flow_control/flow_control.pdf?inline=false
 [functions]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/functions/functions.pdf?inline=false
