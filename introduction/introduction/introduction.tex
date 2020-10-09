@@ -56,8 +56,7 @@
 
 \subsection{Material}
 \begin{pframe}
- All course material is to be found here:\\
- \hrefcc{emailc}{https://git.lumc.nl/courses/programming-course}
+ \hrefcc{emailc}{https://github.com/LUMC/python-course}
 
  \begin{center}
    \includegraphics[width=0.95\textwidth]{../../images/books.jpg}
@@ -73,12 +72,10 @@
   \begin{itemize}
    \item Blended teaching + exercising.
   \end{itemize}
-  \item Have your laptop open during\\
-  the lessons.
-  \item Repeat the code from the slides,\\
-  play around with it.
+  \item Repeat the code from the slides/ \\
+  lectures and play around with it.
   \item Do the session exercises.
-  \item There will be a few assignments.
+  \item Practical sessions.
  \end{itemize}
  \begin{tikzpicture}[remember picture,overlay]
     \node[xshift=-4.5cm,yshift=-6.5cm] at (current page.north east)
@@ -93,8 +90,6 @@
   \begin{itemize}
    \item Mark Santcroos \\
      \hrefcc{emailc}{m.a.santcroos@lumc.nl}
-   \item Jonathan Vis \\
-     \hrefcc{emailc}{j.k.vis@lumc.nl}
    \item Ruben Vorderman \\
      \hrefcc{emailc}{r.h.p.vorderman@lumc.nl}
    \item Redmar van den Berg \\
@@ -113,13 +108,7 @@
 \subsection{Program}
 \begin{pframe}
  \begin{center}
-  \includesvg[width=0.95\textwidth]{../../images/program.svg}
- \end{center}
-\end{pframe}
-
-\begin{pframe}
- \begin{center}
-  \includesvg[width=0.95\textwidth]{../../images/program_special.svg}
+  \includesvg[width=\textwidth]{../../images/program_2020.svg}
  \end{center}
 \end{pframe}
 
@@ -129,7 +118,7 @@
  \begin{itemize}
   \item Anaconda:
   \begin{itemize}
-   \item Python $3.7$.
+   \item Python $3.x$.
    \item Comes with all that's required:
    \begin{itemize}
     \item Python interpreter.
@@ -179,8 +168,7 @@
 \subsection{Getting help}
 \begin{pframe}
  \begin{itemize}
-  \item Ask a teacher (we will be around in the afternoon).
-  \item If it's private, mail one of the teachers.
+  \item Ask a teacher.
  \end{itemize}
  \begin{center}
   \includegraphics[width=0.54\textwidth]{../../images/help.jpg}
@@ -232,17 +220,19 @@
 
 \subsection{Why Python?}
 \begin{pframe}
+ \vspace{-0.3cm}
  \begin{itemize}
   \item Widely used with a large community.
  \end{itemize}
  \vspace{-0.5cm}
  \begin{center}
-  \includegraphics[width=0.70\textwidth]{../../images/growth_major_languages-1-1024x878_stackoverflow_c.png}
+  \includegraphics[width=0.72\textwidth]{../../images/growth_major_languages-1-1024x878_stackoverflow_c.png}
   \tiny{https://stackoverflow.blog/2017/09/06/incredible-growth-python/}
  \end{center}
 \end{pframe}
 
 \begin{pframe}
+ \vspace{-0.3cm}
  \begin{itemize}
   \item Widely used with a large community.
  \end{itemize}
@@ -254,6 +244,7 @@
 \end{pframe}
 
 \begin{pframe}
+ \vspace{-0.3cm}
  \begin{itemize}
   \item Widely used with a large community.
  \end{itemize}
@@ -284,9 +275,9 @@
   \item Python 3 is backwards incompatible.
   \item Some libraries don't support it yet.
   \item Some Python 3 features are backported in Python 2.7.
-  \item Python 2.7 will not be maintained past 2020.
+  \item Last Python 2 release in April 2020.
  \end{itemize}
-  We'll use Python 3.7 for this course.
+  We'll use Python 3 for this course.
 \end{pframe}
 
 
@@ -345,377 +336,6 @@ $
    \end{lstlisting}}}
   \end{terminal}
  \end{minipage}
-\end{pframe}
-
-\subsection{The IPython interpreter}
-\begin{pframe}
-  Similar to the standard Python interpreter, but with:
-  \begin{itemize}
-    \item syntax highlighting;
-    \item tab completion;
-    \item cross-session history;
-    \item etc.
-  \end{itemize}
-  \medskip
-
-  \begin{terminal}
-  \color{white}{
-   \begin{lstlisting}[frame=,style=,numbers=none,aboveskip=-0.1cm]
-$ ipython
-Python 3.7 (default, Nov 12 2018, 13:43:14)
-Type 'copyright', 'credits' or 'license' for more information
-IPython 6.1.0 -- An enhanced Interactive Python. Type '?' for help.
-  \end{lstlisting}}
-  \begin{pythonin}{python}
-  \end{pythonin}
-  \addtocounter{cntr}{-1}
- \end{terminal}
-\end{pframe}
-
-
-\section{Python as a Calculator}
-
-\subsection{Integers}
-\begin{pframe}
- \begin{ipython}
-  \begin{pythonin}{python}
-17
-  \end{pythonin}
-  \begin{pythonout}
-17
-  \end{pythonout}
-  \\
-
-  \begin{pythonin}{python}
-(17 + 4) * 2 - 10
-  \end{pythonin}
-  \begin{pythonout}
-32
-  \end{pythonout}
-  \\
-
-  \begin{pythonin}{python}
-14 // 4  # floor division - quotient
-  \end{pythonin}
-  \begin{pythonout}
-3
-  \end{pythonout}
-  \\
-
-  \begin{pythonin}{python}
-14 % 4   # modulus - remainder
-  \end{pythonin}
-  \begin{pythonout}
-2
-  \end{pythonout}
-  \\
-
-  \begin{pythonin}{python}
-2 ** 3   # exponentiation
-  \end{pythonin}
-  \begin{pythonout}
-8
-  \end{pythonout}
- \end{ipython}
-\end{pframe}
-
-
-\subsection{Floating point numbers}
-\begin{pframe}
- \begin{ipython}
-  \begin{pythonin}{python}
-3.2 * 18 - 2.1
-  \end{pythonin}
-  \begin{pythonout}
-55.5
-  \end{pythonout}
-  \\
-
-  \begin{pythonin}{python}
-36 / 5
-  \end{pythonin}
-  \begin{pythonout}
-7.2
-  \end{pythonout}
- \end{ipython}
-\end{pframe}
-
-
-\begin{pframe}
-Scientific notation:
-\begin{ipython}
-  \begin{pythonin}{python}
-1.3e20 + 2
-  \end{pythonin}
-  \begin{pythonout}
-1.3e+20
-  \end{pythonout}
-  \\
-
-  \begin{pythonin}{python}
-1.3 * 10**20
-  \end{pythonin}
-  \begin{pythonout}
-1.3e+20
-  \end{pythonout}
- \end{ipython}
-\end{pframe}
-
-
-\section{Variables}
-
-\begin{pframe}
- \vspace{-0.75cm}
- \begin{itemize}
-  \item Names (identifiers) used to reference values. Can consist of:
-  \begin{itemize}
-   \item the uppercase and lowercase letters \emp{A} through \emp{Z};
-   \item the underscore \emp{\_};
-   \item the digits \emp{0} through \emp{9}, except for the first character.
-  \end{itemize}
-  \pause
-  \item Notes:
-  \begin{itemize}
-   \item Python is case sensitive.
-   \item \hrefc{linkc}{https://docs.python.org/3.7/reference/lexical_analysis.html\#keywords}{Reserved words} (\emp{if}, \emp{then}, \emp{for}, etc.)
-   are not to be employed.
-  \end{itemize}
- \end{itemize}
- \pause
-
- \begin{ipython}
-  \begin{pythonin}{python}
-a = 17
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
-leiden_population = 123856
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
-f18_speed = 1.8
-  \end{pythonin}
- \end{ipython}
-\end{pframe}
-
-
-\begin{pframe}
- \vspace{-0.75cm}
- \begin{itemize}
-  \item No need to declare them first or define the type.
-  \pause
-  \item However, you do need to give variables values before you use them.
- \end{itemize}
-
- \begin{ipython}
-  \begin{pythonin}{python}
-a = 17
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
-c = a + b
-  \end{pythonin}
-  \begin{pythonerr}{python}
----------------------------------------------------------------------------
-NameError                                 Traceback (most recent call last)
-<ipython-input-2-1674f6151070> in <module>
-----> 1 c = a + b
-
-NameError: name 'b' is not defined
-  \end{pythonerr}
- \end{ipython}
-\end{pframe}
-
-
-\section{Python's Type System}
-
-\subsection{Every value has a type}
-\begin{pframe}
- \begin{itemize}
-  \item View it using \mintinline{python}{type}.
- \end{itemize}
-
- \begin{ipython}
-  \begin{pythonin}{python}
-type(27)
-  \end{pythonin}
-  \begin{pythonout}
-int
-  \end{pythonout}
-  \\
-
-  \begin{pythonin}{python}
-type(3 * 2)
-  \end{pythonin}
-  \begin{pythonout}
-int
-  \end{pythonout}
-  \\
-
-  \begin{pythonin}{python}
-type(3 / 2)
-  \end{pythonin}
-  \begin{pythonout}
-float
-  \end{pythonout}
-  \\
-
-  \begin{pythonin}{python}
-type(a)
-  \end{pythonin}
-  \begin{pythonout}
-int
-  \end{pythonout}
- \end{ipython}
-\end{pframe}
-
-
-\subsection{Some operations are defined on more than one type}
-\begin{pframe}
- \begin{itemize}
-  \item Possibly with different meanings.
- \end{itemize}
-
- \begin{ipython}
-  \begin{pythonin}{python}
-type(3 * 2.0)
-  \end{pythonin}
-  \begin{pythonout}
-float
-  \end{pythonout}
-  \\
-
-  \begin{pythonin}{python}
-drinks = 'beer' * 5 + 'whiskey'
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
-drinks
-  \end{pythonin}
-  \begin{pythonout}
-'beerbeerbeerbeerbeerwhiskey'
-  \end{pythonout}
-  \\
-
-  \begin{pythonin}{python}
-type(drinks)
-  \end{pythonin}
-  \begin{pythonout}
-str
-  \end{pythonout}
- \end{ipython}
-\end{pframe}
-
-
-\subsection{Dynamic typing}
-\begin{pframe}
- \begin{itemize}
-  \item At runtime variables can be assigned values of different types.
- \end{itemize}
-
- \begin{ipython}
-  \begin{pythonin}{python}
-a
-  \end{pythonin}
-  \begin{pythonout}
-17
-  \end{pythonout}
-  \\
-
-  \begin{pythonin}{python}
-type(a)
-  \end{pythonin}
-  \begin{pythonout}
-int
-  \end{pythonout}
-  \\
-
-  \begin{pythonin}{python}
-a = 'spezi'
-  \end{pythonin}
-  \\
-  \begin{pythonin}{python}
-type(a)
-  \end{pythonin}
-  \begin{pythonout}
-str
-  \end{pythonout}
- \end{ipython}
-\end{pframe}
-
-
-\subsection{Strongly typed}
-\begin{pframe}
- \begin{itemize}
-  \item Operations on values with incompatible types are forbidden.
- \end{itemize}
-
- \begin{ipython}
-  \begin{pythonin}{python}
-'beer' + 34
-  \end{pythonin}
-  \begin{pythonerr}{python}
----------------------------------------------------------------------------
-TypeError                                 Traceback (most recent call last)
-<ipython-input-17-ec918fbfdf41> in <module>()
-----> 1 'beer' + 34
-
-TypeError: Can't convert 'int' object to str implicitly
-  \end{pythonerr}
- \end{ipython}
-\end{pframe}
-
-
-\section{Ipython Magics}
-
-\begin{pframe}
- \begin{ipython}
-  \begin{pythonin}{python}
-%save introduction 1-25
-  \end{pythonin}
-  \begin{pythonoutnonumber}
-The following commands were written to file 'introduction.py':\\
-...
-  \end{pythonoutnonumber}\\
-  \begin{pythonin}{python}
-%run introduction.py
-  \end{pythonin}
-  \\
-
-  \begin{pythonin}{python}
-exit
-  \end{pythonin}
- \end{ipython}
-
- Documentation of all the magics is to be found
-  \hrefc{linkc}{https://ipython.readthedocs.io/en/stable/interactive/magics.html}{here}.
-\end{pframe}
-
-
-\section{Hands On!}
-\begin{pframe}
- \vspace{-0.5cm}
- \begin{enumerate}
-  \item We've seen that \mintinline{python}{b = 2} is legal.
-  \begin{enumerate}[a.]
-   \item What about \mintinline{python}{2 = b}?
-   \item How about \mintinline{python}{a = b = 1}?
-  \end{enumerate}
-  \item In math notation you can multiply $x$ and $y$ like this: $xy$. What
-  happens if you try that in Python?
-  \item How many seconds are there in $42$ minutes and $42$ seconds?
-  \item How many miles are there in $16$ kilometers? ($1$ mile = $1.61$ km)
-  \item Let's assume that you run a $42$ km race in $4$ hours $42$ minutes and
-  $42$ seconds.
-  \begin{enumerate}[a.]
-   \item What is your average pace (time per mile in minutes and seconds)?
-   \item What is your average speed in miles per hour?
-  \end{enumerate}
-  \item Use string operations to reference \mintinline{python}{'tra la la la'}
-  in a variable named \mintinline{python}{song}.
-  \item If an article costs $249$ Euros including the $19\%$ Value Added Tax
-  (VAT), what is the actual VAT amount in Euros for the corresponding article?
- \end{enumerate}
 \end{pframe}
 
 
