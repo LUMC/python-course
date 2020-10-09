@@ -21,16 +21,49 @@ courses before.
 - Location: online
 - Teachers:
   - Mark Santcroos
-  - Jonathan Vis
   - Redmar van den Berg
   - Mihai Lefter
 - Registration via www.medgencentre.com. Direct access to the
 [registration form](https://forms.lumc.nl/lumc2/PYTHONcourse).
 
-Program and Materials
+Program
 -------
 
-TBA
+| Day              |  Time         | Lesson                                                      |
+|------------------|---------------|-------------------------------------------------------------|
+| Monday, 12/10    | 9:00 - 9:30   | Introduction                                                |
+|                  | 9:30 - 10:10  | Python Basics                                               |
+|                  | 10:10 - 10:20 | Break                                                       |
+|                  | 10:20 - 11:10 | Lists                                                       |
+|                  | 11:10 - 11:20 | Break                                                       |
+|                  | 11:20 - 12:10 | Builtin Functions and Packages                              |
+|                  | 12:10 - 12:40 | Lunch Break                                                 |
+|                  | 12:40 - 13:00 | Q&A                                                         |
+|                  | 13:00 - 13:20 | Flow Control                                                |
+|                  | 13:20 - 13:40 | Dictionaries                                                |
+|                  | 13:40 - 15:10 | Practical Session                                           |
+|                  | 15:10 - 16:00 | Assignments Review                                          |
+| Tuesday, 13/10   | 9:00 - 9:20   | Sets                                                        |
+|                  | 9:20 - 9:40   | Tuples                                                      |
+|                  | 9:40 - 10:10  | User Defined Functions                                      |
+|                  | 10:10 - 10:20 | Break                                                       |
+|                  | 10:20 - 10:50 | Text Files                                                  |
+|                  | 10:50 - 11:20 | Exceptions                                                  |
+|                  | 11:20 - 11:30 | Break                                                       |
+|                  | 11:30 - 12:00 | Q&A                                                         |
+|                  | 12:00 - 12:30 | Lunch Break                                                 |
+|                  | 12:30 - 15:00 | Practical Session                                           |
+|                  | 15:00 - 16:00 | Assignments Review                                          |
+| Wednesday, 14/10 | 9:00 - 10:00  | Object Oriented Programming                                 |
+|                  | 10:00 - 10:30 | Q&A                                                         |
+|                  | 10:30 - 11:30 | Practical Session                                           |
+|                  | 11:30 - 11:00 | Assignments Review                                          |
+|                  | 12:00 - 12:30 | Lunch Break                                                 |
+|                  | 12:30 - 15:00 | Practical Session                                           |
+|                  | 15:00 - 16:00 | Assignments Review                                          |
+| Thursday, 15/10  | 9:00 - 15:00  | Data Analysis                                               |
+|                  | 15:00 - 15:30 | Q&A                                                         |
+|                  | 15:30 - 16:00 | Wrap-up                                                     |
 
 Assignments
 -----------
