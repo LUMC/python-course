@@ -40,7 +40,7 @@
 |                  | 12:00 - 12:30 | Lunch Break                                                 |
 |                  | 12:30 - 15:00 | Practical Session                                           |
 |                  | 15:00 - 16:00 | Assignments Review                                          |
-| Thursday, 25/10  | 9:00 - 15:00  | [Data Analysis][data_analysis_external]                     |
+| Thursday, 15/10  | 9:00 - 15:00  | [Data Analysis][data_analysis_external]                     |
 |                  | 15:00 - 15:30 | Q&A                                                         |
 |                  | 15:30 - 16:00 | Wrap-up                                                     |
 
