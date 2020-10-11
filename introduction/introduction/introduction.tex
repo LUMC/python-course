@@ -29,195 +29,6 @@
 \section{Introduction}
 \makeTableOfContents
 
-\subsection{About the course}
-\begin{pframe}
- \begin{itemize}
-  \item Aimed at PhD students, Postdocs, researchers, analysts, ...
-  \item Focus on:
-  \begin{itemize}
-   \item Basic understanding of Python.
-   \item Programming as a tool to do your research.
-   \item Slightly biased on bioinformatics.
-  \end{itemize}
- \end{itemize}
- \medskip
-
- \begin{minipage}{0.47\textwidth}
- \begin{center}
-   \includegraphics[width=0.69\textwidth]{../../images/laptop_man.jpg}
- \end{center}
- \end{minipage}%
- \begin{minipage}{0.47\textwidth}
- \begin{center}
-   \includegraphics[width=0.9\textwidth]{../../images/dna.jpg}
- \end{center}
- \end{minipage}
-\end{pframe}
-
-\subsection{Material}
-\begin{pframe}
- \hrefcc{emailc}{https://github.com/LUMC/python-course}
-
- \begin{center}
-   \includegraphics[width=0.95\textwidth]{../../images/books.jpg}
- \end{center}
-\end{pframe}
-
-\subsection{Hands On!}
-\begin{pframe}
- Programming is fun!
- \begin{itemize}
-  \item You only learn programming by doing it.
-  \item Lecture format:
-  \begin{itemize}
-   \item Blended teaching + exercising.
-  \end{itemize}
-  \item Repeat the code from the slides/ \\
-  lectures and play around with it.
-  \item Do the session exercises.
-  \item Practical sessions.
- \end{itemize}
- \begin{tikzpicture}[remember picture,overlay]
-    \node[xshift=-4.5cm,yshift=-6.5cm] at (current page.north east)
-    {\includegraphics[width=6cm]{../../images/hands_on.jpg}};
-  \end{tikzpicture}
-\end{pframe}
-
-
-\subsection{Teachers}
-\begin{pframe}
- \begin{minipage}[t]{0.5\textwidth}
-  \begin{itemize}
-   \item Mark Santcroos \\
-     \hrefcc{emailc}{m.a.santcroos@lumc.nl}
-   \item Ruben Vorderman \\
-     \hrefcc{emailc}{r.h.p.vorderman@lumc.nl}
-   \item Redmar van den Berg \\
-     \hrefcc{emailc}{r.r.van\_den\_berg@lumc.nl}
-   \item Mihai Lefter\\
-    \hrefcc{emailc}{m.lefter@lumc.nl}
-  \end{itemize}
- \end{minipage}
-  \begin{tikzpicture}[remember picture,overlay]
-    \node[xshift=-5.0cm,yshift=-6.0cm] at (current page.north east)
-    {\includesvg[width=7cm]{../../images/class.svg}};
-  \end{tikzpicture}
-\end{pframe}
-
-
-\subsection{Program}
-\begin{pframe}
- \begin{center}
-  \includesvg[width=\textwidth]{../../images/program_2020.svg}
- \end{center}
-\end{pframe}
-
-
-\subsection{Software requirements}
-\begin{pframe}
- \begin{itemize}
-  \item Anaconda:
-  \begin{itemize}
-   \item Python $3.x$.
-   \item Comes with all that's required:
-   \begin{itemize}
-    \item Python interpreter.
-    \item Jupyter Notebook.
-    \item Libraries: NumPy, Panda,\\
-    matplotlib, Bokeh, Biopython, ...
-   \end{itemize}
-   \item \hrefc{emailc}{http://docs.anaconda.com/anaconda/install/}{Installation instructions}.
-  \end{itemize}
-  \bigskip
-  \item Git:
-  \begin{itemize}
-   \item \hrefc{emailc}{https://git-scm.com/book/en/v2/Getting-Started-Installing-Git}{Installation instructions}.
-  \end{itemize}
- \end{itemize}
- \begin{tikzpicture}[remember picture,overlay]
-  \node[xshift=-4.5cm,yshift=-5.5cm] at (current page.north east)
-  {\includesvg[width=3cm]{../../images/requirements_logos.svg}};
- \end{tikzpicture}
-\end{pframe}
-
-
-\subsection{Assignments}
-\begin{pframe}
- \begin{itemize}
-  \item We make use of GitHub Classroom.
-  \begin{itemize}
-   \item GitHub account required.
-   \item Receive link with assignment repository.
-  \end{itemize}
-  \item Own forked repository to work on:
-  \begin{itemize}
-   \item Clone it.
-   \item Code it.
-   \item Push it.
-  \end{itemize}
-  \item Direct file upload to repository\\
-  is also possible.
- \end{itemize}
- \begin{tikzpicture}[remember picture,overlay]
-    \node[xshift=-4.5cm,yshift=-6.5cm] at (current page.north east)
-    {\includegraphics[width=6cm]{../../images/assignments.jpg}};
-  \end{tikzpicture}
-\end{pframe}
-
-
-\subsection{Getting help}
-\begin{pframe}
- \begin{itemize}
-  \item Ask a teacher.
- \end{itemize}
- \begin{center}
-  \includegraphics[width=0.54\textwidth]{../../images/help.jpg}
- \end{center}
-\end{pframe}
-
-
-\section{About Python}
-
-\subsection{History}
-\begin{pframe}
- \begin{itemize}
-  \item Created early 90's by Guido van Rossem at CWI.
-  \begin{itemize}
-   \item Name: Monty Python.
-  \end{itemize}
-  \item Design is driven by code readability.
- \end{itemize}
- \begin{tikzpicture}[remember picture,overlay]
-   \node[xshift=-4.5cm,yshift=-6.5cm] at (current page.north east)
-   {\includegraphics[width=6cm]{../../images/Guido.jpg}};
- \end{tikzpicture}
- \begin{tikzpicture}[remember picture,overlay]
-   \node[xshift=-11.5cm,yshift=-6.5cm] at (current page.north east)
-   {\includesvg[width=6cm]{../../images/cwi.svg}};
- \end{tikzpicture}
-\end{pframe}
-
-
-\subsection{Features}
-\begin{pframe}
- \begin{itemize}
-  \item General purpose, high-level programming language.
-  \item Interpreted, no separate compilation step needed.
-  \item Imperative and object-oriented programming.
-  \begin{itemize}
-   \item And some functional programming.
-  \end{itemize}
-  \item Dynamic type system.
-  \item Automatic memory management.
- \end{itemize}
- We'll come back to most of this.
- \begin{tikzpicture}[remember picture,overlay]
-    \node[xshift=-4.5cm,yshift=-6.5cm] at (current page.north east)
-    {\includegraphics[width=6cm]{../../images/abstract.jpg}};
-  \end{tikzpicture}
-\end{pframe}
-
-
 \subsection{Why Python?}
 \begin{pframe}
  \vspace{-0.3cm}
@@ -256,16 +67,37 @@
 \end{pframe}
 
 \begin{pframe}
- \begin{itemize}
-  \item Widely used with a large community.
-  \item Rich scientific libraries.
-  \item Many other libraries available.
-  \item Readable and low barrier to entry.
- \end{itemize}
  \begin{tikzpicture}[remember picture,overlay]
     \node[xshift=-4.5cm,yshift=-6.5cm] at (current page.north east)
     {\includegraphics[width=6cm]{../../images/widely.jpg}};
   \end{tikzpicture}
+ \begin{itemize}
+  \item Widely used with a large community.
+  \item Rich (scientific) libraries.
+  \item Low barrier to entry.
+ \end{itemize}
+\end{pframe}
+
+
+\section{About Python}
+
+\subsection{History}
+\begin{pframe}
+ \begin{itemize}
+  \item Created early 90's by Guido van Rossem at CWI.
+  \begin{itemize}
+   \item Name: Monty Python.
+  \end{itemize}
+  \item Design is driven by code readability.
+ \end{itemize}
+ \begin{tikzpicture}[remember picture,overlay]
+   \node[xshift=-4.5cm,yshift=-6.5cm] at (current page.north east)
+   {\includegraphics[width=6cm]{../../images/Guido.jpg}};
+ \end{tikzpicture}
+ \begin{tikzpicture}[remember picture,overlay]
+   \node[xshift=-11.5cm,yshift=-6.5cm] at (current page.north east)
+   {\includesvg[width=6cm]{../../images/cwi.svg}};
+ \end{tikzpicture}
 \end{pframe}
 
 \subsection{Python 2 versus Python 3}
@@ -280,9 +112,29 @@
   We'll use Python 3 for this course.
 \end{pframe}
 
+\subsection{Features}
+\begin{pframe}
+ \begin{tikzpicture}[remember picture,overlay]
+  \node[xshift=-4.5cm,yshift=-6.7cm] at (current page.north east)
+  {\includegraphics[width=6cm]{../../images/abstract.jpg}};
+ \end{tikzpicture}
+ \begin{itemize}
+  \item General purpose, high-level programming language.
+  \pause
+  \item Interpreted, no separate compilation step needed.
+  \pause
+  \item Imperative and object-oriented programming.
+  \begin{itemize}
+   \item And some functional programming.
+  \end{itemize}
+  \pause
+  \item Dynamic type system.
+  \pause
+  \item Automatic memory management.
+ \end{itemize}
+\end{pframe}
 
 \section{Running Python Code}
-
 \begin{pframe}
 \vspace{-0.5cm}
 \begin{minipage}[t]{0.47\textwidth}
@@ -337,6 +189,148 @@ $
   \end{terminal}
  \end{minipage}
 \end{pframe}
+
+
+\section{This Course}
+\begin{pframe}
+ \begin{itemize}
+  \item Aimed at PhD students, Postdocs, researchers, analysts, ...
+  \item Focus on:
+  \begin{itemize}
+   \item Programming as a tool to do your research.
+   \item Basic understanding of Python.
+  \end{itemize}
+ \end{itemize}
+ \medskip
+
+ \begin{minipage}{0.47\textwidth}
+ \begin{center}
+   \includegraphics[width=0.69\textwidth]{../../images/laptop_man.jpg}
+ \end{center}
+ \end{minipage}%
+ \begin{minipage}{0.47\textwidth}
+ \begin{center}
+   \includegraphics[width=0.9\textwidth]{../../images/dna.jpg}
+ \end{center}
+ \end{minipage}
+\end{pframe}
+
+\subsection{Hands On!}
+\begin{pframe}
+ Programming is fun!
+ \begin{itemize}
+  \item You only learn programming by doing it.
+  \item Lecture format:
+  \begin{itemize}
+   \item Blended teaching + exercising.
+  \end{itemize}
+  \item Repeat the code from the slides/ \\
+  lectures and play around with it.
+  \item Do the session exercises.
+  \item Practical sessions.
+ \end{itemize}
+ \begin{tikzpicture}[remember picture,overlay]
+    \node[xshift=-4.5cm,yshift=-6.5cm] at (current page.north east)
+    {\includegraphics[width=6cm]{../../images/hands_on.jpg}};
+  \end{tikzpicture}
+\end{pframe}
+
+\subsection{Program}
+\begin{pframe}
+ \begin{center}
+  \includesvg[width=\textwidth]{../../images/program_2020.svg}
+ \end{center}
+\end{pframe}
+
+\subsection{Material}
+\begin{pframe}
+ \hrefcc{emailc}{https://github.com/LUMC/python-course}
+
+ \begin{center}
+   \includegraphics[width=0.95\textwidth]{../../images/books.jpg}
+ \end{center}
+\end{pframe}
+
+\subsection{Practical Sessions}
+\begin{pframe}
+ \begin{itemize}
+  \item We make use of GitHub Classroom.
+  \begin{itemize}
+   \item GitHub account required.
+   \item Receive link with assignment repository.
+  \end{itemize}
+  \item Own forked repository to work on:
+  \begin{itemize}
+   \item Clone it.
+   \item Code it.
+   \item Push it.
+  \end{itemize}
+  \item Direct file upload to repository\\
+  is also possible.
+ \end{itemize}
+ \begin{tikzpicture}[remember picture,overlay]
+    \node[xshift=-4.5cm,yshift=-6.3cm] at (current page.north east)
+    {\includegraphics[width=6cm]{../../images/assignments.jpg}};
+  \end{tikzpicture}
+\end{pframe}
+
+\subsection{Software requirements}
+\begin{pframe}
+ \begin{itemize}
+  \item Anaconda:
+  \begin{itemize}
+   \item Python $3.x$.
+   \item Comes with all that's required:
+   \begin{itemize}
+    \item Python interpreter.
+    \item Jupyter Notebook.
+    \item Libraries: NumPy, Panda,\\
+    matplotlib, Bokeh, Biopython, ...
+   \end{itemize}
+   \item \hrefc{emailc}{http://docs.anaconda.com/anaconda/install/}{Installation instructions}.
+  \end{itemize}
+  \bigskip
+  \item Git:
+  \begin{itemize}
+   \item \hrefc{emailc}{https://git-scm.com/book/en/v2/Getting-Started-Installing-Git}{Installation instructions}.
+  \end{itemize}
+ \end{itemize}
+ \begin{tikzpicture}[remember picture,overlay]
+  \node[xshift=-4.5cm,yshift=-5.5cm] at (current page.north east)
+  {\includesvg[width=3cm]{../../images/requirements_logos.svg}};
+ \end{tikzpicture}
+\end{pframe}
+
+\subsection{Getting help}
+\begin{pframe}
+ \begin{itemize}
+  \item Ask a question.
+ \end{itemize}
+ \begin{center}
+  \includegraphics[width=0.54\textwidth]{../../images/help.jpg}
+ \end{center}
+\end{pframe}
+
+\subsection{Teachers}
+\begin{pframe}
+ \begin{minipage}[t]{0.5\textwidth}
+  \begin{itemize}
+   \item Mark Santcroos \\
+     \hrefcc{emailc}{m.a.santcroos@lumc.nl}
+   \item Ruben Vorderman \\
+     \hrefcc{emailc}{r.h.p.vorderman@lumc.nl}
+   \item Redmar van den Berg \\
+     \hrefcc{emailc}{r.r.van\_den\_berg@lumc.nl}
+   \item Mihai Lefter\\
+    \hrefcc{emailc}{m.lefter@lumc.nl}
+  \end{itemize}
+ \end{minipage}
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[xshift=-5.0cm,yshift=-6.0cm] at (current page.north east)
+    {\includesvg[width=7cm]{../../images/class.svg}};
+  \end{tikzpicture}
+\end{pframe}
+
 
 
 % Make the acknowledgements slide.
