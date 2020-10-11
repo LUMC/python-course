@@ -31,17 +31,17 @@ Program
 
 | Day              |  Time         | Lesson                                                      |
 |------------------|---------------|-------------------------------------------------------------|
-| Monday, 12/10    | 9:00 - 9:30   | Introduction                                                |
-|                  | 9:30 - 10:10  | Python Basics                                               |
+| Monday, 12/10    | 9:00 - 9:30   | [Introduction][introduction]                                |
+|                  | 9:30 - 10:10  | [Python Basics][basics]                                     |
 |                  | 10:10 - 10:20 | Break                                                       |
-|                  | 10:20 - 11:10 | Lists                                                       |
+|                  | 10:20 - 11:10 | [Lists][lists]                                              |
 |                  | 11:10 - 11:20 | Break                                                       |
-|                  | 11:20 - 12:10 | Builtin Functions and Packages                              |
+|                  | 11:20 - 12:10 | [Builtin Functions and Packages][builtins]                  |
 |                  | 12:10 - 12:40 | Lunch Break                                                 |
 |                  | 12:40 - 13:00 | Q&A                                                         |
-|                  | 13:00 - 13:20 | Flow Control                                                |
-|                  | 13:20 - 13:40 | Dictionaries                                                |
-|                  | 13:40 - 15:10 | Practical Session                                           |
+|                  | 13:00 - 13:20 | Flow Control: [lecture][flow_control_external], [exercises][exercises_flow_control].|
+|                  | 13:20 - 13:40 | Dictionaries: [lecture][dictionaries_external], [exercises][exercises_dictionaries].|
+|                  | 13:40 - 15:10 | [Practical Session](https://classroom.github.com/a/w4GAzuFt)|
 |                  | 15:10 - 16:00 | Assignments Review                                          |
 | Tuesday, 13/10   | 9:00 - 9:20   | Sets                                                        |
 |                  | 9:20 - 9:40   | Tuples                                                      |
@@ -76,7 +76,27 @@ Software installation
 
 See the instructions [here](https://docs.anaconda.com/anaconda/install/).
 
-[introduction]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/introduction/introduction.pdf?inline=false
+[basics]: https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-1-python-basics?ex=1
+[lists]: https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-2-python-lists?ex=1
+[builtins]: https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-3-functions-and-packages?ex=1
+[flow_control_external]: https://www.youtube.com/watch?v=RpoUAGp7Pcc
+[dictionaries_external]: https://www.youtube.com/watch?v=XCcpzWs-CI4
+[sets_external]: https://www.youtube.com/watch?v=sBvaPopWOmQ
+[tuples_external]: https://www.youtube.com/watch?v=NI26dqhs2Rk
+[functions_external]: https://www.youtube.com/watch?v=NE97ylAnrz4
+[text_files_external]: https://www.youtube.com/watch?v=4mX0uPQFLDU
+[exceptions_external]: https://www.youtube.com/watch?v=nlCKrKGHSSk
+[oop_cs_dojo_1]: https://www.youtube.com/watch?v=8yjkWGRlUmY
+[oop_cs_dojo_2]: https://www.youtube.com/watch?v=wfcWRAxRVBA
+[oop_traversy_media]: https://www.youtube.com/watch?v=MikphENIrOo
+[oop_tech_with_tim]: https://www.youtube.com/watch?v=JeznW_7DlB0&t=2213s
+[data_analysis_external]: https://www.youtube.com/watch?v=r-uOLxNrNk8
+
+[exercises_flow_control]: planning/exercises_flow_control.md
+[exercises_dictionaries]: planning/exercises_dictionaries.md
+
+
+[introduction]: ../introduction/introduction/introduction.pdf?inline=false
 [data_types]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/data_types/data_types.pdf?inline=false
 [flow_control]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/flow_control/flow_control.pdf?inline=false
 [functions]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/functions/functions.pdf?inline=false
