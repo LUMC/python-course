@@ -65,11 +65,6 @@ Program
 |                  | 15:00 - 15:30 | Q&A                                                         |
 |                  | 15:30 - 16:00 | Wrap-up                                                     |
 
-Assignments
------------
-
-TBA
-
 
 Software installation
 ---------------------
@@ -96,7 +91,7 @@ See the instructions [here](https://docs.anaconda.com/anaconda/install/).
 [exercises_dictionaries]: planning/exercises_dictionaries.md
 
 
-[introduction]: ../introduction/introduction/introduction.pdf?inline=false
+[introduction]: introduction/introduction/introduction.pdf?inline=false
 [data_types]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/data_types/data_types.pdf?inline=false
 [flow_control]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/flow_control/flow_control.pdf?inline=false
 [functions]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/functions/functions.pdf?inline=false
