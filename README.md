@@ -39,6 +39,10 @@ Program
 |                  |               | Extras: [lists comprehensions][lists_comprehension].|
 |                  | 11:10 - 11:20 | Break                                                       |
 |                  | 11:20 - 12:10 | [Builtin Functions and Packages][builtins]                  |
+|                  |               | Alternatives:                                               |
+|                  |               | - [string methods][string_methods].                         |
+|                  |               | - [builtins overview][builtins_overview], [python builtins documentation](https://docs.python.org/3/library/functions.html).|
+|                  |               | - examples: [len()](https://www.youtube.com/watch?v=vV8faG_eLlw&list=PL4eU-_ytIUt_s4S9aZ6rLoP7aAUkj66gx&index=39), [type()](https://www.youtube.com/watch?v=25lXfMjkJTQ&list=PL4eU-_ytIUt_s4S9aZ6rLoP7aAUkj66gx&index=67), [sorted()](https://www.youtube.com/watch?v=t3Ot06TRspg&list=PL4eU-_ytIUt_s4S9aZ6rLoP7aAUkj66gx&index=61).  |
 |                  | 12:10 - 12:40 | Lunch Break                                                 |
 |                  | 12:40 - 13:00 | Q&A                                                         |
 |                  | 13:00 - 13:20 | Flow Control: [lecture][flow_control_external], [exercises][exercises_flow_control].|
@@ -91,6 +95,9 @@ See the instructions [here](https://docs.anaconda.com/anaconda/install/).
 
 [lists_socratica]: https://www.youtube.com/watch?v=ohCDWZgNIU0
 [lists_comprehension]: https://www.youtube.com/watch?v=AhSvKGTh28Q
+[string_methods]: https://www.youtube.com/watch?v=F2x20Ks4M8U
+[builtins_overview]: https://www.youtube.com/watch?v=NBIs5FgYmB8&list=PL4eU-_ytIUt_s4S9aZ6rLoP7aAUkj66gx
+
 
 [exercises_lists]: planning/exercises_lists.md
 [exercises_flow_control]: planning/exercises_flow_control.md
