@@ -35,7 +35,8 @@ Program
 |                  | 9:30 - 10:10  | [Python Basics][basics]                                     |
 |                  | 10:10 - 10:20 | Break                                                       |
 |                  | 10:20 - 11:10 | [Lists][lists]                                              |
-|                  |               | Alternative: [lecture][lists_socratica]                     |
+|                  |               | Alternative: [lecture][lists_socratica], [exercises][exercises_lists].|
+|                  |               | Extras: [lists comprehensions][lists_comprehension].|
 |                  | 11:10 - 11:20 | Break                                                       |
 |                  | 11:20 - 12:10 | [Builtin Functions and Packages][builtins]                  |
 |                  | 12:10 - 12:40 | Lunch Break                                                 |
@@ -89,7 +90,9 @@ See the instructions [here](https://docs.anaconda.com/anaconda/install/).
 [data_analysis_external]: https://www.youtube.com/watch?v=r-uOLxNrNk8
 
 [lists_socratica]: https://www.youtube.com/watch?v=ohCDWZgNIU0
+[lists_comprehension]: https://www.youtube.com/watch?v=AhSvKGTh28Q
 
+[exercises_lists]: planning/exercises_lists.md
 [exercises_flow_control]: planning/exercises_flow_control.md
 [exercises_dictionaries]: planning/exercises_dictionaries.md
 
