@@ -49,9 +49,9 @@ Program
 |                  | 13:20 - 13:40 | Dictionaries: [lecture][dictionaries_external], [exercises][exercises_dictionaries].|
 |                  | 13:40 - 15:10 | [Practical Session](https://classroom.github.com/a/w4GAzuFt)|
 |                  | 15:10 - 16:00 | Assignments Review                                          |
-| Tuesday, 13/10   | 9:00 - 9:20   | Sets                                                        |
-|                  | 9:20 - 9:40   | Tuples                                                      |
-|                  | 9:40 - 10:10  | User Defined Functions                                      |
+| Tuesday, 13/10   | 9:00 - 9:20   | Sets: [lecture][sets_external], [exercises][exercises_sets].|
+|                  | 9:20 - 9:40   | Tuples: [lecture][tuples_external], [exercises][exercises_tuples].|
+|                  | 9:40 - 10:10  | User Defined Functions: [lecture][functions_external], [exercises][exercises_functions].|                                      |
 |                  | 10:10 - 10:20 | Break                                                       |
 |                  | 10:20 - 10:50 | Text Files                                                  |
 |                  | 10:50 - 11:20 | Exceptions                                                  |
@@ -98,11 +98,12 @@ See the instructions [here](https://docs.anaconda.com/anaconda/install/).
 [string_methods]: https://www.youtube.com/watch?v=F2x20Ks4M8U
 [builtins_overview]: https://www.youtube.com/watch?v=NBIs5FgYmB8&list=PL4eU-_ytIUt_s4S9aZ6rLoP7aAUkj66gx
 
-
 [exercises_lists]: planning/exercises_lists.md
 [exercises_flow_control]: planning/exercises_flow_control.md
 [exercises_dictionaries]: planning/exercises_dictionaries.md
-
+[exercises_sets]: planning/exercises_sets.md
+[exercises_tuples]: planning/exercises_tuples.md
+[exercises_functions]: planning/exercises_user_defined_functions.md
 
 [introduction]: introduction/introduction/introduction.pdf?inline=false
 [data_types]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/data_types/data_types.pdf?inline=false
