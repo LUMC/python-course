@@ -58,7 +58,7 @@ Program
 |                  | 11:20 - 11:30 | Break                                                       |
 |                  | 11:30 - 12:00 | Q&A                                                         |
 |                  | 12:00 - 12:30 | Lunch Break                                                 |
-|                  | 12:30 - 15:00 | Practical Session                                           |
+|                  | 12:30 - 15:00 | [Practical Session](https://classroom.github.com/a/7xeF-pUg)|
 |                  | 15:00 - 16:00 | Assignments Review                                          |
 | Wednesday, 14/10 | 9:00 - 10:00  | Object Oriented Programming                                 |
 |                  | 10:00 - 10:30 | Q&A                                                         |
