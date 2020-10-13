@@ -53,8 +53,8 @@ Program
 |                  | 9:20 - 9:40   | Tuples: [lecture][tuples_external], [exercises][exercises_tuples].|
 |                  | 9:40 - 10:10  | User Defined Functions: [lecture][functions_external], [exercises][exercises_functions].|                                      |
 |                  | 10:10 - 10:20 | Break                                                       |
-|                  | 10:20 - 10:50 | Text Files                                                  |
-|                  | 10:50 - 11:20 | Exceptions                                                  |
+|                  | 10:20 - 10:50 | Text Files: [lecture][text_files_external], [exercises][exercises_text_files].|
+|                  | 10:50 - 11:20 | Exceptions: [lecture][exceptions_external], [exercises][exercises_exceptions].|
 |                  | 11:20 - 11:30 | Break                                                       |
 |                  | 11:30 - 12:00 | Q&A                                                         |
 |                  | 12:00 - 12:30 | Lunch Break                                                 |
@@ -104,6 +104,8 @@ See the instructions [here](https://docs.anaconda.com/anaconda/install/).
 [exercises_sets]: planning/exercises_sets.md
 [exercises_tuples]: planning/exercises_tuples.md
 [exercises_functions]: planning/exercises_user_defined_functions.md
+[exercises_text_files]: planning/exercises_text_files.md
+[exercises_exceptions]: planning/exercises_exceptions.md
 
 [introduction]: introduction/introduction/introduction.pdf?inline=false
 [data_types]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/data_types/data_types.pdf?inline=false
