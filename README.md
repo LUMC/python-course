@@ -60,9 +60,9 @@ Program
 |                  | 12:00 - 12:30 | Lunch Break                                                 |
 |                  | 12:30 - 15:00 | [Practical Session](https://classroom.github.com/a/7xeF-pUg)|
 |                  | 15:00 - 16:00 | Assignments Review                                          |
-| Wednesday, 14/10 | 9:00 - 10:00  | Object Oriented Programming                                 |
+| Wednesday, 14/10 | 9:00 - 10:00  | Object Oriented Programming: [lecture][oop_traversy_media] (until 30:50).|
 |                  | 10:00 - 10:30 | Q&A                                                         |
-|                  | 10:30 - 11:30 | Practical Session                                           |
+|                  | 10:30 - 11:30 | [Practical Session](https://classroom.github.com/a/6qjo5_hn)|
 |                  | 11:30 - 11:00 | Assignments Review                                          |
 |                  | 12:00 - 12:30 | Lunch Break                                                 |
 |                  | 12:30 - 15:00 | Practical Session                                           |
