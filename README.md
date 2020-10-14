@@ -65,7 +65,7 @@ Program
 |                  | 10:30 - 11:30 | [Practical Session](https://classroom.github.com/a/6qjo5_hn)|
 |                  | 11:30 - 11:00 | Assignments Review                                          |
 |                  | 12:00 - 12:30 | Lunch Break                                                 |
-|                  | 12:30 - 15:00 | [Practical Session(https://classroom.github.com/a/nAZDgTex) |
+|                  | 12:30 - 15:00 | [Practical Session](https://classroom.github.com/a/nAZDgTex) |
 |                  | 15:00 - 16:00 | Assignments Review                                          |
 | Thursday, 15/10  | 9:00 - 15:00  | Data Analysis                                               |
 |                  | 15:00 - 15:30 | Q&A                                                         |
