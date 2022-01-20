@@ -16,12 +16,9 @@ courses before.
 
 ## Coordinates
 
-- Date: 12-15 October, 2020
-- Time: 9:00 - 16:00
-- Location: online
+- Date: 31 January - 3 February, 2022
+- Location: J-01-116 and J-01-117
 - Teachers:
-  - Mark Santcroos
-  - Redmar van den Berg
   - Mihai Lefter
 - Registration via www.medgencentre.com. Direct access to the
 [registration form](https://forms.lumc.nl/lumc2/PYTHONcourse).
@@ -29,48 +26,28 @@ courses before.
 Program
 -------
 
-| Day              |  Time         | Lesson                                                      |
-|------------------|---------------|-------------------------------------------------------------|
-| Monday, 12/10    | 9:00 - 9:30   | [Introduction][introduction]                                |
-|                  | 9:30 - 10:10  | [Python Basics][basics]                                     |
-|                  | 10:10 - 10:20 | Break                                                       |
-|                  | 10:20 - 11:10 | [Lists][lists]                                              |
-|                  |               | Alternative: [lecture][lists_socratica], [exercises][exercises_lists].|
-|                  |               | Extras: [lists comprehensions][lists_comprehension].|
-|                  | 11:10 - 11:20 | Break                                                       |
-|                  | 11:20 - 12:10 | [Builtin Functions and Packages][builtins]                  |
-|                  |               | Alternatives:                                               |
-|                  |               | - [string methods][string_methods].                         |
-|                  |               | - [builtins overview][builtins_overview], [python builtins documentation](https://docs.python.org/3/library/functions.html).|
-|                  |               | - examples: [len()](https://www.youtube.com/watch?v=vV8faG_eLlw&list=PL4eU-_ytIUt_s4S9aZ6rLoP7aAUkj66gx&index=39), [type()](https://www.youtube.com/watch?v=25lXfMjkJTQ&list=PL4eU-_ytIUt_s4S9aZ6rLoP7aAUkj66gx&index=67), [sorted()](https://www.youtube.com/watch?v=t3Ot06TRspg&list=PL4eU-_ytIUt_s4S9aZ6rLoP7aAUkj66gx&index=61).  |
-|                  | 12:10 - 12:40 | Lunch Break                                                 |
-|                  | 12:40 - 13:00 | Q&A                                                         |
-|                  | 13:00 - 13:20 | Flow Control: [lecture][flow_control_external], [exercises][exercises_flow_control].|
-|                  | 13:20 - 13:40 | Dictionaries: [lecture][dictionaries_external], [exercises][exercises_dictionaries].|
-|                  | 13:40 - 15:10 | [Practical Session](https://classroom.github.com/a/w4GAzuFt)|
-|                  | 15:10 - 16:00 | Assignments Review                                          |
-| Tuesday, 13/10   | 9:00 - 9:20   | Sets: [lecture][sets_external], [exercises][exercises_sets].|
-|                  | 9:20 - 9:40   | Tuples: [lecture][tuples_external], [exercises][exercises_tuples].|
-|                  | 9:40 - 10:10  | User Defined Functions: [lecture][functions_external], [exercises][exercises_functions].|                                      |
-|                  | 10:10 - 10:20 | Break                                                       |
-|                  | 10:20 - 10:50 | Text Files: [lecture][text_files_external], [exercises][exercises_text_files].|
-|                  | 10:50 - 11:20 | Exceptions: [lecture][exceptions_external], [exercises][exercises_exceptions].|
-|                  | 11:20 - 11:30 | Break                                                       |
-|                  | 11:30 - 12:00 | Q&A                                                         |
-|                  | 12:00 - 12:30 | Lunch Break                                                 |
-|                  | 12:30 - 15:00 | [Practical Session](https://classroom.github.com/a/7xeF-pUg)|
-|                  | 15:00 - 16:00 | Assignments Review                                          |
-| Wednesday, 14/10 | 9:00 - 10:00  | Object Oriented Programming: [lecture][oop_traversy_media] (until 30:50).|
-|                  | 10:00 - 10:30 | Q&A                                                         |
-|                  | 10:30 - 11:30 | [Practical Session](https://classroom.github.com/a/6qjo5_hn)|
-|                  | 11:30 - 11:00 | Assignments Review                                          |
-|                  | 12:00 - 12:30 | Lunch Break                                                 |
-|                  | 12:30 - 15:00 | [Practical Session](https://classroom.github.com/a/nAZDgTex)|
-|                  | 15:00 - 16:00 | Assignments Review                                          |
-| Thursday, 15/10  | 9:00 - 15:00  | [Data Analysis][data_analysis_external]                     |
-|                  | 15:00 - 15:30 | Q&A                                                         |
-|                  | 15:30 - 16:00 | Wrap-up                                                     |
-
+| Day              | Location | Time          | Lesson                                              |
+|------------------|----------|---------------|-----------------------------------------------------|
+| Monday, 31/01    | J-1-117  |  9:30 - 10:00 | [Introduction][introduction]                        |
+|                  |          | 10:00 - 11:00 | [Data types][data_types]                            |
+|                  |          | 11:00 - 12:00 | [Flow control][flow_control]                        |
+|                  |          | 12:00 - 13:00 | Lunch break                                         |
+|                  |          | 12:30 - 15:00 | Practical session                                   |
+| Tuesday, 01/02   | J-1-117  | 10:30 - 11:00 | Assignments review                                  |
+|                  |          | 11:00 - 12:00 | [Functions][functions]                              |
+|                  |          | 12:00 - 13:00 | [Object-oriented programming][oop]                  |
+|                  |          | 13:00 - 13:30 | Lunch break                                         |
+|                  |          | 13:30 - 16:00 | Practical session                                   |
+| Wednesday, 02/02 | J-1-116  |  9:30 - 10:30 | Assignments review                                  |
+|                  |          | 10:30 - 11:30 | [String methods, errors and exceptions][strings]    |
+|                  |          | 11:30 - 12:30 | [Standard library, reading and writing files][std_library]  |
+|                  |          | 12:30 - 13:00 | Lunch break                                         |
+|                  | J-1-117  | 13:00 - 15:30 | Practical session                                   |
+| Thursday, 03/02  | J-1-117  | 10:00 - 11:00 | Assignments review                                  |
+|                  |          | 11:00 - 12:00 | [Jupyter Notebook][jupyter_notebook]                |
+|                  |          | 12:00 - 13:00 | [Data mangling with pandas][pandas]                 |
+|                  |          | 13:00 - 13:30 | Lunch break                                         |
+|                  | J-1-116  | 13:30 - 16:00 | Practical session                                   |
 
 Software installation
 ---------------------
