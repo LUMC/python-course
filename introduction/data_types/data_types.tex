@@ -87,13 +87,8 @@ What is the sum of two numbers?
  \end{center}
 \end{pframe}
 
-\begin{pframe}
- \begin{center}
-   \includesvg[width=1\textwidth]{../../images/data_types.svg}
- \end{center}
-\end{pframe}
-
 \section{Numeric Types}
+\makeTableOfContentsSection
 
 \subsection{Integer numbers}
 \begin{pframe}
@@ -134,7 +129,9 @@ s
 \end{minipage}
 \end{pframe}
 
-\section{Sequence types}
+\section{Sequence Types}
+\makeTableOfContentsSection
+
 \subsection{Lists}
 \begin{pframe}
 Mutable sequences of values.
@@ -186,7 +183,7 @@ You see? I continued after a blank line."""
 \end{pframe}
 
 \begin{pframe}
-But not mix them!
+But do not mix them!
 \begin{pyconsole}
 'a string can not be written with mixed quotes"
 \end{pyconsole}
@@ -292,6 +289,8 @@ list(zip(['red', 'white', 'blue'], range(3)))
 
 
 \section{Dictionaries}
+\makeTableOfContentsSection
+
 \subsection{Unordered map of hashable values to arbitrary objects}
 \begin{pframe}
 \begin{pyconsole}
@@ -325,6 +324,7 @@ list(d.items())
 
 
 \section{Sets}
+\makeTableOfContentsSection
 
 \subsection{Mutable unordered collections of hashable values without duplication}
 \begin{pframe}
@@ -389,6 +389,8 @@ s1 - s2
 
 
 \section{Booleans}
+\makeTableOfContentsSection
+
 \begin{pframe}
 The two boolean values are written \mintinline{python}{False} and
 \mintinline{python}{True}.
@@ -417,12 +419,19 @@ not False
 \end{pframe}
 
 
-\section{Mutable vs immutable data types}
+\section{Mutable vs Immutable}
+\makeTableOfContentsSection
+
+\begin{pframe}
+ \begin{center}
+   \includesvg[width=1\textwidth]{../../images/data_types.svg}
+ \end{center}
+\end{pframe}
+
 \subsection{Mutable data types}
 \begin{pframe}
 Objects whose value can change are said to be mutable.
 
-Lists, sets and dictionaries are mutable.
 \begin{pyconsole}
 a = [1,2,3,4]
 a.append(5)
@@ -439,7 +448,6 @@ b
 \begin{pframe}
 Objects whose value is unchangeable once they are created are called immutable.
 
-int, float, decimal, bool, string, tuple are immutable.
 \begin{pyconsole}
 (1,2,3,4)[2] = 5
 \end{pyconsole}
@@ -450,6 +458,8 @@ NB. In Python 3.8, range is also a data type and immutable.
 
 
 \section{Equivalence}
+\makeTableOfContentsSection
+
 \subsection{Value vs object}
 \begin{pframe}
 We have two equivalence relations: value equality (\mintinline{python}{==}) and
@@ -480,7 +490,6 @@ name + x
 \end{pframe}
 
 
-\section{Casting}
 \subsection{Combining different types}
 \begin{pframe}
 \begin{pyconsole}

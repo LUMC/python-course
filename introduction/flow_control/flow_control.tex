@@ -25,9 +25,8 @@
 \makeTitleSlide{\includesvg[height=3.5cm]{../../images/Python.svg}}
 
 % First page of the presentation.
-\section{Introduction}
+% \section{Introduction}
 \makeTableOfContents
-
 
 
 \section{Sequential Execution}
@@ -70,6 +69,7 @@ Performed with the \emp{input([prompt])} built-in function:
   \item The user input is then read as a string.
  \end{itemize}
  \pause
+ \begin{minipage}{0.40\textwidth}
  \begin{pythonfile}{sum.py}
   \begin{minted}[linenos]{python}
 a = input('a = ')
@@ -84,11 +84,13 @@ a = 100 \\
 b = 200 \\
 100200}}
  \end{terminal}
+\end{minipage}%
  \pause
- \begin{tikzpicture}[remember picture,overlay]
-   \node[xshift=-6.5cm,yshift=-6.64cm] at (current page.north east)
-   {\includesvg[width=5.8cm]{../../images/questions.svg}};
- \end{tikzpicture}
+ \begin{minipage}{0.57\textwidth}
+ \begin{center}
+  \includesvg[width=5.8cm]{../../images/questions.svg}
+ \end{center}
+ \end{minipage}%
 \end{pframe}
 
 
@@ -99,6 +101,7 @@ Performed with the \emp{input([prompt])} built-in function:
         output.
   \item The user input is then read as a \empt{string}.
  \end{itemize}
+ \begin{minipage}{0.40\textwidth}
  \begin{pythonfile}{sum.py}
   \begin{minted}[linenos]{python}
 a = int(input('a = '))
@@ -112,6 +115,13 @@ a = 100 \\
 b = 200 \\
 300}}
  \end{terminal}
+ \end{minipage}%
+ \pause
+ \begin{minipage}{0.57\textwidth}
+ \begin{center}
+  \includesvg[width=0.7\textwidth]{../../images/a_b_4.svg}
+ \end{center}
+ \end{minipage}%
 \end{pframe}
 
 
@@ -130,8 +140,8 @@ print(a+b)
  \end{pythonfile}
 \end{pframe}
 
-
 \section{Conditionals}
+\makeTableOfContentsSection
 
 \begin{pframe}
  \begin{center}
@@ -396,6 +406,8 @@ equal}}
 
 
 \section{Indentation}
+\makeTableOfContentsSection
+
 \begin{pframe}
  Python uses indentation to delimit code blocks.
  \begin{itemize}
@@ -419,8 +431,8 @@ if False:
 \end{pframe}
 
 
-
 \section{Loops}
+\makeTableOfContentsSection
 
 \begin{pframe}
  \begin{center}
@@ -640,6 +652,7 @@ else:
 
 
 \section{Comprehensions}
+\makeTableOfContentsSection
 
 \subsection{Lists}
 \begin{pframe}
