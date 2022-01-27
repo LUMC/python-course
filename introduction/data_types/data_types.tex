@@ -16,6 +16,8 @@
 
 \input{../../shared/shared.tex}
 
+\usepackage[inkscapelatex=false]{svg}
+
 \usepackage[pyconbanner=none,pygopt={style=friendly, texcomments=true, mathescape=false}]{pythontex}
 \usepackage{mdframed}
 \surroundwithmdframed[backgroundcolor=black!15]{pyconsole}
@@ -33,7 +35,66 @@
 \section{Introduction}
 %\makeTableOfContents
 
-\section{Numeric types}
+\subsection{Problem}
+\begin{pframe}
+What is the sum of two numbers?
+\end{pframe}
+
+\begin{pframe}
+\addtocounter{framenumber}{-1}
+What is the sum of two numbers?
+ \begin{center}
+   \includesvg[width=0.5\textwidth]{../../images/a_b_0.svg}
+ \end{center}
+\end{pframe}
+
+\begin{pframe}
+\addtocounter{framenumber}{-1}
+What is the sum of two numbers?
+ \begin{center}
+   \includesvg[width=0.5\textwidth]{../../images/a_b_1.svg}
+ \end{center}
+\end{pframe}
+
+\begin{pframe}
+\addtocounter{framenumber}{-1}
+What is the sum of two numbers?
+ \begin{center}
+   \includesvg[width=0.5\textwidth]{../../images/a_b_2.svg}
+ \end{center}
+\end{pframe}
+
+\begin{pframe}
+\addtocounter{framenumber}{-1}
+What is the sum of two numbers?
+ \begin{center}
+   \includesvg[width=0.5\textwidth]{../../images/a_b_3.svg}
+ \end{center}
+\end{pframe}
+
+\begin{pframe}
+\addtocounter{framenumber}{-1}
+What is the sum of two numbers?
+ \begin{center}
+   \includesvg[width=0.5\textwidth]{../../images/a_b_4.svg}
+ \end{center}
+\end{pframe}
+
+\subsection{ }
+\begin{pframe}
+ \begin{center}
+   \includesvg[width=1\textwidth]{../../images/data_types_0.svg}
+ \end{center}
+\end{pframe}
+
+\begin{pframe}
+ \begin{center}
+   \includesvg[width=1\textwidth]{../../images/data_types.svg}
+ \end{center}
+\end{pframe}
+
+\section{Numeric Types}
+
 \subsection{Integer numbers}
 \begin{pframe}
 \begin{pyconsole}
@@ -46,7 +107,7 @@ type(1)
 
 \end{pframe}
 
-\subsection{Floating point numbers}
+\subsection{Real / floating point numbers}
 \begin{pframe}
 \begin{pyconsole}
 1.0
@@ -57,6 +118,21 @@ type(1.0)
 \end{pyconsole}
 \end{pframe}
 
+\subsection{Problem}
+\begin{pframe}
+\begin{minipage}[t]{0.47\textwidth}
+\includesvg[width=1\textwidth]{../../images/a_b_4.svg}
+\end{minipage}
+\begin{minipage}[t]{0.47\textwidth}
+\vspace{-5cm}
+\begin{pyconsole}
+a = 100
+b = 200
+s = a + b
+s
+\end{pyconsole}
+\end{minipage}
+\end{pframe}
 
 \section{Sequence types}
 \subsection{Lists}
@@ -68,7 +144,7 @@ type(integers)
 \end{pyconsole}
 \medskip
 \medskip
-Lists can be heterogeneous, but we typically don't use that.
+Lists can be heterogeneous!
 \begin{pyconsole}
 a = 'xyz'
 [3, 'abc', 1.3e20, [a, a, 2]]
@@ -138,8 +214,7 @@ Accessing arguments by position or name is more readable.
 
 \subsection{Common sequence operations}
 \begin{pframe}
-All sequence types support: concatenation, membership/substring tests,
-indexing, and slicing.
+All sequence types support: concatenation, membership, indexing, and slicing.
 \begin{pyconsole}
 [1, 2, 3] + [4, 5, 6]
 
@@ -299,7 +374,6 @@ such as union and intersect.
 
 \subsection{Operations}
 \begin{pframe}
- Difference
  \medskip
 
 \begin{pyconsole}
@@ -307,9 +381,9 @@ s1 = {12, 28, 21, 17}
 
 s2 = {28, 32, 71, 12}
 
-s1.difference(s2)
+s1 - s2
 
-{1,2}.issubset({1,2,3})
+{1,3}.issubset({1,2,3})
 \end{pyconsole}
 \end{pframe}
 
