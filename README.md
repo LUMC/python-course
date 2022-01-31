@@ -54,6 +54,11 @@ Software installation
 
 See the instructions [here](https://docs.anaconda.com/anaconda/install/).
 
+Assignments
+-----------
+
+- [Day 1](https://classroom.github.com/a/xCC1nVcF)
+
 [basics]: https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-1-python-basics?ex=1
 [lists]: https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-2-python-lists?ex=1
 [builtins]: https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-3-functions-and-packages?ex=1
