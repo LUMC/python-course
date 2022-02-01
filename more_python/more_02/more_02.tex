@@ -4,7 +4,7 @@
 \title{Python Programming}
 \providecommand{\mySubTitle}{Standard library, reading and writing files}
 \providecommand{\myConference}{Programming Course}
-\providecommand{\myDate}{28-11-2018}
+\providecommand{\myDate}{02-02-2022}
 \providecommand{\myGroup}{}
 \providecommand{\myDepartment}{}
 \providecommand{\myCenter}{}
@@ -91,7 +91,7 @@ IndexError: list index out of range
   \item To make our script work as a module (in the intended way), we need to
   add a check whether the module is imported or not:
  \end{itemize}
- \vspace{-0.3cm}
+ \vspace{-0.2cm}
  \begin{pythoncode}
    \begin{minted}{python}
 if __name__ == '__main__':
@@ -117,7 +117,6 @@ if __name__ == '__main__':
  \begin{itemize}
   \item When a module is imported, we can access the objects defined in it:
  \end{itemize}
- \vspace{-0.3cm}
  \begin{ipython}
    \begin{pythonin}{python}
 import seq_toolbox
@@ -140,7 +139,7 @@ seq_toolbox.calc_gc_percent
   \item After importing our module, we can read up on how to use the function
   in its docstring:
  \end{itemize}
- \vspace{-0.3cm}
+
  \begin{ipython}
    \begin{pythonin}{python}
 seq_toolbox.calc_gc_percent?
@@ -344,7 +343,7 @@ random.choice(['apple', 'banana', 'grape', 'kiwi', 'orange'])
   \item Change the \mintinline{python}{if __name__ == '__main__'} block to be
   the following:
  \end{itemize}
- \vspace{-0.3cm}
+ \vspace{-0.2cm}
  \begin{pythoncode}
   \begin{minted}{python}
 if __name__ == '__main__':
@@ -417,7 +416,7 @@ fh.read()
   \item Executing fh.read() a second time gives an empty string.
   This is because we have "walked" through the file to its end.
  \end{itemize}
- \vspace{-0.3cm}
+ \vspace{-0.1cm}
  \begin{ipython}
   \begin{pythonin}{python}
 fh.read()
@@ -433,7 +432,7 @@ fh.read()
   \item Here, we use 0 as the argument since we want to move the handle to
   position 0 (beginning of the file):
  \end{itemize}
- \vspace{-0.3cm}
+ \vspace{-0.1cm}
  \begin{ipython}
   \begin{pythonin}{python}
 fh.seek(0)
@@ -556,6 +555,7 @@ fw.close()
 
 \subsection{Be cautious when using file handles}
 \begin{pframe}
+ \vspace{-0.2cm}
  \begin{itemize}
   \item When reading / writing files, we are interacting with external resources
   that may or may not behave as expected.
@@ -566,7 +566,7 @@ fw.close()
    \item We have a completely wrong idea of what's in the file.
   \end{itemize}
  \end{itemize}
- \vspace{-0.3cm}
+ \vspace{-0.1cm}
  \begin{pythoncode}
   \begin{minted}{python}
 try:

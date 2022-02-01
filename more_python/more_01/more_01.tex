@@ -4,7 +4,7 @@
 \title{Python Programming}
 \providecommand{\mySubTitle}{String methods, error and exceptions}
 \providecommand{\myConference}{Programming Course}
-\providecommand{\myDate}{28-11-2018}
+\providecommand{\myDate}{02-02-2022}
 \providecommand{\myGroup}{}
 \providecommand{\myDepartment}{}
 \providecommand{\myCenter}{}
@@ -444,7 +444,7 @@ def calc_gc_percent(seq):
   exceptions so we can tailor our handling.
   \item Example of code that violates this principle:
  \end{itemize}
- \vspace{-0.3cm}
+ \vspace{-0.1cm}
  \begin{pythoncode}
    \begin{minted}{python}
 try:
@@ -457,7 +457,7 @@ except ValueError:
  \begin{itemize}
   \item A better way would be:
  \end{itemize}
- \vspace{-0.3cm}
+ \vspace{-0.1cm}
  \begin{pythoncode}
    \begin{minted}{python}
 try:
@@ -476,7 +476,7 @@ my_other_function()
  \begin{itemize}
   \item The following code is syntactically valid, but never use it:
  \end{itemize}
- \vspace{-0.3cm}
+ \vspace{-0.1cm}
  \begin{pythoncode}
    \begin{minted}{python}
 try:
@@ -488,7 +488,7 @@ except:
  \begin{itemize}
   \item Always use the full exception name when to make for a much cleaner code:
  \end{itemize}
- \vspace{-0.3cm}
+ \vspace{-0.1cm}
  \begin{pythoncode}
    \begin{minted}{python}
 try:
@@ -510,7 +510,6 @@ except IndexError:
  \begin{itemize}
   \item We could have written our last exception block like so:
  \end{itemize}
- \vspace{-0.3cm}
  \begin{pythoncode}
    \begin{minted}{python}
 if gc_count + at_count == 0:
