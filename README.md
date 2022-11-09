@@ -16,8 +16,8 @@ courses before.
 
 ## Coordinates
 
-- Date: 31 January - 3 February, 2022
-- Location: J-01-116 and J-01-117
+- Date: 29 November - 2 December, 2022
+- Location: V-3-12 and V-1-24
 - Teachers:
   - Mihai Lefter
 - Registration via www.medgencentre.com. Direct access to the
@@ -28,26 +28,26 @@ Program
 
 | Day              | Location | Time          | Lesson                                              |
 |------------------|----------|---------------|-----------------------------------------------------|
-| Monday, 31/01    | J-1-117  |  9:30 - 10:00 | [Introduction][introduction]                        |
+| Tuesday, 29/11   | V-3-12   |  9:30 - 10:00 | [Introduction][introduction]                        |
 |                  |          | 10:00 - 11:00 | [Data types][data_types]                            |
 |                  |          | 11:00 - 12:00 | [Flow control][flow_control]                        |
 |                  |          | 12:00 - 13:00 | Lunch break                                         |
 |                  |          | 12:30 - 15:00 | Practical session                                   |
-| Tuesday, 01/02   | J-1-117  | 10:30 - 11:00 | Assignments review                                  |
+| Wednesday, 30/11 | V-1-24   | 10:30 - 11:00 | Assignments review                                  |
 |                  |          | 11:00 - 12:00 | [Functions][functions]                              |
 |                  |          | 12:00 - 13:00 | [Object-oriented programming][oop]                  |
 |                  |          | 13:00 - 13:30 | Lunch break                                         |
 |                  |          | 13:30 - 16:00 | Practical session                                   |
-| Wednesday, 02/02 | J-1-116  |  9:30 - 10:30 | Assignments review                                  |
+| Thursday, 01/12  | V-1-24   |  9:30 - 10:30 | Assignments review                                  |
 |                  |          | 10:30 - 11:30 | [String methods, errors and exceptions][strings]    |
 |                  |          | 11:30 - 12:30 | [Standard library, reading and writing files][std_library]  |
 |                  |          | 12:30 - 13:00 | Lunch break                                         |
-|                  | J-1-117  | 13:00 - 15:30 | Practical session                                   |
-| Thursday, 03/02  | J-1-117  | 10:00 - 11:00 | Assignments review                                  |
+|                  |          | 13:00 - 15:30 | Practical session                                   |
+| Friday, 02/12    | V-1-24   | 10:00 - 11:00 | Assignments review                                  |
 |                  |          | 11:00 - 12:00 | [Jupyter Notebook][jupyter_notebook]                |
 |                  |          | 12:00 - 13:00 | [Data mangling with pandas][pandas]                 |
 |                  |          | 13:00 - 13:30 | Lunch break                                         |
-|                  | J-1-116  | 13:30 - 16:00 | Practical session                                   |
+|                  |          | 13:30 - 16:00 | Practical session                                   |
 
 Software installation
 ---------------------
@@ -57,12 +57,12 @@ See the instructions [here](https://docs.anaconda.com/anaconda/install/).
 Assignments
 -----------
 
-- [Day 1](https://classroom.github.com/a/xCC1nVcF)
+- [Day 1]()
 - Day 2:
-  - [Functions](https://classroom.github.com/a/w7pdNy-B)
-  - [OOP](https://classroom.github.com/a/57n5EZZP)
-- [Day 3](https://classroom.github.com/a/xNMeb3DB)
-- [Day 4](https://classroom.github.com/a/fbWadm58)
+  - [Functions]()
+  - [OOP]()
+- [Day 3]()
+- [Day 4]()
 
 [basics]: https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-1-python-basics?ex=1
 [lists]: https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-2-python-lists?ex=1
