@@ -31,23 +31,23 @@ Program
 | Tuesday, 29/11   | V-3-12   |  9:30 - 10:00 | [Introduction][introduction]                        |
 |                  |          | 10:00 - 11:00 | [Data types][data_types]                            |
 |                  |          | 11:00 - 12:00 | [Flow control][flow_control]                        |
-|                  |          | 12:00 - 13:00 | Lunch break                                         |
+|                  |          | 12:00 - 12:30 | Lunch break                                         |
 |                  |          | 12:30 - 15:00 | Practical session                                   |
-| Wednesday, 30/11 | V-1-24   | 10:30 - 11:00 | Assignments review                                  |
-|                  |          | 11:00 - 12:00 | [Functions][functions]                              |
-|                  |          | 12:00 - 13:00 | [Object-oriented programming][oop]                  |
-|                  |          | 13:00 - 13:30 | Lunch break                                         |
-|                  |          | 13:30 - 16:00 | Practical session                                   |
-| Thursday, 01/12  | V-1-24   |  9:30 - 10:30 | Assignments review                                  |
-|                  |          | 10:30 - 11:30 | [String methods, errors and exceptions][strings]    |
-|                  |          | 11:30 - 12:30 | [Standard library, reading and writing files][std_library]  |
-|                  |          | 12:30 - 13:00 | Lunch break                                         |
-|                  |          | 13:00 - 15:30 | Practical session                                   |
-| Friday, 02/12    | V-1-24   | 10:00 - 11:00 | Assignments review                                  |
-|                  |          | 11:00 - 12:00 | [Jupyter Notebook][jupyter_notebook]                |
-|                  |          | 12:00 - 13:00 | [Data mangling with pandas][pandas]                 |
-|                  |          | 13:00 - 13:30 | Lunch break                                         |
-|                  |          | 13:30 - 16:00 | Practical session                                   |
+| Wednesday, 30/11 | V-1-24   |  9:30 - 10:00 | Assignments review                                  |
+|                  |          | 11:00 - 11:00 | [Functions][functions]                              |
+|                  |          | 11:00 - 12:00 | [Object-oriented programming][oop]                  |
+|                  |          | 12:00 - 12:30 | Lunch break                                         |
+|                  |          | 12:30 - 15:00 | Practical session                                   |
+| Thursday, 01/12  | V-1-24   |  9:30 - 10:00 | Assignments review                                  |
+|                  |          | 10:00 - 11:00 | [String methods, errors and exceptions][strings]    |
+|                  |          | 11:00 - 12:00 | [Standard library, reading and writing files][std_library]  |
+|                  |          | 12:00 - 12:30 | Lunch break                                         |
+|                  |          | 12:30 - 15:00 | Practical session                                   |
+| Friday, 02/12    | V-1-24   |  9:30 - 10:00 | Assignments review                                  |
+|                  |          | 10:00 - 11:00 | [Jupyter Notebook][jupyter_notebook]                |
+|                  |          | 11:00 - 12:00 | [Data mangling with pandas][pandas]                 |
+|                  |          | 12:00 - 12:30 | Lunch break                                         |
+|                  |          | 12:30 - 15:00 | Practical session                                   |
 
 Software installation
 ---------------------
