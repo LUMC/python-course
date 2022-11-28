@@ -57,7 +57,7 @@ See the instructions [here](https://docs.anaconda.com/anaconda/install/).
 Assignments
 -----------
 
-- [Day 1]()
+- [Day 1](https://classroom.github.com/a/1sakSN00)
 - Day 2:
   - [Functions]()
   - [OOP]()
