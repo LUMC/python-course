@@ -9,3 +9,8 @@
 *.backup
 *.toc
 *.vrb
+*_minted-*/
+*pythontex-files*
+*synctex.gz
+*.pytxcode
+*svg-inkscape/

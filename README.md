@@ -59,8 +59,8 @@ Assignments
 
 - [Day 1](https://classroom.github.com/a/1sakSN00)
 - Day 2:
-  - [Functions]()
-  - [OOP]()
+  - [Functions](https://classroom.github.com/a/UrivxDE2)
+  - [OOP](https://classroom.github.com/a/WdnY3RsX)
 - [Day 3]()
 - [Day 4]()
 
