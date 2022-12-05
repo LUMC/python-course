@@ -16,10 +16,10 @@ courses before.
 
 ## Coordinates
 
-- Date: 29 November - 2 December, 2022
-- Location: V-3-12 and V-1-24
+- Date: TBA
+- Location: TBA
 - Teachers:
-  - Mihai Lefter
+  - TBA
 - Registration via www.medgencentre.com. Direct access to the
 [registration form](https://forms.lumc.nl/lumc2/PYTHONcourse).
 
@@ -28,22 +28,22 @@ Program
 
 | Day              | Location | Time          | Lesson                                              |
 |------------------|----------|---------------|-----------------------------------------------------|
-| Tuesday, 29/11   | V-3-12   |  9:30 - 10:00 | [Introduction][introduction]                        |
+| TBA   | TBA   |  9:30 - 10:00 | [Introduction][introduction]                        |
 |                  |          | 10:00 - 11:00 | [Data types][data_types]                            |
 |                  |          | 11:00 - 12:00 | [Flow control][flow_control]                        |
 |                  |          | 12:00 - 12:30 | Lunch break                                         |
 |                  |          | 12:30 - 15:00 | Practical session                                   |
-| Wednesday, 30/11 | V-1-24   |  9:30 - 10:00 | Assignments review                                  |
+| TBA | TBA   |  9:30 - 10:00 | Assignments review                                  |
 |                  |          | 11:00 - 11:00 | [Functions][functions]                              |
 |                  |          | 11:00 - 12:00 | [Object-oriented programming][oop]                  |
 |                  |          | 12:00 - 12:30 | Lunch break                                         |
 |                  |          | 12:30 - 15:00 | Practical session                                   |
-| Thursday, 01/12  | V-1-24   |  9:30 - 10:00 | Assignments review                                  |
+| TBA  | TBA   |  9:30 - 10:00 | Assignments review                                  |
 |                  |          | 10:00 - 11:00 | [String methods, errors and exceptions][strings]    |
 |                  |          | 11:00 - 12:00 | [Standard library, reading and writing files][std_library]  |
 |                  |          | 12:00 - 12:30 | Lunch break                                         |
 |                  |          | 12:30 - 15:00 | Practical session                                   |
-| Friday, 02/12    | V-1-24   |  9:30 - 10:00 | Assignments review                                  |
+| TBA    | TBA   |  9:30 - 10:00 | Assignments review                                  |
 |                  |          | 10:00 - 11:00 | [Jupyter Notebook][jupyter_notebook]                |
 |                  |          | 11:00 - 12:00 | [Data mangling with pandas][pandas]                 |
 |                  |          | 12:00 - 12:30 | Lunch break                                         |
@@ -57,12 +57,12 @@ See the instructions [here](https://docs.anaconda.com/anaconda/install/).
 Assignments
 -----------
 
-- [Day 1](https://classroom.github.com/a/1sakSN00)
+- [Day 1]()
 - Day 2:
-  - [Functions](https://classroom.github.com/a/UrivxDE2)
-  - [OOP](https://classroom.github.com/a/WdnY3RsX)
-- [Day 3](https://classroom.github.com/a/_KwZSCR7)
-- [Day 4](https://classroom.github.com/a/LfZcyfpM)
+  - [Functions]()
+  - [OOP]()
+- [Day 3]()
+- [Day 4]()
 
 [basics]: https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-1-python-basics?ex=1
 [lists]: https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-2-python-lists?ex=1
