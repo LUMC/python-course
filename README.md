@@ -16,10 +16,10 @@ courses before.
 
 ## Coordinates
 
-- Date: TBA
-- Location: TBA
+- Date: 9-12 May 2023
+- Location: V-04-036/040
 - Teachers:
-  - TBA
+  - Mihai Lefter
 - Registration via www.medgencentre.com. Direct access to the
 [registration form](https://forms.lumc.nl/lumc2/PYTHONcourse).
 
@@ -28,22 +28,22 @@ Program
 
 | Day              | Location | Time          | Lesson                                              |
 |------------------|----------|---------------|-----------------------------------------------------|
-| TBA   | TBA   |  9:30 - 10:00 | [Introduction][introduction]                        |
+| 9 May   | V-04-036/040   |  9:30 - 10:00 | [Introduction][introduction]                        |
 |                  |          | 10:00 - 11:00 | [Data types][data_types]                            |
 |                  |          | 11:00 - 12:00 | [Flow control][flow_control]                        |
 |                  |          | 12:00 - 12:30 | Lunch break                                         |
 |                  |          | 12:30 - 15:00 | Practical session                                   |
-| TBA | TBA   |  9:30 - 10:00 | Assignments review                                  |
+| 10 May |  V-04-018/022   |  9:30 - 10:00 | Assignments review                                  |
 |                  |          | 11:00 - 11:00 | [Functions][functions]                              |
 |                  |          | 11:00 - 12:00 | [Object-oriented programming][oop]                  |
 |                  |          | 12:00 - 12:30 | Lunch break                                         |
 |                  |          | 12:30 - 15:00 | Practical session                                   |
-| TBA  | TBA   |  9:30 - 10:00 | Assignments review                                  |
+| 11 May  | V-03-22   |  9:30 - 10:00 | Assignments review                                  |
 |                  |          | 10:00 - 11:00 | [String methods, errors and exceptions][strings]    |
 |                  |          | 11:00 - 12:00 | [Standard library, reading and writing files][std_library]  |
 |                  |          | 12:00 - 12:30 | Lunch break                                         |
 |                  |          | 12:30 - 15:00 | Practical session                                   |
-| TBA    | TBA   |  9:30 - 10:00 | Assignments review                                  |
+| 12 May    | V-03-22   |  9:30 - 10:00 | Assignments review                                  |
 |                  |          | 10:00 - 11:00 | [Jupyter Notebook][jupyter_notebook]                |
 |                  |          | 11:00 - 12:00 | [Data mangling with pandas][pandas]                 |
 |                  |          | 12:00 - 12:30 | Lunch break                                         |
