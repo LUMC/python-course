@@ -7,7 +7,7 @@
 \title{Python Programming}
 \providecommand{\mySubTitle}{Data Types}
 \providecommand{\myConference}{Programming Course}
-\providecommand{\myDate}{29-11-2022}
+\providecommand{\myDate}{}
 \providecommand{\myGroup}{}
 \providecommand{\myDepartment}{}
 \providecommand{\myCenter}{}
@@ -16,6 +16,7 @@
 
 \input{../../shared/shared.tex}
 
+\usepackage{booktabs}
 \usepackage[inkscapelatex=false]{svg}
 
 \usepackage[pyconbanner=none,pygopt={style=friendly, texcomments=true, mathescape=false}]{pythontex}
@@ -86,6 +87,25 @@ What is the sum of two numbers?
    \includesvg[width=1\textwidth]{../../images/data_types_0.svg}
  \end{center}
 \end{pframe}
+
+
+\subsection{Arithmetic Operators}
+\begin{pframe}
+ \begin{table}[]
+  \begin{tabular}{@{}ccc@{}}
+   \toprule
+   Operator     & Name & Example \\ \toprule
+   \emp{+}      & Addition & \pythoninline{a} \emp{+} \pythoninline{c} \\
+   \emp{-}      & Subtraction & \pythoninline{a} \emp{-} \pythoninline{c} \\
+   \emp{*}      & Multiplication & \pythoninline{a} \emp{*} \pythoninline{c} \\
+   \emp{/}      & Division & \pythoninline{a} \emp{/} \pythoninline{c} \\
+   \emp{//}     & Floor division & \pythoninline{a} \emp{//} \pythoninline{c} \\
+   \emp{\%}     & Modulus &  \pythoninline{a} \emp{\%} \pythoninline{c} \\
+   \emp{**}     & Exponentiation & \pythoninline{a} \emp{**} \pythoninline{c} \\
+  \end{tabular}
+ \end{table}
+\end{pframe}
+
 
 \section{Numeric Types}
 \makeTableOfContentsSection
