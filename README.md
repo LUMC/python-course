@@ -95,11 +95,11 @@ Assignments
 [exercises_exceptions]: planning/exercises_exceptions.md
 
 [introduction]: introduction/introduction/introduction.pdf?inline=false
-[data_types]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/data_types/data_types.pdf?inline=false
-[flow_control]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/flow_control/flow_control.pdf?inline=false
-[functions]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/functions/functions.pdf?inline=false
-[strings]: https://git.lumc.nl/courses/programming-course/raw/master/more_python/more_01/more_01.pdf?inline=false
-[std_library]: https://git.lumc.nl/courses/programming-course/raw/master/more_python/more_02/more_02.pdf?inline=false
+[data_types]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/data_types/data_types.pdf
+[flow_control]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/flow_control/flow_control.pdf
+[functions]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/functions/functions.pdf
+[strings]: https://git.lumc.nl/courses/programming-course/raw/master/more_python/more_01/more_01.pdf
+[std_library]: https://git.lumc.nl/courses/programming-course/raw/master/more_python/more_02/more_02.pdf
 [oop]: https://git.lumc.nl/courses/programming-course/raw/master/oop/oop.pdf
 [jupyter_notebook]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/jupyter/05_jupyter.ipynb
 [pandas]: http://nbviewer.ipython.org/urls/git.lumc.nl/courses/programming-course/raw/master/pandas/pandas.ipynb
