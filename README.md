@@ -59,8 +59,8 @@ Assignments
 
 - [Day 1](https://classroom.github.com/a/gc-FvgSt)
 - Day 2:
-  - [Functions]()
-  - [OOP]()
+  - [Functions](https://classroom.github.com/a/V3WGWN-s)
+  - [OOP](https://classroom.github.com/a/bkm3HDlT)
 - [Day 3]()
 - [Day 4]()
 
@@ -94,7 +94,7 @@ Assignments
 [exercises_text_files]: planning/exercises_text_files.md
 [exercises_exceptions]: planning/exercises_exceptions.md
 
-[introduction]: introduction/introduction/introduction.pdf?inline=false
+[introduction]: introduction/introduction/introduction.pdf
 [data_types]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/data_types/data_types.pdf
 [flow_control]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/flow_control/flow_control.pdf
 [functions]: https://git.lumc.nl/courses/programming-course/raw/master/introduction/functions/functions.pdf
