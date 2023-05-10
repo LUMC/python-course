@@ -61,7 +61,7 @@ Assignments
 - Day 2:
   - [Functions](https://classroom.github.com/a/V3WGWN-s)
   - [OOP](https://classroom.github.com/a/bkm3HDlT)
-- [Day 3]()
+- [Day 3](https://classroom.github.com/a/kzi79cQC)
 - [Day 4]()
 
 [basics]: https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-1-python-basics?ex=1
