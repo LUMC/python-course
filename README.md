@@ -16,10 +16,10 @@ courses before.
 
 ## Coordinates
 
-- Date: TBA
-- Location: TBA
+- Date: 23-28 November 2023
+- Location: J-1-83
 - Teachers:
-  - TBA
+  - Mihai Lefter
 - Registration via www.medgencentre.com. Direct access to the
 [registration form](https://forms.lumc.nl/lumc2/PYTHONcourse).
 
@@ -28,22 +28,22 @@ Program
 
 | Day              | Location | Time          | Lesson                                              |
 |------------------|----------|---------------|-----------------------------------------------------|
-| TBA   | TBA   |  9:30 - 10:00 | [Introduction][introduction]                        |
+| 23 November   | J-1-83   |  9:30 - 10:00 | [Introduction][introduction]                        |
 |                  |          | 10:00 - 11:00 | [Data types][data_types]                            |
 |                  |          | 11:00 - 12:00 | [Flow control][flow_control]                        |
 |                  |          | 12:00 - 12:30 | Lunch break                                         |
 |                  |          | 12:30 - 15:00 | Practical session                                   |
-| TBA |  TBA   |  9:30 - 10:00 | Assignments review                                  |
+| 24 November |  J-1-83   |  9:30 - 10:00 | Assignments review                                  |
 |                  |          | 11:00 - 11:00 | [Functions][functions]                              |
 |                  |          | 11:00 - 12:00 | [Object-oriented programming][oop]                  |
 |                  |          | 12:00 - 12:30 | Lunch break                                         |
 |                  |          | 12:30 - 15:00 | Practical session                                   |
-| TBA  | TBA   |  9:30 - 10:00 | Assignments review                                  |
+| 27 November  | J-1-83   |  9:30 - 10:00 | Assignments review                                  |
 |                  |          | 10:00 - 11:00 | [String methods, errors and exceptions][strings]    |
 |                  |          | 11:00 - 12:00 | [Standard library, reading and writing files][std_library]  |
 |                  |          | 12:00 - 12:30 | Lunch break                                         |
 |                  |          | 12:30 - 15:00 | Practical session                                   |
-| TBA    | TBA   |  9:30 - 10:00 | Assignments review                                  |
+| 28 November    | J-1-83   |  9:30 - 10:00 | Assignments review                                  |
 |                  |          | 10:00 - 11:00 | [Jupyter Notebook][jupyter_notebook]                |
 |                  |          | 11:00 - 12:00 | [Data mangling with pandas][pandas]                 |
 |                  |          | 12:00 - 12:30 | Lunch break                                         |
