@@ -16,8 +16,8 @@ courses before.
 
 ## Coordinates
 
-- Date: 9-12 May 2023
-- Location: V-04-036/040
+- Date: 23-28 November 2023
+- Location: J-1-83
 - Teachers:
   - Mihai Lefter
 - Registration via www.medgencentre.com. Direct access to the
@@ -28,22 +28,22 @@ Program
 
 | Day              | Location | Time          | Lesson                                              |
 |------------------|----------|---------------|-----------------------------------------------------|
-| 9 May   | V-04-036/040   |  9:30 - 10:00 | [Introduction][introduction]                        |
+| 23 November   | J-1-83   |  9:30 - 10:00 | [Introduction][introduction]                        |
 |                  |          | 10:00 - 11:00 | [Data types][data_types]                            |
 |                  |          | 11:00 - 12:00 | [Flow control][flow_control]                        |
 |                  |          | 12:00 - 12:30 | Lunch break                                         |
 |                  |          | 12:30 - 15:00 | Practical session                                   |
-| 10 May |  V-04-018/022   |  9:30 - 10:00 | Assignments review                                  |
+| 24 November |  J-1-83   |  9:30 - 10:00 | Assignments review                                  |
 |                  |          | 11:00 - 11:00 | [Functions][functions]                              |
 |                  |          | 11:00 - 12:00 | [Object-oriented programming][oop]                  |
 |                  |          | 12:00 - 12:30 | Lunch break                                         |
 |                  |          | 12:30 - 15:00 | Practical session                                   |
-| 11 May  | V-03-22   |  9:30 - 10:00 | Assignments review                                  |
+| 27 November  | J-1-83   |  9:30 - 10:00 | Assignments review                                  |
 |                  |          | 10:00 - 11:00 | [String methods, errors and exceptions][strings]    |
 |                  |          | 11:00 - 12:00 | [Standard library, reading and writing files][std_library]  |
 |                  |          | 12:00 - 12:30 | Lunch break                                         |
 |                  |          | 12:30 - 15:00 | Practical session                                   |
-| 12 May    | V-03-22   |  9:30 - 10:00 | Assignments review                                  |
+| 28 November    | J-1-83   |  9:30 - 10:00 | Assignments review                                  |
 |                  |          | 10:00 - 11:00 | [Jupyter Notebook][jupyter_notebook]                |
 |                  |          | 11:00 - 12:00 | [Data mangling with pandas][pandas]                 |
 |                  |          | 12:00 - 12:30 | Lunch break                                         |
@@ -57,10 +57,10 @@ See the instructions [here](https://docs.anaconda.com/anaconda/install/).
 Assignments
 -----------
 
-- [Day 1](https://classroom.github.com/a/gc-FvgSt)
+- [Day 1]()
 - Day 2:
-  - [Functions](https://classroom.github.com/a/V3WGWN-s)
-  - [OOP](https://classroom.github.com/a/bkm3HDlT)
+  - [Functions]()
+  - [OOP]()
 - [Day 3]()
 - [Day 4]()
 
